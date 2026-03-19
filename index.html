@@ -288,6 +288,24 @@
       color: var(--muted);
     }
 
+    .post-actions {
+      margin-top: 10px;
+    }
+
+    .report-button {
+      background: #ffffff;
+      color: var(--header);
+      border: 1px solid #dbe5df;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .report-button:hover {
+      background: #f4f7f5;
+    }
+
     @media (max-width: 640px) {
       header {
         padding: 42px 16px 30px;
@@ -448,8 +466,40 @@ og forstand til å se forskjellen.</div>
         meta.className = 'post-meta';
         meta.textContent = new Date(post.created_at).toLocaleString('no-NO');
 
+        const actions = document.createElement('div');
+        actions.className = 'post-actions';
+
+        const reportBtn = document.createElement('button');
+        reportBtn.className = 'report-button';
+        reportBtn.textContent = 'Rapporter';
+
+        reportBtn.onclick = async function () {
+          const reason = prompt('Hvorfor vil du rapportere dette innlegget?');
+          if (!reason || !reason.trim()) return;
+
+          reportBtn.disabled = true;
+          reportBtn.textContent = 'Rapportert';
+
+          const { error } = await supabaseClient
+            .from('reports')
+            .insert([{ post_id: post.id, reason: reason.trim() }]);
+
+          if (error) {
+            console.error(error);
+            reportBtn.disabled = false;
+            reportBtn.textContent = 'Rapporter';
+            alert('Kunne ikke sende rapport.');
+            return;
+          }
+
+          alert('Takk. Innlegget er rapportert.');
+        };
+
+        actions.appendChild(reportBtn);
+
         div.appendChild(text);
         div.appendChild(meta);
+        div.appendChild(actions);
         container.appendChild(div);
       });
     }
