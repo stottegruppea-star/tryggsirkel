@@ -2,73 +2,145 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trygg Sirkel</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       background: #f4f7f6;
+      color: #1f2a2a;
       text-align: center;
       margin: 0;
+      line-height: 1.6;
     }
 
     header {
       background: #2f4f4f;
       color: white;
-      padding: 30px;
+      padding: 32px 20px;
     }
 
     .container {
-      padding: 20px;
-      max-width: 600px;
+      padding: 24px 20px 40px;
+      max-width: 760px;
       margin: auto;
+    }
+
+    .intro,
+    .section-box {
+      background: white;
+      padding: 24px;
+      margin: 18px 0;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .intro {
+      text-align: center;
     }
 
     .zoom-button {
       display: block;
       background: #4CAF50;
       color: white;
-      padding: 25px;
-      margin: 30px 0;
-      font-size: 22px;
+      padding: 22px;
+      margin: 24px 0;
+      font-size: 24px;
+      font-weight: bold;
       border-radius: 12px;
       text-decoration: none;
     }
 
-    .post {
-      background: white;
-      padding: 15px;
-      margin: 10px 0;
-      border-radius: 10px;
-      text-align: left;
+    .zoom-button:hover {
+      opacity: 0.95;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .prayer {
+      text-align: center;
+      font-style: italic;
+      white-space: pre-line;
+    }
+
+    .welcome {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 18px;
+    }
+
+    .time {
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .subtle {
+      color: #4b5b5b;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Trygg Sirkel</h1>
-  <p>Et anonymt fellesskap – én dag av gangen</p>
-</header>
+  <header>
+    <h1>Trygg Sirkel</h1>
+    <p>Et anonymt fellesskap – én dag av gangen</p>
+  </header>
 
-<div class="container">
+  <div class="container">
 
-  <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
-    Bli med i møte
-  </a>
+    <div class="intro">
+      <p><strong>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</strong></p>
+      <p>Du kan dele, eller bare lytte. Ingen press.</p>
 
-  <h2>Dagens innlegg</h2>
+      <div class="time">🕗 Hver kveld kl. 20:00</div>
+      <p class="subtle">Samme link hver dag.</p>
+    </div>
 
-  <div class="post">
-    <strong>StilleRev42</strong><br>
-    Hadde en tung dag i dag, men jeg prøver.
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
+      Bli med i møte
+    </a>
+
+    <div class="section-box">
+      <h2>🌿 Ukens refleksjon</h2>
+      <p><strong>Dagen i dag</strong></p>
+    </div>
+
+    <div class="section-box">
+      <h2>📜 Ordensregler</h2>
+      <ul>
+        <li>Kamera må være på</li>
+        <li>Mikrofon av når du ikke snakker</li>
+        <li>Ingen kommentarer eller råd til andres delinger</li>
+        <li>Anonymitet og respekt for hverandre – det som deles her, blir her</li>
+        <li>Én snakker om gangen – ingen avbrytelser eller diskusjoner</li>
+        <li>Synlig beruselse blir tatt ut av møtet</li>
+      </ul>
+    </div>
+
+    <div class="section-box prayer">
+Gi oss sinnsro
+til å godta de ting vi ikke kan forandre
+mot til å forandre de ting vi kan
+og forstand til å se forskjellen.
+    </div>
+
+    <div class="welcome">Velkommen ❤️</div>
+
   </div>
-
-  <div class="post">
-    <strong>LysSti88</strong><br>
-    Klarte å stå imot i dag. Små steg.
-  </div>
-
-</div>
 
 </body>
 </html>
