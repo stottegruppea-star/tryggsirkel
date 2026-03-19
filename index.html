@@ -1,324 +1,206 @@
 <!DOCTYPE html>
+
 <html lang="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trygg Sirkel</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <style>
-    :root {
-      --bg: #eef3ef;
-      --card: #ffffff;
-      --header: #23403f;
-      --text: #243232;
-      --muted: #5c6d6d;
-      --accent: #2e9b57;
-      --accent-hover: #257d46;
-      --accent-2: #f3faf5;
-      --border: #dbe5df;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      --radius: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #f3f7f4 0%, #eaf1ed 100%);
-      color: var(--text);
-      line-height: 1.7;
+      background: #eef3ef;
+      color: #243232;
     }
 
     header {
-      background:
-        linear-gradient(rgba(35,64,63,0.60), rgba(35,64,63,0.78)),
-        url('header.png');
-      background-size: cover;
-      background-position: center;
+      background: #23403f;
       color: white;
       text-align: center;
-      padding: 56px 20px 42px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-      letter-spacing: 0.4px;
-    }
-
-    header p {
-      margin: 12px auto 0;
-      font-size: 19px;
-      max-width: 760px;
-      color: rgba(255,255,255,0.95);
+      padding: 40px 20px;
     }
 
     .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 22px 16px 44px;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px 22px;
-      margin-bottom: 18px;
-    }
-
-    .top-message {
-      text-align: center;
-      padding: 28px 22px;
-    }
-
-    .top-message .lead {
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 1.5;
-      margin: 0 0 12px;
-    }
-
-    .top-message .text {
-      margin: 0;
-      font-size: 18px;
-    }
-
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 6px;
-    }
-
-    .badge {
-      background: var(--accent-2);
-      color: var(--header);
-      border: 1px solid #cfe4d6;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .time-box {
-      text-align: center;
-      background: #f7fbf8;
-      border: 1px solid #dde9e1;
-      border-radius: 14px;
-      padding: 18px;
-      margin-top: 18px;
-    }
-
-    .time-box .time {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-bottom: 6px;
-    }
-
-    .time-box .subtle {
-      color: var(--muted);
-      font-size: 17px;
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
     .zoom-button {
       display: block;
-      width: 100%;
       text-align: center;
-      background: var(--accent);
+      background: #2e9b57;
       color: white;
       text-decoration: none;
-      font-size: 30px;
+      font-size: 26px;
       font-weight: bold;
-      padding: 26px 18px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(46, 155, 87, 0.30);
-      transition: background 0.2s ease, transform 0.2s ease;
-      margin: 18px 0;
-      border: 4px solid rgba(255,255,255,0.65);
+      padding: 20px;
+      border-radius: 16px;
+      margin: 20px 0;
     }
 
-    .zoom-button:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-    }
-
-    .zoom-help {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: -4px;
-      margin-bottom: 20px;
-    }
-
-    .zoom-help small {
-      display: block;
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
       font-size: 16px;
-      font-weight: normal;
-      color: var(--muted);
-      margin-top: 6px;
     }
 
-    h2 {
-      margin: 0 0 14px;
-      font-size: 25px;
-      color: var(--header);
-    }
-
-    .reflection {
-      text-align: center;
-      font-size: 24px;
+    button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: #2e9b57;
+      color: white;
+      font-size: 18px;
       font-weight: bold;
-      padding-top: 4px;
     }
 
-    ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
-
-    .prayer {
-      text-align: center;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.9;
-      white-space: pre-line;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .welcome {
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: 6px;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 15px;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 640px) {
-      header {
-        padding: 42px 16px 30px;
-      }
-
-      header h1 {
-        font-size: 32px;
-      }
-
-      header p {
-        font-size: 17px;
-      }
-
-      .card {
-        padding: 20px 16px;
-      }
-
-      .top-message .lead {
-        font-size: 21px;
-      }
-
-      .top-message .text {
-        font-size: 17px;
-      }
-
-      .time-box .time {
-        font-size: 24px;
-      }
-
-      .zoom-button {
-        font-size: 26px;
-        padding: 22px 14px;
-      }
-
-      .zoom-help {
-        font-size: 18px;
-      }
-
-      .reflection,
-      .prayer,
-      .welcome {
-        font-size: 21px;
-      }
-    }
   </style>
+
 </head>
+
 <body>
 
-  <header>
-    <h1>Trygg Sirkel</h1>
-    <p>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</p>
-  </header>
+<header>
+  <h1>Trygg Sirkel</h1>
+  <p>Gratis og anonymt møte</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card top-message">
-      <p class="lead">Du kan være med helt gratis og anonymt.</p>
-      <p class="text">Du kan dele, eller bare lytte. Ingen press. Dette er laget for å være enkelt å bruke.</p>
+  <div class="card">
+    <p>
+      Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.
+    </p>
+    <p>
+      Du kan dele, eller bare lytte. Ingen press.
+    </p>
 
-      <div class="badges">
-        <div class="badge">✅ Gratis</div>
-        <div class="badge">✅ Anonymt</div>
-        <div class="badge">✅ Samme link hver dag</div>
-      </div>
+```
+<p><b>🕗 Hver kveld kl. 20:00</b></p>
 
-      <div class="time-box">
-        <div class="time">🕗 Hver kveld kl. 20:00</div>
-        <div class="subtle">Trykk på den grønne knappen under for å åpne møtelinken.</div>
-      </div>
-    </div>
-
-    <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="zoom-button">
-      TRYKK HER FOR Å BLI MED I MØTET
-    </a>
-
-    <div class="zoom-help">
-      Dette er møtelinken
-      <small>Knappen åpner Zoom-møtet direkte</small>
-    </div>
-
-    <div class="card">
-      <h2>🌿 Ukens refleksjon</h2>
-      <div class="reflection">Dagen i dag</div>
-    </div>
-
-    <div class="card">
-      <h2>📜 Ordensregler</h2>
-      <ul>
-        <li>Kamera må være på</li>
-        <li>Mikrofon av når du ikke snakker</li>
-        <li>Ingen kommentarer eller råd til andres delinger</li>
-        <li>Anonymitet og respekt for hverandre – det som deles her, blir her</li>
-        <li>Én snakker om gangen – ingen avbrytelser eller diskusjoner</li>
-        <li>Synlig beruselse blir tatt ut av møtet</li>
-      </ul>
-    </div>
-
-    <div class="card prayer">Gi oss sinnsro
-til å godta de ting vi ikke kan forandre
-mot til å forandre de ting vi kan
-og forstand til å se forskjellen.</div>
-
-    <div class="welcome">Velkommen ❤️</div>
-    <div class="footer-note">Trygg Sirkel er gratis å bruke og krever ingen betaling.</div>
+<a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" class="zoom-button">
+  TRYKK HER FOR Å BLI MED
+</a>
+```
 
   </div>
+
+  <div class="card">
+    <h2>🌿 Ukens refleksjon</h2>
+    <p><b>Dagen i dag</b></p>
+  </div>
+
+  <div class="card">
+    <h2>📜 Ordensregler</h2>
+    <ul>
+      <li>Kamera må være på</li>
+      <li>Mikrofon av når du ikke snakker</li>
+      <li>Ingen kommentarer eller råd</li>
+      <li>Anonymitet og respekt</li>
+      <li>Én snakker om gangen</li>
+      <li>Synlig beruselse blir tatt ut</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p>
+      Gi oss sinnsro<br>
+      til å godta de ting vi ikke kan forandre<br>
+      mot til å forandre de ting vi kan<br>
+      og forstand til å se forskjellen.
+    </p>
+  </div>
+
+  <!-- ANONYM VEGG -->
+
+  <div class="card">
+    <h2>🧱 Anonym vegg</h2>
+
+```
+<p>
+  Her kan du skrive helt anonymt.<br>
+  Ingen navn lagres eller vises.
+</p>
+
+<p>
+  Du kan dele noe du kjenner på – eller bare skrive noen ord.
+</p>
+
+<textarea id="postInput" placeholder="Skriv noe anonymt..."></textarea>
+
+<button onclick="addPost()">DEL ANONYMT</button>
+
+<div id="message"></div>
+
+<div id="posts" style="margin-top:20px;"></div>
+```
+
+  </div>
+
+</div>
+
+<script>
+const supabaseClient = window.supabase.createClient(
+  'https://nnmavsrnwiqxkegpsaub.supabase.co',
+  'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
+);
+
+async function loadPosts() {
+  const { data } = await supabaseClient
+    .from('posts')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  const container = document.getElementById('posts');
+  container.innerHTML = '';
+
+  if (!data || data.length === 0) {
+    container.innerHTML = 'Ingen innlegg enda.';
+    return;
+  }
+
+  data.forEach(post => {
+    const div = document.createElement('div');
+    div.style.background = '#f7fbf8';
+    div.style.padding = '10px';
+    div.style.marginBottom = '10px';
+    div.style.borderRadius = '10px';
+    div.innerText = post.content;
+    container.appendChild(div);
+  });
+}
+
+async function addPost() {
+  const input = document.getElementById('postInput');
+  const text = input.value.trim();
+
+  if (!text) return;
+
+  await supabaseClient.from('posts').insert([
+    { content: text }
+  ]);
+
+  input.value = '';
+  loadPosts();
+}
+
+loadPosts();
+</script>
 
 </body>
 </html>
