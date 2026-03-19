@@ -5,91 +5,199 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trygg Sirkel</title>
   <style>
+    :root {
+      --bg: #eef3ef;
+      --card: #ffffff;
+      --header: #2f4f4f;
+      --text: #243232;
+      --muted: #5c6d6d;
+      --accent: #6ba57a;
+      --accent-hover: #5a9469;
+      --border: #dbe5df;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7f6;
-      color: #1f2a2a;
-      text-align: center;
       margin: 0;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #f3f7f4 0%, #eaf1ed 100%);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     header {
-      background: #2f4f4f;
+      background: linear-gradient(180deg, #355857 0%, #2f4f4f 100%);
       color: white;
-      padding: 32px 20px;
+      padding: 48px 20px 36px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+      letter-spacing: 0.4px;
+    }
+
+    header p {
+      margin: 12px 0 0;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .container {
-      padding: 24px 20px 40px;
-      max-width: 760px;
-      margin: auto;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 28px 18px 44px;
     }
 
-    .intro,
-    .section-box {
-      background: white;
-      padding: 24px;
-      margin: 18px 0;
-      border-radius: 12px;
-      text-align: left;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 24px;
+      margin-bottom: 20px;
     }
 
     .intro {
       text-align: center;
+      padding: 32px 24px;
+    }
+
+    .intro strong {
+      font-size: 21px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .time {
+      margin-top: 16px;
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--header);
+    }
+
+    .subtle {
+      margin-top: 6px;
+      color: var(--muted);
     }
 
     .zoom-button {
       display: block;
-      background: #4CAF50;
+      width: 100%;
+      text-align: center;
+      background: var(--accent);
       color: white;
-      padding: 22px;
-      margin: 24px 0;
+      text-decoration: none;
       font-size: 24px;
       font-weight: bold;
-      border-radius: 12px;
-      text-decoration: none;
+      padding: 22px 18px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(107, 165, 122, 0.25);
+      transition: background 0.2s ease, transform 0.2s ease;
+      margin-bottom: 20px;
     }
 
     .zoom-button:hover {
-      opacity: 0.95;
+      background: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
-    h1, h2, h3 {
-      margin-top: 0;
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      color: var(--header);
+    }
+
+    .reflection {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: var(--text);
+      padding-top: 8px;
     }
 
     ul {
-      padding-left: 22px;
       margin: 0;
+      padding-left: 20px;
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .prayer {
       text-align: center;
       font-style: italic;
+      color: var(--text);
+      font-size: 20px;
+      line-height: 1.9;
+      padding-top: 32px;
+      padding-bottom: 32px;
       white-space: pre-line;
     }
 
     .welcome {
       text-align: center;
-      font-size: 22px;
+      font-size: 26px;
       font-weight: bold;
+      color: var(--header);
+      margin-top: 6px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
       margin-top: 18px;
     }
 
-    .time {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
+    @media (max-width: 640px) {
+      header {
+        padding: 38px 16px 30px;
+      }
 
-    .subtle {
-      color: #4b5b5b;
+      header h1 {
+        font-size: 30px;
+      }
+
+      header p {
+        font-size: 16px;
+      }
+
+      .card {
+        padding: 22px 18px;
+      }
+
+      .intro strong {
+        font-size: 19px;
+      }
+
+      .zoom-button {
+        font-size: 21px;
+        padding: 20px 16px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      .reflection,
+      .prayer,
+      .welcome {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -102,24 +210,23 @@
 
   <div class="container">
 
-    <div class="intro">
-      <p><strong>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</strong></p>
+    <div class="card intro">
+      <strong>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</strong>
       <p>Du kan dele, eller bare lytte. Ingen press.</p>
-
       <div class="time">🕗 Hver kveld kl. 20:00</div>
-      <p class="subtle">Samme link hver dag.</p>
+      <div class="subtle">Samme link hver dag.</div>
     </div>
 
     <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
       Bli med i møte
     </a>
 
-    <div class="section-box">
+    <div class="card">
       <h2>🌿 Ukens refleksjon</h2>
-      <p><strong>Dagen i dag</strong></p>
+      <div class="reflection">Dagen i dag</div>
     </div>
 
-    <div class="section-box">
+    <div class="card">
       <h2>📜 Ordensregler</h2>
       <ul>
         <li>Kamera må være på</li>
@@ -131,14 +238,13 @@
       </ul>
     </div>
 
-    <div class="section-box prayer">
-Gi oss sinnsro
+    <div class="card prayer">Gi oss sinnsro
 til å godta de ting vi ikke kan forandre
 mot til å forandre de ting vi kan
-og forstand til å se forskjellen.
-    </div>
+og forstand til å se forskjellen.</div>
 
     <div class="welcome">Velkommen ❤️</div>
+    <div class="footer-note">Trygg Sirkel er gratis å bruke.</div>
 
   </div>
 
