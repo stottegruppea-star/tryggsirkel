@@ -13,7 +13,7 @@
       --card: #ffffff;
       --header: #23403f;
       --text: #243232;
-      --muted: #5c6d6d;
+      --muted: #7a8a89;
       --accent: #2e9b57;
       --accent-hover: #257d46;
       --accent-2: #f3faf5;
@@ -125,7 +125,7 @@
     }
 
     .time-box .subtle {
-      color: var(--muted);
+      color: #5c6d6d;
       font-size: 17px;
     }
 
@@ -164,7 +164,7 @@
       display: block;
       font-size: 16px;
       font-weight: normal;
-      color: var(--muted);
+      color: #5c6d6d;
       margin-top: 6px;
     }
 
@@ -211,20 +211,20 @@
 
     .footer-note {
       text-align: center;
-      color: var(--muted);
+      color: #5c6d6d;
       font-size: 15px;
       margin-top: 12px;
     }
 
     .wall-intro {
       margin-top: 0;
-      color: var(--muted);
+      color: #5c6d6d;
       font-size: 17px;
     }
 
     .wall-note {
       margin-top: 0;
-      color: var(--muted);
+      color: #5c6d6d;
       font-size: 15px;
     }
 
@@ -264,7 +264,7 @@
 
     .post-message {
       margin-top: 12px;
-      color: var(--muted);
+      color: #5c6d6d;
       font-size: 15px;
     }
 
@@ -285,7 +285,7 @@
     .post-meta {
       margin-top: 8px;
       font-size: 13px;
-      color: var(--muted);
+      color: #7a8a89;
     }
 
     .post-actions {
@@ -464,7 +464,18 @@ og forstand til å se forskjellen.</div>
 
         const meta = document.createElement('div');
         meta.className = 'post-meta';
-        meta.textContent = new Date(post.created_at).toLocaleString('no-NO');
+
+        const date = new Date(post.created_at);
+        const time = date.toLocaleTimeString('no-NO', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        const day = date.toLocaleDateString('no-NO', {
+          day: 'numeric',
+          month: 'long'
+        });
+
+        meta.textContent = `🕒 ${time} • ${day}`;
 
         const actions = document.createElement('div');
         actions.className = 'post-actions';
