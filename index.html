@@ -16,14 +16,9 @@
       --muted: #7a8a89;
       --accent: #2e9b57;
       --accent-hover: #257d46;
-      --accent-2: #f3faf5;
       --border: #dbe5df;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       --radius: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
@@ -31,280 +26,116 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #f3f7f4 0%, #eaf1ed 100%);
       color: var(--text);
-      line-height: 1.7;
     }
 
     header {
-      background:
-        linear-gradient(rgba(35,64,63,0.60), rgba(35,64,63,0.78)),
-        url('header.png');
-      background-size: cover;
-      background-position: center;
+      background: #23403f;
       color: white;
       text-align: center;
-      padding: 56px 20px 42px;
+      padding: 40px 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 40px;
-      letter-spacing: 0.4px;
+      font-size: 36px;
     }
 
     header p {
-      margin: 12px auto 0;
-      font-size: 19px;
-      max-width: 760px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 22px 16px 44px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px 22px;
-      margin-bottom: 18px;
-    }
-
-    .top-message {
-      text-align: center;
-      padding: 28px 22px;
-    }
-
-    .top-message .lead {
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 1.5;
-      margin: 0 0 12px;
-    }
-
-    .top-message .text {
-      margin: 0;
+      margin-top: 10px;
       font-size: 18px;
     }
 
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 6px;
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
     }
 
-    .badge {
-      background: var(--accent-2);
-      color: var(--header);
-      border: 1px solid #cfe4d6;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .time-box {
-      text-align: center;
-      background: #f7fbf8;
-      border: 1px solid #dde9e1;
-      border-radius: 14px;
-      padding: 18px;
-      margin-top: 18px;
-    }
-
-    .time-box .time {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-bottom: 6px;
-    }
-
-    .time-box .subtle {
-      color: #5c6d6d;
-      font-size: 17px;
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
     }
 
     .zoom-button {
       display: block;
-      width: 100%;
       text-align: center;
       background: var(--accent);
       color: white;
+      padding: 20px;
+      font-size: 22px;
+      border-radius: 14px;
       text-decoration: none;
-      font-size: 30px;
       font-weight: bold;
-      padding: 26px 18px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(46, 155, 87, 0.30);
-      transition: background 0.2s ease, transform 0.2s ease;
-      margin: 18px 0;
-      border: 4px solid rgba(255,255,255,0.65);
+      margin-bottom: 20px;
     }
 
     .zoom-button:hover {
       background: var(--accent-hover);
-      transform: translateY(-1px);
     }
 
-    .zoom-help {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: -4px;
-      margin-bottom: 20px;
+    .open-room {
+      border: 2px solid #cfe4d6;
+      background: #f3faf5;
     }
 
-    .zoom-help small {
-      display: block;
-      font-size: 16px;
-      font-weight: normal;
-      color: #5c6d6d;
-      margin-top: 6px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 25px;
-      color: var(--header);
-    }
-
-    .reflection {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      padding-top: 4px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
-
-    .prayer {
-      text-align: center;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.9;
-      white-space: pre-line;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .welcome {
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: 6px;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: #5c6d6d;
-      font-size: 15px;
-      margin-top: 12px;
-    }
-
-    .wall-intro {
+    .open-room h2 {
       margin-top: 0;
-      color: #5c6d6d;
-      font-size: 17px;
+      color: #23403f;
     }
 
-    .wall-note {
-      margin-top: 0;
-      color: #5c6d6d;
-      font-size: 15px;
+    .open-room p {
+      font-size: 17px;
+      color: #243232;
     }
 
     .post-input {
       width: 100%;
-      min-height: 120px;
-      padding: 14px;
-      border: 1px solid #dbe5df;
-      border-radius: 14px;
+      min-height: 100px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
       font-size: 16px;
-      font-family: Arial, sans-serif;
-      resize: vertical;
-      outline: none;
-    }
-
-    .post-input:focus {
-      border-color: #9cc8aa;
-      box-shadow: 0 0 0 3px rgba(46, 155, 87, 0.08);
     }
 
     .post-button {
       width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      font-size: 18px;
       background: var(--accent);
       color: white;
       border: none;
-      border-radius: 16px;
-      padding: 18px;
-      font-size: 22px;
-      font-weight: bold;
+      border-radius: 10px;
       cursor: pointer;
-      margin-top: 12px;
-    }
-
-    .post-button:hover {
-      background: var(--accent-hover);
-    }
-
-    .post-message {
-      margin-top: 12px;
-      color: #5c6d6d;
-      font-size: 15px;
-    }
-
-    .posts {
-      margin-top: 20px;
     }
 
     .post-item {
       background: #f7fbf8;
-      border: 1px solid #dbe5df;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-radius: 14px;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .post-meta {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #7a8a89;
-    }
-
-    .post-actions {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
       margin-top: 10px;
     }
 
-    .report-button {
-      background: #ffffff;
-      color: var(--header);
-      border: 1px solid #dbe5df;
-      border-radius: 10px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 14px;
+    .post-meta {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
     }
 
-    .report-button:hover {
-      background: #f4f7f5;
+    .report-button {
+      margin-top: 8px;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: white;
+      cursor: pointer;
     }
+
   </style>
 </head>
 
@@ -312,28 +143,33 @@
 
 <header>
   <h1>Trygg Sirkel</h1>
-  <p>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</p>
+  <p>Gratis og anonymt møte</p>
 </header>
 
 <div class="container">
 
-  <div class="card top-message">
-    <p class="lead">Du kan være med helt gratis og anonymt.</p>
-    <p class="text">Du kan dele, eller bare lytte. Ingen press.</p>
-
-    <div class="time-box">
-      <div class="time">🕗 Hver kveld kl. 20:00</div>
-      <div class="subtle">Trykk på knappen under</div>
-    </div>
-  </div>
-
+  <!-- FAST MØTE -->
   <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
-    TRYKK HER FOR Å BLI MED I MØTET
+    BLI MED PÅ DAGLIG MØTE KL 20:00
   </a>
 
+  <!-- 24/7 MØTE -->
+  <div class="card open-room">
+    <h2>🟢 Åpen møteplass (24/7)</h2>
+    <p>
+      Her kan du gå inn når som helst – dag eller natt.<br><br>
+      Dette er en åpen plass der du kan møte andre, eller bare sitte stille sammen med noen.
+    </p>
+
+    <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="zoom-button">
+      GÅ TIL ÅPEN MØTEPLASS
+    </a>
+  </div>
+
+  <!-- VEGG -->
   <div class="card">
     <h2>🧱 Anonym vegg</h2>
-    <p class="wall-intro">Her kan du dele helt anonymt. Ingen navn lagres eller vises.</p>
+    <p>Her kan du dele helt anonymt. Ingen navn lagres eller vises.</p>
 
     <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt..."></textarea>
     <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
