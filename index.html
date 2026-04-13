@@ -16,14 +16,9 @@
       --muted: #5c6d6d;
       --accent: #2e9b57;
       --accent-hover: #257d46;
-      --accent-2: #f3faf5;
       --border: #dbe5df;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
       --radius: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
     }
 
     body {
@@ -31,568 +26,231 @@
       font-family: Arial, sans-serif;
       background: linear-gradient(180deg, #f3f7f4 0%, #eaf1ed 100%);
       color: var(--text);
-      line-height: 1.7;
     }
 
     header {
-      background:
-        linear-gradient(rgba(35,64,63,0.60), rgba(35,64,63,0.78)),
-        url('header.png');
+      background: linear-gradient(rgba(35,64,63,0.7), rgba(35,64,63,0.8)), url('header.png');
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
-      padding: 56px 20px 42px;
+      padding: 50px 20px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 40px;
-      letter-spacing: 0.4px;
+      font-size: 38px;
     }
 
     header p {
-      margin: 12px auto 0;
-      font-size: 19px;
-      max-width: 760px;
-      color: rgba(255,255,255,0.95);
-    }
-
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 22px 16px 44px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px 22px;
-      margin-bottom: 18px;
-    }
-
-    .top-message {
-      text-align: center;
-      padding: 28px 22px;
-    }
-
-    .top-message .lead {
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 1.5;
-      margin: 0 0 12px;
-    }
-
-    .top-message .text {
-      margin: 0;
+      margin-top: 10px;
       font-size: 18px;
     }
 
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 6px;
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 20px;
     }
 
-    .badge {
-      background: var(--accent-2);
-      color: var(--header);
-      border: 1px solid #cfe4d6;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-
-    .time-box {
-      text-align: center;
-      background: #f7fbf8;
-      border: 1px solid #dde9e1;
-      border-radius: 14px;
-      padding: 18px;
-      margin-top: 18px;
-    }
-
-    .time-box .time {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-bottom: 6px;
-    }
-
-    .time-box .subtle {
-      color: var(--muted);
-      font-size: 17px;
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
     }
 
     .zoom-button {
       display: block;
-      width: 100%;
       text-align: center;
       background: var(--accent);
       color: white;
+      padding: 22px;
+      font-size: 26px;
+      border-radius: 18px;
       text-decoration: none;
-      font-size: 30px;
       font-weight: bold;
-      padding: 26px 18px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(46, 155, 87, 0.30);
-      transition: background 0.2s ease, transform 0.2s ease;
-      margin: 18px 0;
-      border: 4px solid rgba(255,255,255,0.65);
+      margin: 20px 0;
     }
 
     .zoom-button:hover {
       background: var(--accent-hover);
-      transform: translateY(-1px);
     }
 
-    .zoom-help {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: -4px;
-      margin-bottom: 20px;
-    }
-
-    .zoom-help small {
-      display: block;
-      font-size: 16px;
-      font-weight: normal;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .open-room-card {
+    .open-room {
       background: #f3faf5;
       border: 2px solid #cfe4d6;
     }
 
-    .open-room-title {
-      margin: 0 0 12px;
-      font-size: 25px;
-      color: var(--header);
-    }
-
-    .open-room-text {
-      margin: 0 0 14px;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .open-room-note {
-      margin: 0;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
     h2 {
-      margin: 0 0 14px;
-      font-size: 25px;
+      margin-top: 0;
       color: var(--header);
     }
 
     .reflection {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      padding-top: 4px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
-
-    .prayer {
-      text-align: center;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.9;
-      white-space: pre-line;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .welcome {
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: 6px;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 15px;
-      margin-top: 12px;
-    }
-
-    .wall-intro {
-      margin-top: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .wall-note {
-      margin-top: 0;
-      color: var(--muted);
-      font-size: 15px;
+      font-size: 18px;
+      line-height: 1.7;
     }
 
     .post-input {
       width: 100%;
-      min-height: 120px;
-      padding: 14px;
-      border: 1px solid #dbe5df;
-      border-radius: 14px;
+      min-height: 100px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
       font-size: 16px;
-      font-family: Arial, sans-serif;
-      resize: vertical;
-      outline: none;
-    }
-
-    .post-input:focus {
-      border-color: #9cc8aa;
-      box-shadow: 0 0 0 3px rgba(46, 155, 87, 0.08);
     }
 
     .post-button {
       width: 100%;
+      margin-top: 10px;
+      padding: 14px;
+      font-size: 18px;
       background: var(--accent);
       color: white;
       border: none;
-      border-radius: 16px;
-      padding: 18px;
-      font-size: 22px;
-      font-weight: bold;
+      border-radius: 10px;
       cursor: pointer;
-      margin-top: 12px;
-    }
-
-    .post-button:hover {
-      background: var(--accent-hover);
-    }
-
-    .post-message {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .posts {
-      margin-top: 20px;
     }
 
     .post-item {
       background: #f7fbf8;
-      border: 1px solid #dbe5df;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-radius: 14px;
-      white-space: pre-wrap;
-      word-break: break-word;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 10px;
     }
 
     .post-meta {
-      margin-top: 8px;
+      margin-top: 6px;
       font-size: 13px;
       color: #7a8a89;
     }
 
-    .post-actions {
-      margin-top: 10px;
-    }
-
     .report-button {
-      background: #ffffff;
-      color: var(--header);
-      border: 1px solid #dbe5df;
-      border-radius: 10px;
-      padding: 8px 12px;
+      margin-top: 8px;
+      padding: 6px 10px;
+      font-size: 13px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: white;
       cursor: pointer;
-      font-size: 14px;
     }
 
-    .report-button:hover {
-      background: #f4f7f5;
-    }
-
-    @media (max-width: 640px) {
-      header {
-        padding: 42px 16px 30px;
-      }
-
-      header h1 {
-        font-size: 32px;
-      }
-
-      header p {
-        font-size: 17px;
-      }
-
-      .card {
-        padding: 20px 16px;
-      }
-
-      .top-message .lead {
-        font-size: 21px;
-      }
-
-      .top-message .text {
-        font-size: 17px;
-      }
-
-      .time-box .time {
-        font-size: 24px;
-      }
-
-      .zoom-button {
-        font-size: 26px;
-        padding: 22px 14px;
-      }
-
-      .zoom-help {
-        font-size: 18px;
-      }
-
-      .reflection,
-      .prayer,
-      .welcome {
-        font-size: 21px;
-      }
-
-      .open-room-title {
-        font-size: 22px;
-      }
-
-      .open-room-text {
-        font-size: 17px;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Trygg Sirkel</h1>
-    <p>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</p>
-  </header>
+<header>
+  <h1>Trygg Sirkel</h1>
+  <p>Et trygt og gratis nettmøte for deg som sliter med rus eller bare trenger et sted å være ærlig.</p>
+</header>
 
-  <div class="container">
+<div class="container">
 
-    <div class="card top-message">
-      <p class="lead">Du kan være med helt gratis og anonymt.</p>
-      <p class="text">Du kan dele, eller bare lytte. Ingen press. Dette er laget for å være enkelt å bruke.</p>
+  <!-- HOVEDMØTE -->
+  <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
+    BLI MED PÅ DAGLIG MØTE KL 20:00
+  </a>
 
-      <div class="badges">
-        <div class="badge">✅ Gratis</div>
-        <div class="badge">✅ Anonymt</div>
-        <div class="badge">✅ Samme link hver dag</div>
-      </div>
+  <!-- 24/7 -->
+  <div class="card open-room">
+    <h2>🟢 Åpen møteplass (24/7)</h2>
+    <p>Her kan du gå inn når som helst – dag eller natt.</p>
+    <p>Et sted du kan møte andre, eller bare være.</p>
 
-      <div class="time-box">
-        <div class="time">🕗 Hver kveld kl. 20:00</div>
-        <div class="subtle">Trykk på den grønne knappen under for å åpne møtelinken.</div>
-      </div>
-    </div>
-
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
-      TRYKK HER FOR Å BLI MED I MØTET
+    <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="zoom-button">
+      GÅ TIL ÅPEN MØTEPLASS
     </a>
-
-    <div class="zoom-help">
-      Dette er møtelinken
-      <small>Knappen åpner Zoom-møtet direkte</small>
-    </div>
-
-    <div class="card">
-      <h2>🌿 Ukens refleksjon</h2>
-      <div class="reflection">Aksept</div>
-    </div>
-
-    <div class="card">
-      <h2>📜 Ordensregler</h2>
-      <ul>
-        <li>Kamera må være på</li>
-        <li>Mikrofon av når du ikke snakker</li>
-        <li>Ingen kommentarer eller råd til andres delinger</li>
-        <li>Anonymitet og respekt for hverandre – det som deles her, blir her</li>
-        <li>Én snakker om gangen – ingen avbrytelser eller diskusjoner</li>
-        <li>Synlig beruselse blir tatt ut av møtet</li>
-      </ul>
-    </div>
-
-    <div class="card prayer">Gi oss sinnsro
-til å godta de ting vi ikke kan forandre
-mot til å forandre de ting vi kan
-og forstand til å se forskjellen.</div>
-
-    <div class="welcome">Velkommen ❤️</div>
-    <div class="footer-note">Trygg Sirkel er gratis å bruke og krever ingen betaling.</div>
-
-    <div class="card open-room-card">
-      <h2 class="open-room-title">🟢 Åpen møteplass (24/7)</h2>
-      <p class="open-room-text">Her kan du gå inn når som helst – dag eller natt.</p>
-      <p class="open-room-text">Dette er en åpen plass der du kan møte andre, eller bare sitte stille sammen med noen.</p>
-      <p class="open-room-note">Denne møteplassen er åpen hele døgnet.</p>
-
-      <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="zoom-button">
-        GÅ TIL ÅPEN MØTEPLASS
-      </a>
-    </div>
-
-    <div class="card">
-      <h2>🧱 Anonym vegg</h2>
-      <p class="wall-intro">Her kan du dele helt anonymt. Ingen navn lagres eller vises.</p>
-      <p class="wall-note">Du kan skrive hvordan dagen din er, eller bare noen ord.</p>
-
-      <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
-      <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
-
-      <div id="postMessage" class="post-message"></div>
-      <div id="posts" class="posts"></div>
-    </div>
-
   </div>
 
-  <script>
-    const supabaseClient = window.supabase.createClient(
-      'https://nnmavsrnwiqxkegpsaub.supabase.co',
-      'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
-    );
+  <!-- TEMA -->
+  <div class="card">
+    <h2>🗓️ Tema denne uken</h2>
 
-    async function loadPosts() {
-      const container = document.getElementById('posts');
-      if (!container) return;
+    <div class="reflection">
+      <strong>Mandag:</strong> Når oppdaget du at du hadde avhengighetssyndrom?<br>
+      <strong>Tirsdag:</strong> Hverdagens små gleder<br>
+      <strong>Onsdag:</strong> Har sosiale relasjoner endret seg?<br>
+      <strong>Torsdag:</strong> Hvordan det var å leve i aktiv rus?<br>
+      <strong>Fredag:</strong> Hvordan gleder du deg til helgen når du ikke drikker?<br>
+      <strong>Lørdag:</strong> Ensomhet<br>
+      <strong>Søndag:</strong> The walk of shame – del din verste fyllehistorie
+    </div>
 
-      container.innerHTML = '<div class="wall-note">Laster innlegg...</div>';
+    <p style="margin-top:10px; color:#5c6d6d;">
+      Du velger selv om du vil dele eller bare lytte.
+    </p>
+  </div>
 
-      const { data, error } = await supabaseClient
-        .from('posts')
-        .select('id, content, created_at')
-        .order('created_at', { ascending: false });
+  <!-- VEGG -->
+  <div class="card">
+    <h2>🧱 Anonym vegg</h2>
+    <p>Her kan du dele helt anonymt.</p>
 
-      if (error) {
-        container.innerHTML = '<div class="wall-note">Kunne ikke laste innlegg.</div>';
-        console.error(error);
-        return;
-      }
+    <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt..."></textarea>
+    <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
 
-      if (!data || data.length === 0) {
-        container.innerHTML = '<div class="wall-note">Ingen innlegg enda.</div>';
-        return;
-      }
+    <div id="posts"></div>
+  </div>
 
-      container.innerHTML = '';
+</div>
 
-      data.forEach(post => {
-        const div = document.createElement('div');
-        div.className = 'post-item';
+<script>
+  const supabaseClient = window.supabase.createClient(
+    'https://nnmavsrnwiqxkegpsaub.supabase.co',
+    'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
+  );
 
-        const text = document.createElement('div');
-        text.textContent = post.content;
+  async function loadPosts() {
+    const { data } = await supabaseClient
+      .from('posts')
+      .select('*')
+      .order('created_at', { ascending: false });
 
-        const meta = document.createElement('div');
-        meta.className = 'post-meta';
+    const container = document.getElementById('posts');
+    container.innerHTML = '';
 
-        const date = new Date(post.created_at);
-        const time = date.toLocaleTimeString('no-NO', {
-          hour: '2-digit',
-          minute: '2-digit'
-        });
-        const day = date.toLocaleDateString('no-NO', {
-          day: 'numeric',
-          month: 'long'
-        });
+    data.forEach(post => {
+      const div = document.createElement('div');
+      div.className = 'post-item';
 
-        meta.textContent = `🕒 ${time} • ${day}`;
+      const text = document.createElement('div');
+      text.textContent = post.content;
 
-        const actions = document.createElement('div');
-        actions.className = 'post-actions';
+      const meta = document.createElement('div');
+      meta.className = 'post-meta';
 
-        const reportBtn = document.createElement('button');
-        reportBtn.className = 'report-button';
-        reportBtn.textContent = 'Rapporter';
+      const date = new Date(post.created_at);
+      const time = date.toLocaleTimeString('no-NO', {hour:'2-digit', minute:'2-digit'});
+      const day = date.toLocaleDateString('no-NO', {day:'numeric', month:'long'});
 
-        reportBtn.onclick = async function () {
-          const reason = prompt('Hvorfor vil du rapportere dette innlegget?');
-          if (!reason || !reason.trim()) return;
+      meta.textContent = `🕒 ${time} • ${day}`;
 
-          reportBtn.disabled = true;
-          reportBtn.textContent = 'Rapportert';
+      div.appendChild(text);
+      div.appendChild(meta);
 
-          const { error } = await supabaseClient
-            .from('reports')
-            .insert([{ post_id: post.id, reason: reason.trim() }]);
+      container.appendChild(div);
+    });
+  }
 
-          if (error) {
-            console.error(error);
-            reportBtn.disabled = false;
-            reportBtn.textContent = 'Rapporter';
-            alert('Kunne ikke sende rapport.');
-            return;
-          }
+  async function addPost() {
+    const input = document.getElementById('postInput');
 
-          alert('Takk. Innlegget er rapportert.');
-        };
+    if (!input.value.trim()) return;
 
-        actions.appendChild(reportBtn);
+    await supabaseClient
+      .from('posts')
+      .insert([{ content: input.value }]);
 
-        div.appendChild(text);
-        div.appendChild(meta);
-        div.appendChild(actions);
-        container.appendChild(div);
-      });
-    }
-
-    async function addPost() {
-      const input = document.getElementById('postInput');
-      const msg = document.getElementById('postMessage');
-      if (!input || !msg) return;
-
-      const text = input.value.trim();
-
-      if (!text) {
-        msg.textContent = 'Skriv noe før du deler.';
-        return;
-      }
-
-      if (text.length > 1000) {
-        msg.textContent = 'Innlegget er for langt. Hold det under 1000 tegn.';
-        return;
-      }
-
-      msg.textContent = 'Sender...';
-
-      const { error } = await supabaseClient
-        .from('posts')
-        .insert([{ content: text }]);
-
-      if (error) {
-        msg.textContent = 'Kunne ikke dele innlegget.';
-        console.error(error);
-        return;
-      }
-
-      input.value = '';
-      msg.textContent = 'Innlegget er delt anonymt.';
-      loadPosts();
-    }
-
+    input.value = '';
     loadPosts();
-  </script>
+  }
+
+  loadPosts();
+</script>
 
 </body>
 </html>
