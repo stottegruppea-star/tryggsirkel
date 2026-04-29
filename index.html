@@ -1,578 +1,361 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trygg Sirkel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trygg Sirkel</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-  <style>
-    :root {
-      --bg: #eef3ef;
-      --card: #ffffff;
-      --header: #23403f;
-      --text: #243232;
-      --muted: #5c6d6d;
-      --accent: #2e9b57;
-      --accent-hover: #257d46;
-      --accent-2: #f3faf5;
-      --border: #dbe5df;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-      --radius: 18px;
-    }
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#edf3ef;
+color:#17333a;
+line-height:1.6;
+}
 
-    * { box-sizing: border-box; }
+header{
+background:#1f4543;
+color:white;
+text-align:center;
+padding:55px 20px;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #f3f7f4 0%, #eaf1ed 100%);
-      color: var(--text);
-      line-height: 1.7;
-    }
+header h1{
+margin:0;
+font-size:52px;
+}
 
-    header {
-      background:
-        linear-gradient(rgba(35,64,63,0.60), rgba(35,64,63,0.78)),
-        url('header.png');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 56px 20px 42px;
-    }
+header p{
+margin-top:10px;
+font-size:24px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-      letter-spacing: 0.4px;
-    }
+.container{
+max-width:900px;
+margin:auto;
+padding:25px 15px 60px;
+}
 
-    header p {
-      margin: 12px auto 0;
-      font-size: 19px;
-      max-width: 760px;
-      color: rgba(255,255,255,0.95);
-    }
+.card{
+background:white;
+border-radius:22px;
+padding:28px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
 
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 22px 16px 44px;
-    }
+h2{
+margin-top:0;
+font-size:38px;
+}
 
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 26px 22px;
-      margin-bottom: 18px;
-    }
+.big-button{
+display:block;
+text-align:center;
+background:#2ea357;
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:34px;
+padding:28px;
+border-radius:20px;
+margin:18px 0;
+}
 
-    .top-message {
-      text-align: center;
-      padding: 28px 22px;
-    }
+.big-button:hover{
+background:#238247;
+}
 
-    .top-message .lead {
-      font-size: 24px;
-      font-weight: bold;
-      line-height: 1.5;
-      margin: 0 0 12px;
-    }
+.small{
+color:#5e6d70;
+font-size:17px;
+}
 
-    .top-message .text {
-      margin: 0;
-      font-size: 18px;
-    }
+.topic-list div{
+padding:8px 0;
+border-bottom:1px solid #edf0ef;
+font-size:22px;
+}
 
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin: 18px 0 6px;
-    }
+textarea,input{
+width:100%;
+padding:16px;
+border-radius:14px;
+border:1px solid #cfd8d2;
+font-size:18px;
+box-sizing:border-box;
+margin-bottom:12px;
+}
 
-    .badge {
-      background: var(--accent-2);
-      color: var(--header);
-      border: 1px solid #cfe4d6;
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-weight: bold;
-      font-size: 16px;
-    }
+textarea{
+min-height:130px;
+resize:vertical;
+}
 
-    .time-box {
-      text-align: center;
-      background: #f7fbf8;
-      border: 1px solid #dde9e1;
-      border-radius: 14px;
-      padding: 18px;
-      margin-top: 18px;
-    }
+button{
+width:100%;
+background:#2ea357;
+color:white;
+border:none;
+padding:18px;
+font-size:28px;
+font-weight:bold;
+border-radius:16px;
+cursor:pointer;
+}
 
-    .time-box .time {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-bottom: 6px;
-    }
+button:hover{
+background:#238247;
+}
 
-    .time-box .subtle {
-      color: var(--muted);
-      font-size: 17px;
-    }
+.post{
+background:#f6faf7;
+border:1px solid #dce6df;
+padding:16px;
+border-radius:16px;
+margin-top:12px;
+}
 
-    .zoom-button, .send-button {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: var(--accent);
-      color: white;
-      text-decoration: none;
-      font-size: 30px;
-      font-weight: bold;
-      padding: 26px 18px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(46, 155, 87, 0.30);
-      transition: background 0.2s ease, transform 0.2s ease;
-      margin: 18px 0;
-      border: 4px solid rgba(255,255,255,0.65);
-      cursor: pointer;
-    }
+.meta{
+font-size:14px;
+color:#6c7a7c;
+margin-top:8px;
+}
 
-    .zoom-button:hover, .send-button:hover {
-      background: var(--accent-hover);
-      transform: translateY(-1px);
-    }
+.report{
+margin-top:10px;
+background:white;
+border:1px solid #d4ddd7;
+color:#17333a;
+font-size:15px;
+padding:8px 12px;
+border-radius:10px;
+width:auto;
+}
 
-    .zoom-help {
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: -4px;
-      margin-bottom: 20px;
-    }
+.center{
+text-align:center;
+}
 
-    .zoom-help small {
-      display: block;
-      font-size: 16px;
-      font-weight: normal;
-      color: var(--muted);
-      margin-top: 6px;
-    }
+.prayer{
+font-style:italic;
+font-size:28px;
+text-align:center;
+line-height:1.8;
+}
 
-    .contact-card {
-      background: #f7fbf8;
-      border: 2px solid #cfe4d6;
-    }
+@media(max-width:700px){
 
-    .contact-form label {
-      display: block;
-      margin-top: 12px;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: var(--header);
-    }
+header h1{font-size:40px;}
+header p{font-size:20px;}
+h2{font-size:30px;}
+.big-button{font-size:26px;}
+button{font-size:24px;}
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .open-room-card {
-      background: #f3faf5;
-      border: 2px solid #cfe4d6;
-    }
-
-    .open-room-title {
-      margin: 0 0 12px;
-      font-size: 25px;
-      color: var(--header);
-    }
-
-    .open-room-text {
-      margin: 0 0 10px;
-      font-size: 18px;
-      color: var(--text);
-    }
-
-    .open-room-note {
-      margin: 0;
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-size: 25px;
-      color: var(--header);
-    }
-
-    .reflection {
-      text-align: left;
-      font-size: 19px;
-      line-height: 1.8;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 12px;
-      font-size: 17px;
-    }
-
-    .prayer {
-      text-align: center;
-      font-style: italic;
-      font-size: 22px;
-      line-height: 1.9;
-      white-space: pre-line;
-      padding-top: 28px;
-      padding-bottom: 28px;
-    }
-
-    .welcome {
-      text-align: center;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--header);
-      margin-top: 6px;
-    }
-
-    .footer-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 15px;
-      margin-top: 12px;
-    }
-
-    .wall-intro {
-      margin-top: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .wall-note {
-      margin-top: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .post-input {
-      width: 100%;
-      min-height: 120px;
-      padding: 14px;
-      border: 1px solid #dbe5df;
-      border-radius: 14px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-      resize: vertical;
-      outline: none;
-    }
-
-    .post-button {
-      width: 100%;
-      background: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 16px;
-      padding: 18px;
-      font-size: 22px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 12px;
-    }
-
-    .post-item {
-      background: #f7fbf8;
-      border: 1px solid #dbe5df;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-radius: 14px;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    .post-meta {
-      margin-top: 8px;
-      font-size: 13px;
-      color: #7a8a89;
-    }
-
-    .post-actions {
-      margin-top: 10px;
-    }
-
-    .report-button {
-      background: #ffffff;
-      color: var(--header);
-      border: 1px solid #dbe5df;
-      border-radius: 10px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    @media (max-width: 640px) {
-      header h1 { font-size: 32px; }
-      .zoom-button, .send-button {
-        font-size: 24px;
-        padding: 22px 14px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>Trygg Sirkel</h1>
-  <p>Et trygt og gratis nettmøte for deg som sliter med rus eller avhengighet – eller bare trenger et sted å være ærlig.</p>
+<h1>Trygg Sirkel</h1>
+<p>Gratis og anonymt møte</p>
 </header>
 
 <div class="container">
 
-  <div class="card top-message">
-    <p class="lead">Du kan være med helt gratis og anonymt.</p>
-    <p class="text">Du kan dele, eller bare lytte. Ingen press. Dette er laget for å være enkelt å bruke.</p>
+<div class="card center">
+<h2>Du kan være med helt gratis og anonymt.</h2>
+<p>Du kan dele, eller bare lytte. Ingen press.</p>
+<p>Alle er velkommen – også hvis du er helt ny og trenger ekstra støtte.</p>
 
-    <div class="badges">
-      <div class="badge">✅ Gratis</div>
-      <div class="badge">✅ Anonymt</div>
-      <div class="badge">✅ Samme link hver dag</div>
-    </div>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-button">
+BLI MED PÅ DAGLIG MØTE KL 20:00
+</a>
 
-    <div class="time-box">
-      <div class="time">🕗 Hver kveld kl. 20:00</div>
-      <div class="subtle">Trykk på den grønne knappen under for å åpne møtelinken.</div>
-    </div>
-  </div>
+<p class="small">Fast møte hver kveld klokken 20:00</p>
+</div>
 
-  <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="zoom-button">
-    TRYKK HER FOR Å BLI MED I MØTET
-  </a>
+<div class="card">
+<h2>🟢 Åpen møteplass (24/7)</h2>
 
-  <div class="zoom-help">
-    Dette er møtelinken
-    <small>Knappen åpner Zoom-møtet direkte</small>
-  </div>
+<p>Her kan du gå inn når som helst – dag eller natt.</p>
+<p>Møtet er åpent for alle. Om du er ny og trenger støtte, er du ekstra velkommen.</p>
 
-  <div class="card contact-card">
-    <h2>✉️ Kontakt oss / meld interesse</h2>
-    <p class="wall-intro">
-      Ønsker du å vite mer, bli med på møte eller komme i kontakt med oss?
-      Send oss en melding. Du kan bruke kallenavn hvis du vil.
-    </p>
+<a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="big-button">
+GÅ TIL ÅPEN MØTEPLASS
+</a>
+</div>
 
-    <form class="contact-form" action="mailto:Stottegruppea@gmail.com" method="post" enctype="text/plain">
-      <label for="name">Navn / kallenavn (valgfritt)</label>
-      <input type="text" id="name" name="Navn eller kallenavn">
+<div class="card">
+<h2>✉️ Kontakt oss anonymt</h2>
 
-      <label for="contact">E-post eller telefon (valgfritt)</label>
-      <input type="text" id="contact" name="Kontaktinfo">
+<p>Du kan ta kontakt helt anonymt. Du trenger ikke bruke fullt navn.</p>
+<p>Hvis du ønsker svar må du legge igjen e-post eller telefon.</p>
+<p>Nybegynnere kan også skrive hvis de trenger litt ekstra støtte før første møte.</p>
 
-      <label for="message">Melding</label>
-      <textarea id="message" name="Melding" placeholder="Skriv meldingen din her..."></textarea>
+<form action="mailto:Stottegruppea@gmail.com" method="post" enctype="text/plain">
 
-      <button type="submit" class="send-button">SEND MELDING</button>
-    </form>
-  </div>
+<input type="text" placeholder="Kallenavn (valgfritt)" name="Kallenavn">
 
-  <div class="card">
-    <h2>🗓️ Tema denne uken</h2>
+<input type="text" placeholder="E-post eller telefon hvis du vil ha svar" name="Kontakt">
 
-    <div class="reflection">
-      <strong>Mandag:</strong> Når oppdaget du at du hadde avhengighetssyndrom?<br>
-      <strong>Tirsdag:</strong> Hverdagens små gleder<br>
-      <strong>Onsdag:</strong> Har sosiale relasjoner endret seg?<br>
-      <strong>Torsdag:</strong> Hvordan det var å leve i aktiv rus?<br>
-      <strong>Fredag:</strong> Hvordan gleder du deg til helgen når du ikke drikker?<br>
-      <strong>Lørdag:</strong> Ensomhet<br>
-      <strong>Søndag:</strong> The walk of shame – del din verste fyllehistorie
-    </div>
+<textarea placeholder="Skriv melding anonymt her..." name="Melding"></textarea>
 
-    <p style="margin-top: 12px; color: #5c6d6d; font-size: 15px;">
-      Du velger selv om du vil dele eller bare lytte.
-    </p>
-  </div>
+<button type="submit">SEND ANONYMT</button>
 
-  <div class="card">
-    <h2>📜 Ordensregler</h2>
-    <ul>
-      <li>Kamera må være på</li>
-      <li>Mikrofon av når du ikke snakker</li>
-      <li>Ingen kommentarer eller råd til andres delinger</li>
-      <li>Anonymitet og respekt for hverandre – det som deles her, blir her</li>
-      <li>Én snakker om gangen – ingen avbrytelser eller diskusjoner</li>
-      <li>Synlig beruselse blir tatt ut av møtet</li>
-    </ul>
-  </div>
+</form>
+</div>
 
-  <div class="card prayer">Gi oss sinnsro
-til å godta de ting vi ikke kan forandre
-mot til å forandre de ting vi kan
-og forstand til å se forskjellen.</div>
+<div class="card">
+<h2>🌿 Tema neste uke</h2>
 
-  <div class="welcome">Velkommen ❤️</div>
-  <div class="footer-note">Trygg Sirkel er gratis å bruke og krever ingen betaling.</div>
+<div class="topic-list">
+<div><strong>Mandag:</strong> Når oppdaget du at du hadde avhengighetssyndrom?</div>
+<div><strong>Tirsdag:</strong> Hverdagens små gleder</div>
+<div><strong>Onsdag:</strong> Har sosiale relasjoner endret seg?</div>
+<div><strong>Torsdag:</strong> Hvordan det var å leve i aktiv rus?</div>
+<div><strong>Fredag:</strong> Hvordan gleder du deg til helgen når du ikke drikker?</div>
+<div><strong>Lørdag:</strong> Ensomhet</div>
+<div><strong>Søndag:</strong> Del din verste fyllehistorie</div>
+</div>
 
-  <div class="card open-room-card">
-    <h2 class="open-room-title">🟢 Åpen møteplass (24/7)</h2>
-    <p class="open-room-text">Her kan du gå inn når som helst – dag eller natt.</p>
-    <p class="open-room-text">Dette er en åpen plass der du kan møte andre, eller bare sitte stille sammen med noen.</p>
-    <p class="open-room-note">Denne møteplassen er åpen hele døgnet.</p>
+</div>
 
-    <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="zoom-button">
-      GÅ TIL ÅPEN MØTEPLASS
-    </a>
-  </div>
+<div class="card">
+<h2>📜 Ordensregler</h2>
 
-  <div class="card">
-    <h2>🧱 Anonym vegg</h2>
-    <p class="wall-intro">Her kan du dele helt anonymt. Ingen navn lagres eller vises.</p>
-    <p class="wall-note">Du kan skrive hvordan dagen din er, eller bare noen ord.</p>
+<ul>
+<li>Kamera må være på</li>
+<li>Mikrofon av når du ikke snakker</li>
+<li>Ingen kommentarer eller råd</li>
+<li>Anonymitet og respekt</li>
+<li>Én snakker om gangen</li>
+<li>Synlig beruselse blir tatt ut</li>
+</ul>
 
-    <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
-    <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
+</div>
 
-    <div id="postMessage" class="post-message"></div>
-    <div id="posts" class="posts"></div>
-  </div>
+<div class="card prayer">
+Gi oss sinnsro<br>
+til å godta de ting vi ikke kan forandre<br>
+mot til å forandre de ting vi kan<br>
+og forstand til å se forskjellen.
+</div>
+
+<div class="card center">
+<h2>Velkommen ❤️</h2>
+<p>Trygg Sirkel er gratis å bruke og krever ingen betaling.</p>
+</div>
+
+<div class="card">
+<h2>🧱 Anonym vegg</h2>
+
+<p>Her kan du dele helt anonymt. Ingen navn lagres eller vises.</p>
+
+<textarea id="postInput" placeholder="Skriv noe anonymt her..."></textarea>
+
+<button onclick="addPost()">DEL ANONYMT</button>
+
+<div id="status" class="small" style="margin-top:10px;"></div>
+
+<div id="posts"></div>
+
+</div>
 
 </div>
 
 <script>
-  const supabaseClient = window.supabase.createClient(
-    'https://nnmavsrnwiqxkegpsaub.supabase.co',
-    'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
-  );
+const supabaseClient = window.supabase.createClient(
+'https://nnmavsrnwiqxkegpsaub.supabase.co',
+'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
+);
 
-  async function loadPosts() {
-    const container = document.getElementById('posts');
-    if (!container) return;
+async function loadPosts(){
 
-    container.innerHTML = '<div class="wall-note">Laster innlegg...</div>';
+const postsDiv = document.getElementById("posts");
+postsDiv.innerHTML = "Laster innlegg...";
 
-    const { data, error } = await supabaseClient
-      .from('posts')
-      .select('id, content, created_at')
-      .order('created_at', { ascending: false });
+const { data, error } = await supabaseClient
+.from("posts")
+.select("*")
+.order("created_at",{ascending:false});
 
-    if (error) {
-      container.innerHTML = '<div class="wall-note">Kunne ikke laste innlegg.</div>';
-      return;
-    }
+if(error){
+postsDiv.innerHTML = "Kunne ikke laste innlegg.";
+return;
+}
 
-    if (!data || data.length === 0) {
-      container.innerHTML = '<div class="wall-note">Ingen innlegg enda.</div>';
-      return;
-    }
+if(!data.length){
+postsDiv.innerHTML = "Ingen innlegg enda.";
+return;
+}
 
-    container.innerHTML = '';
+postsDiv.innerHTML = "";
 
-    data.forEach(post => {
-      const div = document.createElement('div');
-      div.className = 'post-item';
+data.forEach(post=>{
 
-      const text = document.createElement('div');
-      text.textContent = post.content;
+const div=document.createElement("div");
+div.className="post";
 
-      const meta = document.createElement('div');
-      meta.className = 'post-meta';
+div.innerHTML=`
+<div>${post.content}</div>
+<div class="meta">${new Date(post.created_at).toLocaleString("no-NO")}</div>
+<button class="report" onclick="reportPost(${post.id})">Rapporter</button>
+`;
 
-      const date = new Date(post.created_at);
-      const time = date.toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' });
-      const day = date.toLocaleDateString('no-NO', { day: 'numeric', month: 'long' });
+postsDiv.appendChild(div);
 
-      meta.textContent = `🕒 ${time} • ${day}`;
+});
 
-      const actions = document.createElement('div');
-      actions.className = 'post-actions';
+}
 
-      const reportBtn = document.createElement('button');
-      reportBtn.className = 'report-button';
-      reportBtn.textContent = 'Rapporter';
+async function addPost(){
 
-      reportBtn.onclick = async function () {
-        const reason = prompt('Hvorfor vil du rapportere dette innlegget?');
-        if (!reason || !reason.trim()) return;
+const input=document.getElementById("postInput");
+const status=document.getElementById("status");
 
-        reportBtn.disabled = true;
-        reportBtn.textContent = 'Rapportert';
+const text=input.value.trim();
 
-        const { error } = await supabaseClient
-          .from('reports')
-          .insert([{ post_id: post.id, reason: reason.trim() }]);
+if(!text){
+status.innerText="Skriv noe først.";
+return;
+}
 
-        if (error) {
-          reportBtn.disabled = false;
-          reportBtn.textContent = 'Rapporter';
-          alert('Kunne ikke sende rapport.');
-          return;
-        }
+const { error } = await supabaseClient
+.from("posts")
+.insert([{content:text}]);
 
-        alert('Takk. Innlegget er rapportert.');
-      };
+if(error){
+status.innerText="Kunne ikke dele.";
+return;
+}
 
-      actions.appendChild(reportBtn);
-      div.appendChild(text);
-      div.appendChild(meta);
-      div.appendChild(actions);
-      container.appendChild(div);
-    });
-  }
+input.value="";
+status.innerText="Innlegget er delt anonymt.";
+loadPosts();
 
-  async function addPost() {
-    const input = document.getElementById('postInput');
-    const msg = document.getElementById('postMessage');
-    const text = input.value.trim();
+}
 
-    if (!text) {
-      msg.textContent = 'Skriv noe før du deler.';
-      return;
-    }
+async function reportPost(id){
 
-    if (text.length > 1000) {
-      msg.textContent = 'Innlegget er for langt. Hold det under 1000 tegn.';
-      return;
-    }
+const reason=prompt("Hvorfor rapporterer du dette innlegget?");
 
-    msg.textContent = 'Sender...';
+if(!reason) return;
 
-    const { error } = await supabaseClient
-      .from('posts')
-      .insert([{ content: text }]);
+await supabaseClient
+.from("reports")
+.insert([{post_id:id,reason:reason}]);
 
-    if (error) {
-      msg.textContent = 'Kunne ikke dele innlegget.';
-      return;
-    }
+alert("Rapport sendt.");
 
-    input.value = '';
-    msg.textContent = 'Innlegget er delt anonymt.';
-    loadPosts();
-  }
+}
 
-  loadPosts();
+loadPosts();
 </script>
 
 </body>
