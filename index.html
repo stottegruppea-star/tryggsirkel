@@ -167,7 +167,7 @@ line-height:1.8;
 }
 
 .theme-item{
-margin-bottom:14px;
+margin-bottom:16px;
 }
 
 ul{
@@ -339,13 +339,40 @@ Dette skjer i full anonymitet og på en trygg måte.
 
 <div class="reflection">
 
-<div class="theme-item"><strong>Mandag:</strong> Ensomhet og isolasjon</div>
-<div class="theme-item"><strong>Tirsdag:</strong> Frykten for tilbakefall</div>
-<div class="theme-item"><strong>Onsdag:</strong> Selvfølelse og egenverdi</div>
-<div class="theme-item"><strong>Torsdag:</strong> Mål og drømmer</div>
-<div class="theme-item"><strong>Fredag:</strong> Selvmedfølelse og tilgivelse</div>
-<div class="theme-item"><strong>Lørdag:</strong> Identifisering av triggere</div>
-<div class="theme-item"><strong>Søndag:</strong> Verdier og mening</div>
+<div class="theme-item">
+<strong>Mandag:</strong> Ensomhet og isolasjon<br>
+Hvordan håndtere følelsen av å stå alene, og hvordan bygge et nytt, sunt nettverk.
+</div>
+
+<div class="theme-item">
+<strong>Tirsdag:</strong> Frykten for tilbakefall<br>
+Hvordan snu frykt til aksept og beredskap, uten at det tar over hverdagen.
+</div>
+
+<div class="theme-item">
+<strong>Onsdag:</strong> Selvfølelse og egenverdi<br>
+Hvordan finne tilbake til hvem man er uten avhengigheten.
+</div>
+
+<div class="theme-item">
+<strong>Torsdag:</strong> Mål og drømmer<br>
+Hva ønsker jeg å fylle det nye livet mitt med?
+</div>
+
+<div class="theme-item">
+<strong>Fredag:</strong> Selvmedfølelse og tilgivelse<br>
+Hvordan slutte å være sin egen strengeste dommer og i stedet praktisere selvtilgivelse for fortidens feil.
+</div>
+
+<div class="theme-item">
+<strong>Lørdag:</strong> Identifisering av triggere<br>
+Hvordan gjenkjenne situasjoner, følelser eller personer som skaper sug, og hvordan håndtere dem.
+</div>
+
+<div class="theme-item">
+<strong>Søndag:</strong> Verdier og mening<br>
+Hva er mine kjerneverdier nå? Å finne en mening med hverdagen som er sterkere enn suget etter rus eller spill.
+</div>
 
 </div>
 </div>
@@ -409,9 +436,9 @@ if(!data) return;
 data.forEach(post=>{
 const div=document.createElement('div');
 div.className='post-item';
-div.innerHTML=post.content+
-'<div class="post-meta">🕒 '+
-new Date(post.created_at).toLocaleString('no-NO')+
+div.innerHTML=post.content +
+'<div class="post-meta">🕒 ' +
+new Date(post.created_at).toLocaleString('no-NO') +
 '</div>';
 container.appendChild(div);
 });
@@ -420,7 +447,6 @@ container.appendChild(div);
 async function addPost(){
 const input=document.getElementById('postInput');
 const msg=document.getElementById('postMessage');
-
 const text=input.value.trim();
 
 if(!text){
