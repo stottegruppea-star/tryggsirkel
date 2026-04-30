@@ -319,22 +319,20 @@ Dette skjer i full anonymitet og på en trygg måte.
 <h2>✉️ Kontakt oss</h2>
 
 <form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
-
 <input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 
 <label>Navn / kallenavn</label>
-<input type="text" name="Navn / kallenavn">
+<input type="text" name="navn">
 
 <label>E-post / telefon (valgfritt)</label>
-<input type="text" name="E-post / telefon">
+<input type="text" name="kontakt">
 
 <label>Melding</label>
-<textarea name="Melding"></textarea>
+<textarea name="melding"></textarea>
 
 <button type="submit" class="send-button">SEND MELDING</button>
-
 </form>
 </div>
 
@@ -474,6 +472,8 @@ loadPosts();
 
 loadPosts();
 </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
