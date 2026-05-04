@@ -16,6 +16,7 @@
 --green:#2f8f5b;
 --green-dark:#226c44;
 --soft:#eef7f1;
+--soft2:#f8fbf9;
 --border:#dce9e1;
 --shadow:0 18px 45px rgba(31,47,45,.10);
 --radius:26px;
@@ -31,50 +32,56 @@ color:var(--ink);
 line-height:1.7;
 }
 
-/* HEADER */
-
 .hero{
 background:
-linear-gradient(rgba(23,49,45,.70),rgba(23,49,45,.86)),
+linear-gradient(rgba(23,49,45,.68),rgba(23,49,45,.84)),
 url('header.png');
 background-size:cover;
 background-position:center;
 color:white;
-padding:70px 20px 60px;
+padding:54px 18px 58px;
 text-align:center;
 }
 
-.brand{
-display:flex;
-flex-direction:column;
-align-items:center;
+.hero-inner{
+max-width:880px;
+margin:auto;
 }
 
 .logo{
-width:130px;
-margin-bottom:14px;
-filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+width:320px;
+max-width:88vw;
+margin:0 auto 22px;
+display:block;
+filter:drop-shadow(0 12px 24px rgba(0,0,0,.28));
+border-radius:24px;
 }
 
-.hero h1{
-font-size:52px;
+.hero-sub{
+font-size:23px;
+font-weight:800;
+max-width:760px;
+margin:0 auto 24px;
+}
+
+.hero-line{
+font-size:24px;
 font-weight:900;
-letter-spacing:2px;
-margin:0;
+line-height:1.5;
+margin:28px 0;
 }
 
-.hero-tagline{
+.hero-text{
 font-size:18px;
-opacity:.9;
-margin-top:10px;
+max-width:720px;
+margin:auto;
+color:rgba(255,255,255,.94);
 }
-
-/* LAYOUT */
 
 .container{
-max-width:900px;
+max-width:940px;
 margin:auto;
-padding:28px 16px 60px;
+padding:30px 16px 60px;
 }
 
 .card{
@@ -88,6 +95,23 @@ margin-bottom:22px;
 
 .center{text-align:center;}
 
+.badges{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:26px;
+}
+
+.badge{
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.35);
+border-radius:999px;
+padding:10px 16px;
+font-weight:700;
+color:white;
+}
+
 .primary-btn{
 display:block;
 width:100%;
@@ -95,11 +119,14 @@ background:linear-gradient(180deg,var(--green),var(--green-dark));
 color:white;
 text-align:center;
 text-decoration:none;
-font-size:28px;
+font-size:30px;
 font-weight:900;
-padding:24px;
-border-radius:22px;
-margin-top:18px;
+padding:26px 18px;
+border-radius:24px;
+box-shadow:0 14px 30px rgba(47,143,91,.28);
+margin:24px 0;
+border:none;
+cursor:pointer;
 }
 
 .secondary-btn{
@@ -109,68 +136,118 @@ background:white;
 color:var(--green-dark);
 text-align:center;
 text-decoration:none;
-font-size:22px;
+font-size:24px;
 font-weight:900;
-padding:20px;
-border-radius:20px;
+padding:22px 18px;
+border-radius:22px;
 border:2px solid #bfdcc9;
-margin-top:16px;
+margin:20px 0 0;
 }
 
 h2{
-margin:0 0 12px;
-font-size:26px;
+margin:0 0 14px;
+font-size:28px;
+color:var(--ink);
 }
 
 .section-note{
 color:var(--muted);
-font-size:15px;
-margin-bottom:12px;
+font-size:16px;
+margin:0 0 16px;
 }
 
-/* THEMES */
-
-.theme-list{
+.trust-grid{
 display:grid;
-gap:12px;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
 }
 
-.theme-item{
-background:var(--soft);
+.trust-item{
+background:var(--soft2);
 border:1px solid var(--border);
-border-radius:18px;
-padding:16px;
+border-radius:20px;
+padding:18px;
 }
 
-.theme-day{
-font-weight:bold;
+.trust-item strong{
 display:block;
+font-size:18px;
+color:var(--green-dark);
 margin-bottom:4px;
 }
 
-/* FORMS */
+.highlight{
+background:linear-gradient(180deg,#f3faf5,#eaf5ee);
+border:2px solid #cce4d4;
+}
+
+.theme-list{
+display:grid;
+gap:14px;
+}
+
+.theme-item{
+background:var(--soft2);
+border:1px solid var(--border);
+border-radius:20px;
+padding:18px;
+}
+
+.theme-day{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
+}
+
+.theme-text{
+margin:0;
+font-size:16px;
+color:var(--ink);
+}
+
+ul{
+margin:0;
+padding-left:22px;
+}
+
+li{
+margin-bottom:12px;
+font-size:17px;
+}
 
 .contact-form label{
 display:block;
-margin-top:12px;
-font-weight:bold;
+font-weight:800;
+margin:14px 0 6px;
 }
 
 .contact-form input,
 .contact-form textarea{
 width:100%;
-padding:14px;
 border:1px solid var(--border);
-border-radius:14px;
-margin-top:4px;
+border-radius:18px;
+padding:15px;
+font-size:16px;
+font-family:inherit;
+background:white;
+}
+
+.contact-form textarea{
+min-height:130px;
+resize:vertical;
 }
 
 .post-input{
 width:100%;
-padding:14px;
+min-height:130px;
 border:1px solid var(--border);
-border-radius:14px;
-min-height:120px;
+border-radius:18px;
+padding:15px;
+font-size:16px;
+font-family:inherit;
+resize:vertical;
 }
 
 .post-button{
@@ -178,82 +255,169 @@ width:100%;
 background:var(--green);
 color:white;
 border:none;
-border-radius:18px;
-padding:16px;
-font-size:20px;
-margin-top:10px;
+border-radius:20px;
+padding:18px;
+font-size:22px;
+font-weight:900;
+cursor:pointer;
+margin-top:14px;
 }
-
-/* POSTS */
 
 .post-item{
-background:#f8fcf9;
+background:var(--soft2);
 border:1px solid var(--border);
-border-radius:14px;
-padding:12px;
-margin-top:10px;
+border-radius:18px;
+padding:16px;
+margin-bottom:12px;
+white-space:pre-wrap;
+word-break:break-word;
 }
 
-/* MOBILE */
+.post-meta{
+margin-top:8px;
+font-size:13px;
+color:var(--muted);
+}
 
-@media(max-width:640px){
-.logo{width:100px;}
-.hero h1{font-size:34px;}
-.hero-tagline{font-size:15px;}
+.welcome{
+text-align:center;
+font-size:30px;
+font-weight:900;
+color:var(--green-dark);
+margin-top:16px;
+}
+
+@media(max-width:700px){
+.hero{
+padding:42px 16px 46px;
+}
+.logo{
+width:245px;
+}
+.hero-sub{
+font-size:19px;
+}
+.hero-line{
+font-size:21px;
+}
+.card{
+padding:24px 18px;
+}
+.primary-btn{
+font-size:24px;
+padding:22px 14px;
+}
+.secondary-btn{
+font-size:21px;
+}
+.trust-grid{
+grid-template-columns:1fr;
+}
+h2{
+font-size:24px;
+}
 }
 </style>
 </head>
 
 <body>
 
-<header class="hero">
-<div class="brand">
-<img src="logo.png" class="logo">
-<h1>TRYGG SIRKEL</h1>
+<section class="hero">
+<div class="hero-inner">
+
+<img src="logo.png" class="logo" alt="Trygg Sirkel logo">
+
+<p class="hero-sub">Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet.</p>
+
+<div class="hero-line">
+Et trygt sted å dele.<br>
+Et trygt sted å lytte.<br>
+Et trygt sted å starte på nytt.
 </div>
 
-<p class="hero-tagline">Et sted å være ærlig. Sammen.</p>
-</header>
+<p class="hero-text">
+Hos oss møter du mennesker med egne erfaringer. Ingen fasade. Ingen skam. Ingen krav om å prestere.
+<br><br>
+Du er velkommen akkurat som du er.
+</p>
 
-<div class="container">
+<div class="badges">
+<div class="badge">Gratis</div>
+<div class="badge">Anonymt</div>
+<div class="badge">Lav terskel</div>
+<div class="badge">Trygt fellesskap</div>
+</div>
+
+</div>
+</section>
+
+<main class="container">
 
 <div class="card center">
-<h2>Gratis og anonymt nettmøte</h2>
-<p>Et trygt sted å dele, lytte og starte på nytt.</p>
+<h2>🕗 Hver kveld kl. 20:00</h2>
+<p class="section-note">Trykk på knappen under for å bli med i møtet.</p>
 
 <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="primary-btn">
 BLI MED I MØTET
 </a>
-
-<p class="section-note">🕗 Hver kveld kl. 20:00</p>
 </div>
 
 <div class="card">
 <h2>For alles trygghet</h2>
-<p>Kamera må være på ved oppstart. Du kan dele hvis du vil – eller bare lytte.</p>
+<p>
+Kamera må være på ved oppstart, slik at vi vet hvem som deltar og skaper trygghet i gruppen.
+Du trenger ikke dele mer enn du ønsker.
+</p>
+
+<div class="trust-grid">
+<div class="trust-item">
+<strong>Du kan bare lytte</strong>
+Du trenger ikke si noe før du selv vil.
+</div>
+<div class="trust-item">
+<strong>Ingen prestasjon</strong>
+Du trenger ikke forklare deg eller ha alt på plass.
+</div>
+<div class="trust-item">
+<strong>Anonymitet</strong>
+Det som deles her, blir her.
+</div>
+<div class="trust-item">
+<strong>Fellesskap</strong>
+Du møter mennesker med egne erfaringer.
+</div>
+</div>
 </div>
 
-<div class="card">
+<div class="card highlight">
 <h2>🤝 Trenger du hjelp til første møte?</h2>
-<p>Det er helt normalt å grue seg. Vi kan møte deg digitalt først og hjelpe deg i gang.</p>
+<p>Det er helt normalt å grue seg.</p>
+<p>
+Hvis du synes det er vanskelig å bli med første gang, kan du sende oss en melding.
+Vi kan møte deg digitalt først og hjelpe deg trygt inn.
+</p>
+<p>Du trenger ikke gjøre dette alene.</p>
 </div>
 
 <div class="card">
 <h2>✉️ Kontakt oss</h2>
+<p class="section-note">Send oss en melding hvis du har spørsmål, trenger hjelp til første møte, eller bare vil ta kontakt.</p>
 
 <form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
 
-<label>Navn</label>
+<label>Navn / kallenavn</label>
 <input type="text" name="navn">
 
-<label>Kontakt</label>
+<label>E-post / telefon (valgfritt)</label>
 <input type="text" name="kontakt">
 
 <label>Melding</label>
 <textarea name="melding"></textarea>
 
-<button class="primary-btn">SEND MELDING</button>
+<button type="submit" class="primary-btn">SEND MELDING</button>
 </form>
 </div>
 
@@ -264,37 +428,37 @@ BLI MED I MØTET
 
 <div class="theme-item">
 <span class="theme-day">Mandag – Grenser i praksis</span>
-Hvordan kjenne en grense i kroppen? Hvordan si nei?
+<p class="theme-text">Hvordan kjenne en grense i kroppen? Hvordan si nei uten forklaring? Når tviler man på egne grenser?</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span>
-Hvordan gi oss selv avslutning.
+<p class="theme-text">Behovet for closure, hvorfor vi overtenker, og hvordan gi oss selv avslutning.</p>
 </div>
 
 <div class="theme-item">
-<span class="theme-day">Onsdag – Å stole på seg selv</span>
-Bygge tillit til egen dømmekraft.
+<span class="theme-day">Onsdag – Å stole på seg selv igjen</span>
+<p class="theme-text">Hvordan bygge opp tillit til egen dømmekraft?</p>
 </div>
 
 <div class="theme-item">
-<span class="theme-day">Torsdag – Trygghet i relasjoner</span>
-Hvordan skal det føles i kroppen.
+<span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span>
+<p class="theme-text">Forskjellen på intensitet og trygghet, røde flagg vs grønne flagg, og hvordan det skal føles i kroppen.</p>
 </div>
 
 <div class="theme-item">
-<span class="theme-day">Fredag – Å velge seg selv</span>
-Små valg i hverdagen.
+<span class="theme-day">Fredag – Å velge seg selv, hver dag</span>
+<p class="theme-text">Små valg i hverdagen. Hva betyr det konkret å velge seg selv?</p>
 </div>
 
 <div class="theme-item">
-<span class="theme-day">Lørdag – Selvmedfølelse</span>
-Hvordan snakke snillere til seg selv.
+<span class="theme-day">Lørdag – Fra selvkritikk til selvmedfølelse</span>
+<p class="theme-text">Hvordan snakker vi til oss selv? Hvordan bygge en snill indre stemme?</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Søndag – Et liv som støtter deg</span>
-Skam vs ansvar. Indre dialog.
+<p class="theme-text">Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg? Hvorfor er vi uærlige med oss selv eller andre? Skam vs ansvar. Hvor bevisst er du din indre dialog?</p>
 </div>
 
 </div>
@@ -303,23 +467,44 @@ Skam vs ansvar. Indre dialog.
 <div class="card">
 <h2>📜 Trygge rammer</h2>
 <ul>
-<li>Kamera på</li>
-<li>Mikrofon av</li>
+<li>Kamera på ved oppstart</li>
+<li>Mikrofon av når du ikke snakker</li>
 <li>Én snakker om gangen</li>
-<li>Respekt og anonymitet</li>
+<li>Vi lytter uten å avbryte</li>
+<li>Ingen råd med mindre noen ber om det</li>
+<li>Det som deles her, blir her</li>
+<li>Synlig ruspåvirkning kan føre til at du må forlate møtet</li>
 </ul>
+</div>
+
+<div class="card highlight">
+<h2>🟢 Åpen møteplass</h2>
+<p>Et digitalt rom du kan gå inn i når som helst – dag eller natt.</p>
+<p>
+Når du trenger noen rundt deg.<br>
+Når kvelden blir tung.<br>
+Når du bare trenger å ikke være alene.
+</p>
+
+<a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="secondary-btn">
+GÅ TIL ÅPEN MØTEPLASS
+</a>
 </div>
 
 <div class="card">
 <h2>🧱 Anonym vegg</h2>
+<p class="section-note">Her kan du dele noen ord anonymt. Ingen navn lagres eller vises.</p>
 
-<textarea id="postInput" class="post-input"></textarea>
+<textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
 <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
 
+<div id="postMessage" class="section-note"></div>
 <div id="posts"></div>
 </div>
 
-</div>
+<div class="welcome">Velkommen ❤️</div>
+
+</main>
 
 <script>
 const supabaseClient = window.supabase.createClient(
@@ -328,26 +513,56 @@ const supabaseClient = window.supabase.createClient(
 );
 
 async function loadPosts(){
-const {data}=await supabaseClient.from('posts').select('*').order('created_at',{ascending:false});
 const container=document.getElementById('posts');
+
+const {data}=await supabaseClient
+.from('posts')
+.select('*')
+.order('created_at',{ascending:false});
+
 container.innerHTML='';
-data?.forEach(p=>{
+
+if(!data) return;
+
+data.forEach(post=>{
 const div=document.createElement('div');
 div.className='post-item';
-div.innerText=p.content;
+div.innerHTML=post.content +
+'<div class="post-meta">🕒 ' +
+new Date(post.created_at).toLocaleString('no-NO') +
+'</div>';
 container.appendChild(div);
 });
 }
 
 async function addPost(){
-const text=document.getElementById('postInput').value;
-await supabaseClient.from('posts').insert([{content:text}]);
-document.getElementById('postInput').value='';
+const input=document.getElementById('postInput');
+const msg=document.getElementById('postMessage');
+const text=input.value.trim();
+
+if(!text){
+msg.textContent='Skriv noe først.';
+return;
+}
+
+const {error}=await supabaseClient
+.from('posts')
+.insert([{content:text}]);
+
+if(error){
+msg.textContent='Kunne ikke dele.';
+return;
+}
+
+input.value='';
+msg.textContent='Innlegget er delt anonymt.';
 loadPosts();
 }
 
 loadPosts();
 </script>
+
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
