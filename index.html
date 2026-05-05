@@ -310,7 +310,7 @@ font-size:26px;
 .hero-sub{
 font-size:18px;
 }
-hero-line{
+.hero-line{
 font-size:19px;
 }
 .card{
@@ -340,7 +340,7 @@ font-size:24px;
 
 <img src="logo.png" class="logo" alt="Trygg Sirkel logo">
 
-<h1 class="hero-title">Sliter du med alkohol eller rus – og sitter mye alene?</h1>
+<h1 class="hero-title">Strever du med alkohol, rus eller avhengighet – og kjenner deg mye alene?</h1>
 
 <p class="hero-sub">
 Her kan du møte andre som forstår. Helt anonymt. Helt uten press.
@@ -348,7 +348,7 @@ Her kan du møte andre som forstår. Helt anonymt. Helt uten press.
 
 <div class="hero-line">
 Du trenger ikke si noe.<br>
-Det holder å være der.
+Det holder å møte opp.
 </div>
 
 <p class="hero-text">
@@ -371,7 +371,7 @@ Du er velkommen akkurat som du er.
 
 <div class="card center">
 <h2>🕗 Hver kveld kl. 20:00</h2>
-<p class="section-note">Samme tid. Samme sted. Et sted du kan komme tilbake til.</p>
+<p class="section-note">Samme tid. Samme sted. Et trygt sted du kan komme tilbake til.</p>
 
 <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="primary-btn">
 BLI MED I MØTET
@@ -417,7 +417,7 @@ Du møter mennesker med egne erfaringer.
 <div class="card">
 <h2>For alles trygghet</h2>
 <p>
-Kamera må være på ved oppstart, slik at vi vet hvem som deltar og skaper trygghet i gruppen.
+Kamera må være på ved oppstart, slik at vi vet hvem som deltar og kan skape trygghet i gruppen.
 </p>
 <p>
 Du trenger ikke dele mer enn du ønsker.
@@ -425,7 +425,7 @@ Du trenger ikke dele mer enn du ønsker.
 </div>
 
 <div class="card highlight">
-<h2>🤝 Grue seg til første møte?</h2>
+<h2>🤝 Gruer du deg til første møte?</h2>
 <p>
 Det er helt normalt.
 </p>
@@ -472,7 +472,7 @@ Du trenger ikke gjøre dette alene.
 
 <div class="theme-item">
 <span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span>
-<p class="theme-text">Behovet for closure, hvorfor vi overtenker, og hvordan gi oss selv avslutning.</p>
+<p class="theme-text">Behovet for avslutning, hvorfor vi overtenker, og hvordan vi kan gi oss selv ro.</p>
 </div>
 
 <div class="theme-item">
@@ -482,7 +482,7 @@ Du trenger ikke gjøre dette alene.
 
 <div class="theme-item">
 <span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span>
-<p class="theme-text">Forskjellen på intensitet og trygghet, røde flagg vs grønne flagg, og hvordan det skal føles i kroppen.</p>
+<p class="theme-text">Forskjellen på intensitet og trygghet, røde og grønne flagg, og hvordan trygghet kan kjennes i kroppen.</p>
 </div>
 
 <div class="theme-item">
@@ -492,12 +492,12 @@ Du trenger ikke gjøre dette alene.
 
 <div class="theme-item">
 <span class="theme-day">Lørdag – Fra selvkritikk til selvmedfølelse</span>
-<p class="theme-text">Hvordan snakker vi til oss selv? Hvordan bygge en snill indre stemme?</p>
+<p class="theme-text">Hvordan snakker vi til oss selv? Hvordan kan vi bygge en snillere indre stemme?</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Søndag – Et liv som støtter deg</span>
-<p class="theme-text">Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg? Hvorfor er vi uærlige med oss selv eller andre? Skam vs ansvar. Hvor bevisst er du din indre dialog?</p>
+<p class="theme-text">Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg? Skam, ansvar og bevissthet rundt egen indre dialog.</p>
 </div>
 
 </div>
@@ -566,10 +566,16 @@ if(!data) return;
 data.forEach(post=>{
 const div=document.createElement('div');
 div.className='post-item';
-div.innerHTML=post.content +
-'<div class="post-meta">🕒 ' +
-new Date(post.created_at).toLocaleString('no-NO') +
-'</div>';
+
+const text=document.createElement('div');
+text.textContent=post.content;
+
+const meta=document.createElement('div');
+meta.className='post-meta';
+meta.textContent='🕒 ' + new Date(post.created_at).toLocaleString('no-NO');
+
+div.appendChild(text);
+div.appendChild(meta);
 container.appendChild(div);
 });
 }
