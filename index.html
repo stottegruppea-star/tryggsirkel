@@ -4,329 +4,671 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Alise i Edruland – Jeg er Alise, jeg er i edring</title>
+<title>Trygg Sirkel</title>
 
-<meta name="description" content="Første innlegg i bloggen Alise i Edruland. En tekst om edring, trygghet, avhengighet og reisen tilbake til seg selv.">
+<meta name="google-site-verification" content="Jbo1J11JzoZA3a3ypedyrggkmls2yziwsjV_mgX8DaE" />
 
-<link rel="icon" type="image/png" href="../logo.png">
+<meta name="description" content="Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet.">
+
+<meta name="keywords" content="slutte å drikke, alkoholisme, rusavhengighet, anonym hjelp, nettmøte rus, ettervern, rusfri">
+
+<meta name="author" content="Trygg Sirkel">
+
+<meta property="og:title" content="Trygg Sirkel – gratis og anonymt nettmøte">
+<meta property="og:description" content="Et trygt sted å dele, lytte eller bare møte opp.">
+<meta property="og:url" content="https://www.tryggsirkel.no">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
+
+<link rel="canonical" href="https://www.tryggsirkel.no">
+<link rel="icon" type="image/png" href="logo.png">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
+
+:root{
+--card:#ffffff;
+--ink:#1f2f2d;
+--muted:#60716d;
+--green:#2f8f5b;
+--green-dark:#226c44;
+--soft:#f8fbf9;
+--border:#dce9e1;
+--shadow:0 18px 45px rgba(31,47,45,.10);
+--radius:28px;
+}
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 margin:0;
 font-family:Inter, Arial, sans-serif;
-background:
-linear-gradient(rgba(248,251,249,.88),rgba(237,244,239,.94)),
-url('../alise-banner.JPG');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-color:#1f2f2d;
-line-height:1.9;
+background:linear-gradient(180deg,#f7faf8 0%,#edf4ef 100%);
+color:var(--ink);
+line-height:1.8;
 }
 
-.hero{
-background:
-linear-gradient(rgba(23,49,45,.62),rgba(23,49,45,.82)),
-url('../alise-banner.JPG');
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-color:white;
-text-align:center;
-padding:120px 20px;
-}
-
-.hero h1{
-font-size:46px;
-margin:0;
-font-weight:900;
-}
-
-.hero p{
-font-size:21px;
-margin-top:14px;
+.hero-banner{
+width:100%;
+display:block;
 }
 
 .container{
-max-width:850px;
+max-width:950px;
 margin:auto;
-padding:30px 16px 70px;
+padding:26px 16px 70px;
 }
 
 .card{
-background:rgba(255,255,255,.94);
-border:1px solid #dce9e1;
-border-radius:26px;
-box-shadow:0 18px 45px rgba(31,47,45,.14);
+background:var(--card);
+border:1px solid var(--border);
+border-radius:var(--radius);
 padding:34px;
-backdrop-filter:blur(4px);
+margin-bottom:24px;
+box-shadow:var(--shadow);
 }
 
-.meta{
-color:#60716d;
-font-size:15px;
-margin-bottom:28px;
+.quote-card{
+text-align:center;
+background:linear-gradient(180deg,#ffffff,#f7fbf8);
+}
+
+.quote{
+font-size:30px;
+font-weight:900;
+line-height:1.5;
+color:var(--green-dark);
+margin:0;
+}
+
+.hero-text{
+text-align:center;
+}
+
+.hero-title{
+font-size:34px;
+font-weight:900;
+line-height:1.35;
+margin-bottom:18px;
+color:var(--green-dark);
+}
+
+.hero-sub{
+font-size:20px;
+color:var(--ink);
+max-width:760px;
+margin:auto;
+}
+
+.story{
+font-size:18px;
+line-height:2;
+}
+
+.emphasis{
+font-size:25px;
+font-weight:900;
+line-height:1.6;
+text-align:center;
+margin-top:30px;
+color:var(--green-dark);
+}
+
+.primary-btn{
+display:block;
+width:100%;
+background:linear-gradient(180deg,#3fb870,#2f8f5b);
+color:white;
+text-align:center;
+text-decoration:none;
+font-size:31px;
+font-weight:900;
+padding:28px 20px;
+border-radius:24px;
+margin-top:22px;
+box-shadow:0 14px 30px rgba(47,143,91,.30);
+}
+
+.secondary-btn{
+display:block;
+width:100%;
+background:#f1fff6;
+border:2px solid #9fd8b3;
+color:var(--green-dark);
+text-align:center;
+text-decoration:none;
+font-size:24px;
+font-weight:900;
+padding:22px 18px;
+border-radius:22px;
+margin-top:20px;
+}
+
+.highlight{
+background:linear-gradient(180deg,#f3faf5,#e9f4ed);
+border:2px solid #cde4d4;
+}
+
+.warm-card{
+background:linear-gradient(180deg,#fffaf2,#fff3e1);
+border:2px solid #f0d8ad;
+}
+
+.section-note{
+font-size:16px;
+color:var(--muted);
 }
 
 h2{
-font-size:34px;
-color:#226c44;
-line-height:1.3;
 margin-top:0;
+margin-bottom:18px;
+font-size:30px;
+color:var(--ink);
 }
 
-.article{
-font-size:19px;
+.trust-list{
+display:grid;
+gap:14px;
 }
 
-.article p{
-margin-bottom:22px;
+.trust-item{
+background:var(--soft);
+border:1px solid var(--border);
+border-radius:20px;
+padding:18px;
 }
 
-.strong-line{
-font-size:25px;
+.trust-item strong{
+display:block;
+margin-bottom:6px;
+font-size:18px;
+color:var(--green-dark);
+}
+
+.theme-list{
+display:grid;
+gap:14px;
+}
+
+.theme-item{
+background:var(--soft);
+border:1px solid var(--border);
+border-radius:20px;
+padding:18px;
+}
+
+.theme-day{
+display:block;
+font-size:18px;
 font-weight:900;
-color:#226c44;
-text-align:center;
-margin:34px 0;
-line-height:1.5;
+margin-bottom:8px;
+color:var(--green-dark);
 }
 
-.back-btn{
-display:inline-block;
-margin-top:30px;
-background:linear-gradient(180deg,#3fb870,#2f8f5b);
-color:white;
-text-decoration:none;
-padding:18px 26px;
+.contact-form label{
+display:block;
+font-weight:800;
+margin:14px 0 6px;
+}
+
+.contact-form input,
+.contact-form textarea{
+width:100%;
+border:1px solid var(--border);
 border-radius:18px;
+padding:15px;
+font-size:16px;
+font-family:inherit;
+background:white;
+}
+
+.contact-form textarea{
+min-height:130px;
+resize:vertical;
+}
+
+.post-input{
+width:100%;
+min-height:130px;
+border:1px solid var(--border);
+border-radius:18px;
+padding:15px;
+font-size:16px;
+font-family:inherit;
+resize:vertical;
+}
+
+.post-button{
+width:100%;
+background:var(--green);
+color:white;
+border:none;
+border-radius:20px;
+padding:18px;
+font-size:22px;
 font-weight:900;
+margin-top:14px;
+cursor:pointer;
+}
+
+.post-item{
+background:var(--soft);
+border:1px solid var(--border);
+border-radius:18px;
+padding:16px;
+margin-bottom:12px;
+white-space:pre-wrap;
+word-break:break-word;
+}
+
+.post-meta{
+margin-top:8px;
+font-size:13px;
+color:var(--muted);
+}
+
+.welcome{
+text-align:center;
+font-size:32px;
+font-weight:900;
+color:var(--green-dark);
+margin-top:10px;
 }
 
 @media(max-width:700px){
-body{
-background-attachment:scroll;
-}
-
-.hero{
-padding:80px 18px;
-background-attachment:scroll;
-}
-
-.hero h1{
-font-size:36px;
-}
 
 .card{
-padding:24px 20px;
+padding:26px 20px;
 }
 
-h2{
+.quote{
+font-size:25px;
+}
+
+.hero-title{
 font-size:28px;
 }
 
-.article{
+.hero-sub{
 font-size:18px;
 }
+
+.primary-btn{
+font-size:24px;
+padding:24px 16px;
 }
+
+.secondary-btn{
+font-size:21px;
+}
+
+h2{
+font-size:25px;
+}
+
+.emphasis{
+font-size:22px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-<h1>Alise i Edruland</h1>
-<p>En blogg om edring – reisen til trygghet, fra innsiden og ut</p>
-</section>
+<img src="header.png" class="hero-banner" alt="Trygg Sirkel banner">
 
 <main class="container">
 
+<div class="card quote-card">
+
+<p class="quote">
+Her møter du ikke skam.<br>
+Ingen pekefinger.<br>
+Bare mennesker som oppriktig ønsker et liv uten rus.
+</p>
+
+</div>
+
+<div class="card hero-text">
+
+<div class="hero-title">
+Du trenger ikke si noe.<br>
+Du trenger bare møte opp.
+</div>
+
+<p class="hero-sub">
+Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet.
+</p>
+
+</div>
+
 <div class="card">
 
-<h2>Jeg er Alise, jeg er i edring</h2>
+<div class="story">
 
-<div class="meta">
-9. mai 2026 · Alise i Edruland
+<p>
+Møtene varierer fra dag til dag. Hver dag har vi et nytt tema, men du trenger ikke si noe, og du trenger ikke forholde deg til temaet.
+</p>
+
+<p>
+Kjernen i det vi gjør er enkel: Vi gjør hverandre sterkere – bare ved å være her sammen.
+</p>
+
+<p>
+Noen dager er vi ti–tolv. Andre dager er vi fire–fem. Det viktigste er ikke hvor mange vi er. Det viktigste er at vi ikke er alene.
+</p>
+
+<p>
+Det skjer noe når vi samles. Et trygt rom. En trygg sirkel.
+</p>
+
+<p>
+Vi lytter til hverandre. Deler når vi vil. Og det som blir sagt – blir her.
+</p>
+
+<p>
+For mange av oss føltes det som å komme hjem første gang.
+</p>
+
+<p>
+For ingenting er så ensomt som aktiv rus. Men lite er så befriende som å oppdage at vi ikke er alene.
+</p>
+
 </div>
 
-<div class="article">
+<p class="emphasis">
+Vi er ikke unike i det vi står i.<br>
+Vi er mennesker – med en avhengighet.
+</p>
 
-<p>Dette er mitt første blogginnlegg – mine første tanker i det jeg vil kalle for <strong>Alise i Edruland</strong>.</p>
+</div>
 
-<p>For lenge, lenge siden, før Norge var Norge og språket vi kjenner i dag var et helt annet – den gangen da folk drakk øl som vann, eller mjød som det het, hadde de et ord vi ikke lenger bruker.</p>
+<div class="card highlight">
 
-<p>Det norrøne ordet “øðruligr / auðr”. Uttales edring. Et ord som handlet om å være ved sans og samling.</p>
+<h2>🕗 Hver kveld kl. 20:00</h2>
 
-<p>Edring kommer fra verbet å edre, altså å bli edru eller klar igjen. Det henger sammen med ordet edru, som er veldig gammelt i norsk og nordiske språk generelt.</p>
+<p class="section-note">
+Samme tid. Samme sted. Et sted du kan komme tilbake til.
+</p>
 
-<p>Det ble brukt i betydningen å komme til sans og samling, å klare opp, å vende tilbake til klarhet.</p>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="primary-btn">
+BLI MED I MØTET
+</a>
 
-<p>Ikke bare “slutte å drikke”.</p>
+<p class="section-note">
+Du trenger ikke si noe. Det holder å være der.
+</p>
 
-<p>Og egentlig er det jo ganske vakkert når man tenker på det.</p>
+</div>
 
-<p>For ordet rommer noe mer enn avhold, mer som en tilbakevending til seg selv, til klarhet og bevissthet.</p>
+<div class="card warm-card">
 
-<p>Det er derfor jeg liker ordet bedre enn de typiske “tilfriskning”, “rusfrihet” og “rehabilitering”.</p>
+<h2>✍️ Alise i Edruland</h2>
 
-<p>Edring føles mindre klinisk og mer menneskelig. Nesten som “å våkne igjen.”</p>
+<p>
+En blogg om edring, om reisen til trygghet – fra innsiden og ut.
+</p>
 
-<p>Og det er jo nettopp det vi holder på med her – vi holder på å våkne, klarne og lande i oss selv.</p>
+<a href="/blogg/alise-i-edruland.html" class="secondary-btn">
+LES ALISE I EDRULAND
+</a>
 
-<p>Ja, jeg skriver vi. For dette er ikke bare min blogg.</p>
+</div>
 
-<p>Jeg har en venn, en likesinnet – en jeg ikke hadde klart dette uten. Vi har skapt Trygg Sirkel sammen.</p>
+<div class="card">
 
-<p>I Alice i Eventyrland er “The White Rabbit” en av de viktigste karakterene i boka – det er han som lokker Alice ned i kaninhullet og starter hele eventyret.</p>
+<h2>🔒 For alles trygghet</h2>
 
-<p>I TV-serien som ble laget mange år etter at bøkene kom ut, ble han kalt Percy.</p>
+<div class="trust-list">
 
-<p>Uten Percy hadde jeg ikke turt. Ikke turt å skrive eller lage en nettside, og et rom som dette.</p>
+<div class="trust-item">
+<strong>Kamera er på under møtet</strong>
+Det handler om trygghet – å se hvem vi er sammen med.
+</div>
 
-<p>Så min venn, min makker, Herr Percy – dette første innlegget blir mest om meg, for din historie er din egen. Men jeg håper du vil skrive den her når du en dag er klar.</p>
+<div class="trust-item">
+<strong>Du trenger ikke bruke fullt navn</strong>
+Du trenger ikke bruke ditt ekte navn i det hele tatt.
+</div>
 
-<p>For uten deg, uten din historie, hadde jeg aldri hoppet inn i Edruland.</p>
+<div class="trust-item">
+<strong>Mikrofonen er av</strong>
+Du slår den på hvis du vil dele.
+</div>
 
-<p>Så…</p>
+<div class="trust-item">
+<strong>Du kan også bare sitte stille</strong>
+Det er helt lov.
+</div>
 
-<p>Jeg vet ikke hva jeg skal kalle meg – om jeg er en alkoholiker, om jeg er et menneske med et avhengighetssyndrom, en alkis, en dranker. Det spiller vel til syvende og sist egentlig ingen rolle hva jeg kaller meg.</p>
+<div class="trust-item">
+<strong>Vi kommenterer ikke hverandres delinger</strong>
+Ingen råd. Ingen meninger. Ingen vurderinger.
+</div>
 
-<p>Jeg har brukt alkohol feil.</p>
-
-<p>Jeg har brukt det for å overleve, for å slippe å kjenne på følelser og tankekjør. Det fungerte til det ikke gjorde det lenger.</p>
-
-<p>Det fungerte helt til den dagen smerten ved å drikke var likestilt med smerten ved ikke å drikke.</p>
-
-<p>Så jeg slutta.</p>
-
-<p>Det er 198 dager siden i dag.</p>
-
-<p>198 dager siden jeg sto i dusjen og vannet kjentes som piskeslag og angsten var så støyende at jeg holdt pusten.</p>
-
-<p>Det er 199 dager siden jeg kasta opp – og fortsatte å drikke.</p>
-
-<p>199 dager siden jeg var full nok til å tørre å møte mitt eget blikk i speilet.</p>
-
-<p>199 dager siden jeg nådde bunnen.</p>
-
-<p>Og på bunnen har jeg vært før, og den eneste veien opp derfra er å sparke fra.</p>
-
-<div class="strong-line">Jeg er Alise.</div>
-
-<p>Jeg er et menneske som lærte tidlig at trygghet ikke er noe man kan lene seg på.</p>
-
-<p>Trygghet er noe man må lage selv. Finne selv. Bygge selv. Bære selv.</p>
-
-<p>Jeg var liten da jeg skjønte at livet kan snu på et sekund.</p>
-
-<p>At det finnes voksne som ikke klarer å være voksne.</p>
-
-<p>At det finnes netter der ingen passer på.</p>
-
-<p>Netter der stemmen til de voksne blir hardere, blikkene blir tommere, og jeg forstår at nå må jeg bli stille. Nå må jeg bli liten. Nå må jeg overleve.</p>
-
-<p>Jeg lærte å lese rom. Lese stemninger. Lese pust.</p>
-
-<p>Om en dør ble åpnet litt for fort.</p>
-
-<p>Om en flaske ble satt litt for hardt på bordet.</p>
-
-<p>Om latteren var ekte eller truende.</p>
-
-<p>Jeg lærte å ikke ta plass.</p>
-
-<p>Og jeg lærte noe annet også:</p>
-
-<p>At fantasien er et sted jeg kan gjemme meg når virkeligheten gjør for vondt.</p>
-
-<p>Så jeg ble et barn som drømte.</p>
-
-<p>Et barn som håpet.</p>
-
-<p>Et barn som leste bøker og eventyr.</p>
-
-<p>Et barn som gjorde det til en vane å lage en annen verden inni hodet mitt.</p>
-
-<p>En verden der ting alltid gikk bra.</p>
-
-<p>Der noen kom og tok meg i hånda og sa:</p>
-
-<p>“Jeg har deg nå.”</p>
-
-<p>Og det reddet meg den gangen.</p>
-
-<p>Men den strategien fulgte meg videre.</p>
-
-<p>Inn i ungdommen.</p>
-
-<p>Inn i kjærligheten.</p>
-
-<p>Inn i livet.</p>
-
-<div class="strong-line">Jeg er Alise.</div>
-
-<p>Jeg har levd i overlevelse.</p>
-
-<p>Jeg har gjort det jeg måtte for å komme meg gjennom.</p>
-
-<p>Fantasien reddet meg som barn.</p>
-
-<p>Rus hjalp meg å dempe kroppen i perioder.</p>
-
-<p>Relasjoner, uansett hvor skadelige de var, ble et sted å puste når ensomheten ble for stor.</p>
-
-<p>Men nå…</p>
-
-<p>Nå er jeg et sted der jeg ikke klarer å late som mer.</p>
-
-<p>Der fantasien forsvinner som sand mellom hendene mine.</p>
-
-<p>Jeg er ferdig med å lengte etter det som aldri kommer.</p>
-
-<p>Jeg er ferdig med å gjøre meg liten for å bli valgt.</p>
-
-<p>Jeg er ferdig med å unnskylde andre menneskers ondskap.</p>
-
-<p>Jeg er ferdig med å bygge fantasislott for å overleve.</p>
-
-<p>Jeg er ferdig med å bygge hjem i mennesker som aldri har plass til meg i det.</p>
-
-<p>For jeg har endelig forstått at det der løftet om trygghet nederst i flaska, er det farligste løftet av dem alle.</p>
-
-<p>Jeg har forstått at barnet i meg må få bli sett.</p>
-
-<p>Må få ta plass.</p>
-
-<p>På ekte.</p>
-
-<p>Ikke bli drukna.</p>
-
-<p>Ikke bli dempa.</p>
-
-<p>Ikke bli forlatt.</p>
-
-<div class="strong-line">Jeg er Alise.</div>
-
-<p>Jeg er et åpent sår nå.</p>
-
-<p>Men jeg gror.</p>
-
-<p>Og jeg, jeg velger meg selv nå.</p>
-
-<p>For første gang velger jeg meg.</p>
-
-<div class="strong-line">
-Jeg er Alise.<br>
-Jeg skal ikke drikke i dag.
+<div class="trust-item">
+<strong>Det som deles i møtet, blir i møtet</strong>
+Vi snakker ikke om de som ikke er der.
 </div>
 
 </div>
 
-<a href="/" class="back-btn">← Tilbake til Trygg Sirkel</a>
+</div>
 
+<div class="card warm-card">
+
+<h2>❤️ Gruer du deg til første møte?</h2>
+
+<p>
+Det gjorde vi også.
+</p>
+
+<p>
+Du trenger ikke gjøre dette alene.
+</p>
+
+<p>
+Send oss en melding hvis du trenger hjelp til å komme i gang.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>✉️ Kontakt oss</h2>
+
+<form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
+
+<input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<label>Navn / kallenavn</label>
+<input type="text" name="navn">
+
+<label>E-post / telefon (valgfritt)</label>
+<input type="text" name="kontakt">
+
+<label>Melding</label>
+<textarea name="melding"></textarea>
+
+<button type="submit" class="primary-btn">
+SEND MELDING
+</button>
+
+</form>
+
+</div>
+
+<div class="card">
+
+<h2>🗓️ Ukas temaer</h2>
+
+<div class="theme-list">
+
+<div class="theme-item">
+<span class="theme-day">Mandag – Grenser i praksis</span>
+Hvordan kjenne en grense i kroppen? Hvordan si nei uten forklaring?
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span>
+Behovet for closure, hvorfor vi overtenker, og hvordan gi oss selv avslutning.
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Onsdag – Å stole på seg selv igjen</span>
+Hvordan bygge opp tillit til egen dømmekraft?
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span>
+Forskjellen på intensitet og trygghet, røde flagg vs grønne flagg.
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Fredag – Å velge seg selv</span>
+Små valg i hverdagen. Hva betyr det konkret å velge seg selv?
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Lørdag – Fra selvkritikk til selvmedfølelse</span>
+Hvordan bygge en snill indre stemme?
+</div>
+
+<div class="theme-item">
+<span class="theme-day">Søndag – Et liv som støtter deg</span>
+Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg?
+</div>
+
+</div>
+
+</div>
+
+<div class="card warm-card">
+
+<h2>🟢 Vanskelig dag?</h2>
+
+<p>
+Dette er en døgnåpen møteplass hvor vi kan møtes ved behov.
+</p>
+
+<p>
+Du kommer rett inn. Ingen som må slippe deg inn.
+</p>
+
+<a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="secondary-btn">
+GÅ TIL ÅPEN MØTEPLASS
+</a>
+
+</div>
+
+<div class="card">
+
+<h2>🧱 Anonym vegg</h2>
+
+<p class="section-note">
+Her kan du dele noen ord anonymt.
+</p>
+
+<textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
+
+<button onclick="addPost()" class="post-button">
+DEL ANONYMT
+</button>
+
+<div id="postMessage" class="section-note"></div>
+
+<div id="posts"></div>
+
+</div>
+
+<div class="welcome">
+Velkommen ❤️
 </div>
 
 </main>
+
+<script>
+
+const supabaseClient = window.supabase.createClient(
+'https://nnmavsrnwiqxkegpsaub.supabase.co',
+'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
+);
+
+async function loadPosts(){
+
+const container=document.getElementById('posts');
+
+const {data}=await supabaseClient
+.from('posts')
+.select('*')
+.order('created_at',{ascending:false});
+
+container.innerHTML='';
+
+if(!data) return;
+
+data.forEach(post=>{
+
+const div=document.createElement('div');
+
+div.className='post-item';
+
+div.innerHTML=post.content +
+'<div class="post-meta">🕒 ' +
+new Date(post.created_at).toLocaleString('no-NO') +
+'</div>';
+
+container.appendChild(div);
+
+});
+
+}
+
+async function addPost(){
+
+const input=document.getElementById('postInput');
+const msg=document.getElementById('postMessage');
+
+const text=input.value.trim();
+
+if(!text){
+msg.textContent='Skriv noe først.';
+return;
+}
+
+const {error}=await supabaseClient
+.from('posts')
+.insert([{content:text}]);
+
+if(error){
+msg.textContent='Kunne ikke dele.';
+return;
+}
+
+input.value='';
+
+msg.textContent='Innlegget er delt anonymt.';
+
+loadPosts();
+
+}
+
+loadPosts();
+
+</script>
+
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
