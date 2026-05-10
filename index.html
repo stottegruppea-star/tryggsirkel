@@ -9,734 +9,769 @@
 <meta name="google-site-verification" content="Jbo1J11JzoZA3a3ypedyrggkmls2yziwsjV_mgX8DaE" />
 
 <meta name="description" content="Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet. Du trenger ikke si noe. Det holder å møte opp.">
+<meta name="keywords" content="slutte å drikke, alkoholisme, alkoholproblem, rusavhengighet, avhengighet, anonym hjelp, nettmøte rus, ettervern, rusfri, alkoholfri">
+<meta name="author" content="Trygg Sirkel">
 
+<meta property="og:title" content="Trygg Sirkel – gratis og anonymt nettmøte">
+<meta property="og:description" content="Et trygt sted å dele, lytte eller bare møte opp.">
+<meta property="og:url" content="https://www.tryggsirkel.no">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trygg Sirkel">
+<meta name="twitter:description" content="Gratis og anonymt nettmøte">
+<meta name="twitter:image" content="https://www.tryggsirkel.no/logo.png">
+
+<link rel="canonical" href="https://www.tryggsirkel.no">
 <link rel="icon" type="image/png" href="logo.png">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
 :root{
---cream:#f7efe7;
---warm:#fff7f0cc;
---card:#fffaf6d9;
---line:#e7d7c9;
---text:#34251f;
---muted:#7d6a61;
---green:#7f9361;
---green-dark:#617246;
---rose:#c98b7d;
---shadow:0 20px 40px rgba(40,20,10,.12);
+--cream:#fff5ec;
+--paper:#fffaf4;
+--soft:#f4dfcf;
+--rose:#c77b6f;
+--rose-dark:#9d5a51;
+--green:#65764d;
+--green-dark:#26371f;
+--brown:#35241f;
+--muted:#7a6258;
+--line:#ead2c1;
+--shadow:0 18px 45px rgba(70,38,26,.14);
+--radius:28px;
 }
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
-font-family:Inter,Arial,sans-serif;
-color:var(--text);
-background:url('veien-hjem.png') center center fixed;
-background-size:cover;
-position:relative;
+font-family:Inter, Arial, sans-serif;
+background:#fff5ec;
+color:var(--brown);
+line-height:1.75;
 }
 
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:rgba(255,245,236,.82);
-backdrop-filter:blur(2px);
-z-index:-1;
-}
-
-.topbar{
-position:sticky;
-top:0;
-z-index:999;
-background:rgba(255,248,242,.82);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(231,215,201,.8);
-}
+a{text-decoration:none;}
 
 .nav{
-max-width:1300px;
-margin:auto;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:10;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 24px;
-gap:20px;
+gap:28px;
+padding:24px 7%;
+background:rgba(255,246,238,.58);
+backdrop-filter:blur(8px);
 }
 
-.logo-wrap{
+.brand{
 display:flex;
 align-items:center;
-gap:16px;
-text-decoration:none;
-color:var(--text);
+gap:14px;
+background:rgba(255,250,244,.68);
+padding:10px 18px;
+border-radius:24px;
 }
 
-.logo{
-width:74px;
-height:74px;
+.brand img{
+width:78px;
+height:78px;
 object-fit:contain;
 }
 
-.logo-text{
-display:flex;
-flex-direction:column;
-}
-
-.logo-title{
-font-size:38px;
+.brand-title{
+font-size:30px;
 font-weight:900;
-letter-spacing:1px;
+letter-spacing:2px;
+color:var(--green-dark);
+line-height:1.1;
 }
 
-.logo-sub{
-font-size:13px;
-color:var(--muted);
-letter-spacing:2px;
+.brand-sub{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.5px;
+color:var(--brown);
 }
 
 .nav-links{
 display:flex;
 align-items:center;
-gap:14px;
-flex-wrap:wrap;
+gap:28px;
+font-size:14px;
+font-weight:900;
+letter-spacing:.8px;
+text-transform:uppercase;
 }
 
 .nav-links a{
-text-decoration:none;
-color:var(--text);
-font-weight:700;
-padding:12px 16px;
-border-radius:14px;
-transition:.2s;
-}
-
-.nav-links a:hover{
-background:rgba(255,255,255,.6);
+color:var(--brown);
 }
 
 .nav-btn{
-background:#d8be96;
+background:var(--green);
 color:#2a1d18!important;
-font-weight:900;
 padding:15px 24px;
 border-radius:14px;
 box-shadow:0 12px 26px rgba(38,55,31,.22);
 }
 
 .hero{
-max-width:1300px;
-margin:40px auto 28px;
-padding:0 24px;
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:28px;
+min-height:78vh;
+background:
+linear-gradient(90deg,rgba(255,246,238,.92) 0%,rgba(255,246,238,.70) 38%,rgba(255,246,238,.10) 100%),
+url('veien-hjem.png');
+background-size:cover;
+background-position:center;
+display:flex;
 align-items:center;
+padding:150px 8% 90px;
 }
 
-.hero-card{
-background:var(--warm);
-border:1px solid rgba(255,255,255,.55);
-backdrop-filter:blur(10px);
-border-radius:34px;
-padding:56px;
-box-shadow:var(--shadow);
+.hero-content{
+max-width:660px;
 }
 
 .hero h1{
-font-size:82px;
-line-height:1;
-margin:0 0 16px;
-font-family:Georgia,serif;
+font-family:Georgia, serif;
+font-size:76px;
+line-height:1.05;
+margin:0;
+color:var(--green-dark);
 }
 
-.hero-script{
-font-size:52px;
-color:var(--rose);
+.script{
 font-family:cursive;
+font-size:48px;
+color:var(--rose-dark);
 line-height:1.1;
-margin-bottom:28px;
+margin:8px 0 26px;
 }
 
-.hero-text{
-font-size:24px;
-line-height:1.8;
-max-width:760px;
+.hero p{
+font-size:21px;
+font-weight:600;
+max-width:570px;
 }
 
 .hero-buttons{
 display:flex;
 gap:18px;
-margin-top:34px;
 flex-wrap:wrap;
+margin-top:30px;
 }
 
-.primary-btn,
-.secondary-btn{
-text-decoration:none;
-font-weight:900;
-border-radius:18px;
-padding:18px 28px;
+.btn{
 display:inline-flex;
 align-items:center;
 justify-content:center;
-transition:.2s;
+border-radius:15px;
+padding:17px 28px;
+font-size:16px;
+font-weight:900;
+letter-spacing:.4px;
 }
 
-.primary-btn{
-background:var(--rose);
+.btn-primary{
+background:linear-gradient(180deg,#d99182,#c47468);
 color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
 }
 
-.secondary-btn{
-background:rgba(255,255,255,.6);
+.btn-outline{
+color:var(--brown);
+border:1.5px solid rgba(53,36,31,.35);
+background:rgba(255,250,244,.52);
+backdrop-filter:blur(5px);
+}
+
+.icon-strip{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+background:#f2dfcf;
+border-top:1px solid rgba(53,36,31,.08);
+border-bottom:1px solid rgba(53,36,31,.08);
+}
+
+.icon-box{
+text-align:center;
+padding:34px 22px;
+border-right:1px solid rgba(53,36,31,.10);
+}
+
+.icon-box:last-child{border-right:none;}
+
+.icon{
+font-size:44px;
+margin-bottom:8px;
+}
+
+.icon-box h3{
+margin:0 0 8px;
+font-size:18px;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+
+.icon-box p{
+margin:0;
+font-size:15px;
+line-height:1.45;
+}
+
+.icon-script{
+font-family:cursive;
+font-size:36px;
+color:var(--rose-dark);
+line-height:1.25;
+}
+
+.main{
+max-width:1380px;
+margin:auto;
+padding:36px 5% 70px;
+}
+
+.grid-top{
+display:grid;
+grid-template-columns:1.25fr 1fr;
+gap:26px;
+margin-bottom:26px;
+}
+
+.panel{
+background:rgba(255,250,244,.92);
 border:1px solid var(--line);
-color:var(--text);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+overflow:hidden;
 }
 
-.hero-image{
-min-height:700px;
-border-radius:34px;
-background:
-linear-gradient(rgba(255,244,235,.12),rgba(255,244,235,.12)),
-url('veien-hjem.png');
+.meeting-panel{
+display:grid;
+grid-template-columns:1fr 1.05fr;
+}
+
+.panel-img{
+min-height:360px;
 background-size:cover;
 background-position:center;
-box-shadow:var(--shadow);
 }
 
-.container{
-max-width:1300px;
-margin:auto;
-padding:0 24px 80px;
+.panel-content{
+padding:38px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:22px;
-margin-bottom:30px;
-}
-
-.small-card{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:28px;
-padding:30px;
-backdrop-filter:blur(10px);
-box-shadow:var(--shadow);
-text-align:center;
-}
-
-.small-card h3{
-margin:18px 0 10px;
-font-size:24px;
-}
-
-.section-grid{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:28px;
-margin-bottom:28px;
-}
-
-.big-card{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:34px;
-overflow:hidden;
-backdrop-filter:blur(10px);
-box-shadow:var(--shadow);
-}
-
-.big-image{
-height:330px;
-background:url('veien-hjem.png') center/cover;
-}
-
-.big-content{
-padding:36px;
-}
-
-.big-content h2{
-font-size:52px;
-margin:0 0 14px;
-font-family:Georgia,serif;
-}
-
-.big-content p{
-font-size:22px;
-line-height:1.8;
-}
-
-.blog-preview{
-display:flex;
-gap:24px;
-align-items:center;
-padding:30px;
-}
-
-.blog-preview img{
-width:250px;
-border-radius:24px;
-}
-
-.blog-preview h2{
-font-size:42px;
-margin-top:0;
-font-family:Georgia,serif;
-}
-
-.card{
-background:var(--card);
-border:1px solid var(--line);
-border-radius:32px;
-padding:36px;
-margin-bottom:28px;
-backdrop-filter:blur(10px);
-box-shadow:var(--shadow);
-}
-
-.card h2{
-font-size:48px;
-margin-top:0;
-font-family:Georgia,serif;
-}
-
-.theme-item,
-.trust-item,
-.post-item{
-background:rgba(255,255,255,.65);
-border:1px solid var(--line);
-border-radius:18px;
-padding:20px;
-margin-bottom:14px;
-}
-
-.theme-day{
-display:block;
+.tag{
+font-size:14px;
 font-weight:900;
-margin-bottom:8px;
-font-size:22px;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:var(--rose-dark);
+margin-bottom:10px;
+}
+
+h2{
+font-family:Georgia, serif;
+font-size:42px;
+line-height:1.15;
+margin:0 0 18px;
 color:var(--green-dark);
 }
 
+.panel p{
+font-size:18px;
+margin-top:0;
+}
+
+.big-btn{
+display:inline-flex;
+margin-top:16px;
+background:var(--green);
+color:white;
+padding:15px 24px;
+border-radius:14px;
+font-weight:900;
+border:none;
+cursor:pointer;
+}
+
+.blog-panel{
+display:grid;
+grid-template-columns:260px 1fr;
+gap:24px;
+padding:26px;
+align-items:center;
+}
+
+.blog-panel img{
+width:100%;
+height:260px;
+border-radius:20px;
+object-fit:cover;
+}
+
+.blog-panel h2{
+font-size:32px;
+}
+
+.card{
+background:rgba(255,250,244,.94);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:34px;
+margin-bottom:26px;
+}
+
+.quote{
+text-align:center;
+font-family:Georgia, serif;
+font-size:34px;
+font-weight:900;
+line-height:1.45;
+color:var(--green-dark);
+}
+
+.story{
+font-size:18px;
+line-height:1.9;
+}
+
+.emphasis{
+font-size:24px;
+font-weight:900;
+color:var(--rose-dark);
+text-align:center;
+margin-top:26px;
+line-height:1.5;
+}
+
+.two-col{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:26px;
+}
+
+.trust-list,
+.theme-list{
+display:grid;
+gap:14px;
+}
+
+.trust-item,
+.theme-item{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:20px;
+padding:18px;
+}
+
+.trust-item strong,
+.theme-day{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
+}
+
+.theme-text{
+margin:0;
+font-size:16px;
+}
+
+.section-note{
+color:var(--muted);
+font-size:16px;
+}
+
+.contact-form label{
+display:block;
+font-weight:900;
+margin:14px 0 6px;
+}
+
 .contact-form input,
-.contact-form textarea,
+.contact-form textarea{
+width:100%;
+border:1px solid var(--line);
+border-radius:18px;
+padding:15px;
+font-size:16px;
+font-family:inherit;
+background:white;
+}
+
+.contact-form textarea{
+min-height:130px;
+resize:vertical;
+}
+
 .post-input{
 width:100%;
-padding:18px;
-border-radius:18px;
+min-height:130px;
 border:1px solid var(--line);
-background:rgba(255,255,255,.7);
-font-size:18px;
-margin-bottom:14px;
+border-radius:18px;
+padding:15px;
+font-size:16px;
 font-family:inherit;
+resize:vertical;
+background:white;
 }
 
 .post-button{
 width:100%;
-border:none;
-border-radius:22px;
-padding:22px;
 background:var(--green);
 color:white;
-font-size:34px;
+border:none;
+border-radius:20px;
+padding:18px;
+font-size:22px;
 font-weight:900;
 cursor:pointer;
+margin-top:14px;
 }
 
 .post-item{
+background:rgba(255,255,255,.65);
+border:1px solid var(--line);
+border-radius:18px;
+padding:16px;
+margin-bottom:12px;
 white-space:pre-wrap;
-overflow-wrap:break-word;
-word-break:normal;
-font-size:21px;
-line-height:1.8;
+word-break:break-word;
 }
 
 .post-meta{
-margin-top:14px;
-font-size:14px;
+margin-top:8px;
+font-size:13px;
 color:var(--muted);
 }
 
 .welcome{
 text-align:center;
-font-size:42px;
+font-family:Georgia, serif;
+font-size:36px;
 font-weight:900;
-padding:40px 0 20px;
+color:var(--rose-dark);
+margin-top:20px;
 }
 
-@media(max-width:1100px){
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
+}
+
+.nav-links{
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+}
 
 .hero{
+min-height:auto;
+padding:80px 24px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.script{
+font-size:36px;
+}
+
+.icon-strip{
+grid-template-columns:1fr 1fr;
+}
+
+.grid-top,
+.two-col,
+.meeting-panel{
 grid-template-columns:1fr;
 }
 
-.hero-image{
-min-height:420px;
-}
-
-.grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.section-grid{
+.blog-panel{
 grid-template-columns:1fr;
 }
 
+.blog-panel img{
+height:320px;
+}
 }
 
-@media(max-width:700px){
-
-.nav{
-flex-direction:column;
-align-items:stretch;
-padding:14px;
-}
-
-.logo-wrap{
+@media(max-width:650px){
+.brand{
+width:100%;
 justify-content:center;
 }
 
-.logo{
+.brand img{
 width:58px;
 height:58px;
 }
 
-.logo-title{
-font-size:28px;
-text-align:center;
+.brand-title{
+font-size:21px;
 }
 
-.logo-sub{
+.brand-sub{
 font-size:10px;
-text-align:center;
 }
 
 .nav-links{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
 width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+font-size:13px;
 }
 
 .nav-links a{
-display:flex;
-align-items:center;
-justify-content:center;
+background:rgba(255,250,244,.75);
+padding:10px 8px;
+border-radius:12px;
 text-align:center;
-font-size:14px;
-padding:12px 10px;
-min-height:44px;
-background:rgba(255,255,255,.45);
+white-space:nowrap;
 }
 
 .nav-btn{
 grid-column:1 / -1;
-padding:14px;
-font-size:18px;
-border-radius:16px;
-background:#d8be96;
-color:#2a1d18!important;
-font-weight:900;
-}
-
-.hero{
-margin-top:20px;
-padding:0 14px;
-}
-
-.hero-card{
-padding:30px 22px;
 }
 
 .hero h1{
-font-size:54px;
-line-height:1.05;
+font-size:42px;
 }
 
-.hero-script{
-font-size:34px;
-}
-
-.hero-text{
-font-size:19px;
-line-height:1.7;
-}
-
-.hero-image{
-min-height:260px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.primary-btn,
-.secondary-btn{
-width:100%;
-font-size:18px;
-padding:16px;
-}
-
-.grid{
-grid-template-columns:1fr;
-padding:0 4px;
-}
-
-.small-card{
-padding:24px;
-}
-
-.big-content{
-padding:24px;
-}
-
-.big-content h2,
-.blog-preview h2,
-.card h2{
-font-size:36px;
-line-height:1.15;
-}
-
-.big-content p,
-.card p{
-font-size:18px;
-line-height:1.75;
-}
-
-.blog-preview{
-flex-direction:column;
-padding:22px;
-}
-
-.blog-preview img{
-width:100%;
-}
-
-.container{
-padding:0 14px 60px;
-}
-
-.card{
-padding:24px 18px;
-}
-
-.post-button{
-font-size:28px;
-padding:20px;
-}
-
-.post-item{
-font-size:17px;
-line-height:1.65;
-padding:22px;
-overflow-wrap:break-word;
-word-break:normal;
-white-space:pre-wrap;
-}
-
-.post-meta{
-font-size:13px;
-margin-top:14px;
-}
-
-.welcome{
+.script{
 font-size:30px;
 }
 
+.hero p{
+font-size:18px;
 }
 
+.icon-strip{
+grid-template-columns:1fr;
+}
+
+.card,
+.panel-content{
+padding:24px 18px;
+}
+
+h2{
+font-size:30px;
+}
+
+.quote{
+font-size:25px;
+}
+}
 </style>
 </head>
 
-<body>
-
-<header class="topbar">
+<body id="top">
 
 <nav class="nav">
-
-<a href="#" class="logo-wrap">
-
-<img src="logo.png" class="logo" alt="Trygg Sirkel">
-
-<div class="logo-text">
-<div class="logo-title">TRYGG SIRKEL</div>
-<div class="logo-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
+<div class="brand">
+<img src="logo.png" alt="Trygg Sirkel logo">
+<div>
+<div class="brand-title">TRYGG SIRKEL</div>
+<div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
 </div>
-
-</a>
+</div>
 
 <div class="nav-links">
-<a href="#">HJEM</a>
-<a href="#temaer">MØTETEMAER</a>
-<a href="/blogg/Herr-percy-og-alise-i-edruland.html">BLOGG</a>
-<a href="#kontakt">KONTAKT</a>
-
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">
-BLI MED ❤️
-</a>
+<a href="#top">Hjem</a>
+<a href="#mote">Kveldsmøte</a>
+<a href="/blogg/Herr-percy-og-alise-i-edruland.html">Blogg</a>
+<a href="#temaer">Ukas temaer</a>
+<a href="#apen">Åpen møteplass</a>
+<a href="#kontakt">Kontakt</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">Bli med ❤️</a>
 </div>
-
 </nav>
 
-</header>
-
 <section class="hero">
-
-<div class="hero-card">
-
+<div class="hero-content">
 <h1>Du er ikke alene.</h1>
+<div class="script">Det finnes hjelp. Det finnes håp. ♡</div>
 
-<div class="hero-script">
-Det finnes hjelp. Det finnes håp. ❤️
-</div>
-
-<div class="hero-text">
-Trygg Sirkel er et gratis og anonymt fellesskap for deg som strever med alkohol, rus eller annen avhengighet. Her møter du forståelse, respekt og mennesker som vet hvordan det føles.
-</div>
+<p>
+Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet.
+</p>
 
 <div class="hero-buttons">
-
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="primary-btn">
-BLI MED PÅ MØTE
-</a>
-
-<a href="#kontakt" class="secondary-btn">
-KONTAKT OSS
-</a>
-
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="btn btn-primary">BLI MED I MØTET 🤍</a>
+<a href="#kontakt" class="btn btn-outline">KONTAKT OSS 🌿</a>
 </div>
-
 </div>
-
-<div class="hero-image"></div>
-
 </section>
 
-<main class="container">
-
-<div class="grid">
-
-<div class="small-card">
-<h3>🤝 Fellesskap</h3>
-<p>Du trenger ikke gjøre dette alene.</p>
+<section class="icon-strip">
+<div class="icon-box">
+<div class="icon">🤍</div>
+<h3>Fellesskap</h3>
+<p>Du trenger ikke gjøre dette alene. Sammen er vi sterkere.</p>
 </div>
 
-<div class="small-card">
-<h3>❤️ Forståelse</h3>
-<p>Ingen skam. Ingen pekefinger.</p>
+<div class="icon-box">
+<div class="icon">❤️</div>
+<h3>Forståelse</h3>
+<p>Bli møtt med respekt, forståelse og erfaring.</p>
 </div>
 
-<div class="small-card">
-<h3>🌱 Veiviser</h3>
+<div class="icon-box">
+<div class="icon">🌿</div>
+<h3>Veiviser</h3>
 <p>Et sted å lande når livet gjør vondt.</p>
 </div>
 
-<div class="small-card">
-<h3>🏡 Trygge møteplasser</h3>
-<p>Et varmt rom på nett – hver kveld.</p>
+<div class="icon-box">
+<div class="icon">🏡</div>
+<h3>Trygge møteplasser</h3>
+<p>Anonyme og gratis møteplasser.</p>
 </div>
 
+<div class="icon-box">
+<div class="icon-script">Du fortjener<br>et godt liv ♡</div>
 </div>
+</section>
 
-<div class="section-grid">
+<main class="main">
 
-<div class="big-card">
-
-<div class="big-image"></div>
-
-<div class="big-content">
-
+<div class="grid-top" id="mote">
+<div class="panel meeting-panel">
+<div class="panel-img" style="background-image:url('veien-hjem.png')"></div>
+<div class="panel-content">
+<div class="tag">Hver kveld kl. 20:00 🤍</div>
 <h2>Møt oss på kveldsmøte</h2>
-
-<p>
-Hver kveld kl. 20:00 har vi åpne møter på nett.
-Du trenger ikke si noe.
-Du trenger bare å møte opp.
-</p>
-
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="primary-btn">
-TIL MØTET
-</a>
-
+<p>Samme tid. Samme sted. Et sted du kan komme tilbake til.</p>
+<p>Du trenger ikke si noe. Det holder å være der.</p>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">BLI MED I MØTET</a>
+</div>
 </div>
 
-</div>
-
-<div class="big-card">
-
-<div class="blog-preview">
-
-<img src="i-morgen.png">
-
+<div class="panel blog-panel">
+<img src="kaffe-bok.png" alt="Herr Percy og Alise i Edruland">
 <div>
-
+<div class="tag">Siste fra bloggen 🤍</div>
 <h2>Herr Percy og Alise i Edruland</h2>
-
-<p>
-En blogg om edring, om reisen til trygghet – fra innsiden og ut.
-</p>
-
-<a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="secondary-btn">
-LES BLOGGEN
-</a>
-
+<p>En blogg om edring, om reisen til trygghet – fra innsiden og ut.</p>
+<a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="big-btn">LES BLOGGEN</a>
 </div>
-
 </div>
-
-</div>
-
-</div>
-
-<div class="card" id="temaer">
-
-<h2>🗓️ Ukas temaer</h2>
-
-<div class="theme-item">
-<span class="theme-day">Mandag – Grenser i praksis</span>
-Hvordan kjenne en grense i kroppen?
-</div>
-
-<div class="theme-item">
-<span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span>
-Hvordan gi oss selv avslutning?
-</div>
-
-<div class="theme-item">
-<span class="theme-day">Onsdag – Å stole på seg selv igjen</span>
-Hvordan bygge tillit til egen dømmekraft?
-</div>
-
-<div class="theme-item">
-<span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span>
-Forskjellen på intensitet og trygghet.
-</div>
-
-<div class="theme-item">
-<span class="theme-day">Fredag – Å velge seg selv</span>
-Små valg i hverdagen.
-</div>
-
 </div>
 
 <div class="card">
+<p class="quote">
+Her møter du ikke skam.<br>
+Ingen pekefinger.<br>
+Bare mennesker som oppriktig ønsker et liv uten rus.
+</p>
+</div>
 
+<div class="card">
+<h2>Et trygt sted å lande</h2>
+
+<div class="story">
+<p>Møtene varierer fra dag til dag. Hver dag har vi et nytt tema, men du trenger ikke si noe, og du trenger ikke forholde deg til temaet.</p>
+<p>Kjernen i det vi gjør er enkel: Vi gjør hverandre sterkere – bare ved å være her sammen.</p>
+<p>Noen dager er vi ti–tolv. Andre dager er vi fire–fem. Det viktigste er ikke hvor mange vi er. Det viktigste er at vi ikke er alene.</p>
+<p>Det skjer noe når vi samles. Et trygt rom. En trygg sirkel.</p>
+<p>Vi lytter til hverandre. Deler når vi vil. Og det som blir sagt – blir her.</p>
+<p>For mange av oss føltes det som å komme hjem første gang.</p>
+<p>For ingenting er så ensomt som aktiv rus. Men lite er så befriende som å oppdage at vi ikke er alene.</p>
+</div>
+
+<p class="emphasis">
+Vi er ikke unike i det vi står i.<br>
+Vi er mennesker – med en avhengighet.
+</p>
+</div>
+
+<div class="card">
+<h2>🔒 For alles trygghet</h2>
+
+<div class="trust-list">
+<div class="trust-item"><strong>Kamera er på under møtet</strong>Det handler om trygghet – å se hvem vi er sammen med.</div>
+<div class="trust-item"><strong>Du trenger ikke bruke fullt navn</strong>Du trenger ikke bruke ditt ekte navn i det hele tatt.</div>
+<div class="trust-item"><strong>Mikrofonen er av</strong>Du slår den på hvis du vil dele.</div>
+<div class="trust-item"><strong>Du kan også bare sitte stille</strong>Det er helt lov.</div>
+<div class="trust-item"><strong>Vi kommenterer ikke hverandres delinger</strong>Ingen råd. Ingen meninger. Ingen vurderinger.</div>
+<div class="trust-item"><strong>Det som deles i møtet, blir i møtet</strong>Vi snakker ikke om de som ikke er der.</div>
+</div>
+</div>
+
+<div class="two-col">
+<div class="card">
+<h2>❤️ Gruer du deg til første møte?</h2>
+<p>Det gjorde vi også.</p>
+<p>Du trenger ikke gjøre dette alene.</p>
+<p>Send oss en melding hvis du trenger hjelp til å komme i gang.</p>
+</div>
+
+<div class="card" id="apen">
+<h2>🟢 Vanskelig dag?</h2>
+<p>Dette er en døgnåpen møteplass hvor vi kan møtes ved behov.</p>
+<a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="big-btn">GÅ TIL ÅPEN MØTEPLASS</a>
+</div>
+</div>
+
+<div class="card" id="temaer">
+<h2>🗓️ Ukas temaer</h2>
+
+<div class="theme-list">
+<div class="theme-item"><span class="theme-day">Mandag – Grenser i praksis</span><p class="theme-text">Hvordan kjenne en grense i kroppen? Hvordan si nei uten forklaring? Når tviler man på egne grenser?</p></div>
+<div class="theme-item"><span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span><p class="theme-text">Behovet for closure, hvorfor vi overtenker, og hvordan gi oss selv avslutning.</p></div>
+<div class="theme-item"><span class="theme-day">Onsdag – Å stole på seg selv igjen</span><p class="theme-text">Hvordan bygge opp tillit til egen dømmekraft?</p></div>
+<div class="theme-item"><span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span><p class="theme-text">Forskjellen på intensitet og trygghet, røde flagg vs grønne flagg, og hvordan det skal føles i kroppen.</p></div>
+<div class="theme-item"><span class="theme-day">Fredag – Å velge seg selv, hver dag</span><p class="theme-text">Små valg i hverdagen. Hva betyr det konkret å velge seg selv?</p></div>
+<div class="theme-item"><span class="theme-day">Lørdag – Fra selvkritikk til selvmedfølelse</span><p class="theme-text">Hvordan snakker vi til oss selv? Hvordan bygge en snill indre stemme?</p></div>
+<div class="theme-item"><span class="theme-day">Søndag – Et liv som støtter deg</span><p class="theme-text">Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg? Skam vs ansvar. Hvor bevisst er du din indre dialog?</p></div>
+</div>
+</div>
+
+<div class="card" id="kontakt">
+<h2>✉️ Kontakt oss</h2>
+
+<form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+
+<label>Navn / kallenavn</label>
+<input type="text" name="navn">
+
+<label>E-post / telefon (valgfritt)</label>
+<input type="text" name="kontakt">
+
+<label>Melding</label>
+<textarea name="melding"></textarea>
+
+<button type="submit" class="post-button">SEND MELDING</button>
+</form>
+</div>
+
+<div class="card">
 <h2>🧱 Anonym vegg</h2>
 
-<p>Her kan du dele noen ord anonymt.</p>
+<p class="section-note">
+Her kan du dele noen ord anonymt.
+</p>
 
 <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
 
@@ -744,32 +779,8 @@ Små valg i hverdagen.
 DEL ANONYMT
 </button>
 
-<div id="postMessage"></div>
-
+<div id="postMessage" class="section-note"></div>
 <div id="posts"></div>
-
-</div>
-
-<div class="card" id="kontakt">
-
-<h2>✉️ Kontakt oss</h2>
-
-<form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
-
-<input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
-
-<input type="text" name="navn" placeholder="Navn / kallenavn">
-
-<input type="text" name="kontakt" placeholder="E-post / telefon">
-
-<textarea name="melding" placeholder="Melding"></textarea>
-
-<button type="submit" class="primary-btn">
-SEND MELDING
-</button>
-
-</form>
-
 </div>
 
 <div class="welcome">
@@ -779,14 +790,12 @@ Velkommen ❤️
 </main>
 
 <script>
-
 const supabaseClient = window.supabase.createClient(
 'https://nnmavsrnwiqxkegpsaub.supabase.co',
 'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
 );
 
 async function loadPosts(){
-
 const container=document.getElementById('posts');
 
 const {data}=await supabaseClient
@@ -799,7 +808,6 @@ container.innerHTML='';
 if(!data) return;
 
 data.forEach(post=>{
-
 const div=document.createElement('div');
 
 div.className='post-item';
@@ -810,13 +818,10 @@ new Date(post.created_at).toLocaleString('no-NO') +
 '</div>';
 
 container.appendChild(div);
-
 });
-
 }
 
 async function addPost(){
-
 const input=document.getElementById('postInput');
 const msg=document.getElementById('postMessage');
 
@@ -837,15 +842,11 @@ return;
 }
 
 input.value='';
-
 msg.textContent='Innlegget er delt anonymt.';
-
 loadPosts();
-
 }
 
 loadPosts();
-
 </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
