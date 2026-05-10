@@ -20,114 +20,98 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Trygg Sirkel">
-<meta name="twitter:description" content="Gratis og anonymt nettmøte">
-<meta name="twitter:image" content="https://www.tryggsirkel.no/logo.png">
-
 <link rel="canonical" href="https://www.tryggsirkel.no">
 <link rel="icon" type="image/png" href="logo.png">
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
 :root{
 --card:#ffffff;
 --ink:#1f2f2d;
 --muted:#60716d;
 --green:#2f8f5b;
 --green-dark:#226c44;
---soft2:#f8fbf9;
+--soft:#f8fbf9;
 --border:#dce9e1;
 --shadow:0 18px 45px rgba(31,47,45,.10);
---radius:26px;
+--radius:28px;
 }
 
-*{
-box-sizing:border-box;
-}
+*{box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
 font-family:Inter, Arial, sans-serif;
-background:linear-gradient(180deg,#f8fbf9 0%,#edf4ef 100%);
+background:linear-gradient(180deg,#f7faf8 0%,#edf4ef 100%);
 color:var(--ink);
-line-height:1.75;
+line-height:1.8;
 }
 
-.hero{
-background:
-linear-gradient(rgba(23,49,45,.68),rgba(23,49,45,.84)),
-url('header.png');
-background-size:cover;
-background-position:center;
-color:white;
-padding:54px 18px 60px;
-text-align:center;
-}
-
-.hero-inner{
-max-width:880px;
-margin:auto;
-}
-
-.logo{
-width:330px;
-max-width:88vw;
-margin:0 auto 28px;
+.hero-banner{
+width:100%;
 display:block;
-filter:drop-shadow(0 12px 24px rgba(0,0,0,.28));
-border-radius:24px;
-}
-
-.hero-main{
-font-size:32px;
-font-weight:900;
-line-height:1.35;
-max-width:820px;
-margin:0 auto 24px;
-}
-
-.hero-sub{
-font-size:20px;
-font-weight:700;
-max-width:760px;
-margin:0 auto;
-color:rgba(255,255,255,.95);
 }
 
 .container{
-max-width:940px;
+max-width:950px;
 margin:auto;
-padding:30px 16px 60px;
+padding:26px 16px 70px;
 }
 
 .card{
 background:var(--card);
 border:1px solid var(--border);
 border-radius:var(--radius);
-box-shadow:var(--shadow);
-padding:32px;
+padding:34px;
 margin-bottom:24px;
+box-shadow:var(--shadow);
 }
 
-.center{
+.quote-card{
 text-align:center;
+background:linear-gradient(180deg,#ffffff,#f7fbf8);
 }
 
-h2{
-margin:0 0 16px;
-font-size:28px;
+.quote{
+font-size:30px;
+font-weight:900;
+line-height:1.5;
+color:var(--green-dark);
+margin:0;
+}
+
+.hero-text{text-align:center;}
+
+.hero-title{
+font-size:34px;
+font-weight:900;
+line-height:1.35;
+margin-bottom:18px;
+color:var(--green-dark);
+}
+
+.hero-sub{
+font-size:20px;
 color:var(--ink);
+max-width:760px;
+margin:auto;
 }
 
-p{
-margin-top:0;
+.story{
+font-size:18px;
+line-height:2;
+}
+
+.emphasis{
+font-size:25px;
+font-weight:900;
+line-height:1.6;
+text-align:center;
+margin-top:30px;
+color:var(--green-dark);
 }
 
 .primary-btn{
@@ -137,12 +121,12 @@ background:linear-gradient(180deg,#3fb870,#2f8f5b);
 color:white;
 text-align:center;
 text-decoration:none;
-font-size:30px;
+font-size:31px;
 font-weight:900;
-padding:26px 18px;
+padding:28px 20px;
 border-radius:24px;
-box-shadow:0 12px 30px rgba(47,143,91,.35);
-margin:24px 0 12px;
+margin-top:22px;
+box-shadow:0 14px 30px rgba(47,143,91,.30);
 border:none;
 cursor:pointer;
 }
@@ -150,7 +134,8 @@ cursor:pointer;
 .secondary-btn{
 display:block;
 width:100%;
-background:#f2fff6;
+background:#f1fff6;
+border:2px solid #9fd8b3;
 color:var(--green-dark);
 text-align:center;
 text-decoration:none;
@@ -158,49 +143,29 @@ font-size:24px;
 font-weight:900;
 padding:22px 18px;
 border-radius:22px;
-border:2px solid #8fd3aa;
-margin:20px 0 0;
-box-shadow:0 12px 24px rgba(47,143,91,.16);
+margin-top:20px;
 }
 
 .highlight{
-background:linear-gradient(180deg,#f3faf5,#eaf5ee);
-border:2px solid #cce4d4;
+background:linear-gradient(180deg,#f3faf5,#e9f4ed);
+border:2px solid #cde4d4;
 }
 
 .warm-card{
-background:linear-gradient(180deg,#fffaf2,#fff4e4);
+background:linear-gradient(180deg,#fffaf2,#fff3e1);
 border:2px solid #f0d8ad;
 }
 
-.quote-card{
-text-align:center;
-}
-
-.quote{
-font-size:28px;
-font-weight:900;
-line-height:1.45;
-color:var(--green-dark);
-}
-
-.story{
-font-size:18px;
-line-height:1.9;
-}
-
-.emphasis{
-font-size:24px;
-font-weight:900;
-color:var(--green-dark);
-text-align:center;
-margin-top:26px;
-line-height:1.5;
-}
-
 .section-note{
-color:var(--muted);
 font-size:16px;
+color:var(--muted);
+}
+
+h2{
+margin-top:0;
+margin-bottom:18px;
+font-size:30px;
+color:var(--ink);
 }
 
 .trust-list{
@@ -209,18 +174,17 @@ gap:14px;
 }
 
 .trust-item{
-background:var(--soft2);
+background:var(--soft);
 border:1px solid var(--border);
 border-radius:20px;
 padding:18px;
-font-size:17px;
 }
 
 .trust-item strong{
 display:block;
+margin-bottom:6px;
 font-size:18px;
 color:var(--green-dark);
-margin-bottom:4px;
 }
 
 .theme-list{
@@ -229,7 +193,7 @@ gap:14px;
 }
 
 .theme-item{
-background:var(--soft2);
+background:var(--soft);
 border:1px solid var(--border);
 border-radius:20px;
 padding:18px;
@@ -239,13 +203,8 @@ padding:18px;
 display:block;
 font-size:18px;
 font-weight:900;
+margin-bottom:8px;
 color:var(--green-dark);
-margin-bottom:6px;
-}
-
-.theme-text{
-margin:0;
-font-size:16px;
 }
 
 .contact-form label{
@@ -290,12 +249,12 @@ border-radius:20px;
 padding:18px;
 font-size:22px;
 font-weight:900;
-cursor:pointer;
 margin-top:14px;
+cursor:pointer;
 }
 
 .post-item{
-background:var(--soft2);
+background:var(--soft);
 border:1px solid var(--border);
 border-radius:18px;
 padding:16px;
@@ -312,69 +271,41 @@ color:var(--muted);
 
 .welcome{
 text-align:center;
-font-size:30px;
+font-size:32px;
 font-weight:900;
 color:var(--green-dark);
-margin-top:16px;
+margin-top:10px;
 }
 
 @media(max-width:700px){
-
-.hero{
-padding:42px 16px 46px;
+.card{padding:26px 20px;}
+.quote{font-size:25px;}
+.hero-title{font-size:28px;}
+.hero-sub{font-size:18px;}
+.primary-btn{font-size:24px;padding:24px 16px;}
+.secondary-btn{font-size:21px;}
+h2{font-size:25px;}
+.emphasis{font-size:22px;}
 }
-
-.logo{
-width:255px;
-}
-
-.hero-main{
-font-size:25px;
-}
-
-.hero-sub{
-font-size:18px;
-}
-
-.card{
-padding:25px 18px;
-}
-
-.primary-btn{
-font-size:24px;
-padding:22px 14px;
-}
-
-.secondary-btn{
-font-size:21px;
-}
-
-h2{
-font-size:24px;
-}
-
-.quote{
-font-size:24px;
-}
-
-.emphasis{
-font-size:21px;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<img src="header.png" class="hero-banner" alt="Trygg Sirkel banner">
 
-<div class="hero-inner">
+<main class="container">
 
-<img src="logo.png" class="logo" alt="Trygg Sirkel logo">
+<div class="card quote-card">
+<p class="quote">
+Her møter du ikke skam.<br>
+Ingen pekefinger.<br>
+Bare mennesker som oppriktig ønsker et liv uten rus.
+</p>
+</div>
 
-<div class="hero-main">
+<div class="card hero-text">
+<div class="hero-title">
 Du trenger ikke si noe.<br>
 Du trenger bare møte opp.
 </div>
@@ -382,27 +313,9 @@ Du trenger bare møte opp.
 <p class="hero-sub">
 Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avhengighet.
 </p>
-
-</div>
-
-</section>
-
-<main class="container">
-
-<div class="card quote-card">
-
-<p class="quote">
-Her møter du ikke skam.<br>
-Ingen pekefinger.<br>
-Bare mennesker som oppriktig ønsker et liv uten rus.
-</p>
-
 </div>
 
 <div class="card">
-
-<h2>Et trygt sted å lande</h2>
-
 <div class="story">
 
 <p>
@@ -426,7 +339,11 @@ Vi lytter til hverandre. Deler når vi vil. Og det som blir sagt – blir her.
 </p>
 
 <p>
-For mange av oss føltes det som å komme hjem første gang.
+For mange av oss føltes det som å komme hjem første gang. Å høre andre sette ord på det vi selv har båret på.
+</p>
+
+<p>
+Hvordan rus kan ta plass i hverdagen. I relasjoner. I økonomien. I selvrespekten. I livet.
 </p>
 
 <p>
@@ -439,11 +356,9 @@ For ingenting er så ensomt som aktiv rus. Men lite er så befriende som å oppd
 Vi er ikke unike i det vi står i.<br>
 Vi er mennesker – med en avhengighet.
 </p>
-
 </div>
 
-<div class="card center highlight">
-
+<div class="card highlight">
 <h2>🕗 Hver kveld kl. 20:00</h2>
 
 <p class="section-note">
@@ -457,25 +372,21 @@ BLI MED I MØTET
 <p class="section-note">
 Du trenger ikke si noe. Det holder å være der.
 </p>
-
 </div>
 
 <div class="card warm-card">
-
-<h2>✍️ Alise i Edruland</h2>
+<h2>✍️ Herr Percy og Alise i Edruland</h2>
 
 <p>
-En blogg fra Trygg Sirkel om edring, om reisen til trygghet - fra innsiden og ut.
+En blogg om edring, om reisen til trygghet – fra innsiden og ut.
 </p>
 
 <a href="/blogg/alise-i-edruland.html" class="secondary-btn">
-LES ALISE I EDRULAND
+LES HERR PERCY OG ALISE I EDRULAND
 </a>
-
 </div>
 
 <div class="card">
-
 <h2>🔒 For alles trygghet</h2>
 
 <div class="trust-list">
@@ -501,8 +412,18 @@ Det er helt lov.
 </div>
 
 <div class="trust-item">
+<strong>Noen møter er stille</strong>
+Likevel kan det være godt med en time sammen med mennesker som forstår.
+</div>
+
+<div class="trust-item">
 <strong>Vi kommenterer ikke hverandres delinger</strong>
 Ingen råd. Ingen meninger. Ingen vurderinger.
+</div>
+
+<div class="trust-item">
+<strong>Etter møtet åpnes rommet</strong>
+De som vil kan bli igjen og snakke fritt.
 </div>
 
 <div class="trust-item">
@@ -511,11 +432,9 @@ Vi snakker ikke om de som ikke er der.
 </div>
 
 </div>
-
 </div>
 
 <div class="card warm-card">
-
 <h2>❤️ Gruer du deg til første møte?</h2>
 
 <p>
@@ -523,21 +442,22 @@ Det gjorde vi også.
 </p>
 
 <p>
-Du trenger ikke gjøre dette alene.
+Du trenger ikke gjøre dette alene. Og du trenger ikke gå inn i det med uro.
 </p>
 
 <p>
-Send oss en melding hvis du trenger hjelp til å komme i gang.
+Send oss en melding. Vi hjelper deg i gang – og svarer på det du lurer på.
 </p>
-
 </div>
 
 <div class="card">
-
 <h2>✉️ Kontakt oss</h2>
 
-<form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
+<p class="section-note">
+Send oss en melding hvis du har spørsmål, trenger hjelp til første møte, eller bare vil ta kontakt.
+</p>
 
+<form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
@@ -551,93 +471,82 @@ Send oss en melding hvis du trenger hjelp til å komme i gang.
 <label>Melding</label>
 <textarea name="melding"></textarea>
 
-<button type="submit" class="primary-btn">
-SEND MELDING
-</button>
-
+<button type="submit" class="primary-btn">SEND MELDING</button>
 </form>
-
 </div>
 
 <div class="card">
-
 <h2>🗓️ Ukas temaer</h2>
 
 <div class="theme-list">
 
 <div class="theme-item">
 <span class="theme-day">Mandag – Grenser i praksis</span>
-<p class="theme-text">
 Hvordan kjenne en grense i kroppen? Hvordan si nei uten forklaring? Når tviler man på egne grenser?
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Tirsdag – Å slippe det vi ikke får svar på</span>
-<p class="theme-text">
 Behovet for closure, hvorfor vi overtenker, og hvordan gi oss selv avslutning.
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Onsdag – Å stole på seg selv igjen</span>
-<p class="theme-text">
 Hvordan bygge opp tillit til egen dømmekraft?
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Torsdag – Hva er ekte trygghet i en relasjon?</span>
-<p class="theme-text">
 Forskjellen på intensitet og trygghet, røde flagg vs grønne flagg, og hvordan det skal føles i kroppen.
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Fredag – Å velge seg selv, hver dag</span>
-<p class="theme-text">
 Små valg i hverdagen. Hva betyr det konkret å velge seg selv?
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Lørdag – Fra selvkritikk til selvmedfølelse</span>
-<p class="theme-text">
 Hvordan snakker vi til oss selv? Hvordan bygge en snill indre stemme?
-</p>
 </div>
 
 <div class="theme-item">
 <span class="theme-day">Søndag – Et liv som støtter deg</span>
-<p class="theme-text">
 Hvordan bygge et liv som støtter deg i stedet for å ødelegge deg? Skam vs ansvar. Hvor bevisst er du din indre dialog?
-</p>
 </div>
 
 </div>
-
 </div>
 
 <div class="card warm-card">
-
 <h2>🟢 Vanskelig dag?</h2>
 
 <p>
 Dette er en døgnåpen møteplass hvor vi kan møtes ved behov.
 </p>
 
+<p>
+Du kommer rett inn. Ingen som må slippe deg inn. Bare et rom som er der når du trenger det.
+</p>
+
+<p>
+Har du en vanskelig dag og trenger noen å snakke med, kan du skrive på den anonyme delingsveggen. Skriv når du tenker å være der inne, så andre har mulighet til å komme innom og møte deg.
+</p>
+
+<p>
+Ikke vær redd for å bruke det.
+</p>
+
 <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" class="secondary-btn">
 GÅ TIL ÅPEN MØTEPLASS
 </a>
-
 </div>
 
 <div class="card">
-
 <h2>🧱 Anonym vegg</h2>
 
 <p class="section-note">
-Her kan du dele noen ord anonymt.
+Her kan du dele noen ord anonymt. Ingen navn lagres eller vises.
 </p>
 
 <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
@@ -647,9 +556,7 @@ DEL ANONYMT
 </button>
 
 <div id="postMessage" class="section-note"></div>
-
 <div id="posts"></div>
-
 </div>
 
 <div class="welcome">
@@ -659,47 +566,43 @@ Velkommen ❤️
 </main>
 
 <script>
-
 const supabaseClient = window.supabase.createClient(
 'https://nnmavsrnwiqxkegpsaub.supabase.co',
 'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
 );
 
 async function loadPosts(){
-
 const container=document.getElementById('posts');
 
-const {data}=await supabaseClient
+const {data, error}=await supabaseClient
 .from('posts')
 .select('*')
 .order('created_at',{ascending:false});
 
 container.innerHTML='';
 
-if(!data) return;
+if(error || !data) return;
 
 data.forEach(post=>{
-
 const div=document.createElement('div');
-
 div.className='post-item';
 
-div.innerHTML=post.content +
-'<div class="post-meta">🕒 ' +
-new Date(post.created_at).toLocaleString('no-NO') +
-'</div>';
+const text=document.createElement('div');
+text.textContent=post.content;
 
+const meta=document.createElement('div');
+meta.className='post-meta';
+meta.textContent='🕒 ' + new Date(post.created_at).toLocaleString('no-NO');
+
+div.appendChild(text);
+div.appendChild(meta);
 container.appendChild(div);
-
 });
-
 }
 
 async function addPost(){
-
 const input=document.getElementById('postInput');
 const msg=document.getElementById('postMessage');
-
 const text=input.value.trim();
 
 if(!text){
@@ -717,15 +620,11 @@ return;
 }
 
 input.value='';
-
 msg.textContent='Innlegget er delt anonymt.';
-
 loadPosts();
-
 }
 
 loadPosts();
-
 </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
