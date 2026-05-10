@@ -1,270 +1,285 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Herr Percy og Alise i Edruland | Trygg Sirkel</title>
+<title>Herr Percy og Alise i Edruland</title>
 
-  <meta name="description" content="En varm og ærlig blogg om edring, håp og reisen tilbake til livet." />
+<meta name="description" content="En blogg om edring, trygghet, håp og reisen fra innsiden og ut." />
 
-  <style>
-    :root {
-      --cream: #fff3df;
-      --warm-light: rgba(255, 239, 216, 0.88);
-      --brown: #4b211d;
-      --gold: #d8aa62;
-      --text: #2d1714;
-    }
+<style>
+:root{
+  --cream:#fff8f1;
+  --warm:rgba(45,20,18,0.82);
+  --warm-light:rgba(255,248,241,0.88);
+  --rose:#a44d4d;
+  --gold:#d8aa62;
+  --text:#2d1714;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+*{
+  box-sizing:border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background:
-        linear-gradient(rgba(36, 16, 14, 0.25), rgba(36, 16, 14, 0.55)),
-        url("../herr-percy-og-alise-bakgrunn.jpg") center center / cover fixed no-repeat;
-      min-height: 100vh;
-    }
+html,body{
+  margin:0;
+  padding:0;
+}
 
-    .overlay {
-      min-height: 100vh;
-      padding: 30px 18px 70px;
-      background: linear-gradient(
-        to bottom,
-        rgba(31, 12, 10, 0.12),
-        rgba(31, 12, 10, 0.55)
-      );
-    }
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--cream);
+  background:
+    linear-gradient(rgba(25,10,10,0.45),rgba(25,10,10,0.78)),
+    url('herr-percy-og-alise-bakgrunn.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  min-height:100vh;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+.overlay{
+  min-height:100vh;
+  backdrop-filter:blur(2px);
+  padding:50px 20px 80px;
+}
 
-    header {
-      text-align: center;
-      padding: 30px 0 36px;
-      color: var(--cream);
-      text-shadow: 0 6px 24px rgba(0,0,0,0.7);
-    }
+.hero{
+  max-width:1200px;
+  margin:0 auto 30px;
+  text-align:center;
+}
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 6vw, 5rem);
-      line-height: 1.05;
-      font-weight: 400;
-    }
+.hero-image{
+  width:100%;
+  max-width:1200px;
+  border-radius:30px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.18);
+}
 
-    .subtitle {
-      max-width: 760px;
-      margin: 20px auto 0;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      line-height: 1.75;
-      color: #ffe8c9;
-    }
+.welcome-box{
+  max-width:760px;
+  margin:28px auto 50px;
+  background:rgba(255,248,241,0.9);
+  color:var(--text);
+  padding:28px 34px;
+  border-radius:28px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.28);
+  border:1px solid rgba(255,255,255,0.4);
+}
 
-    .intro {
-      max-width: 680px;
-      margin: 0 auto 34px;
-      padding: 24px 30px;
-      border-radius: 24px;
-      background: var(--warm-light);
-      border: 1px solid rgba(216, 170, 98, 0.65);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.34);
-      backdrop-filter: blur(5px);
-    }
+.welcome-box h2{
+  margin-top:0;
+  font-size:2.2rem;
+  color:#6d3737;
+}
 
-    .intro h2 {
-      margin: 0 0 12px;
-      font-size: clamp(1.45rem, 4vw, 2.1rem);
-      font-weight: 400;
-      color: var(--brown);
-    }
+.welcome-box p{
+  line-height:1.8;
+  font-size:1.05rem;
+}
 
-    .intro p {
-      margin: 0 0 13px;
-      font-size: 1.03rem;
-      line-height: 1.7;
-    }
+.section-title{
+  text-align:center;
+  font-size:3rem;
+  margin:30px 0 34px;
+  text-shadow:0 6px 20px rgba(0,0,0,0.55);
+}
 
-    .intro p:last-child {
-      margin-bottom: 0;
-    }
+.posts{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
 
-    .section-title {
-      margin: 0 0 22px;
-      text-align: center;
-      color: var(--cream);
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      font-weight: 400;
-      text-shadow: 0 6px 22px rgba(0,0,0,0.7);
-    }
+.post-card{
+  display:block;
+  text-decoration:none;
+  color:var(--cream);
 
-    .posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
+  background:
+    linear-gradient(
+      135deg,
+      rgba(144,38,38,0.92),
+      rgba(207,94,73,0.88)
+    );
 
-    .post-card {
-      display: block;
-      min-height: 210px;
-      padding: 25px;
-      border-radius: 24px;
-      text-decoration: none;
-      color: var(--cream);
-      background: linear-gradient(
-        145deg,
-        rgba(76, 28, 24, 0.92),
-        rgba(124, 54, 45, 0.88)
-      );
-      border: 1px solid rgba(216, 170, 98, 0.72);
-      box-shadow: 0 18px 45px rgba(0,0,0,0.38);
-      backdrop-filter: blur(6px);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
+  border-radius:28px;
+  padding:32px;
+  border:1px solid rgba(255,230,180,0.35);
 
-    .post-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 24px 58px rgba(0,0,0,0.5);
-      background: linear-gradient(
-        145deg,
-        rgba(96, 36, 31, 0.96),
-        rgba(143, 63, 52, 0.93)
-      );
-    }
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.1);
 
-    .date {
-      color: var(--gold);
-      font-size: 0.88rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      margin-bottom: 13px;
-    }
+  transition:0.25s ease;
+}
 
-    .post-card h3 {
-      margin: 0 0 14px;
-      font-size: 1.45rem;
-      line-height: 1.3;
-      font-weight: 400;
-    }
+.post-card:hover{
+  transform:translateY(-4px) scale(1.01);
+}
 
-    .post-card p {
-      margin: 0;
-      color: #ffe6c4;
-      line-height: 1.65;
-      font-size: 1rem;
-    }
+.post-date{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:0.78rem;
+  opacity:0.85;
+  margin-bottom:14px;
+  font-weight:bold;
+}
 
-    .read-more {
-      margin-top: 24px;
-      color: var(--gold);
-      letter-spacing: 0.04em;
-    }
+.post-card h2{
+  margin:0 0 16px;
+  font-size:2rem;
+  line-height:1.2;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 58px;
-      color: var(--cream);
-      text-shadow: 0 5px 18px rgba(0,0,0,0.7);
-    }
+.post-card p{
+  margin:0;
+  line-height:1.7;
+  font-size:1.06rem;
+}
 
-    footer a {
-      color: var(--cream);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.5);
-    }
+.read-more{
+  display:inline-block;
+  margin-top:22px;
+  color:#ffe4b0;
+  font-weight:bold;
+}
 
-    @media (max-width: 700px) {
-      body {
-        background-attachment: scroll;
-        background-position: center top;
-      }
+footer{
+  text-align:center;
+  margin-top:60px;
+  color:rgba(255,255,255,0.8);
+  font-size:0.95rem;
+}
 
-      .overlay {
-        padding: 22px 14px 48px;
-      }
+footer a{
+  color:var(--cream);
+}
 
-      .intro {
-        padding: 22px 22px;
-        border-radius: 20px;
-      }
+@media (max-width:768px){
 
-      .post-card {
-        border-radius: 20px;
-      }
-    }
-  </style>
+  .overlay{
+    padding:18px 14px 50px;
+  }
+
+  .welcome-box{
+    padding:22px;
+    border-radius:22px;
+    margin-top:20px;
+  }
+
+  .welcome-box h2{
+    font-size:1.8rem;
+  }
+
+  .section-title{
+    font-size:2.2rem;
+    margin-top:14px;
+  }
+
+  .post-card{
+    padding:24px;
+    border-radius:24px;
+  }
+
+  .post-card h2{
+    font-size:1.6rem;
+  }
+
+  .post-card p{
+    font-size:1rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <main class="overlay">
-    <div class="container">
+<div class="overlay">
 
-      <header>
-        <h1>Herr Percy og Alise i Edruland</h1>
+  <section class="hero">
 
-        <p class="subtitle">
-          En blogg om edring, trygghet, håp
-          og reisen fra innsiden og ut.
-        </p>
-      </header>
+    <img
+      src="header.png"
+      alt="Herr Percy og Alise i Edruland"
+      class="hero-image"
+    >
 
-      <section class="intro">
-        <h2>Velkommen inn</h2>
+    <div class="welcome-box">
+      <h2>Velkommen inn</h2>
 
-        <p>
-          Dette er et stille rom inne i Trygg Sirkel.
-          Et sted for ord som får puste,
-          tanker som får lande,
-          og små steg som likevel betyr alt.
-        </p>
+      <p>
+        Dette er et stille rom inne i Trygg Sirkel.
+        Et sted for ord som får puste, tanker som får lande,
+        og små steg som likevel betyr alt.
+      </p>
 
-        <p>
-          Her følger vi Herr Percy og Alise gjennom Edruland —
-          på vei hjem,
-          gjennom det som var,
-          det som er,
-          og det som sakte kan bli godt igjen.
-        </p>
-      </section>
-
-      <h2 class="section-title">Alle blogginnlegg</h2>
-
-      <section class="posts">
-
-        <a class="post-card" href="forste-innlegg.html">
-          <div class="date">10. mai 2026</div>
-
-          <h3>Jeg er Alise, jeg er i edring</h3>
-
-          <p>
-            Det første innlegget.
-            Begynnelsen på en ny fortelling,
-            et nytt språk
-            og en vei inn i edring.
-          </p>
-
-          <div class="read-more">Les innlegget →</div>
-        </a>
-
-      </section>
-
-      <footer>
-        <p>
-          En del av
-          <a href="../index.html">Trygg Sirkel</a>
-        </p>
-      </footer>
-
+      <p>
+        Her følger vi Herr Percy og Alise gjennom Edruland —
+        på vei hjem, gjennom det som var,
+        det som er, og det som sakte kan bli godt igjen.
+      </p>
     </div>
-  </main>
+
+  </section>
+
+  <h2 class="section-title">Alle blogginnlegg</h2>
+
+  <section class="posts">
+
+    <a class="post-card" href="generasjoner.html">
+
+      <div class="post-date">
+        10. mai 2026
+      </div>
+
+      <h2>Generasjoner</h2>
+
+      <p>
+        Om sommerangst, minner, jul, generasjoner av uro –
+        og valget om å stoppe det som blir sendt videre.
+      </p>
+
+      <span class="read-more">
+        Les innlegget →
+      </span>
+
+    </a>
+
+    <a class="post-card" href="forste-innlegg.html">
+
+      <div class="post-date">
+        10. mai 2026
+      </div>
+
+      <h2>Jeg er Alise, jeg er i edring</h2>
+
+      <p>
+        Det første innlegget.
+        Begynnelsen på en ny fortelling,
+        et nytt språk og en vei inn i edring.
+      </p>
+
+      <span class="read-more">
+        Les innlegget →
+      </span>
+
+    </a>
+
+  </section>
+
+  <footer>
+    En del av
+    <a href="../index.html">Trygg Sirkel</a>
+  </footer>
+
+</div>
 
 </body>
 </html>
