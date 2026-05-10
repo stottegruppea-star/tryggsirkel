@@ -442,18 +442,28 @@ cursor:pointer;
 margin-top:14px;
 }
 
+#posts{
+overflow:hidden;
+max-width:100%;
+}
+
 .post-item{
 background:rgba(255,255,255,.65);
 border:1px solid var(--line);
 border-radius:18px;
-padding:16px;
+padding:18px;
 margin-bottom:12px;
 white-space:pre-wrap;
-word-break:break-word;
+overflow-wrap:anywhere;
+word-break:normal;
+hyphens:auto;
+font-size:18px;
+line-height:1.65;
+max-width:100%;
 }
 
 .post-meta{
-margin-top:8px;
+margin-top:10px;
 font-size:13px;
 color:var(--muted);
 }
@@ -578,6 +588,19 @@ font-size:30px;
 
 .quote{
 font-size:25px;
+}
+
+.post-item{
+font-size:16px;
+line-height:1.65;
+padding:18px;
+overflow-wrap:anywhere;
+word-break:normal;
+hyphens:auto;
+}
+
+.post-meta{
+font-size:12px;
 }
 }
 </style>
@@ -795,6 +818,12 @@ const supabaseClient = window.supabase.createClient(
 'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
 );
 
+function formatPostText(text){
+return text
+.replace(/([.!?])(?=\S)/g, '$1 ')
+.replace(/,/g, ', ');
+}
+
 async function loadPosts(){
 const container=document.getElementById('posts');
 
@@ -812,10 +841,15 @@ const div=document.createElement('div');
 
 div.className='post-item';
 
-div.innerHTML=post.content +
-'<div class="post-meta">🕒 ' +
-new Date(post.created_at).toLocaleString('no-NO') +
-'</div>';
+const safeText = document.createElement('div');
+safeText.textContent = formatPostText(post.content);
+
+const meta = document.createElement('div');
+meta.className = 'post-meta';
+meta.textContent = '🕒 ' + new Date(post.created_at).toLocaleString('no-NO');
+
+div.appendChild(safeText);
+div.appendChild(meta);
 
 container.appendChild(div);
 });
