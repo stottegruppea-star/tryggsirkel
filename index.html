@@ -442,7 +442,6 @@ cursor:pointer;
 margin-top:14px;
 }
 
-```css
 #posts{
 overflow:hidden;
 max-width:100%;
@@ -454,17 +453,13 @@ border:1px solid var(--line);
 border-radius:18px;
 padding:18px;
 margin-bottom:12px;
-font-size:18px;
-line-height:1.75;
-max-width:100%;
-overflow:hidden;
-}
-
-.post-item div:first-child{
 white-space:pre-wrap;
-word-break:break-word;
-overflow-wrap:break-word;
-hyphens:none;
+overflow-wrap:anywhere;
+word-break:normal;
+hyphens:auto;
+font-size:18px;
+line-height:1.65;
+max-width:100%;
 }
 
 .post-meta{
@@ -473,27 +468,21 @@ font-size:13px;
 color:var(--muted);
 }
 
-@media(max-width:650px){
-
-.post-item{
-font-size:16px;
-line-height:1.8;
-padding:18px 16px;
+.welcome{
+text-align:center;
+font-family:Georgia, serif;
+font-size:36px;
+font-weight:900;
+color:var(--rose-dark);
+margin-top:20px;
 }
 
-.post-item div:first-child{
-word-break:break-word;
-overflow-wrap:break-word;
-white-space:pre-wrap;
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
 }
-
-.post-meta{
-font-size:12px;
-}
-
-}
-```
-
 
 .nav-links{
 justify-content:center;
@@ -692,7 +681,7 @@ Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller annen avh
 <div class="panel-img" style="background-image:url('veien-hjem.png')"></div>
 <div class="panel-content">
 <div class="tag">Hver kveld kl. 20:00 🤍</div>
-<h2>Møt likesinnede på kveldsmøte</h2>
+<h2>Møt oss på kveldsmøte</h2>
 <p>Samme tid. Samme sted. Et sted du kan komme tilbake til.</p>
 <p>Du trenger ikke si noe. Det holder å være der.</p>
 <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">BLI MED I MØTET</a>
