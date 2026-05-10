@@ -6,150 +6,129 @@
 
   <title>Jeg er Alise, jeg er i edring | Herr Percy og Alise i Edruland</title>
 
-  <meta name="description" content="Det første innlegget i Herr Percy og Alise i Edruland." />
-
   <style>
     :root {
       --cream: #fff3df;
-      --warm-light: rgba(255, 239, 216, 0.9);
+      --warm-light: rgba(255, 239, 216, 0.92);
       --brown: #4b211d;
       --gold: #d8aa62;
       --text: #2d1714;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-
       font-family: Georgia, "Times New Roman", serif;
-
       color: var(--text);
-
       background:
         linear-gradient(rgba(36, 16, 14, 0.28), rgba(36, 16, 14, 0.62)),
         url("../herr-percy-og-alise-bakgrunn.jpg") center center / cover fixed no-repeat;
-
       min-height: 100vh;
     }
 
     .overlay {
       min-height: 100vh;
-
-      padding: 40px 18px 70px;
-
+      padding: 36px 18px 70px;
       background: linear-gradient(
         to bottom,
-        rgba(31, 12, 10, 0.12),
-        rgba(31, 12, 10, 0.55)
+        rgba(31, 12, 10, 0.10),
+        rgba(31, 12, 10, 0.60)
       );
     }
 
     .container {
-      max-width: 850px;
+      max-width: 860px;
       margin: 0 auto;
     }
 
     .back-link {
       display: inline-block;
-
       margin-bottom: 24px;
-
       padding: 10px 18px;
-
       border-radius: 999px;
-
       text-decoration: none;
-
       color: var(--cream);
-
-      background: rgba(45, 20, 18, 0.55);
-
-      border: 1px solid rgba(255,255,255,0.16);
-
+      background: rgba(45, 20, 18, 0.58);
+      border: 1px solid rgba(255,255,255,0.18);
       backdrop-filter: blur(4px);
-
-      transition: background 0.25s ease;
-    }
-
-    .back-link:hover {
-      background: rgba(45, 20, 18, 0.8);
     }
 
     .article {
       background: var(--warm-light);
-
       border-radius: 28px;
-
-      padding: clamp(30px, 5vw, 56px);
-
-      border: 1px solid rgba(216, 170, 98, 0.55);
-
-      box-shadow: 0 22px 55px rgba(0,0,0,0.35);
-
+      padding: clamp(30px, 5vw, 58px);
+      border: 1px solid rgba(216, 170, 98, 0.60);
+      box-shadow: 0 22px 55px rgba(0,0,0,0.36);
       backdrop-filter: blur(6px);
     }
 
     .date {
-      color: rgba(75, 33, 29, 0.7);
-
+      color: rgba(75, 33, 29, 0.68);
       font-size: 0.88rem;
-
       letter-spacing: 0.12em;
-
       text-transform: uppercase;
-
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      margin: 0 0 26px;
-
-      font-size: clamp(2rem, 5vw, 4rem);
-
+      margin: 0 0 30px;
+      font-size: clamp(2.1rem, 5vw, 4rem);
       line-height: 1.08;
-
       font-weight: 400;
-
       color: var(--brown);
     }
 
-    .article p {
-      margin: 0 0 26px;
-
-      font-size: 1.15rem;
-
-      line-height: 2;
-
-      color: var(--text);
+    .lead {
+      font-size: 1.28rem;
+      line-height: 1.8;
+      color: var(--brown);
+      margin-bottom: 34px;
     }
 
-    .article p:last-child {
-      margin-bottom: 0;
+    .center-line {
+      text-align: center;
+      font-size: 1.45rem;
+      color: var(--brown);
+      margin: 34px 0;
+      font-style: italic;
+    }
+
+    .article p {
+      margin: 0 0 24px;
+      font-size: 1.13rem;
+      line-height: 2;
+    }
+
+    .article p.short {
+      margin-bottom: 14px;
+    }
+
+    .quote {
+      margin: 34px 0;
+      padding: 22px 26px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255,255,255,0.28);
+      font-size: 1.24rem;
+      line-height: 1.8;
+      color: var(--brown);
+      font-style: italic;
     }
 
     footer {
       text-align: center;
-
       margin-top: 36px;
-
       color: var(--cream);
-
-      text-shadow: 0 5px 18px rgba(0,0,0,0.7);
+      text-shadow: 0 5px 18px rgba(0,0,0,0.75);
     }
 
     footer a {
       color: var(--cream);
-
       text-decoration: none;
-
       border-bottom: 1px solid rgba(255,255,255,0.4);
     }
 
     @media (max-width: 700px) {
-
       body {
         background-attachment: scroll;
         background-position: center top;
@@ -173,79 +152,194 @@
 </head>
 
 <body>
-
   <main class="overlay">
-
     <div class="container">
 
-      <a class="back-link"
-         href="herr-percy-og-alise-i-edruland.html">
-         ← Tilbake til bloggen
+      <a class="back-link" href="herr-percy-og-alise-i-edruland.html">
+        ← Tilbake til bloggen
       </a>
 
       <article class="article">
 
-        <div class="date">
-          10. mai 2026
-        </div>
+        <div class="date">10. mai 2026</div>
 
-        <h1>
-          Jeg er Alise, jeg er i edring
-        </h1>
+        <h1>Jeg er Alise, jeg er i edring.</h1>
 
-        <p>
-          Dette er mitt første blogginnlegg.
+        <p class="lead">
+          Dette er mitt første blogginnlegg – mine første tanker i det jeg vil kalle for
         </p>
 
-        <p>
-          Kanskje også mitt første ordentlig ærlige steg.
-        </p>
+        <div class="center-line">Alise i Edruland</div>
 
-        <p>
-          Jeg vet ikke helt hvordan man begynner på et nytt liv.
-          Jeg vet bare hvordan det føles når det gamle ikke går lenger.
-        </p>
+        <p>For lenge, lenge siden, før Norge var Norge og språket vi kjenner i dag var et helt annet – den gangen da folk drakk øl som vann, eller mjød som det het, hadde de et ord vi ikke lenger bruker.</p>
 
-        <p>
-          Så dette er starten.
-          Ikke perfekt.
-          Ikke ferdig.
-          Bare ekte.
-        </p>
+        <p>Det norrøne ordet “øðruligr / auðr”.<br>Uttales edring.<br>Et ord som handlet om å være ved sans og samling.</p>
 
-        <p>
-          Jeg kaller det Edruland.
-        </p>
+        <p>Edring kommer fra verbet å edre, altså å bli edru eller klar igjen. Det henger sammen med ordet edru, som er veldig gammelt i norsk (og nordiske språk generelt).</p>
 
-        <p>
-          Et sted mellom mørket og lyset.
-          Mellom skam og håp.
-          Mellom den jeg var,
-          og den jeg kanskje sakte holder på å bli.
-        </p>
+        <p>Det ble brukt i betydningen å komme til sans og samling, å klare opp, å vende tilbake til klarhet.</p>
 
-        <p>
-          Kanskje finnes det flere som kjenner seg igjen her.
-        </p>
+        <p>Ikke bare “slutte å drikke”.</p>
 
-        <p>
-          Kanskje er dette ikke bare min historie.
-        </p>
+        <p>Og egentlig er det jo ganske vakkert når man tenker på det.</p>
+
+        <p>For ordet rommer noe mer enn avhold, men mer som en tilbakevending til seg selv, til klarhet og bevissthet.</p>
+
+        <p>Det er derfor jeg liker ordet bedre enn de typiske “tilfriskning”, “rusfrihet” og “rehabilitering”.</p>
+
+        <p>Edring føles mindre klinisk og mer menneskelig.<br>Nesten som “å våkne igjen.”</p>
+
+        <p>Og det er jo nettopp det vi holder på med her –<br>vi holder på å våkne, klarne og lande i oss selv.</p>
+
+        <p>Ja, jeg skriver vi.<br>For dette er ikke bare min blogg.</p>
+
+        <p>Jeg har en venn, en likesinnet – en jeg ikke hadde klart dette uten.<br>Vi har skapt Trygg Sirkel sammen.</p>
+
+        <p>I Alice i Eventyrland (utgitt i 1865 og skrevet av Lewis Carroll) er «The White Rabbit» en av de viktigste karakterene i plottet i boka – det er han som lokker Alice ned i kaninhullet og starter hele eventyret.</p>
+
+        <p>I TV-serien som ble laget mange år etter at bøkene kom ut, ble han kalt Percy.</p>
+
+        <p>Uten Percy hadde jeg ikke turt.<br>Ikke turt å skrive eller lage en nettside, og et rom som dette.</p>
+
+        <p>Så min venn, min makker,<br>Herr Percy –<br>dette første innlegget blir mest om meg, for din historie er din egen – men jeg håper du vil skrive den her når du en dag er klar.</p>
+
+        <p>For uten deg, uten din historie, hadde jeg aldri hoppet inn i Edruland.</p>
+
+        <p>Så…</p>
+
+        <p>Jeg vet ikke hva jeg skal kalle meg – om jeg er en alkoholiker, om jeg er et menneske med et avhengighetssyndrom, en alkis, en dranker… det spiller vel til syvende og sist egentlig ingen rolle hva jeg kaller meg.</p>
+
+        <p>Jeg har brukt alkohol feil.<br>Jeg har brukt det for å overleve, for å slippe å kjenne på følelser og tankekjør. Det fungerte til det ikke gjorde det lenger.</p>
+
+        <p>Det fungerte helt til den dagen smerten ved å drikke var likestilt med smerten ved ikke å drikke.</p>
+
+        <p>Så jeg slutta.<br>Det er 198 dager siden i dag.</p>
+
+        <p>198 dager siden jeg sto i dusjen og vannet kjentes som piskeslag og angsten var så støyende at jeg holdt pusten.</p>
+
+        <p>Det er 199 dager siden jeg kasta opp – og fortsatte å drikke.</p>
+
+        <p>199 dager siden jeg var full nok til å tørre å møte mitt eget blikk i speilet.</p>
+
+        <p>199 dager siden jeg nådde bunnen.</p>
+
+        <p>Og på bunnen har jeg vært før, og den eneste veien opp derfra<br>er å sparke fra.</p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg er et menneske som lærte tidlig at trygghet ikke er noe man kan lene seg på.</p>
+
+        <p>Trygghet er noe man må lage selv.<br>Finne selv.<br>Bygge selv.<br>Bære selv.</p>
+
+        <p>Jeg var liten da jeg skjønte at livet kan snu på et sekund.</p>
+
+        <p>At det finnes voksne som ikke klarer å være voksne.</p>
+
+        <p>At det finnes netter der ingen passer på.</p>
+
+        <p>Netter der stemmen til de voksne blir hardere, blikkene blir tommere, og jeg forstår at nå må jeg bli stille. Nå må jeg bli liten. Nå må jeg overleve.</p>
+
+        <p>Jeg lærte å lese rom.<br>Lese stemninger.<br>Lese pust.</p>
+
+        <p>Om en dør ble åpnet litt for fort.</p>
+
+        <p>Om en flaske ble satt litt for hardt på bordet.</p>
+
+        <p>Om latteren var ekte eller truende.</p>
+
+        <p>Jeg lærte å ikke ta plass.</p>
+
+        <p>Og jeg lærte noe annet også:</p>
+
+        <p>at fantasien er et sted jeg kan gjemme meg når virkeligheten gjør for vondt.</p>
+
+        <p>Så jeg ble et barn som drømte.</p>
+
+        <p>Et barn som håpet.</p>
+
+        <p>Et barn som leste bøker og eventyr.</p>
+
+        <p>Et barn som gjorde det til en vane å lage en annen verden inni hodet mitt.</p>
+
+        <p>En verden der ting alltid gikk bra.</p>
+
+        <p>Der noen kom og tok meg i hånda og sa:</p>
+
+        <div class="quote">“Jeg har deg nå.”</div>
+
+        <p>Og det reddet meg den gangen.</p>
+
+        <p>Men den strategien fulgte meg videre.</p>
+
+        <p>Inn i ungdommen.</p>
+
+        <p>Inn i kjærligheten.</p>
+
+        <p>Inn i livet.</p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg har levd i overlevelse.</p>
+
+        <p>Jeg har gjort det jeg måtte for å komme meg gjennom.</p>
+
+        <p>Fantasien reddet meg som barn.</p>
+
+        <p>Rus hjalp meg å dempe kroppen i perioder.</p>
+
+        <p>Relasjoner, uansett hvor skadelige de var, ble et sted å puste når ensomheten ble for stor.</p>
+
+        <p>Men nå…</p>
+
+        <p>nå er jeg et sted der jeg ikke klarer å late som mer.</p>
+
+        <p>Der fantasien forsvinner som sand mellom hendene mine.</p>
+
+        <p>Jeg er ferdig med å lengte etter det som aldri kommer.</p>
+
+        <p>Jeg er ferdig med å gjøre meg liten for å bli valgt.</p>
+
+        <p>Jeg er ferdig med å unnskylde andre menneskers ondskap.</p>
+
+        <p>Jeg er ferdig med å bygge fantasislott for å overleve.</p>
+
+        <p>Jeg er ferdig med å bygge hjem i mennesker som aldri har plass til meg i det.</p>
+
+        <p>For jeg har endelig forstått at det der løftet om trygghet nederst i flaska,<br>er det farligste løftet av dem alle.</p>
+
+        <p>Jeg har forstått at barnet i meg<br>må få bli sett.</p>
+
+        <p>Må få ta plass.</p>
+
+        <p>På ekte.</p>
+
+        <p>Ikke bli drukna.</p>
+
+        <p>Ikke bli dempa.</p>
+
+        <p>Ikke bli forlatt.</p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg er et åpent sår nå.</p>
+
+        <p>Men jeg gror.</p>
+
+        <p>Og jeg,<br>jeg velger meg selv nå.</p>
+
+        <p>For første gang<br>velger jeg meg.</p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg skal ikke drikke i dag.</p>
 
       </article>
 
       <footer>
-        <p>
-          En del av
-          <a href="../index.html">
-            Trygg Sirkel
-          </a>
-        </p>
+        <p>En del av <a href="../index.html">Trygg Sirkel</a></p>
       </footer>
 
     </div>
-
   </main>
-
 </body>
 </html>
