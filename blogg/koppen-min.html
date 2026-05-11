@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<title>Koppen min | Herr Percy og Alise i Edruland</title>
+
+<meta name="description" content="Et blogginnlegg om det vi bærer inni oss, om reaksjoner, overlevelse og valget om å fylle livet med noe annet enn flukt." />
+
+<style>
+
+:root{
+    --cream:#f8f1ea;
+    --warm:#fffaf5;
+    --brown:#5b2f2f;
+    --gold:#c49b73;
+    --text:#35201c;
+    --glass:rgba(255,248,242,0.84);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    color:var(--text);
+
+    background:
+    linear-gradient(rgba(20,8,8,0.52), rgba(20,8,8,0.68)),
+    url("../blogg-banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+}
+
+.overlay{
+    min-height:100vh;
+    padding:40px 20px 80px;
+    backdrop-filter:blur(2px);
+}
+
+.container{
+    max-width:960px;
+    margin:0 auto;
+}
+
+.hero{
+    width:100%;
+    border-radius:34px;
+    overflow:hidden;
+    box-shadow:0 25px 70px rgba(0,0,0,0.45);
+    border:1px solid rgba(255,255,255,0.15);
+    margin-bottom:40px;
+}
+
+.hero img{
+    width:100%;
+    display:block;
+}
+
+.article{
+    background:var(--glass);
+    backdrop-filter:blur(10px);
+    border-radius:36px;
+    padding:64px;
+    box-shadow:0 25px 70px rgba(0,0,0,0.28);
+    border:1px solid rgba(255,255,255,0.25);
+}
+
+.date{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.82rem;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+h1{
+    color:var(--brown);
+    font-size:4rem;
+    line-height:1;
+    margin-bottom:40px;
+}
+
+.article p{
+    font-size:1.28rem;
+    line-height:2.05;
+    margin-bottom:32px;
+}
+
+.quote{
+    background:rgba(255,255,255,0.52);
+    border-left:5px solid var(--gold);
+    padding:30px;
+    border-radius:24px;
+    margin:42px 0;
+    font-style:italic;
+}
+
+.ending{
+    margin-top:70px;
+    text-align:center;
+}
+
+.ending p{
+    font-size:1.75rem;
+    line-height:1.8;
+    color:var(--brown);
+}
+
+.end-image{
+    margin-top:55px;
+    text-align:center;
+}
+
+.end-image img{
+    width:100%;
+    max-width:760px;
+    border-radius:28px;
+    box-shadow:0 22px 55px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.back{
+    text-align:center;
+    margin-top:60px;
+}
+
+.back a{
+    color:var(--brown);
+    text-decoration:none;
+    font-size:1.05rem;
+    border-bottom:1px solid rgba(91,47,47,0.3);
+    padding-bottom:4px;
+}
+
+footer{
+    text-align:center;
+    margin-top:36px;
+    color:white;
+    text-shadow:0 4px 18px rgba(0,0,0,0.8);
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+@media (max-width:768px){
+
+    body{
+        background:
+        linear-gradient(rgba(20,8,8,0.60), rgba(20,8,8,0.75)),
+        url("../blogg-banner.jpg");
+
+        background-size:cover;
+        background-position:center;
+        background-attachment:scroll;
+    }
+
+    .overlay{
+        padding:18px 14px 50px;
+    }
+
+    .hero{
+        border-radius:24px;
+        margin-bottom:24px;
+    }
+
+    .article{
+        padding:34px 24px;
+        border-radius:28px;
+    }
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .article p{
+        font-size:1.12rem;
+        line-height:1.95;
+    }
+
+    .quote{
+        padding:22px;
+        margin:28px 0;
+    }
+
+    .ending p{
+        font-size:1.38rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<div class="hero">
+<img src="../koppen-min.png" alt="Koppen min">
+</div>
+
+<article class="article">
+
+<div class="date">11. MAI 2026</div>
+
+<h1>Koppen min</h1>
+
+<p>
+Jeg leste en tekst om en kopp kaffe som traff meg :
+</p>
+
+<div class="quote">
+<p>
+«Tenk deg at du står med en kopp kaffe i hånda.
+Noen kommer forbi og dulter borti deg, og kaffen renner utover.
+Hvorfor sølte du?
+Fordi noen dultet borti deg?
+Nei.
+Du sølte fordi det var kaffe i koppen.
+Hadde det vært vann der, ville det vært vann som rant ut.
+Det som er i koppen, er det som kommer ut når noe treffer oss.»
+</p>
+</div>
+
+<p>
+Da jeg leste dette, måtte jeg sitte med det en stund før jeg forsto det.
+</p>
+
+<p>
+For jeg har lenge trodd at det var livet som gjorde meg sånn.
+At det var menneskene rundt meg. Hendelsene. Belastningene. Tapene.
+Men sannheten er jo at når livet dultet borti meg, var det ikke fordi livet var ekstra brutalt at det som rant ut var sinne, skam, fortvilelse eller behovet for å flykte.
+Det var jo fordi det var det jeg bar inni meg.
+</p>
+
+<p>
+Jeg reagerte. Forklarte. Forsvarte. Ble liten.
+Og ofte bedøvde jeg det hele – med vin, med øl, med å stenge av, med å holde ut litt til.
+</p>
+
+<p>
+Jeg brukte mye tid på å tenke at hvis bare livet ble roligere, hvis folk var snillere, hvis ting gikk min vei – da skulle jeg også bli roligere.
+</p>
+
+<p>
+Men livet slutter ikke å dulte.
+Livet treffer oss. Alltid.
+Det er en del av det å leve.
+</p>
+
+<p>
+Det jeg først nå begynner å forstå, er at jeg ikke alltid kan velge hva som skjer – men jeg kan velge hva jeg fyller meg med, koppen min med.
+</p>
+
+<p>
+Hver dag.
+</p>
+
+<p>
+Med hvilke tanker jeg gir plass.
+Med hvordan jeg snakker til meg selv.
+Med hva jeg bruker for å komme meg gjennom.
+</p>
+
+<p>
+Jeg har fylt koppen min med overlevelse. Med ansvar. Med å være sterk for alle andre.
+Og når livet traff – var det det som rant over.
+</p>
+
+<p>
+Nå prøver jeg å fylle på med noe annet.
+Ikke perfeksjon. Ikke konstant ro.
+Men mer ærlighet. Mer egenomsorg. Mindre selvforakt.
+</p>
+
+<p>
+For når livet dulter borti meg igjen – og det vil det gjøre –
+vil jeg at det som renner over, skal ligne mer på den jeg faktisk er.
+Ikke bare det jeg har lært å bli for å overleve.
+</p>
+
+<div class="ending">
+<p>
+Så nei,
+<br><br>
+jeg skal ikke drikke i dag ❤️
+</p>
+</div>
+
+<div class="end-image">
+<img src="../koppen-min.png" alt="Koppen min">
+</div>
+
+<div class="back">
+<a href="./Herr-percy-og-alise-i-edruland.html">
+← Tilbake til bloggen
+</a>
+</div>
+
+</article>
+
+<footer>
+<p>
+En del av
+<a href="../index.html">Trygg Sirkel</a>
+</p>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
