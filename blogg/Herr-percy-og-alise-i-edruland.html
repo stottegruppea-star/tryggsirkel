@@ -150,9 +150,35 @@ body{
   font-weight:bold;
 }
 
+.social-links{
+  margin-top:60px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  text-decoration:none;
+  color:var(--cream);
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:14px 26px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+  font-weight:bold;
+  transition:0.25s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.social-links a:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.16);
+}
+
 footer{
   text-align:center;
-  margin-top:60px;
+  margin-top:40px;
   color:rgba(255,255,255,0.8);
   font-size:0.95rem;
 }
@@ -209,6 +235,15 @@ footer a{
 
   .post-card p{
     font-size:1rem;
+  }
+
+  .social-links{
+    gap:12px;
+  }
+
+  .social-links a{
+    width:100%;
+    text-align:center;
   }
 }
 </style>
@@ -286,6 +321,18 @@ footer a{
     </a>
 
   </section>
+
+  <div class="social-links">
+
+    <a href="https://www.instagram.com/tryggsirkel?igsh=MWNyaXM0cWZnMnFxbg%3D%3D&utm_source=qr" target="_blank">
+      Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/17WQD7MwJo/?mibextid=wwXIfr" target="_blank">
+      Facebook
+    </a>
+
+  </div>
 
   <footer>
     En del av
