@@ -11,7 +11,6 @@
 <style>
 :root{
   --cream:#fff8f1;
-  --warm:rgba(45,20,18,0.82);
   --warm-light:rgba(255,248,241,0.88);
   --rose:#a44d4d;
   --gold:#d8aa62;
@@ -32,7 +31,7 @@ body{
   color:var(--cream);
   background:
     linear-gradient(rgba(25,10,10,0.45),rgba(25,10,10,0.78)),
-   url('../herr-percy-og-alise-bakgrunn.jpg');
+    url('../herr-percy-og-alise-bakgrunn.jpg');
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
@@ -53,10 +52,21 @@ body{
 
 .hero-image{
   width:100%;
-  max-width:1200px;
+  max-width:1100px;
+  height:360px;
+  margin:0 auto 42px;
   border-radius:30px;
+  overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,0.5);
   border:1px solid rgba(255,255,255,0.18);
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
 }
 
 .welcome-box{
@@ -100,22 +110,11 @@ body{
   display:block;
   text-decoration:none;
   color:var(--cream);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(144,38,38,0.92),
-      rgba(207,94,73,0.88)
-    );
-
+  background:linear-gradient(135deg,rgba(144,38,38,0.92),rgba(207,94,73,0.88));
   border-radius:28px;
   padding:32px;
   border:1px solid rgba(255,230,180,0.35);
-
-  box-shadow:
-    0 15px 45px rgba(0,0,0,0.35),
-    inset 0 1px 0 rgba(255,255,255,0.1);
-
+  box-shadow:0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
   transition:0.25s ease;
 }
 
@@ -164,8 +163,24 @@ footer a{
 
 @media (max-width:768px){
 
+  body{
+    background-attachment:scroll;
+  }
+
   .overlay{
     padding:18px 14px 50px;
+  }
+
+  .hero-image{
+    height:auto;
+    max-width:100%;
+    border-radius:24px;
+    margin-bottom:28px;
+  }
+
+  .hero-image img{
+    height:auto;
+    object-fit:contain;
   }
 
   .welcome-box{
@@ -205,11 +220,9 @@ footer a{
 
   <section class="hero">
 
-    <img
-      src="../blogg-banner.jpg"
-      alt="Herr Percy og Alise i Edruland"
-      class="hero-image"
-    >
+    <div class="hero-image">
+      <img src="../blogg-banner.jpg" alt="Herr Percy og Alise i Edruland">
+    </div>
 
     <div class="welcome-box">
       <h2>Velkommen inn</h2>
@@ -233,25 +246,20 @@ footer a{
 
   <section class="posts">
 
-    <section class="post-card">
-    <div class="post-date">11. MAI 2026</div>
+    <a class="post-card" href="koppen-min.html">
+      <div class="post-date">11. mai 2026</div>
 
-    <h2>Koppen min</h2>
+      <h2>Koppen min</h2>
 
-    <p>
+      <p>
         Om det vi bærer inni oss, reaksjoner, overlevelse og valget om å fylle koppen med noe annet enn flukt.
-    </p>
+      </p>
 
-    <a class="read-more" href="./koppen-min.html">
-        Les innlegget →
+      <span class="read-more">Les innlegget →</span>
     </a>
-      
-</section>
-    <a class="post-card" href="generasjoner.html">
 
-      <div class="post-date">
-        10. mai 2026
-      </div>
+    <a class="post-card" href="generasjoner.html">
+      <div class="post-date">10. mai 2026</div>
 
       <h2>Generasjoner</h2>
 
@@ -260,17 +268,11 @@ footer a{
         og valget om å stoppe det som blir sendt videre.
       </p>
 
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
+      <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="forste-innlegg.html">
-
-      <div class="post-date">
-        10. mai 2026
-      </div>
+      <div class="post-date">10. mai 2026</div>
 
       <h2>Jeg er Alise, jeg er i edring</h2>
 
@@ -280,10 +282,7 @@ footer a{
         et nytt språk og en vei inn i edring.
       </p>
 
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
+      <span class="read-more">Les innlegget →</span>
     </a>
 
   </section>
