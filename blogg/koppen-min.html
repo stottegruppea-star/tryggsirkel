@@ -117,15 +117,24 @@ h1{
 
 .back{
     text-align:center;
-    margin-top:60px;
+    margin-top:40px;
 }
 
 .back a{
-    color:var(--brown);
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:999px;
     text-decoration:none;
-    font-size:1.05rem;
-    border-bottom:1px solid rgba(91,47,47,0.3);
-    padding-bottom:4px;
+    color:var(--cream);
+    background:rgba(45, 20, 18, 0.72);
+    border:1px solid rgba(255,255,255,0.22);
+    backdrop-filter:blur(4px);
+    transition:background 0.25s ease, transform 0.25s ease;
+}
+
+.back a:hover{
+    background:rgba(45, 20, 18, 0.9);
+    transform:translateY(-2px);
 }
 
 footer{
@@ -282,7 +291,7 @@ jeg skal ikke drikke i dag ❤️
 </div>
 
 <div class="back">
-<a href="./Herr-percy-og-alise-i-edruland.html">
+<a href="https://www.tryggsirkel.no/blogg/Herr-percy-og-alise-i-edruland.html">
 ← Tilbake til bloggen
 </a>
 </div>
