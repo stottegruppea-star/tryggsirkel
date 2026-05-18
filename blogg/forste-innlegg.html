@@ -1,425 +1,611 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Herr Percy og Alise i Edruland</title>
+  <title>Jeg er Alise, jeg er i edring | Herr Percy og Alise i Edruland</title>
 
-<meta name="description" content="En blogg om edring, trygghet, håp og reisen fra innsiden og ut." />
+  <style>
+    :root {
+      --cream: #fff3df;
+      --warm-light: rgba(255, 239, 216, 0.92);
+      --brown: #4b211d;
+      --gold: #d8aa62;
+      --text: #2d1714;
+    }
 
-<style>
-:root{
-  --cream:#fff8f1;
-  --warm-light:rgba(255,248,241,0.88);
-  --rose:#a44d4d;
-  --gold:#d8aa62;
-  --text:#2d1714;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-*{
-  box-sizing:border-box;
-}
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
 
-html,body{
-  margin:0;
-  padding:0;
-}
+      background:
+        linear-gradient(rgba(36, 16, 14, 0.28), rgba(36, 16, 14, 0.62)),
+        url("../herr-percy-og-alise-bakgrunn.jpg") center center / cover fixed no-repeat;
 
-body{
-  font-family:Georgia,"Times New Roman",serif;
-  color:var(--cream);
-  background:
-    linear-gradient(rgba(25,10,10,0.45),rgba(25,10,10,0.78)),
-    url('../herr-percy-og-alise-bakgrunn.jpg');
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  min-height:100vh;
-}
+      min-height: 100vh;
+    }
 
-.overlay{
-  min-height:100vh;
-  backdrop-filter:blur(2px);
-  padding:40px 20px 80px;
-}
+    .overlay {
+      min-height: 100vh;
 
-.top-social{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-bottom:28px;
-}
+      padding: 36px 18px 70px;
 
-.follow-text{
-  font-size:1rem;
-  letter-spacing:1px;
-  color:rgba(255,255,255,0.9);
-}
+      background: linear-gradient(
+        to bottom,
+        rgba(31, 12, 10, 0.10),
+        rgba(31, 12, 10, 0.60)
+      );
+    }
 
-.top-social a{
-  text-decoration:none;
-  color:var(--cream);
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.18);
-  padding:12px 22px;
-  border-radius:999px;
-  backdrop-filter:blur(10px);
-  font-weight:bold;
-  transition:0.25s ease;
-  box-shadow:0 10px 25px rgba(0,0,0,0.25);
-}
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
 
-.top-social a:hover{
-  transform:translateY(-2px);
-  background:rgba(255,255,255,0.16);
-}
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--cream);
+      background: rgba(45,20,18,0.58);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      transition: background 0.25s ease;
+    }
 
-.hero{
-  max-width:1200px;
-  margin:0 auto 30px;
-  text-align:center;
-}
+    .back-link:hover {
+      background: rgba(45,20,18,0.8);
+    }
 
-.hero-image{
-  width:100%;
-  max-width:1100px;
-  height:360px;
-  margin:0 auto 42px;
-  border-radius:30px;
-  overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-  border:1px solid rgba(255,255,255,0.18);
-}
+    .article {
+      background: var(--warm-light);
 
-.hero-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  display:block;
-}
+      border-radius: 28px;
 
-.welcome-box{
-  max-width:760px;
-  margin:28px auto 50px;
-  background:rgba(255,248,241,0.9);
-  color:var(--text);
-  padding:28px 34px;
-  border-radius:28px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.28);
-  border:1px solid rgba(255,255,255,0.4);
-}
+      padding: clamp(30px, 5vw, 58px);
 
-.welcome-box h2{
-  margin-top:0;
-  font-size:2.2rem;
-  color:#6d3737;
-}
+      border: 1px solid rgba(216, 170, 98, 0.60);
 
-.welcome-box p{
-  line-height:1.8;
-  font-size:1.05rem;
-}
+      box-shadow: 0 22px 55px rgba(0,0,0,0.36);
 
-.section-title{
-  text-align:center;
-  font-size:3rem;
-  margin:30px 0 34px;
-  text-shadow:0 6px 20px rgba(0,0,0,0.55);
-}
+      backdrop-filter: blur(6px);
+    }
 
-.posts{
-  max-width:1000px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  gap:28px;
-}
+    .date {
+      color: rgba(75, 33, 29, 0.68);
 
-.post-card{
-  display:block;
-  text-decoration:none;
-  color:var(--cream);
-  background:linear-gradient(135deg,rgba(144,38,38,0.92),rgba(207,94,73,0.88));
-  border-radius:28px;
-  padding:32px;
-  border:1px solid rgba(255,230,180,0.35);
-  box-shadow:0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
-  transition:0.25s ease;
-}
+      font-size: 0.88rem;
 
-.post-card:hover{
-  transform:translateY(-4px) scale(1.01);
-}
+      letter-spacing: 0.12em;
 
-.post-date{
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font-size:0.78rem;
-  opacity:0.85;
-  margin-bottom:14px;
-  font-weight:bold;
-}
+      text-transform: uppercase;
 
-.post-card h2{
-  margin:0 0 16px;
-  font-size:2rem;
-  line-height:1.2;
-}
+      margin-bottom: 18px;
+    }
 
-.post-card p{
-  margin:0;
-  line-height:1.7;
-  font-size:1.06rem;
-}
+    h1 {
+      margin: 0 0 30px;
 
-.read-more{
-  display:inline-block;
-  margin-top:22px;
-  color:#ffe4b0;
-  font-weight:bold;
-}
+      font-size: clamp(2.1rem, 5vw, 4rem);
 
-footer{
-  text-align:center;
-  margin-top:50px;
-  color:rgba(255,255,255,0.8);
-  font-size:0.95rem;
-}
+      line-height: 1.08;
 
-footer a{
-  color:var(--cream);
-}
+      font-weight: 400;
 
-@media (max-width:768px){
+      color: var(--brown);
+    }
 
-  body{
-    background-attachment:scroll;
-  }
+    .lead {
+      font-size: 1.28rem;
 
-  .overlay{
-    padding:18px 14px 50px;
-  }
+      line-height: 1.8;
 
-  .top-social{
-    flex-direction:column;
-    gap:10px;
-    margin-bottom:22px;
-  }
+      color: var(--brown);
 
-  .top-social a{
-    width:100%;
-    text-align:center;
-  }
+      margin-bottom: 34px;
+    }
 
-  .hero-image{
-    height:auto;
-    max-width:100%;
-    border-radius:24px;
-    margin-bottom:28px;
-  }
+    .center-line {
+      text-align: center;
 
-  .hero-image img{
-    height:auto;
-    object-fit:contain;
-  }
+      font-size: 1.45rem;
 
-  .welcome-box{
-    padding:22px;
-    border-radius:22px;
-    margin-top:20px;
-  }
+      color: var(--brown);
 
-  .welcome-box h2{
-    font-size:1.8rem;
-  }
+      margin: 34px 0;
 
-  .section-title{
-    font-size:2.2rem;
-    margin-top:14px;
-  }
+      font-style: italic;
+    }
 
-  .post-card{
-    padding:24px;
-    border-radius:24px;
-  }
+    .article p {
+      margin: 0 0 24px;
 
-  .post-card h2{
-    font-size:1.6rem;
-  }
+      font-size: 1.13rem;
 
-  .post-card p{
-    font-size:1rem;
-  }
-}
-</style>
+      line-height: 2;
+    }
+
+    .quote {
+      margin: 34px 0;
+
+      padding: 22px 26px;
+
+      border-left: 4px solid var(--gold);
+
+      background: rgba(255,255,255,0.28);
+
+      font-size: 1.24rem;
+
+      line-height: 1.8;
+
+      color: var(--brown);
+
+      font-style: italic;
+    }
+
+    .ending-image {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .ending-image img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      border: 1px solid rgba(216, 170, 98, 0.45);
+    }
+
+    footer {
+      text-align: center;
+
+      margin-top: 36px;
+
+      color: var(--cream);
+
+      text-shadow: 0 5px 18px rgba(0,0,0,0.75);
+    }
+
+    footer a {
+      color: var(--cream);
+
+      text-decoration: none;
+
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 700px) {
+
+      body {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+
+      .overlay {
+        padding: 24px 14px 50px;
+      }
+
+      .article {
+        border-radius: 22px;
+        padding: 26px 22px;
+      }
+
+      .article p {
+        font-size: 1.05rem;
+        line-height: 1.9;
+      }
+
+      .quote {
+        padding: 18px 20px;
+        font-size: 1.1rem;
+      }
+
+      .ending-image img {
+        border-radius: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="overlay">
+  <main class="overlay">
 
-  <div class="top-social">
+    <div class="container">
 
-    <div class="follow-text">
-      Følg reisen vår:
+      <a class="back-link"
+         href="Herr-percy-og-alise-i-edruland.html">
+         ← Tilbake til bloggen
+      </a>
+
+      <article class="article">
+
+        <div class="date">
+          10. mai 2026
+        </div>
+
+        <h1>
+          Jeg er Alise, jeg er i edring.
+        </h1>
+
+        <p class="lead">
+          Dette er mitt første blogginnlegg – mine første tanker i det jeg vil kalle for
+        </p>
+
+        <div class="center-line">
+          Alise i Edruland
+        </div>
+
+        <p>
+          For lenge, lenge siden, før Norge var Norge og språket vi kjenner i dag var et helt annet – den gangen da folk drakk øl som vann, eller mjød som det het, hadde de et ord vi ikke lenger bruker.
+        </p>
+
+        <p>
+          Det norrøne ordet “øðruligr / auðr”.
+          <br>
+          Uttales edring.
+          <br>
+          Et ord som handlet om å være ved sans og samling.
+        </p>
+
+        <p>
+          Edring kommer fra verbet å edre, altså å bli edru eller klar igjen. Det henger sammen med ordet edru, som er veldig gammelt i norsk (og nordiske språk generelt).
+        </p>
+
+        <p>
+          Det ble brukt i betydningen å komme til sans og samling, å klare opp, å vende tilbake til klarhet.
+        </p>
+
+        <p>
+          Ikke bare “slutte å drikke”.
+        </p>
+
+        <p>
+          Og egentlig er det jo ganske vakkert når man tenker på det.
+        </p>
+
+        <p>
+          For ordet rommer noe mer enn avhold, men mer som en tilbakevending til seg selv, til klarhet og bevissthet.
+        </p>
+
+        <p>
+          Det er derfor jeg liker ordet bedre enn de typiske “tilfriskning”, “rusfrihet” og “rehabilitering”.
+        </p>
+
+        <p>
+          Edring føles mindre klinisk og mer menneskelig.
+          <br>
+          Nesten som “å våkne igjen.”
+        </p>
+
+        <p>
+          Og det er jo nettopp det vi holder på med her –
+          <br>
+          vi holder på å våkne, klarne og lande i oss selv.
+        </p>
+
+        <p>
+          Ja, jeg skriver vi.
+          <br>
+          For dette er ikke bare min blogg.
+        </p>
+
+        <p>
+          Jeg har en venn, en likesinnet – en jeg ikke hadde klart dette uten.
+          <br>
+          Vi har skapt Trygg Sirkel sammen.
+        </p>
+
+        <p>
+          I Alice i Eventyrland (utgitt i 1865 og skrevet av Lewis Carroll) er «The White Rabbit» en av de viktigste karakterene i plottet i boka – det er han som lokker Alice ned i kaninhullet og starter hele eventyret.
+        </p>
+
+        <p>
+          I TV-serien som ble laget mange år etter at bøkene kom ut, ble han kalt Percy.
+        </p>
+
+        <p>
+          Uten Percy hadde jeg ikke turt.
+          <br>
+          Ikke turt å skrive eller lage en nettside, og et rom som dette.
+        </p>
+
+        <p>
+          Så min venn, min makker,
+          <br>
+          Herr Percy –
+          <br>
+          dette første innlegget blir mest om meg, for din historie er din egen – men jeg håper du vil skrive den her når du en dag er klar.
+        </p>
+
+        <p>
+          For uten deg, uten din historie, hadde jeg aldri hoppet inn i Edruland.
+        </p>
+
+        <p>
+          Så…
+        </p>
+
+        <p>
+          Jeg vet ikke hva jeg skal kalle meg – om jeg er en alkoholiker, om jeg er et menneske med et avhengighetssyndrom, en alkis, en dranker… det spiller vel til syvende og sist egentlig ingen rolle hva jeg kaller meg.
+        </p>
+
+        <p>
+          Jeg har brukt alkohol feil.
+          <br>
+          Jeg har brukt det for å overleve, for å slippe å kjenne på følelser og tankekjør. Det fungerte til det ikke gjorde det lenger.
+        </p>
+
+        <p>
+          Det fungerte helt til den dagen smerten ved å drikke var likestilt med smerten ved ikke å drikke.
+        </p>
+
+        <p>
+          Så jeg slutta.
+          <br>
+          Det er 198 dager siden i dag.
+        </p>
+
+        <p>
+          198 dager siden jeg sto i dusjen og vannet kjentes som piskeslag og angsten var så støyende at jeg holdt pusten.
+        </p>
+
+        <p>
+          Det er 199 dager siden jeg kasta opp – og fortsatte å drikke.
+        </p>
+
+        <p>
+          199 dager siden jeg var full nok til å tørre å møte mitt eget blikk i speilet.
+        </p>
+
+        <p>
+          199 dager siden jeg nådde bunnen.
+        </p>
+
+        <p>
+          Og på bunnen har jeg vært før, og den eneste veien opp derfra
+          <br>
+          er å sparke fra.
+        </p>
+
+        <p>
+          Jeg er Alise.
+        </p>
+
+        <p>
+          Jeg er et menneske som lærte tidlig at trygghet ikke er noe man kan lene seg på.
+        </p>
+
+        <p>
+          Trygghet er noe man må lage selv.
+          <br>
+          Finne selv.
+          <br>
+          Bygge selv.
+          <br>
+          Bære selv.
+        </p>
+
+        <p>
+          Jeg var liten da jeg skjønte at livet kan snu på et sekund.
+        </p>
+
+        <p>
+          At det finnes voksne som ikke klarer å være voksne.
+        </p>
+
+        <p>
+          At det finnes netter der ingen passer på.
+        </p>
+
+        <p>
+          Netter der stemmen til de voksne blir hardere, blikkene blir tommere, og jeg forstår at nå må jeg bli stille. Nå må jeg bli liten. Nå må jeg overleve.
+        </p>
+
+        <p>
+          Jeg lærte å lese rom.
+          <br>
+          Lese stemninger.
+          <br>
+          Lese pust.
+        </p>
+
+        <p>
+          Om en dør ble åpnet litt for fort.
+        </p>
+
+        <p>
+          Om en flaske ble satt litt for hardt på bordet.
+        </p>
+
+        <p>
+          Om latteren var ekte eller truende.
+        </p>
+
+        <p>
+          Jeg lærte å ikke ta plass.
+        </p>
+
+        <p>
+          Og jeg lærte noe annet også:
+        </p>
+
+        <p>
+          at fantasien er et sted jeg kan gjemme meg når virkeligheten gjør for vondt.
+        </p>
+
+        <p>
+          Så jeg ble et barn som drømte.
+        </p>
+
+        <p>
+          Et barn som håpet.
+        </p>
+
+        <p>
+          Et barn som leste bøker og eventyr.
+        </p>
+
+        <p>
+          Et barn som gjorde det til en vane å lage en annen verden inni hodet mitt.
+        </p>
+
+        <p>
+          En verden der ting alltid gikk bra.
+        </p>
+
+        <p>
+          Der noen kom og tok meg i hånda og sa:
+        </p>
+
+        <div class="quote">
+          “Jeg har deg nå.”
+        </div>
+
+        <p>
+          Og det reddet meg den gangen.
+        </p>
+
+        <p>
+          Men den strategien fulgte meg videre.
+        </p>
+
+        <p>
+          Inn i ungdommen.
+        </p>
+
+        <p>
+          Inn i kjærligheten.
+        </p>
+
+        <p>
+          Inn i livet.
+        </p>
+
+        <p>
+          Jeg er Alise.
+        </p>
+
+        <p>
+          Jeg har levd i overlevelse.
+        </p>
+
+        <p>
+          Jeg har gjort det jeg måtte for å komme meg gjennom.
+        </p>
+
+        <p>
+          Fantasien reddet meg som barn.
+        </p>
+
+        <p>
+          Rus hjalp meg å dempe kroppen i perioder.
+        </p>
+
+        <p>
+          Relasjoner, uansett hvor skadelige de var, ble et sted å puste når ensomheten ble for stor.
+        </p>
+
+        <p>
+          Men nå…
+        </p>
+
+        <p>
+          nå er jeg et sted der jeg ikke klarer å late som mer.
+        </p>
+
+        <p>
+          Der fantasien forsvinner som sand mellom hendene mine.
+        </p>
+
+        <p>
+          Jeg er ferdig med å lengte etter det som aldri kommer.
+        </p>
+
+        <p>
+          Jeg er ferdig med å gjøre meg liten for å bli valgt.
+        </p>
+
+        <p>
+          Jeg er ferdig med å unnskylde andre menneskers ondskap.
+        </p>
+
+        <p>
+          Jeg er ferdig med å bygge fantasislott for å overleve.
+        </p>
+
+        <p>
+          Jeg er ferdig med å bygge hjem i mennesker som aldri har plass til meg i det.
+        </p>
+
+        <p>
+          For jeg har endelig forstått at det der løftet om trygghet nederst i flaska,
+          <br>
+          er det farligste løftet av dem alle.
+        </p>
+
+        <p>
+          Jeg har forstått at barnet i meg
+          <br>
+          må få bli sett.
+        </p>
+
+        <p>Må få ta plass.</p>
+
+        <p>På ekte.</p>
+
+        <p>Ikke bli drukna.</p>
+
+        <p>Ikke bli dempa.</p>
+
+        <p>Ikke bli forlatt.</p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg er et åpent sår nå.</p>
+
+        <p>Men jeg gror.</p>
+
+        <p>
+          Og jeg,
+          <br>
+          jeg velger meg selv nå.
+        </p>
+
+        <p>
+          For første gang
+          <br>
+          velger jeg meg.
+        </p>
+
+        <p>Jeg er Alise.</p>
+
+        <p>Jeg skal ikke drikke i dag.</p>
+
+        <div class="ending-image">
+          <img src="../ane-alise.jpg" alt="Ane-Alise">
+        </div>
+
+      </article>
+
+      <footer>
+        <p>
+          En del av
+          <a href="../index.html">Trygg Sirkel</a>
+        </p>
+      </footer>
+
     </div>
 
-    <a href="https://www.instagram.com/tryggsirkel?igsh=MWNyaXM0cWZnMnFxbg%3D%3D&utm_source=qr" target="_blank">
-      Instagram
-    </a>
-
-    <a href="https://www.facebook.com/share/17WQD7MwJo/?mibextid=wwXIfr" target="_blank">
-      Facebook
-    </a>
-
-  </div>
-
-  <section class="hero">
-
-    <div class="hero-image">
-      <img src="../blogg-banner.jpg" alt="Herr Percy og Alise i Edruland">
-    </div>
-
-    <div class="welcome-box">
-      <h2>Velkommen inn</h2>
-
-      <p>
-        Dette er et stille rom inne i Trygg Sirkel.
-        Et sted for ord som får puste, tanker som får lande,
-        og små steg som likevel betyr alt.
-      </p>
-
-      <p>
-        Her følger vi Herr Percy og Alise gjennom Edruland —
-        på vei hjem, gjennom det som var,
-        det som er, og det som sakte kan bli godt igjen.
-      </p>
-    </div>
-
-  </section>
-
-  <h2 class="section-title">Alle blogginnlegg</h2>
-
-  <section class="posts">
-
-    <a class="post-card" href="kognitiv.html">
-
-      <div class="post-date">
-        13. mai 2026
-      </div>
-
-      <h2>
-        Kognitiv dissonans
-      </h2>
-
-      <p>
-        Om destruktive mønstre, indre konflikter,
-        skam, relasjoner, edring og kampen mellom sannhet og flukt.
-      </p>
-
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
-    </a>
-
-    <a class="post-card" href="sonder.html">
-
-      <div class="post-date">
-        12. mai 2026
-      </div>
-
-      <h2>
-        Sonder
-      </h2>
-
-      <p>
-        Om mennesker, selvfølelse, ensomhet,
-        edring og innsikten i at ingen egentlig går alene.
-      </p>
-
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
-    </a>
-
-    <a class="post-card" href="koppen-min.html">
-
-      <div class="post-date">
-        11. mai 2026
-      </div>
-
-      <h2>
-        Koppen min
-      </h2>
-
-      <p>
-        Om det vi bærer inni oss, reaksjoner, overlevelse
-        og valget om å fylle koppen med noe annet enn flukt.
-      </p>
-
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
-    </a>
-
-    <a class="post-card" href="generasjoner.html">
-
-      <div class="post-date">
-        10. mai 2026
-      </div>
-
-      <h2>
-        Generasjoner
-      </h2>
-
-      <p>
-        Om sommerangst, minner, jul,
-        generasjoner av uro – og valget om å stoppe det som blir sendt videre.
-      </p>
-
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
-    </a>
-
-    <a class="post-card" href="forste-innlegg.html">
-
-      <div class="post-date">
-        10. mai 2026
-      </div>
-
-      <h2>
-        Jeg er Alise, jeg er i edring
-      </h2>
-
-      <p>
-        Det første innlegget.
-        Begynnelsen på en ny fortelling,
-        et nytt språk og en vei inn i edring.
-      </p>
-
-      <span class="read-more">
-        Les innlegget →
-      </span>
-
-    </a>
-
-  </section>
-
-  <footer>
-    En del av
-    <a href="../index.html">Trygg Sirkel</a>
-  </footer>
-
-</div>
+  </main>
 
 </body>
 </html>
