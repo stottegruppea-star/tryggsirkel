@@ -1,1 +1,501 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<title>Borgerkrig | Herr Percy og Alise i Edruland</title>
+
+<meta name="description" content="Om skammen, løgnene, vinflaskene, og hvordan tillit til seg selv kanskje bygges igjen — én handling av gangen." />
+
+<style>
+
+:root{
+    --cream:#f8f1ea;
+    --warm:#fffaf5;
+    --brown:#5b2f2f;
+    --gold:#c49b73;
+    --text:#35201c;
+    --glass:rgba(255,248,242,0.84);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    color:var(--text);
+
+    background:
+    linear-gradient(rgba(20,8,8,0.52), rgba(20,8,8,0.68)),
+    url("../herr-percy-og-alise-bakgrunn.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    min-height:100vh;
+}
+
+.overlay{
+    min-height:100vh;
+    padding:40px 20px 80px;
+    backdrop-filter:blur(2px);
+}
+
+.container{
+    max-width:960px;
+    margin:0 auto;
+}
+
+.article{
+    background:var(--glass);
+    backdrop-filter:blur(10px);
+    border-radius:36px;
+    padding:64px;
+    box-shadow:0 25px 70px rgba(0,0,0,0.28);
+    border:1px solid rgba(255,255,255,0.25);
+}
+
+.date{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:0.82rem;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+h1{
+    color:var(--brown);
+    font-size:4rem;
+    line-height:1;
+    margin-bottom:40px;
+}
+
+.article p{
+    font-size:1.28rem;
+    line-height:2.05;
+    margin-bottom:32px;
+}
+
+.quote{
+    background:rgba(255,255,255,0.52);
+    border-left:5px solid var(--gold);
+    padding:30px;
+    border-radius:24px;
+    margin:42px 0;
+    font-style:italic;
+}
+
+.signature{
+    margin-top:70px;
+    text-align:center;
+}
+
+.signature p{
+    font-size:1.75rem;
+    line-height:1.8;
+    color:var(--brown);
+    font-style:italic;
+}
+
+.end-image{
+    margin-top:55px;
+    text-align:center;
+}
+
+.end-image img{
+    width:100%;
+    max-width:760px;
+    border-radius:28px;
+    box-shadow:0 22px 55px rgba(0,0,0,0.35);
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+.back{
+    text-align:center;
+    margin-top:40px;
+}
+
+.back a{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    color:var(--cream);
+    background:rgba(45, 20, 18, 0.72);
+    border:1px solid rgba(255,255,255,0.22);
+    backdrop-filter:blur(4px);
+    transition:background 0.25s ease, transform 0.25s ease;
+}
+
+.back a:hover{
+    background:rgba(45, 20, 18, 0.9);
+    transform:translateY(-2px);
+}
+
+footer{
+    text-align:center;
+    margin-top:36px;
+    color:white;
+    text-shadow:0 4px 18px rgba(0,0,0,0.8);
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+}
+
+@media (max-width:768px){
+
+    body{
+        background:
+        linear-gradient(rgba(20,8,8,0.60), rgba(20,8,8,0.75)),
+        url("../herr-percy-og-alise-bakgrunn.jpg");
+
+        background-size:cover;
+        background-position:center;
+        background-attachment:scroll;
+    }
+
+    .overlay{
+        padding:18px 14px 50px;
+    }
+
+    .article{
+        padding:34px 24px;
+        border-radius:28px;
+    }
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .article p{
+        font-size:1.12rem;
+        line-height:1.95;
+    }
+
+    .quote{
+        padding:22px;
+        margin:28px 0;
+    }
+
+    .signature p{
+        font-size:1.38rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<article class="article">
+
+<div class="date">Mai 2026</div>
+
+<h1>Borgerkrig</h1>
+
+<div class="quote">
+<p>
+«Jeg vet ikke om så mange som har så god innsikt i mennesker, avhengighet og edring som deg.
+Du kan lett sette meg på plass når jeg begynner å rusromantisere,» sa Herr Percy over en kopp kaffe her om dagen.
+</p>
+
+<p>
+«En dag håper jeg at du kan være like fornuftig og god mot deg selv som du er mot andre.
+</p>
+
+<p>
+Så skriv om det.
+Skriv om å snakke fint til seg selv.
+</p>
+
+<p>
+Tekstene dine hjelper folk.
+De hjelper meg.
+Og de hjelper andre som oss, Alise.»
+</p>
+</div>
+
+<p>
+Men åh, som jeg tviler.
+</p>
+
+<p>
+På meg selv.
+På tekstene mine.
+På tankene mine.
+På løftene mine til meg selv.
+</p>
+
+<p>
+For hvordan skal jeg kunne stole på meg selv, når jeg så mange ganger kunne love meg selv om morgenen at jeg ikke skulle drikke —
+og likevel stå der klokken ti på stengetid med vinflaska i hånda.
+</p>
+
+<p>
+Blikket mitt som ikke klarte møte han i kassa.
+</p>
+
+<p>
+Jeg rullerte på både butikker og pol.
+Som om det hjalp.
+</p>
+
+<p>
+De skjønte det nok likevel.
+Det skamfulle blikket.
+Desperasjonen.
+</p>
+
+<p>
+Gaveposene jeg kjøpte med vinflaskene, som om de skulle til noen andre.
+Som om det gjorde det mindre sant.
+</p>
+
+<p>
+«Greit å få unna helgehandelen tidlig,» hørte jeg meg selv si mens jeg kjøpte to sixpacks på en tirsdag.
+</p>
+
+<p>
+Som om jeg måtte forsvare meg for et menneske jeg aldri hadde møtt.
+</p>
+
+<p>
+Som om løgnen nesten ble sann hvis jeg bare sa den høyt.
+</p>
+
+<p>
+Og alle de svarte søppelsekkene med tomgods.
+</p>
+
+<p>
+De som var så pinlig fulle at jeg kjørte til butikker langt unna for å levere dem.
+</p>
+
+<p>
+Svetten som rant nedover ryggen hvis det ble kø.
+</p>
+
+<p>
+«Jaja, det var jo en fin feiring,» hørte jeg meg selv si.
+</p>
+
+<p>
+Som om jeg hadde drukket sammen med noen.
+</p>
+
+<p>
+Men det hadde jeg jo nesten aldri.
+</p>
+
+<p>
+For det var ikke mennesker jeg ville ha.
+</p>
+
+<p>
+Det var rusen.
+</p>
+
+<p>
+Jeg ville bli vektløs.
+Forsvinne litt.
+Slippe å være i meg selv.
+</p>
+
+<p>
+Ut og spise med folk kunne nesten føles irriterende.
+Tre retter og vinpakke, mens alle andre smakte på vinen og snakket om hva som passet til maten.
+</p>
+
+<p>
+Som om smaken betydde noe.
+</p>
+
+<p>
+Maten var da ikke interessant.
+</p>
+
+<p>
+Rusen var det jeg ville ha.
+Og den ville jeg helst ha alene.
+</p>
+
+<p>
+Kjenne at kroppen slapp taket.
+At hodet stilnet.
+At ingen så hvor mye makt glasset hadde over meg.
+</p>
+
+<p>
+Mens jeg satt der i en indre borgerkrig og ødela mitt eget liv med mine egne to hender.
+</p>
+
+<p>
+Og alle de søndagene.
+</p>
+
+<p>
+Alle gangene jeg lovte meg selv at neste uke skulle bli annerledes.
+</p>
+
+<p>
+Så klarte jeg kanskje mandag.
+Noen ganger helt til onsdag.
+</p>
+
+<p>
+I beste fall en uke.
+</p>
+
+<p>
+Før selvrespekten igjen forsvant i samme rasende fart som vinen i glasset.
+</p>
+
+<p>
+Så hvordan snakker man fint til seg selv etter noe sånt?
+</p>
+
+<p>
+Hvordan bygger man tillit til et menneske som har sviktet seg selv igjen og igjen?
+</p>
+
+<p>
+Og det mennesket er deg selv.
+</p>
+
+<p>
+Det er nå jeg sikkert skulle skrevet at jeg vet svaret.
+</p>
+
+<p>
+Men det gjør jeg ikke.
+</p>
+
+<p>
+Jeg vet bare at jeg har sluttet å love meg selv store ting.
+</p>
+
+<p>
+Jeg har bare innsett at jeg alltid vil være én enhet unna å falle tilbake i en nedadgående spiral.
+</p>
+
+<p>
+For én enhet er ikke én enhet.
+</p>
+
+<p>
+Én enhet er som å kaste bensin på et bål og håpe flammene skal slukke.
+</p>
+
+<p>
+Og jeg har kastet så mange kanner på det bålet at jeg nesten brant meg selv opp.
+</p>
+
+<p>
+Så kanskje er min eneste oppgave nå å akseptere at glørne alltid kommer til å finnes der.
+</p>
+
+<p>
+Og at i det øyeblikket jeg begynner å innbille meg noe annet —
+da er jeg i fare igjen.
+</p>
+
+<p>
+Da står jeg igjen med handling.
+</p>
+
+<p>
+Jeg har makten i de samme hendene som en gang nesten tok livet av meg, til å sette bensinkanna fra meg.
+</p>
+
+<p>
+Og kanskje er det sånn tillit bygges igjen.
+</p>
+
+<p>
+Ikke gjennom tanker.
+Ikke gjennom store løfter.
+</p>
+
+<p>
+Gjennom handlinger.
+Små, daglige handlinger.
+</p>
+
+<p>
+At jeg blir værende.
+At jeg tåler meg selv.
+</p>
+
+<p>
+Tåler følelsene.
+Gleden like mye som sorgen.
+Overveldelsen like mye som angsten.
+</p>
+
+<p>
+At jeg ikke drikker på det.
+</p>
+
+<p>
+At jeg velger meg selv igjen og igjen.
+At jeg velger livet mitt med alt det innebærer.
+</p>
+
+<p>
+At jeg stoler på at jeg kan regulere meg selv uten den kjemiske, giftige selvreguleringen alkohol faktisk er.
+</p>
+
+<p>
+At jeg kan hoppe av tredemølla og faktisk gå fremover.
+</p>
+
+<p>
+At for første gang på lenge lar jeg handlingene mine stå på samme side som meg selv.
+</p>
+
+<p>
+Og med det kan jeg endelig la den indre borgerkrigen stilne.
+</p>
+
+<div class="signature">
+<p>
+Jeg skal ikke drikke i dag.
+</p>
+</div>
+
+<div class="end-image">
+<img src="../borgerkrig.jpg" alt="Borgerkrig">
+</div>
+
+<div class="back">
+<a href="https://www.tryggsirkel.no/blogg/Herr-percy-og-alise-i-edruland.html">
+← Tilbake til bloggen
+</a>
+</div>
+
+</article>
+
+<footer>
+<p>
+En del av
+<a href="../index.html">Trygg Sirkel</a>
+</p>
+</footer>
+
+</div>
+</div>
+
+</body>
+</html>
