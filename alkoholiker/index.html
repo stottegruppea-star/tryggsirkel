@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alkoholiker | Trygg Sirkel</title>
+
+<meta name="description" content="Er jeg alkoholiker? Les om alkoholisme, alkoholproblemer, skam, avhengighet, edring og anonym støtte gjennom Trygg Sirkel.">
+<meta name="keywords" content="alkoholiker, er jeg alkoholiker, alkoholisme, alkoholproblem, alkoholavhengighet, slutte å drikke, hjelp alkoholiker, anonym hjelp alkohol, edring, rusfri">
+<meta name="author" content="Trygg Sirkel">
+
+<meta property="og:title" content="Alkoholiker | Trygg Sirkel">
+<meta property="og:description" content="Du trenger ikke være sikker på hva du skal kalle deg for å søke støtte.">
+<meta property="og:url" content="https://www.tryggsirkel.no/alkoholiker/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
+
+<link rel="canonical" href="https://www.tryggsirkel.no/alkoholiker/">
+<link rel="icon" type="image/png" href="../logo.png">
+
+<style>
+:root{
+--cream:#fff5ec;
+--rose:#c77b6f;
+--rose-dark:#9d5a51;
+--green:#65764d;
+--green-dark:#26371f;
+--brown:#35241f;
+--muted:#7a6258;
+--line:#ead2c1;
+--shadow:0 18px 45px rgba(70,38,26,.14);
+--radius:28px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Inter, Arial, sans-serif;
+background:#fff5ec;
+color:var(--brown);
+line-height:1.75;
+}
+
+a{text-decoration:none;}
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:10;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:28px;
+padding:24px 7%;
+background:rgba(255,246,238,.58);
+backdrop-filter:blur(8px);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+background:rgba(255,250,244,.68);
+padding:10px 18px;
+border-radius:24px;
+}
+
+.brand img{
+width:78px;
+height:78px;
+object-fit:contain;
+}
+
+.brand-title{
+font-size:30px;
+font-weight:900;
+letter-spacing:2px;
+color:var(--green-dark);
+line-height:1.1;
+}
+
+.brand-sub{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.5px;
+color:var(--brown);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+font-size:14px;
+font-weight:900;
+letter-spacing:.8px;
+text-transform:uppercase;
+}
+
+.nav-links a{
+color:var(--brown);
+}
+
+.nav-btn{
+background:var(--green);
+color:white!important;
+padding:15px 24px;
+border-radius:14px;
+box-shadow:0 12px 26px rgba(38,55,31,.22);
+}
+
+.hero{
+min-height:70vh;
+background:
+linear-gradient(90deg,rgba(255,246,238,.94) 0%,rgba(255,246,238,.74) 42%,rgba(255,246,238,.18) 100%),
+url('../veien-hjem.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:150px 8% 90px;
+}
+
+.hero-content{
+max-width:720px;
+}
+
+.hero h1{
+font-family:Georgia, serif;
+font-size:72px;
+line-height:1.05;
+margin:0;
+color:var(--green-dark);
+}
+
+.script{
+font-family:cursive;
+font-size:44px;
+color:var(--rose-dark);
+line-height:1.1;
+margin:10px 0 26px;
+}
+
+.hero p{
+font-size:21px;
+font-weight:600;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+padding:17px 28px;
+font-size:16px;
+font-weight:900;
+letter-spacing:.4px;
+}
+
+.btn-primary{
+background:linear-gradient(180deg,#d99182,#c47468);
+color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
+}
+
+.btn-outline{
+color:var(--brown);
+border:1.5px solid rgba(53,36,31,.35);
+background:rgba(255,250,244,.62);
+backdrop-filter:blur(5px);
+}
+
+.main{
+max-width:1050px;
+margin:auto;
+padding:42px 5% 70px;
+}
+
+.card{
+background:rgba(255,250,244,.94);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:38px;
+margin-bottom:28px;
+}
+
+h2{
+font-family:Georgia, serif;
+font-size:42px;
+line-height:1.15;
+margin:0 0 18px;
+color:var(--green-dark);
+}
+
+p{
+font-size:18px;
+margin-top:0;
+}
+
+ul{
+font-size:18px;
+padding-left:24px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+.highlight{
+background:linear-gradient(180deg,rgba(255,250,244,.96),rgba(244,223,207,.82));
+border:1px solid var(--line);
+}
+
+.question{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:20px;
+padding:20px;
+margin-bottom:14px;
+}
+
+.question strong{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
+}
+
+.big-btn{
+display:inline-flex;
+margin-top:16px;
+background:var(--green);
+color:white;
+padding:16px 26px;
+border-radius:14px;
+font-weight:900;
+}
+
+.welcome{
+text-align:center;
+font-family:Georgia, serif;
+font-size:36px;
+font-weight:900;
+color:var(--rose-dark);
+margin-top:20px;
+}
+
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
+}
+
+.nav-links{
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.hero{
+min-height:auto;
+padding:80px 24px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.script{
+font-size:36px;
+}
+}
+
+@media(max-width:650px){
+.brand{
+width:100%;
+justify-content:center;
+}
+
+.brand img{
+width:58px;
+height:58px;
+}
+
+.brand-title{
+font-size:21px;
+}
+
+.brand-sub{
+font-size:10px;
+}
+
+.nav-links{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+font-size:13px;
+}
+
+.nav-links a{
+background:rgba(255,250,244,.75);
+padding:10px 8px;
+border-radius:12px;
+text-align:center;
+white-space:nowrap;
+}
+
+.nav-btn{
+grid-column:1 / -1;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.script{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card{
+padding:24px 18px;
+}
+
+h2{
+font-size:30px;
+}
+
+p,
+ul{
+font-size:16px;
+}
+
+.btn{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav class="nav">
+<div class="brand">
+<img src="../logo.png" alt="Trygg Sirkel logo">
+<div>
+<div class="brand-title">TRYGG SIRKEL</div>
+<div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
+</div>
+</div>
+
+<div class="nav-links">
+<a href="https://www.tryggsirkel.no">Forside</a>
+<a href="#alkoholiker">Alkoholiker</a>
+<a href="#tegn">Tegn</a>
+<a href="#sporsmal">Spørsmål</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">Bli med ❤️</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>Er jeg alkoholiker?</h1>
+
+<div class="script">
+Du trenger ikke ha svaret alene. ♡
+</div>
+
+<p>
+Mange søker etter ordet alkoholiker når de egentlig prøver å forstå sitt eget forhold til alkohol. Du trenger ikke være sikker på hva du skal kalle deg for å søke støtte.
+</p>
+
+<div class="hero-buttons">
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="btn btn-primary">BLI MED I MØTET 🤍</a>
+<a href="https://www.tryggsirkel.no" class="btn btn-outline">TIL FORSIDEN 🌿</a>
+</div>
+
+</div>
+</section>
+
+<main class="main">
+
+<div class="card" id="alkoholiker">
+<h2>Hva betyr det å være alkoholiker?</h2>
+
+<p>
+Ordet alkoholiker kan føles tungt. For noen gir det mening. For andre føles det skamfullt, fremmed eller for stort.
+</p>
+
+<p>
+Noen bruker heller ord som alkoholproblem, alkoholavhengighet, rusavhengighet eller avhengighetssyndrom.
+</p>
+
+<p>
+Hva du kaller det, er ikke alltid det viktigste.
+</p>
+
+<p>
+Det viktigste er om alkohol har begynt å ta mer plass i livet ditt enn du ønsker.
+</p>
+
+<p>
+Hvis du lurer på om du er alkoholiker, er det ofte et tegn på at noe i deg allerede vet at forholdet til alkohol har blitt vanskelig.
+</p>
+</div>
+
+<div class="card" id="tegn">
+<h2>Tegn på at alkohol har blitt et problem</h2>
+
+<p>
+Du trenger ikke ha mistet alt for å få hjelp.
+</p>
+
+<p>
+Mange som strever med alkohol fungerer lenge på utsiden, mens innsiden blir mer og mer sliten.
+</p>
+
+<p>
+Kanskje kjenner du deg igjen i noe av dette:
+</p>
+
+<ul>
+<li>Du drikker mer enn du hadde planlagt.</li>
+<li>Du lover deg selv at dette var siste gang.</li>
+<li>Du prøver å kutte ned, men ender tilbake i samme mønster.</li>
+<li>Du skjuler hvor mye du drikker.</li>
+<li>Du bruker alkohol for å få ro, mot eller pause fra hodet.</li>
+<li>Du kjenner skam, uro eller anger etterpå.</li>
+<li>Du tenker mye på når du kan drikke igjen.</li>
+<li>Du blir irritert hvis noe hindrer deg i å drikke.</li>
+<li>Du har opplevd at én drink ikke blir én drink.</li>
+<li>Du føler deg alene med det.</li>
+</ul>
+
+<p>
+Hvis flere av disse punktene treffer, betyr det ikke at du er ødelagt.
+</p>
+
+<p>
+Det betyr at du kanskje trenger støtte.
+</p>
+</div>
+
+<div class="card">
+<h2>Alkoholisme handler ofte om mer enn alkohol</h2>
+
+<p>
+Mange tror alkoholisme bare handler om mengde.
+</p>
+
+<p>
+Hvor ofte du drikker. Hvor mye du drikker. Hvor lenge du har drukket.
+</p>
+
+<p>
+Men for mange handler det også om funksjonen alkoholen har fått.
+</p>
+
+<p>
+Drikker du for å slippe å kjenne?
+</p>
+
+<p>
+Drikker du for å få ro i kroppen?
+</p>
+
+<p>
+Drikker du for å tåle ensomhet, stress, sorg, uro eller skam?
+</p>
+
+<p>
+Da handler det ikke bare om alkohol. Da handler det også om hva alkoholen prøver å hjelpe deg med, selv om den samtidig gjør livet tyngre.
+</p>
+</div>
+
+<div class="card">
+<h2>Skam gjør det vanskelig å be om hjelp</h2>
+
+<p>
+Mange venter lenge før de sier noe.
+</p>
+
+<p>
+Ikke fordi de ikke vil ha hjelp, men fordi skammen er så sterk.
+</p>
+
+<p>
+Kanskje tenker du:
+</p>
+
+<ul>
+<li>Jeg burde klare dette selv.</li>
+<li>Andre har det verre enn meg.</li>
+<li>Jeg er ikke “så ille”.</li>
+<li>Hva om noen dømmer meg?</li>
+<li>Hva om jeg må slutte for alltid?</li>
+<li>Hva om jeg ikke klarer det?</li>
+</ul>
+
+<p>
+Slike tanker er vanlige.
+</p>
+
+<p>
+Men skam vokser ofte i stillhet.
+</p>
+
+<p>
+Å møte andre som forstår kan gjøre det litt lettere å være ærlig.
+</p>
+</div>
+
+<div class="card">
+<h2>Du må ikke være sikker før du kommer</h2>
+
+<p>
+Du trenger ikke møte opp med en ferdig konklusjon.
+</p>
+
+<p>
+Du trenger ikke si: “Jeg er alkoholiker.”
+</p>
+
+<p>
+Du trenger ikke vite om du skal slutte for alltid.
+</p>
+
+<p>
+Du kan komme fordi du lurer.
+</p>
+
+<p>
+Du kan komme fordi du er sliten.
+</p>
+
+<p>
+Du kan komme fordi noe i deg kjenner at alkohol ikke lenger gir deg det den lovet.
+</p>
+</div>
+
+<div class="card">
+<h2>Fellesskap kan bryte isolasjonen</h2>
+
+<p>
+Alkoholproblemer trives ofte best alene.
+</p>
+
+<p>
+Når vi skjuler, lyver, bagatelliserer eller later som, blir avstanden til andre større.
+</p>
+
+<p>
+Mange opplever at det hjelper å møte mennesker som faktisk forstår hvordan det er.
+</p>
+
+<p>
+Ikke mennesker som dømmer.
+</p>
+
+<p>
+Ikke mennesker som kommer med pekefinger.
+</p>
+
+<p>
+Bare mennesker som kjenner igjen kampen fra innsiden.
+</p>
+</div>
+
+<div class="card highlight">
+<h2>Trygg Sirkel</h2>
+
+<p>
+Trygg Sirkel er et gratis og anonymt nettmøte for mennesker som strever med alkohol, rus eller annen avhengighet.
+</p>
+
+<p>
+Dette er ikke behandling eller terapi.
+</p>
+
+<p>
+Det er et fellesskap bygget på egne erfaringer, støtte og forståelse.
+</p>
+
+<p>
+Vi møtes digitalt hver kveld klokken 20:00.
+</p>
+
+<p>
+Du trenger ikke si noe.
+</p>
+
+<p>
+Det holder å møte opp.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED I KVELD
+</a>
+</div>
+
+<div class="card" id="sporsmal">
+<h2>Vanlige spørsmål</h2>
+
+<div class="question">
+<strong>Må jeg kalle meg alkoholiker?</strong>
+Nei. Du bestemmer selv hvilke ord du bruker om deg selv og din situasjon.
+</div>
+
+<div class="question">
+<strong>Kan jeg komme hvis jeg bare lurer på om jeg har et problem?</strong>
+Ja. Du trenger ikke være sikker for å møte opp.
+</div>
+
+<div class="question">
+<strong>Er Trygg Sirkel behandling?</strong>
+Nei. Trygg Sirkel er ikke behandling eller terapi. Det er et fellesskap basert på egne erfaringer.
+</div>
+
+<div class="question">
+<strong>Må jeg snakke?</strong>
+Nei. Det er lov å bare lytte.
+</div>
+
+<div class="question">
+<strong>Er det anonymt?</strong>
+Ja. Du trenger ikke bruke fullt navn. Du bestemmer selv hvor mye du vil dele.
+</div>
+</div>
+
+<div class="card highlight">
+<h2>Du trenger ikke finne ut av alt i dag</h2>
+
+<p>
+Kanskje du er alkoholiker.
+</p>
+
+<p>
+Kanskje du har et alkoholproblem.
+</p>
+
+<p>
+Kanskje du bare vet at noe ikke føles riktig lenger.
+</p>
+
+<p>
+Det er nok til å ta ett lite steg.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED PÅ KVELDSMØTE
+</a>
+</div>
+
+<div class="welcome">
+Du trenger ikke bære spørsmålet alene ❤️
+</div>
+
+</main>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
