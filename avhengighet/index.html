@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Avhengighet | Trygg Sirkel</title>
+
+<meta name="description" content="Avhengighet handler ofte om mer enn alkohol eller rus. Les om avhengighet, skam, sug, kontroll, edring og anonym støtte gjennom Trygg Sirkel.">
+<meta name="keywords" content="avhengighet, rusavhengighet, alkoholavhengighet, alkoholproblem, slutte å drikke, hjelp avhengighet, anonym hjelp rus, edring, rusfri, nettmøte avhengighet">
+<meta name="author" content="Trygg Sirkel">
+
+<meta property="og:title" content="Avhengighet | Trygg Sirkel">
+<meta property="og:description" content="Avhengighet handler ofte om mer enn rusen. Du trenger ikke finne veien alene.">
+<meta property="og:url" content="https://www.tryggsirkel.no/avhengighet/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
+
+<link rel="canonical" href="https://www.tryggsirkel.no/avhengighet/">
+<link rel="icon" type="image/png" href="../logo.png">
+
+<style>
+:root{
+--cream:#fff5ec;
+--rose:#c77b6f;
+--rose-dark:#9d5a51;
+--green:#65764d;
+--green-dark:#26371f;
+--brown:#35241f;
+--muted:#7a6258;
+--line:#ead2c1;
+--shadow:0 18px 45px rgba(70,38,26,.14);
+--radius:28px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Inter, Arial, sans-serif;
+background:#fff5ec;
+color:var(--brown);
+line-height:1.75;
+}
+
+a{text-decoration:none;}
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:10;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:28px;
+padding:24px 7%;
+background:rgba(255,246,238,.58);
+backdrop-filter:blur(8px);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+background:rgba(255,250,244,.68);
+padding:10px 18px;
+border-radius:24px;
+}
+
+.brand img{
+width:78px;
+height:78px;
+object-fit:contain;
+}
+
+.brand-title{
+font-size:30px;
+font-weight:900;
+letter-spacing:2px;
+color:var(--green-dark);
+line-height:1.1;
+}
+
+.brand-sub{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.5px;
+color:var(--brown);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+font-size:14px;
+font-weight:900;
+letter-spacing:.8px;
+text-transform:uppercase;
+}
+
+.nav-links a{
+color:var(--brown);
+}
+
+.nav-btn{
+background:var(--green);
+color:white!important;
+padding:15px 24px;
+border-radius:14px;
+box-shadow:0 12px 26px rgba(38,55,31,.22);
+}
+
+.hero{
+min-height:70vh;
+background:
+linear-gradient(90deg,rgba(255,246,238,.94) 0%,rgba(255,246,238,.74) 42%,rgba(255,246,238,.18) 100%),
+url('../veien-hjem.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:150px 8% 90px;
+}
+
+.hero-content{
+max-width:720px;
+}
+
+.hero h1{
+font-family:Georgia, serif;
+font-size:72px;
+line-height:1.05;
+margin:0;
+color:var(--green-dark);
+}
+
+.script{
+font-family:cursive;
+font-size:44px;
+color:var(--rose-dark);
+line-height:1.1;
+margin:10px 0 26px;
+}
+
+.hero p{
+font-size:21px;
+font-weight:600;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+padding:17px 28px;
+font-size:16px;
+font-weight:900;
+letter-spacing:.4px;
+}
+
+.btn-primary{
+background:linear-gradient(180deg,#d99182,#c47468);
+color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
+}
+
+.btn-outline{
+color:var(--brown);
+border:1.5px solid rgba(53,36,31,.35);
+background:rgba(255,250,244,.62);
+backdrop-filter:blur(5px);
+}
+
+.main{
+max-width:1050px;
+margin:auto;
+padding:42px 5% 70px;
+}
+
+.card{
+background:rgba(255,250,244,.94);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:38px;
+margin-bottom:28px;
+}
+
+h2{
+font-family:Georgia, serif;
+font-size:42px;
+line-height:1.15;
+margin:0 0 18px;
+color:var(--green-dark);
+}
+
+p{
+font-size:18px;
+margin-top:0;
+}
+
+ul{
+font-size:18px;
+padding-left:24px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+.highlight{
+background:linear-gradient(180deg,rgba(255,250,244,.96),rgba(244,223,207,.82));
+border:1px solid var(--line);
+}
+
+.question{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:20px;
+padding:20px;
+margin-bottom:14px;
+}
+
+.question strong{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
+}
+
+.big-btn{
+display:inline-flex;
+margin-top:16px;
+background:var(--green);
+color:white;
+padding:16px 26px;
+border-radius:14px;
+font-weight:900;
+}
+
+.welcome{
+text-align:center;
+font-family:Georgia, serif;
+font-size:36px;
+font-weight:900;
+color:var(--rose-dark);
+margin-top:20px;
+}
+
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
+}
+
+.nav-links{
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.hero{
+min-height:auto;
+padding:80px 24px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.script{
+font-size:36px;
+}
+}
+
+@media(max-width:650px){
+.brand{
+width:100%;
+justify-content:center;
+}
+
+.brand img{
+width:58px;
+height:58px;
+}
+
+.brand-title{
+font-size:21px;
+}
+
+.brand-sub{
+font-size:10px;
+}
+
+.nav-links{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+font-size:13px;
+}
+
+.nav-links a{
+background:rgba(255,250,244,.75);
+padding:10px 8px;
+border-radius:12px;
+text-align:center;
+white-space:nowrap;
+}
+
+.nav-btn{
+grid-column:1 / -1;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.script{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card{
+padding:24px 18px;
+}
+
+h2{
+font-size:30px;
+}
+
+p,
+ul{
+font-size:16px;
+}
+
+.btn{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav class="nav">
+<div class="brand">
+<img src="../logo.png" alt="Trygg Sirkel logo">
+<div>
+<div class="brand-title">TRYGG SIRKEL</div>
+<div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
+</div>
+</div>
+
+<div class="nav-links">
+<a href="https://www.tryggsirkel.no">Forside</a>
+<a href="#avhengighet">Avhengighet</a>
+<a href="#tegn">Tegn</a>
+<a href="#sporsmal">Spørsmål</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">Bli med ❤️</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>Avhengighet</h1>
+
+<div class="script">
+Det handler ofte om mer enn rusen. ♡
+</div>
+
+<p>
+Avhengighet kan få et menneske til å gjøre ting det egentlig ikke vil. Det betyr ikke at du er ødelagt. Det betyr at du kanskje trenger støtte, ærlighet og fellesskap.
+</p>
+
+<div class="hero-buttons">
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="btn btn-primary">BLI MED I MØTET 🤍</a>
+<a href="https://www.tryggsirkel.no" class="btn btn-outline">TIL FORSIDEN 🌿</a>
+</div>
+
+</div>
+</section>
+
+<main class="main">
+
+<div class="card" id="avhengighet">
+<h2>Hva er avhengighet?</h2>
+
+<p>
+Avhengighet handler ikke bare om alkohol, rusmidler eller handlinger.
+</p>
+
+<p>
+For mange handler avhengighet også om å lete etter lindring. En pause. Ro i kroppen. Stillhet i hodet. En vei bort fra noe som gjør vondt.
+</p>
+
+<p>
+Noen strever med alkohol. Noen med rus. Noen med piller, spill, mat, relasjoner eller andre mønstre som etter hvert tar mer plass enn de ønsker.
+</p>
+
+<p>
+Det viktigste er ikke alltid hva avhengigheten handler om.
+</p>
+
+<p>
+Det viktigste er hva den gjør med livet ditt.
+</p>
+</div>
+
+<div class="card" id="tegn">
+<h2>Tegn på at avhengighet har fått for stor plass</h2>
+
+<p>
+Du trenger ikke passe inn i en bestemt boks for å få hjelp.
+</p>
+
+<p>
+Mange som strever med avhengighet fungerer lenge på utsiden, mens innsiden blir mer og mer sliten.
+</p>
+
+<p>
+Kanskje kjenner du deg igjen i noe av dette:
+</p>
+
+<ul>
+<li>Du lover deg selv at dette er siste gang.</li>
+<li>Du mister kontrollen når du først begynner.</li>
+<li>Du skjuler, bagatelliserer eller lyver.</li>
+<li>Du bruker alkohol eller rus for å få ro.</li>
+<li>Du får sug eller sterke tanker om å bruke igjen.</li>
+<li>Du fortsetter selv om det skaper problemer.</li>
+<li>Du kjenner skam, uro eller anger etterpå.</li>
+<li>Du trekker deg unna mennesker som bryr seg.</li>
+<li>Du føler at livet blir smalere.</li>
+<li>Du prøver å slutte, men faller tilbake i samme mønster.</li>
+</ul>
+
+<p>
+Hvis flere av disse punktene treffer, betyr det ikke at du er svak.
+</p>
+
+<p>
+Det kan bety at du trenger mer støtte enn du har hatt alene.
+</p>
+</div>
+
+<div class="card">
+<h2>Avhengighet lover ofte noe den ikke kan gi</h2>
+
+<p>
+Mange bruker alkohol eller rus fordi det en gang hjalp med noe.
+</p>
+
+<p>
+Kanskje ga det ro. Kanskje ga det mot. Kanskje fjernet det ensomhet, uro, skam eller smerte for en stund.
+</p>
+
+<p>
+Problemet er at det som først kjennes som hjelp, etter hvert ofte tar mer enn det gir.
+</p>
+
+<p>
+Det som skulle gi frihet, kan begynne å styre dagen.
+</p>
+
+<p>
+Det som skulle gi ro, kan skape mer uro.
+</p>
+
+<p>
+Det som skulle dempe skam, kan gi enda mer skam etterpå.
+</p>
+</div>
+
+<div class="card">
+<h2>Skam gjør avhengighet sterkere</h2>
+
+<p>
+Mange som strever med avhengighet føler seg alene.
+</p>
+
+<p>
+Ikke fordi ingen bryr seg, men fordi skammen gjør det vanskelig å være ærlig.
+</p>
+
+<p>
+Kanskje tenker du:
+</p>
+
+<ul>
+<li>Jeg burde klare dette selv.</li>
+<li>Ingen må få vite hvor ille det er.</li>
+<li>Jeg har skuffet for mange.</li>
+<li>Jeg er ikke sånn egentlig.</li>
+<li>Jeg kan fikse det i morgen.</li>
+<li>Hvis jeg sier det høyt, blir det virkelig.</li>
+</ul>
+
+<p>
+Slike tanker er vanlige.
+</p>
+
+<p>
+Men avhengighet vokser ofte i stillhet.
+</p>
+
+<p>
+Å dele ærlig med noen som forstår kan være et viktig første steg.
+</p>
+</div>
+
+<div class="card">
+<h2>Du er mer enn avhengigheten din</h2>
+
+<p>
+Avhengighet kan få mennesker til å miste kontakten med seg selv.
+</p>
+
+<p>
+Det kan bli vanskelig å kjenne igjen egne verdier, egne drømmer og egen styrke.
+</p>
+
+<p>
+Men du er ikke bare det du har gjort.
+</p>
+
+<p>
+Du er ikke bare de gangene du falt.
+</p>
+
+<p>
+Du er ikke bare skammen, suget eller mønsteret.
+</p>
+
+<p>
+Det finnes fortsatt noe i deg som vil leve friere.
+</p>
+
+<p>
+Det er verdt å lytte til.
+</p>
+</div>
+
+<div class="card">
+<h2>Hvorfor fellesskap kan hjelpe</h2>
+
+<p>
+Mange prøver å komme seg ut av avhengighet alene.
+</p>
+
+<p>
+Noen klarer det en stund. Noen faller tilbake. Noen blir sittende fast i skam og isolasjon.
+</p>
+
+<p>
+Fellesskap løser ikke alt.
+</p>
+
+<p>
+Men det kan gjøre én viktig ting:
+</p>
+
+<p>
+Det kan minne deg på at du ikke er alene.
+</p>
+
+<p>
+Når du møter mennesker som forstår fra innsiden, blir det ofte litt lettere å være ærlig.
+</p>
+</div>
+
+<div class="card highlight">
+<h2>Trygg Sirkel</h2>
+
+<p>
+Trygg Sirkel er et gratis og anonymt nettmøte for mennesker som strever med alkohol, rus eller annen avhengighet.
+</p>
+
+<p>
+Dette er ikke behandling eller terapi.
+</p>
+
+<p>
+Det er et fellesskap bygget på egne erfaringer, støtte og forståelse.
+</p>
+
+<p>
+Vi møtes digitalt hver kveld klokken 20:00.
+</p>
+
+<p>
+Du trenger ikke si noe.
+</p>
+
+<p>
+Det holder å møte opp.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED I KVELD
+</a>
+</div>
+
+<div class="card" id="sporsmal">
+<h2>Vanlige spørsmål</h2>
+
+<div class="question">
+<strong>Må jeg vite hvilken avhengighet jeg har?</strong>
+Nei. Du trenger ikke ha alle ordene klare for å møte opp.
+</div>
+
+<div class="question">
+<strong>Er Trygg Sirkel bare for alkohol?</strong>
+Nei. Trygg Sirkel er for mennesker som strever med alkohol, rus eller annen avhengighet.
+</div>
+
+<div class="question">
+<strong>Er dette behandling?</strong>
+Nei. Trygg Sirkel er ikke behandling eller terapi. Det er et fellesskap basert på egne erfaringer.
+</div>
+
+<div class="question">
+<strong>Må jeg snakke?</strong>
+Nei. Det er lov å bare lytte.
+</div>
+
+<div class="question">
+<strong>Er det anonymt?</strong>
+Ja. Du trenger ikke bruke fullt navn. Du bestemmer selv hvor mye du vil dele.
+</div>
+</div>
+
+<div class="card highlight">
+<h2>Du trenger ikke klare dette alene</h2>
+
+<p>
+Hvis du kjenner at avhengighet har fått for stor plass i livet ditt, trenger du ikke finne veien alene.
+</p>
+
+<p>
+Det holder å ta ett lite steg.
+</p>
+
+<p>
+Ett møte. Én kveld. Ett ærlig øyeblikk.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED PÅ KVELDSMØTE
+</a>
+</div>
+
+<div class="welcome">
+Du er mer enn det som holder deg fast ❤️
+</div>
+
+</main>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
