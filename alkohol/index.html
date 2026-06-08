@@ -5,422 +5,530 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Hjelp med alkohol | Trygg Sirkel</title>
+
 <meta name="description" content="Trenger du hjelp med alkohol? Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet.">
 <meta name="keywords" content="hjelp med alkohol, alkoholproblem, alkoholavhengighet, slutte å drikke, alkoholiker, sug etter alkohol, edru, tilbakefall, hjelp alkohol">
 <meta name="author" content="Trygg Sirkel">
 
 <meta property="og:title" content="Hjelp med alkohol | Trygg Sirkel">
 <meta property="og:description" content="Du trenger ikke gjøre dette alene. Gratis og anonymt nettmøte hver kveld kl. 20:00.">
-<meta property="og:url" content="https://www.tryggsirkel.no/alkohol">
+<meta property="og:url" content="https://www.tryggsirkel.no/alkohol/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
 
-<link rel="canonical" href="https://www.tryggsirkel.no/alkohol">
-<link rel="icon" type="image/png" href="/logo.png">
+<link rel="canonical" href="https://www.tryggsirkel.no/alkohol/">
+<link rel="icon" type="image/png" href="../logo.png">
 
 <style>
 :root{
-  --cream:#fff5ec;
-  --rose:#c77b6f;
-  --rose-dark:#9d5a51;
-  --green:#65764d;
-  --green-dark:#26371f;
-  --text:#24301f;
-  --soft:#f7ebe4;
-  --white:rgba(255,255,255,.9);
+--cream:#fff5ec;
+--rose:#c77b6f;
+--rose-dark:#9d5a51;
+--green:#65764d;
+--green-dark:#26371f;
+--brown:#35241f;
+--muted:#7a6258;
+--line:#ead2c1;
+--shadow:0 18px 45px rgba(70,38,26,.14);
+--radius:28px;
 }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
-  font-family:Arial, sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
+margin:0;
+font-family:Inter, Arial, sans-serif;
+background:#fff5ec;
+color:var(--brown);
+line-height:1.75;
 }
 
-header{
-  text-align:center;
-  padding:34px 20px 20px;
-  background:rgba(255,255,255,.82);
+a{text-decoration:none;}
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:10;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:28px;
+padding:24px 7%;
+background:rgba(255,246,238,.58);
+backdrop-filter:blur(8px);
 }
 
-.logo{
-  max-width:350px;
-  width:84%;
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+background:rgba(255,250,244,.68);
+padding:10px 18px;
+border-radius:24px;
+}
+
+.brand img{
+width:78px;
+height:78px;
+object-fit:contain;
+}
+
+.brand-title{
+font-size:30px;
+font-weight:900;
+letter-spacing:2px;
+color:var(--green-dark);
+line-height:1.1;
+}
+
+.brand-sub{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.5px;
+color:var(--brown);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+font-size:14px;
+font-weight:900;
+letter-spacing:.8px;
+text-transform:uppercase;
+}
+
+.nav-links a{
+color:var(--brown);
+}
+
+.nav-btn{
+background:var(--green);
+color:white!important;
+padding:15px 24px;
+border-radius:14px;
+box-shadow:0 12px 26px rgba(38,55,31,.22);
 }
 
 .hero{
-  min-height:76vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:68px 22px;
-  background:
-    linear-gradient(rgba(255,245,236,.78),rgba(255,245,236,.94)),
-    url('/header.png') center/cover no-repeat;
-  overflow:hidden;
+min-height:70vh;
+background:
+linear-gradient(90deg,rgba(255,246,238,.94) 0%,rgba(255,246,238,.74) 42%,rgba(255,246,238,.18) 100%),
+url('../veien-hjem.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:150px 8% 90px;
 }
 
-.hero-inner{
-  max-width:920px;
-  width:100%;
+.hero-content{
+max-width:720px;
 }
 
 .hero h1{
-  font-family:Georgia, serif;
-  font-size:clamp(2.8rem,9vw,6.4rem);
-  line-height:.96;
-  color:var(--green-dark);
-  margin-bottom:18px;
-  overflow-wrap:break-word;
+font-family:Georgia, serif;
+font-size:72px;
+line-height:1.05;
+margin:0;
+color:var(--green-dark);
 }
 
-.hero .script{
-  font-family:Georgia, serif;
-  font-style:italic;
-  font-size:clamp(1.6rem,4vw,3rem);
-  color:var(--rose-dark);
-  margin-bottom:28px;
+.script{
+font-family:cursive;
+font-size:44px;
+color:var(--rose-dark);
+line-height:1.1;
+margin:10px 0 26px;
 }
 
 .hero p{
-  font-size:clamp(1.12rem,2vw,1.42rem);
-  font-weight:700;
-  max-width:760px;
-  margin:0 auto 34px;
+font-size:21px;
+font-weight:600;
+max-width:650px;
 }
 
-.buttons{
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  flex-wrap:wrap;
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-top:30px;
 }
 
 .btn{
-  display:inline-block;
-  padding:16px 32px;
-  border-radius:18px;
-  text-decoration:none;
-  font-weight:800;
-  letter-spacing:.04em;
-  text-transform:uppercase;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+padding:17px 28px;
+font-size:16px;
+font-weight:900;
+letter-spacing:.4px;
 }
 
 .btn-primary{
-  background:var(--rose);
-  color:white;
-  box-shadow:0 12px 28px rgba(157,90,81,.28);
+background:linear-gradient(180deg,#d99182,#c47468);
+color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
 }
 
-.btn-secondary{
-  background:rgba(255,255,255,.82);
-  color:var(--green-dark);
-  border:1px solid rgba(38,55,31,.18);
+.btn-outline{
+color:var(--brown);
+border:1.5px solid rgba(53,36,31,.35);
+background:rgba(255,250,244,.62);
+backdrop-filter:blur(5px);
 }
 
-section{
-  padding:68px 22px;
-}
-
-.container{
-  max-width:980px;
-  margin:auto;
+.main{
+max-width:1050px;
+margin:auto;
+padding:42px 5% 70px;
 }
 
 .card{
-  background:var(--white);
-  border-radius:28px;
-  padding:38px;
-  margin-bottom:28px;
-  box-shadow:0 18px 45px rgba(38,55,31,.08);
+background:rgba(255,250,244,.94);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:38px;
+margin-bottom:28px;
 }
 
 h2{
-  font-family:Georgia, serif;
-  font-size:clamp(2rem,4vw,3.1rem);
-  color:var(--green-dark);
-  margin-bottom:18px;
-  line-height:1.1;
-}
-
-h3{
-  font-size:1.32rem;
-  color:var(--green-dark);
-  margin:28px 0 10px;
+font-family:Georgia, serif;
+font-size:42px;
+line-height:1.15;
+margin:0 0 18px;
+color:var(--green-dark);
 }
 
 p{
-  margin-bottom:18px;
-  font-size:1.08rem;
+font-size:18px;
+margin-top:0;
 }
 
 ul{
-  margin:16px 0 0 22px;
+font-size:18px;
+padding-left:24px;
 }
 
 li{
-  margin-bottom:10px;
-  font-size:1.05rem;
+margin-bottom:10px;
 }
 
 .highlight{
-  background:var(--soft);
-  border-left:6px solid var(--rose);
-  padding:24px;
-  border-radius:18px;
-  margin:28px 0;
-  font-weight:800;
+background:linear-gradient(180deg,rgba(255,250,244,.96),rgba(244,223,207,.82));
+border:1px solid var(--line);
 }
 
-.related-intro{
-  margin-bottom:24px;
+.question{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:20px;
+padding:20px;
+margin-bottom:14px;
 }
 
-.related-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:14px;
+.question strong{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
 }
 
-.related-grid a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:64px;
-  padding:16px 18px;
-  border-radius:18px;
-  background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(247,235,228,.95));
-  border:1px solid rgba(157,90,81,.20);
-  box-shadow:0 10px 24px rgba(38,55,31,.07);
-  color:var(--green-dark);
-  text-decoration:none;
-  font-weight:800;
-  text-align:center;
-  line-height:1.25;
+.big-btn{
+display:inline-flex;
+margin-top:16px;
+background:var(--green);
+color:white;
+padding:16px 26px;
+border-radius:14px;
+font-weight:900;
 }
 
-footer{
-  text-align:center;
-  padding:42px 20px;
-  background:var(--green-dark);
-  color:white;
+.welcome{
+text-align:center;
+font-family:Georgia, serif;
+font-size:36px;
+font-weight:900;
+color:var(--rose-dark);
+margin-top:20px;
 }
 
-footer a{
-  color:white;
+.related-links{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+margin-top:18px;
 }
 
-@media(max-width:700px){
-  header{
-    padding:26px 16px 16px;
-  }
+.related-links a{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:18px;
+padding:16px;
+font-size:17px;
+font-weight:900;
+color:var(--green-dark);
+}
 
-  .hero{
-    min-height:auto;
-    padding:48px 18px;
-  }
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
+}
 
-  .hero h1{
-    font-size:clamp(2.55rem,12vw,4rem);
-  }
+.nav-links{
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+}
 
-  .hero .script{
-    font-size:clamp(1.45rem,8vw,2.2rem);
-  }
+.hero{
+min-height:auto;
+padding:80px 24px;
+}
 
-  .hero p{
-    font-size:1.07rem;
-  }
+.hero h1{
+font-size:52px;
+}
 
-  section{
-    padding:46px 16px;
-  }
+.script{
+font-size:36px;
+}
+}
 
-  .card{
-    padding:26px;
-    border-radius:24px;
-  }
+@media(max-width:650px){
+.brand{
+width:100%;
+justify-content:center;
+}
 
-  .btn{
-    width:100%;
-    padding:15px 22px;
-  }
+.brand img{
+width:58px;
+height:58px;
+}
 
-  .related-grid{
-    grid-template-columns:1fr;
-  }
+.brand-title{
+font-size:21px;
+}
 
-  .related-grid a{
-    min-height:58px;
-  }
+.brand-sub{
+font-size:10px;
+}
+
+.nav-links{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+font-size:13px;
+}
+
+.nav-links a{
+background:rgba(255,250,244,.75);
+padding:10px 8px;
+border-radius:12px;
+text-align:center;
+white-space:nowrap;
+}
+
+.nav-btn{
+grid-column:1 / -1;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.script{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card{
+padding:24px 18px;
+}
+
+h2{
+font-size:30px;
+}
+
+p,
+ul{
+font-size:16px;
+}
+
+.btn{
+width:100%;
+}
+
+.related-links{
+grid-template-columns:1fr;
+}
 }
 </style>
 </head>
 
-<body>
+<body id="top">
 
-<header>
-  <a href="/">
-    <img src="/logo.png" alt="Trygg Sirkel" class="logo">
-  </a>
-</header>
+<nav class="nav">
+<div class="brand">
+<img src="../logo.png" alt="Trygg Sirkel logo">
+<div>
+<div class="brand-title">TRYGG SIRKEL</div>
+<div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
+</div>
+</div>
 
-<main>
+<div class="nav-links">
+<a href="https://www.tryggsirkel.no">Forside</a>
+<a href="#alkohol">Alkohol</a>
+<a href="#tegn">Tegn</a>
+<a href="#mote">Møte</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">Bli med ❤️</a>
+</div>
+</nav>
 
 <section class="hero">
-  <div class="hero-inner">
-    <h1>Hjelp med alkohol</h1>
-    <div class="script">Du trenger ikke gjøre dette alene.</div>
+<div class="hero-content">
 
-    <p>
-      Hvis alkohol har begynt å ta mer plass i livet ditt enn du ønsker,
-      finnes det et trygt sted å møte andre som forstår.
-    </p>
+<h1>Hjelp med alkohol</h1>
 
-    <div class="buttons">
-      <a class="btn btn-primary" href="https://us06web.zoom.us/j/87199511754" target="_blank">Bli med i møtet 🤍</a>
-      <a class="btn btn-secondary" href="/">Til forsiden 🌿</a>
-    </div>
-  </div>
+<div class="script">
+Du trenger ikke gjøre dette alene. ♡
+</div>
+
+<p>
+Hvis alkohol har begynt å ta mer plass i livet ditt enn du ønsker, finnes det et trygt sted å møte andre som forstår.
+</p>
+
+<div class="hero-buttons">
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="btn btn-primary">BLI MED I MØTET 🤍</a>
+<a href="https://www.tryggsirkel.no" class="btn btn-outline">TIL FORSIDEN 🌿</a>
+</div>
+
+</div>
 </section>
 
-<section>
-  <div class="container">
+<main class="main">
 
-    <div class="card">
-      <h2>Når alkohol tar for mye plass</h2>
+<div class="card" id="alkohol">
+<h2>Når alkohol tar for mye plass</h2>
 
-      <p>
-        For mange skjer det gradvis. Det starter kanskje som noe sosialt,
-        noe som roer kroppen, demper uro eller gir en pause fra tanker og ansvar.
-      </p>
+<p>
+For mange skjer det gradvis. Det starter kanskje som noe sosialt, noe som roer kroppen, demper uro eller gir en pause fra tanker og ansvar.
+</p>
 
-      <p>
-        Etter hvert kan alkohol begynne å styre mer enn du ønsker. Du tenker mer på
-        når du kan drikke. Du drikker mer enn planlagt. Du lover deg selv å ta kontroll,
-        men havner likevel tilbake i samme mønster.
-      </p>
+<p>
+Etter hvert kan alkohol begynne å styre mer enn du ønsker. Du tenker mer på når du kan drikke. Du drikker mer enn planlagt. Du lover deg selv å ta kontroll, men havner likevel tilbake i samme mønster.
+</p>
 
-      <p>
-        Å søke hjelp med alkohol betyr ikke at du har mislyktes. Det betyr at du tar
-        det på alvor.
-      </p>
+<p>
+Å søke hjelp med alkohol betyr ikke at du har mislyktes. Det betyr at du tar det på alvor.
+</p>
 
-      <div class="highlight">
-        Du trenger ikke vente til alt har rast sammen før du ber om støtte.
-      </div>
-    </div>
+<div class="question">
+<strong>Du trenger ikke vente til alt har rast sammen før du ber om støtte.</strong>
+</div>
+</div>
 
-    <div class="card">
-      <h2>Tegn på at alkohol kan ha blitt et problem</h2>
+<div class="card" id="tegn">
+<h2>Tegn på at alkohol kan ha blitt et problem</h2>
 
-      <ul>
-        <li>Du drikker mer enn du hadde tenkt.</li>
-        <li>Du prøver å kutte ned, men får det ikke helt til.</li>
-        <li>Du tenker mye på alkohol.</li>
-        <li>Du skjuler hvor mye du drikker.</li>
-        <li>Du føler skyld, skam eller uro etterpå.</li>
-        <li>Alkohol påvirker økonomi, jobb, familie eller relasjoner.</li>
-        <li>Du bruker alkohol for å slippe å kjenne på vanskelige følelser.</li>
-        <li>Du kjenner sug eller rastløshet når du ikke drikker.</li>
-      </ul>
+<ul>
+<li>Du drikker mer enn du hadde tenkt.</li>
+<li>Du prøver å kutte ned, men får det ikke helt til.</li>
+<li>Du tenker mye på alkohol.</li>
+<li>Du skjuler hvor mye du drikker.</li>
+<li>Du føler skyld, skam eller uro etterpå.</li>
+<li>Alkohol påvirker økonomi, jobb, familie eller relasjoner.</li>
+<li>Du bruker alkohol for å slippe å kjenne på vanskelige følelser.</li>
+<li>Du kjenner sug eller rastløshet når du ikke drikker.</li>
+</ul>
 
-      <p>
-        Du trenger ikke kjenne deg igjen i alt. Hvis alkohol bekymrer deg,
-        er det grunn nok til å ta det på alvor.
-      </p>
-    </div>
+<p>
+Du trenger ikke kjenne deg igjen i alt. Hvis alkohol bekymrer deg, er det grunn nok til å ta det på alvor.
+</p>
+</div>
 
-    <div class="card">
-      <h2>Du må ikke klare det alene</h2>
+<div class="card">
+<h2>Du må ikke klare det alene</h2>
 
-      <p>
-        Mange som strever med alkohol prøver lenge å ordne det selv. De lager regler,
-        tar pauser, lover seg selv en ny start og forsøker å skjerpe seg.
-      </p>
+<p>
+Mange som strever med alkohol prøver lenge å ordne det selv. De lager regler, tar pauser, lover seg selv en ny start og forsøker å skjerpe seg.
+</p>
 
-      <p>
-        Noen ganger holder det en stund. Men for mange kommer det samme mønsteret tilbake.
-        Da kan fellesskap, ærlighet og støtte være avgjørende.
-      </p>
+<p>
+Noen ganger holder det en stund. Men for mange kommer det samme mønsteret tilbake. Da kan fellesskap, ærlighet og støtte være avgjørende.
+</p>
 
-      <p>
-        Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol,
-        rus eller avhengighet. Du kan komme om du er edru. Du kan komme om du prøver å bli edru.
-        Du kan også komme om du bare er usikker.
-      </p>
-    </div>
+<p>
+Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet. Du kan komme om du er edru. Du kan komme om du prøver å bli edru. Du kan også komme om du bare er usikker.
+</p>
+</div>
 
-    <div class="card">
-      <h2>Gratis og anonymt nettmøte</h2>
+<div class="card highlight" id="mote">
+<h2>Gratis og anonymt nettmøte</h2>
 
-      <p>
-        Vi møtes digitalt hver kveld kl. 20:00. Du trenger ikke dele noe første gang.
-        Mange kommer bare for å lytte.
-      </p>
+<p>
+Vi møtes digitalt hver kveld kl. 20:00. Du trenger ikke dele noe første gang. Mange kommer bare for å lytte.
+</p>
 
-      <p>
-        Hos oss møter du mennesker som vet hvordan det kan føles med sug, skam,
-        tilbakefallstanker, uro, ensomhet og ønsket om å få livet tilbake.
-      </p>
+<p>
+Hos oss møter du mennesker som vet hvordan det kan føles med sug, skam, tilbakefallstanker, uro, ensomhet og ønsket om å få livet tilbake.
+</p>
 
-      <ul>
-        <li>Møtet er gratis.</li>
-        <li>Du kan være anonym.</li>
-        <li>Du kan lytte uten å dele.</li>
-        <li>Vi gir ikke råd uten at noen ber om det.</li>
-        <li>Du blir møtt med respekt.</li>
-      </ul>
+<ul>
+<li>Møtet er gratis.</li>
+<li>Du kan være anonym.</li>
+<li>Du kan lytte uten å dele.</li>
+<li>Vi gir ikke råd uten at noen ber om det.</li>
+<li>Du blir møtt med respekt.</li>
+</ul>
 
-      <div class="highlight">
-        Du trenger ikke si noe. Du trenger bare møte opp.
-      </div>
+<div class="question">
+<strong>Du trenger ikke si noe. Du trenger bare møte opp.</strong>
+</div>
 
-      <div class="buttons">
-        <a class="btn btn-primary" href="https://us06web.zoom.us/j/87199511754" target="_blank">Bli med i møtet 🤍</a>
-      </div>
-    </div>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED I KVELD
+</a>
+</div>
 
-    <div class="card">
-      <h2>Relaterte sider</h2>
+<div class="card">
+<h2>Relaterte sider</h2>
 
-      <p class="related-intro">
-        Flere temaer som kan være nyttige hvis du søker hjelp med alkohol,
-        rus, sug, tilbakefall eller edruskap.
-      </p>
+<p>
+Flere temaer som kan være nyttige hvis du søker hjelp med alkohol, rus, sug, tilbakefall eller edruskap.
+</p>
 
-      <div class="related-grid">
-        <a href="/slutte">Hvordan slutte å drikke</a>
-        <a href="/sug">Sug etter alkohol</a>
-        <a href="/edru">Å bli edru</a>
-        <a href="/tilbakefall">Tilbakefall</a>
-        <a href="/alkoholiker">Er jeg alkoholiker?</a>
-        <a href="/avhengighet">Avhengighet</a>
-        <a href="/hjelp">Hjelp med alkohol og rus</a>
-      </div>
-    </div>
+<div class="related-links">
+<a href="/slutte">Hvordan slutte å drikke</a>
+<a href="/sug">Sug etter alkohol</a>
+<a href="/edru">Å bli edru</a>
+<a href="/tilbakefall">Tilbakefall</a>
+<a href="/alkoholiker">Er jeg alkoholiker?</a>
+<a href="/avhengighet">Avhengighet</a>
+<a href="/hjelp">Hjelp med alkohol og rus</a>
+</div>
+</div>
 
-  </div>
-</section>
+<div class="welcome">
+Du trenger ikke gjøre dette alene ❤️
+</div>
 
 </main>
 
-<footer>
-  <p>Trygg Sirkel – et sted å være ærlig, sammen.</p>
-  <p><a href="/">Til forsiden</a></p>
-</footer>
+<script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 </html>
