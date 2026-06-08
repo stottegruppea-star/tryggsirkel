@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tilbakefall | Trygg Sirkel</title>
+
+<meta name="description" content="Tilbakefall etter alkohol eller rus betyr ikke at alt er ødelagt. Les om tilbakefall, skam, sug, edring og hvordan fellesskap kan hjelpe.">
+<meta name="keywords" content="tilbakefall, tilbakefall alkohol, tilbakefall rus, jeg sprakk, begynte å drikke igjen, alkoholproblem, avhengighet, sug etter alkohol, edring, rusfri">
+<meta name="author" content="Trygg Sirkel">
+
+<meta property="og:title" content="Tilbakefall | Trygg Sirkel">
+<meta property="og:description" content="Et tilbakefall betyr ikke at alt er ødelagt. Du trenger ikke bli alene i skammen.">
+<meta property="og:url" content="https://www.tryggsirkel.no/tilbakefall/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
+
+<link rel="canonical" href="https://www.tryggsirkel.no/tilbakefall/">
+<link rel="icon" type="image/png" href="../logo.png">
+
+<style>
+:root{
+--cream:#fff5ec;
+--rose:#c77b6f;
+--rose-dark:#9d5a51;
+--green:#65764d;
+--green-dark:#26371f;
+--brown:#35241f;
+--muted:#7a6258;
+--line:#ead2c1;
+--shadow:0 18px 45px rgba(70,38,26,.14);
+--radius:28px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Inter, Arial, sans-serif;
+background:#fff5ec;
+color:var(--brown);
+line-height:1.75;
+}
+
+a{text-decoration:none;}
+
+.nav{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:10;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:28px;
+padding:24px 7%;
+background:rgba(255,246,238,.58);
+backdrop-filter:blur(8px);
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:14px;
+background:rgba(255,250,244,.68);
+padding:10px 18px;
+border-radius:24px;
+}
+
+.brand img{
+width:78px;
+height:78px;
+object-fit:contain;
+}
+
+.brand-title{
+font-size:30px;
+font-weight:900;
+letter-spacing:2px;
+color:var(--green-dark);
+line-height:1.1;
+}
+
+.brand-sub{
+font-size:12px;
+font-weight:900;
+letter-spacing:1.5px;
+color:var(--brown);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:28px;
+font-size:14px;
+font-weight:900;
+letter-spacing:.8px;
+text-transform:uppercase;
+}
+
+.nav-links a{
+color:var(--brown);
+}
+
+.nav-btn{
+background:var(--green);
+color:white!important;
+padding:15px 24px;
+border-radius:14px;
+box-shadow:0 12px 26px rgba(38,55,31,.22);
+}
+
+.hero{
+min-height:70vh;
+background:
+linear-gradient(90deg,rgba(255,246,238,.94) 0%,rgba(255,246,238,.74) 42%,rgba(255,246,238,.18) 100%),
+url('../veien-hjem.png');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+padding:150px 8% 90px;
+}
+
+.hero-content{
+max-width:720px;
+}
+
+.hero h1{
+font-family:Georgia, serif;
+font-size:72px;
+line-height:1.05;
+margin:0;
+color:var(--green-dark);
+}
+
+.script{
+font-family:cursive;
+font-size:44px;
+color:var(--rose-dark);
+line-height:1.1;
+margin:10px 0 26px;
+}
+
+.hero p{
+font-size:21px;
+font-weight:600;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:15px;
+padding:17px 28px;
+font-size:16px;
+font-weight:900;
+letter-spacing:.4px;
+}
+
+.btn-primary{
+background:linear-gradient(180deg,#d99182,#c47468);
+color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
+}
+
+.btn-outline{
+color:var(--brown);
+border:1.5px solid rgba(53,36,31,.35);
+background:rgba(255,250,244,.62);
+backdrop-filter:blur(5px);
+}
+
+.main{
+max-width:1050px;
+margin:auto;
+padding:42px 5% 70px;
+}
+
+.card{
+background:rgba(255,250,244,.94);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:38px;
+margin-bottom:28px;
+}
+
+h2{
+font-family:Georgia, serif;
+font-size:42px;
+line-height:1.15;
+margin:0 0 18px;
+color:var(--green-dark);
+}
+
+p{
+font-size:18px;
+margin-top:0;
+}
+
+ul{
+font-size:18px;
+padding-left:24px;
+}
+
+li{
+margin-bottom:10px;
+}
+
+.highlight{
+background:linear-gradient(180deg,rgba(255,250,244,.96),rgba(244,223,207,.82));
+border:1px solid var(--line);
+}
+
+.question{
+background:rgba(255,255,255,.58);
+border:1px solid var(--line);
+border-radius:20px;
+padding:20px;
+margin-bottom:14px;
+}
+
+.question strong{
+display:block;
+font-size:18px;
+font-weight:900;
+color:var(--green-dark);
+margin-bottom:6px;
+}
+
+.big-btn{
+display:inline-flex;
+margin-top:16px;
+background:var(--green);
+color:white;
+padding:16px 26px;
+border-radius:14px;
+font-weight:900;
+}
+
+.welcome{
+text-align:center;
+font-family:Georgia, serif;
+font-size:36px;
+font-weight:900;
+color:var(--rose-dark);
+margin-top:20px;
+}
+
+@media(max-width:1050px){
+.nav{
+position:relative;
+flex-direction:column;
+padding:18px;
+}
+
+.nav-links{
+justify-content:center;
+flex-wrap:wrap;
+gap:16px;
+}
+
+.hero{
+min-height:auto;
+padding:80px 24px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.script{
+font-size:36px;
+}
+}
+
+@media(max-width:650px){
+.brand{
+width:100%;
+justify-content:center;
+}
+
+.brand img{
+width:58px;
+height:58px;
+}
+
+.brand-title{
+font-size:21px;
+}
+
+.brand-sub{
+font-size:10px;
+}
+
+.nav-links{
+width:100%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+font-size:13px;
+}
+
+.nav-links a{
+background:rgba(255,250,244,.75);
+padding:10px 8px;
+border-radius:12px;
+text-align:center;
+white-space:nowrap;
+}
+
+.nav-btn{
+grid-column:1 / -1;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.script{
+font-size:30px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.card{
+padding:24px 18px;
+}
+
+h2{
+font-size:30px;
+}
+
+p,
+ul{
+font-size:16px;
+}
+
+.btn{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body id="top">
+
+<nav class="nav">
+<div class="brand">
+<img src="../logo.png" alt="Trygg Sirkel logo">
+<div>
+<div class="brand-title">TRYGG SIRKEL</div>
+<div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
+</div>
+</div>
+
+<div class="nav-links">
+<a href="https://www.tryggsirkel.no">Forside</a>
+<a href="#tilbakefall">Tilbakefall</a>
+<a href="#etterpa">Etterpå</a>
+<a href="#sporsmal">Spørsmål</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="nav-btn">Bli med ❤️</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>Tilbakefall</h1>
+
+<div class="script">
+Det betyr ikke at alt er ødelagt. ♡
+</div>
+
+<p>
+Hvis du har drukket igjen, brukt rus igjen, eller kjenner at du er nær ved å gi opp, trenger du ikke bli alene i skammen.
+</p>
+
+<div class="hero-buttons">
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="btn btn-primary">BLI MED I MØTET 🤍</a>
+<a href="https://www.tryggsirkel.no" class="btn btn-outline">TIL FORSIDEN 🌿</a>
+</div>
+
+</div>
+</section>
+
+<main class="main">
+
+<div class="card" id="tilbakefall">
+<h2>Et tilbakefall betyr ikke at du er ferdig</h2>
+
+<p>
+Mange som strever med alkohol, rus eller annen avhengighet opplever tilbakefall.
+</p>
+
+<p>
+Noen sier: “Jeg sprakk.” Andre sier: “Jeg begynte å drikke igjen.” Noen kjenner bare en tung følelse av skam og tenker at alt arbeidet er bortkastet.
+</p>
+
+<p>
+Men et tilbakefall betyr ikke at alt er ødelagt.
+</p>
+
+<p>
+Det betyr ikke at du er håpløs.
+</p>
+
+<p>
+Det betyr at noe ble for vanskelig å stå i alene, eller at noe i livet ditt trenger mer støtte, mer ærlighet eller mer beskyttelse.
+</p>
+</div>
+
+<div class="card">
+<h2>Skammen etter et tilbakefall</h2>
+
+<p>
+For mange er ikke selve tilbakefallet det tyngste.
+</p>
+
+<p>
+Det tyngste kommer etterpå.
+</p>
+
+<p>
+Skammen. Angeren. Kroppen. Frykten. Tankene om at man har skuffet alle. Følelsen av å måtte begynne helt på nytt.
+</p>
+
+<p>
+Mange trekker seg unna akkurat da de trenger mennesker mest.
+</p>
+
+<p>
+Det er forståelig.
+</p>
+
+<p>
+Men skam vokser ofte i stillhet.
+</p>
+
+<p>
+Å fortelle noen sannheten kan være det første steget tilbake.
+</p>
+</div>
+
+<div class="card">
+<h2>Hvorfor skjer tilbakefall?</h2>
+
+<p>
+Tilbakefall skjer sjelden helt uten grunn, selv om det kan føles sånn.
+</p>
+
+<p>
+Det kan handle om:
+</p>
+
+<ul>
+<li>Sug etter alkohol eller rus</li>
+<li>Stress eller press over tid</li>
+<li>Ensomhet</li>
+<li>Konflikter</li>
+<li>Sorg eller tap</li>
+<li>Gamle vaner</li>
+<li>Følelser som blir for sterke</li>
+<li>Å slutte å være ærlig om hvordan man har det</li>
+<li>Å isolere seg</li>
+<li>Å tro at man “har kontroll” igjen</li>
+</ul>
+
+<p>
+Et tilbakefall kan være smertefullt, men det kan også vise deg noe viktig:
+</p>
+
+<p>
+Hva du trenger mer hjelp med fremover.
+</p>
+</div>
+
+<div class="card" id="etterpa">
+<h2>Hva gjør du etter et tilbakefall?</h2>
+
+<p>
+Det viktigste er å ikke bli alene.
+</p>
+
+<p>
+Mange får tanker som:
+</p>
+
+<ul>
+<li>Da kan jeg like gjerne fortsette.</li>
+<li>Jeg har ødelagt alt.</li>
+<li>Jeg tør ikke si det til noen.</li>
+<li>Jeg klarer aldri dette.</li>
+<li>Jeg kan begynne på nytt i morgen.</li>
+</ul>
+
+<p>
+Dette er farlige tanker, fordi de kan gjøre én sprekk til flere dager, uker eller måneder.
+</p>
+
+<p>
+Hvis du har hatt et tilbakefall, prøv å gjøre det lite igjen så fort som mulig.
+</p>
+
+<ul>
+<li>Si det til noen.</li>
+<li>Kom deg på et møte.</li>
+<li>Drikk vann og spis noe.</li>
+<li>Unngå mer alkohol eller rus i dag.</li>
+<li>Ikke ta store livsvalg mens du er i skam.</li>
+<li>Skriv ned hva som skjedde før tilbakefallet.</li>
+<li>Be om støtte tidligere enn du pleier.</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Du starter ikke på null</h2>
+
+<p>
+Mange føler at de mister alle rusfrie dager hvis de får et tilbakefall.
+</p>
+
+<p>
+Men erfaringene dine forsvinner ikke.
+</p>
+
+<p>
+Alt du lærte før tilbakefallet, er fortsatt med deg.
+</p>
+
+<p>
+Hver ærlige dag teller.
+</p>
+
+<p>
+Hver erfaring teller.
+</p>
+
+<p>
+Det viktige er ikke å straffe deg selv hardere.
+</p>
+
+<p>
+Det viktige er å forstå hva som skjedde, og komme tilbake til støtte raskest mulig.
+</p>
+</div>
+
+<div class="card">
+<h2>Tilbakefall kan begynne før du drikker</h2>
+
+<p>
+For mange starter tilbakefall lenge før første drink eller første rusmiddel.
+</p>
+
+<p>
+Det kan starte med små tegn:
+</p>
+
+<ul>
+<li>Du slutter å møte opp.</li>
+<li>Du sier ikke hvordan du egentlig har det.</li>
+<li>Du blir mer alene.</li>
+<li>Du begynner å romantisere rusen.</li>
+<li>Du tenker at “bare én” går fint.</li>
+<li>Du skjuler uro, sug eller tanker.</li>
+<li>Du blir lei av å gjøre det som hjelper.</li>
+</ul>
+
+<p>
+Å kjenne igjen disse tegnene tidlig kan gjøre det lettere å be om hjelp før du handler på suget.
+</p>
+</div>
+
+<div class="card highlight">
+<h2>Trygg Sirkel</h2>
+
+<p>
+Trygg Sirkel er et gratis og anonymt nettmøte for mennesker som strever med alkohol, rus eller annen avhengighet.
+</p>
+
+<p>
+Dette er ikke behandling eller terapi.
+</p>
+
+<p>
+Det er mennesker med egne erfaringer som møtes for å støtte hverandre.
+</p>
+
+<p>
+Vi møtes digitalt hver kveld klokken 20:00.
+</p>
+
+<p>
+Du trenger ikke si noe.
+</p>
+
+<p>
+Det holder å møte opp.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED I KVELD
+</a>
+</div>
+
+<div class="card" id="sporsmal">
+<h2>Vanlige spørsmål</h2>
+
+<div class="question">
+<strong>Betyr tilbakefall at jeg aldri vil klare det?</strong>
+Nei. Mange mennesker opplever tilbakefall før de finner mer stabil edring.
+</div>
+
+<div class="question">
+<strong>Må jeg fortelle om tilbakefallet på møtet?</strong>
+Nei. Du bestemmer selv hva du vil dele. Det er lov å bare lytte.
+</div>
+
+<div class="question">
+<strong>Kan jeg komme selv om jeg skammer meg?</strong>
+Ja. Kanskje særlig da.
+</div>
+
+<div class="question">
+<strong>Er Trygg Sirkel behandling?</strong>
+Nei. Trygg Sirkel er ikke behandling eller terapi. Det er et fellesskap basert på egne erfaringer.
+</div>
+
+<div class="question">
+<strong>Må jeg være rusfri for å komme?</strong>
+Du er velkommen uansett hvor du er i prosessen. Hvis du er tydelig beruset i selve møtet, kan det hende vi må avslutte for tryggheten i rommet.
+</div>
+</div>
+
+<div class="card highlight">
+<h2>Du trenger ikke bli borte</h2>
+
+<p>
+Hvis du har hatt et tilbakefall, er det lett å gjemme seg.
+</p>
+
+<p>
+Men du er fortsatt velkommen.
+</p>
+
+<p>
+Du trenger ikke forklare alt.
+</p>
+
+<p>
+Du trenger bare å komme tilbake.
+</p>
+
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" class="big-btn">
+BLI MED PÅ KVELDSMØTE
+</a>
+</div>
+
+<div class="welcome">
+Du er ikke tilbake på null. Du er fortsatt her ❤️
+</div>
+
+</main>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
