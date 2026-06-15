@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Trygg Sirkel – gratis og anonymt nettmøte for deg som strever med alkohol</title>
+<title>Trygg Sirkel – gratis og anonymt nettmøte for deg som strever med avhengighet</title>
 
 <meta name="google-site-verification" content="Jbo1J11JzoZA3a3ypedyrggkmls2yziwsjV_mgX8DaE" />
 
-<meta name="description" content="Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, sug, tilbakefall eller ønsker å bli edru. Hver kveld kl. 20:00. Du trenger ikke si noe.">
+<meta name="description" content="Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med avhengighet, sug, tilbakefall eller ønsker en rusfri hverdag. Hver kveld kl. 20:00. Du trenger ikke si noe.">
 <meta name="keywords" content="slutte å drikke, alkoholisme, alkoholproblem, rusavhengighet, avhengighet, anonym hjelp, nettmøte rus, ettervern, rusfri, alkoholfri, sug, tilbakefall, edru">
 <meta name="author" content="Trygg Sirkel">
 
@@ -34,7 +34,7 @@
   "name": "Trygg Sirkel",
   "url": "https://www.tryggsirkel.no",
   "logo": "https://www.tryggsirkel.no/logo.png",
-  "description": "Gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet. Hver kveld kl. 20:00.",
+  "description": "Gratis og anonymt nettmøte for deg som strever med avhengighet, rus eller alkohol. Hver kveld kl. 20:00.",
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "support",
@@ -52,492 +52,101 @@
 
 <style>
 :root{
---cream:#fff5ec;
---paper:#fffaf4;
---soft:#f4dfcf;
---rose:#c77b6f;
---rose-dark:#9d5a51;
---green:#65764d;
---green-dark:#26371f;
---brown:#35241f;
---muted:#7a6258;
---line:#ead2c1;
---shadow:0 18px 45px rgba(70,38,26,.14);
---radius:28px;
+--cream:#fff5ec;--paper:#fffaf4;--soft:#f4dfcf;--rose:#c77b6f;--rose-dark:#9d5a51;--green:#65764d;--green-dark:#26371f;--brown:#35241f;--muted:#7a6258;--line:#ead2c1;--shadow:0 18px 45px rgba(70,38,26,.14);--radius:28px;
 }
-
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-
-body{
-margin:0;
-font-family:Inter, Arial, sans-serif;
-background:#fff5ec;
-color:var(--brown);
-line-height:1.75;
-}
-
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#fff5ec;color:var(--brown);line-height:1.75;}
 a{text-decoration:none;}
-
-/* ── NAV ── */
-.nav{
-position:absolute;
-top:0;left:0;
-width:100%;
-z-index:10;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:28px;
-padding:24px 7%;
-background:rgba(255,246,238,.58);
-backdrop-filter:blur(8px);
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:14px;
-background:rgba(255,250,244,.68);
-padding:10px 18px;
-border-radius:24px;
-}
-
-.brand img{
-width:78px;height:78px;
-object-fit:contain;
-}
-
-.brand-title{
-font-size:30px;font-weight:900;
-letter-spacing:2px;color:var(--green-dark);line-height:1.1;
-}
-
-.brand-sub{
-font-size:12px;font-weight:900;
-letter-spacing:1.5px;color:var(--brown);
-}
-
-.nav-links{
-display:flex;align-items:center;gap:28px;
-font-size:14px;font-weight:900;
-letter-spacing:.8px;text-transform:uppercase;
-}
-
+.nav{position:absolute;top:0;left:0;width:100%;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 7%;background:rgba(255,246,238,.58);backdrop-filter:blur(8px);}
+.brand{display:flex;align-items:center;gap:14px;background:rgba(255,250,244,.68);padding:10px 18px;border-radius:24px;}
+.brand img{width:78px;height:78px;object-fit:contain;}
+.brand-title{font-size:30px;font-weight:900;letter-spacing:2px;color:var(--green-dark);line-height:1.1;}
+.brand-sub{font-size:12px;font-weight:900;letter-spacing:1.5px;color:var(--brown);}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;}
 .nav-links a{color:var(--brown);}
-
-.nav-btn{
-background:var(--green);
-color:#fff!important;
-padding:15px 24px;border-radius:14px;
-box-shadow:0 12px 26px rgba(38,55,31,.22);
-}
-
-/* ── HERO ── */
-.hero{
-min-height:78vh;
-background:
-  linear-gradient(90deg,rgba(255,246,238,.92) 0%,rgba(255,246,238,.70) 38%,rgba(255,246,238,.10) 100%),
-  url('veien-hjem.png');
-background-size:cover;background-position:center;
-display:flex;align-items:center;
-padding:150px 8% 90px;
-}
-
-.hero-content{max-width:660px;}
-
-.meeting-badge{
-display:inline-flex;align-items:center;gap:8px;
-background:rgba(101,118,77,.15);
-border:1.5px solid rgba(101,118,77,.35);
-border-radius:999px;
-padding:9px 20px;
-font-size:15px;font-weight:900;letter-spacing:.4px;
-color:var(--green-dark);
-margin-bottom:22px;
-}
-
-.meeting-badge span{
-background:var(--green);
-color:#fff;
-border-radius:999px;
-padding:2px 10px;
-font-size:13px;
-}
-
-.hero h1{
-font-family:Georgia, serif;
-font-size:76px;line-height:1.05;
-margin:0;color:var(--green-dark);
-}
-
-.script{
-font-family:cursive;font-size:48px;
-color:var(--rose-dark);line-height:1.1;
-margin:8px 0 26px;
-}
-
-.hero p{
-font-size:21px;font-weight:600;
-max-width:570px;
-}
-
-.hero-buttons{
-display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;
-}
-
-.btn{
-display:inline-flex;align-items:center;justify-content:center;
-border-radius:15px;padding:17px 28px;
-font-size:16px;font-weight:900;letter-spacing:.4px;
-}
-
-.btn-primary{
-background:linear-gradient(180deg,#d99182,#c47468);
-color:white;
-box-shadow:0 14px 28px rgba(157,90,81,.28);
-}
-
-.btn-outline{
-color:var(--brown);
-border:1.5px solid rgba(53,36,31,.35);
-background:rgba(255,250,244,.52);
-backdrop-filter:blur(5px);
-}
-
-.btn-open{
-background:rgba(101,118,77,.12);
-border:1.5px solid rgba(101,118,77,.35);
-color:var(--green-dark);
-}
-
-/* ── ICON STRIP ── */
-.icon-strip{
-display:grid;grid-template-columns:repeat(5,1fr);
-background:#f2dfcf;
-border-top:1px solid rgba(53,36,31,.08);
-border-bottom:1px solid rgba(53,36,31,.08);
-}
-
-.icon-box{
-text-align:center;padding:34px 22px;
-border-right:1px solid rgba(53,36,31,.10);
-}
-
+.nav-btn{background:var(--green);color:#fff!important;padding:15px 24px;border-radius:14px;box-shadow:0 12px 26px rgba(38,55,31,.22);}
+.hero{min-height:78vh;background:linear-gradient(90deg,rgba(255,246,238,.92) 0%,rgba(255,246,238,.70) 38%,rgba(255,246,238,.10) 100%),url('veien-hjem.png');background-size:cover;background-position:center;display:flex;align-items:center;padding:150px 8% 90px;}
+.hero-content{max-width:690px;}
+.meeting-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(101,118,77,.15);border:1.5px solid rgba(101,118,77,.35);border-radius:999px;padding:9px 20px;font-size:15px;font-weight:900;letter-spacing:.4px;color:var(--green-dark);margin-bottom:22px;}
+.meeting-badge span{background:var(--green);color:#fff;border-radius:999px;padding:2px 10px;font-size:13px;}
+.hero h1{font-family:Georgia,serif;font-size:76px;line-height:1.05;margin:0;color:var(--green-dark);}
+.script{font-family:cursive;font-size:48px;color:var(--rose-dark);line-height:1.1;margin:8px 0 26px;}
+.hero p{font-size:21px;font-weight:600;max-width:640px;}
+.hero-strong{font-size:22px!important;font-weight:900!important;color:var(--green-dark);margin:16px 0 0;}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:15px;padding:17px 28px;font-size:16px;font-weight:900;letter-spacing:.4px;}
+.btn-primary{background:linear-gradient(180deg,#d99182,#c47468);color:white;box-shadow:0 14px 28px rgba(157,90,81,.28);}
+.btn-outline{color:var(--brown);border:1.5px solid rgba(53,36,31,.35);background:rgba(255,250,244,.52);backdrop-filter:blur(5px);}
+.btn-open{background:rgba(101,118,77,.12);border:1.5px solid rgba(101,118,77,.35);color:var(--green-dark);}
+.icon-strip{display:grid;grid-template-columns:repeat(4,1fr);background:#f2dfcf;border-top:1px solid rgba(53,36,31,.08);border-bottom:1px solid rgba(53,36,31,.08);}
+.icon-box{text-align:center;padding:34px 22px;border-right:1px solid rgba(53,36,31,.10);}
 .icon-box:last-child{border-right:none;}
-
 .icon{font-size:44px;margin-bottom:8px;}
-
-.icon-box h3{
-margin:0 0 8px;font-size:18px;
-letter-spacing:1px;text-transform:uppercase;
-}
-
+.icon-box h3{margin:0 0 8px;font-size:18px;letter-spacing:1px;text-transform:uppercase;}
 .icon-box p{margin:0;font-size:15px;line-height:1.45;}
-
-.icon-script{
-font-family:cursive;font-size:36px;
-color:var(--rose-dark);line-height:1.25;
-}
-
-/* ── MAIN ── */
-.main{
-max-width:1380px;
-margin:auto;
-padding:36px 5% 70px;
-}
-
-.grid-top{
-display:grid;grid-template-columns:1.25fr 1fr;
-gap:26px;margin-bottom:26px;
-}
-
-.panel{
-background:rgba(255,250,244,.92);
-border:1px solid var(--line);
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-overflow:hidden;
-}
-
+.main{max-width:1380px;margin:auto;padding:36px 5% 70px;}
+.grid-top{display:grid;grid-template-columns:1.25fr 1fr;gap:26px;margin-bottom:26px;}
+.panel{background:rgba(255,250,244,.92);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;}
 .meeting-panel{display:grid;grid-template-columns:1fr 1.05fr;}
-
-.panel-img{
-min-height:360px;
-background-size:cover;background-position:center;
-}
-
+.panel-img{min-height:360px;background-size:cover;background-position:center;}
 .panel-content{padding:38px;}
-
-.tag{
-font-size:14px;font-weight:900;
-letter-spacing:1.5px;text-transform:uppercase;
-color:var(--rose-dark);margin-bottom:10px;
-}
-
-h2{
-font-family:Georgia, serif;
-font-size:42px;line-height:1.15;
-margin:0 0 18px;color:var(--green-dark);
-}
-
+.tag{font-size:14px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;color:var(--rose-dark);margin-bottom:10px;}
+h2{font-family:Georgia,serif;font-size:42px;line-height:1.15;margin:0 0 18px;color:var(--green-dark);}
 .panel p{font-size:18px;margin-top:0;}
-
-.big-btn{
-display:inline-flex;
-margin-top:16px;
-background:var(--green);
-color:white;
-padding:15px 24px;border-radius:14px;
-font-weight:900;border:none;cursor:pointer;
-}
-
-.blog-panel{
-display:grid;grid-template-columns:260px 1fr;
-gap:24px;padding:26px;align-items:center;
-}
-
-.blog-panel img{
-width:100%;height:260px;
-border-radius:20px;object-fit:cover;
-}
-
+.big-btn{display:inline-flex;margin-top:16px;background:var(--green);color:white;padding:15px 24px;border-radius:14px;font-weight:900;border:none;cursor:pointer;}
+.blog-panel{display:grid;grid-template-columns:260px 1fr;gap:24px;padding:26px;align-items:center;}
+.blog-panel img{width:100%;height:260px;border-radius:20px;object-fit:cover;}
 .blog-panel h2{font-size:32px;}
-
-/* ── CARDS ── */
-.card{
-background:rgba(255,250,244,.94);
-border:1px solid var(--line);
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-padding:34px;
-margin-bottom:26px;
-}
-
-.quote{
-text-align:center;
-font-family:Georgia, serif;
-font-size:34px;font-weight:900;
-line-height:1.45;color:var(--green-dark);
-}
-
+.card{background:rgba(255,250,244,.94);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:34px;margin-bottom:26px;}
+.quote{text-align:center;font-family:Georgia,serif;font-size:34px;font-weight:900;line-height:1.45;color:var(--green-dark);}
 .story{font-size:18px;line-height:1.9;}
-
-.emphasis{
-font-size:24px;font-weight:900;
-color:var(--rose-dark);
-text-align:center;margin-top:26px;line-height:1.5;
-}
-
+.emphasis{font-size:24px;font-weight:900;color:var(--rose-dark);text-align:center;margin-top:26px;line-height:1.5;}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
-
-/* ── HOW IT WORKS ── */
 .steps{display:grid;gap:16px;margin:24px 0 28px;}
-
-.step{
-display:flex;gap:18px;align-items:flex-start;
-background:rgba(255,255,255,.6);
-border:1px solid var(--line);
-border-radius:20px;padding:20px 22px;
-}
-
-.step-num{
-width:42px;height:42px;min-width:42px;
-background:var(--green);color:#fff;
-border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-font-size:18px;font-weight:900;
-}
-
-.step-content strong{
-display:block;font-size:18px;font-weight:900;
-color:var(--green-dark);margin-bottom:4px;
-}
-
+.step{display:flex;gap:18px;align-items:flex-start;background:rgba(255,255,255,.6);border:1px solid var(--line);border-radius:20px;padding:20px 22px;}
+.step-num{width:42px;height:42px;min-width:42px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;}
+.step-content strong{display:block;font-size:18px;font-weight:900;color:var(--green-dark);margin-bottom:4px;}
 .step-content p{margin:0;font-size:16px;line-height:1.55;}
-
-/* ── TRUST LIST ── */
+.simple-note{font-family:Georgia,serif;font-size:28px;font-weight:900;color:var(--rose-dark);text-align:center;margin-top:22px;}
 .trust-list,.theme-list{display:grid;gap:14px;}
-
-.trust-item,.theme-item{
-background:rgba(255,255,255,.58);
-border:1px solid var(--line);
-border-radius:20px;padding:18px;
-}
-
-.trust-item strong,.theme-day{
-display:block;font-size:18px;font-weight:900;
-color:var(--green-dark);margin-bottom:6px;
-}
-
+.trust-item,.theme-item{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:20px;padding:18px;}
+.trust-item strong,.theme-day{display:block;font-size:18px;font-weight:900;color:var(--green-dark);margin-bottom:6px;}
 .theme-text{margin:0;font-size:16px;}
-
 .section-note{color:var(--muted);font-size:16px;}
-
-/* ── TOPIC LINKS ── */
-.topic-links{
-display:grid;grid-template-columns:repeat(2,1fr);
-gap:12px;margin-top:22px;
-}
-
-.topic-links a{
-background:rgba(255,255,255,.58);
-border:1px solid var(--line);
-border-radius:18px;
-padding:16px 20px;
-font-size:16px;font-weight:700;
-color:var(--green-dark);
-display:flex;align-items:center;gap:10px;
-transition:background .15s;
-}
-
+.topic-links{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
+.topic-links a{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:18px;padding:16px 20px;font-size:16px;font-weight:700;color:var(--green-dark);display:flex;align-items:center;gap:10px;transition:background .15s;}
 .topic-links a:hover{background:rgba(255,255,255,.9);}
-
-/* ── CONTACT FORM ── */
 .contact-form label{display:block;font-weight:900;margin:14px 0 6px;}
-
-.contact-form input,
-.contact-form textarea{
-width:100%;border:1px solid var(--line);
-border-radius:18px;padding:15px;
-font-size:16px;font-family:inherit;background:white;
-}
-
+.contact-form input,.contact-form textarea{width:100%;border:1px solid var(--line);border-radius:18px;padding:15px;font-size:16px;font-family:inherit;background:white;}
 .contact-form textarea{min-height:130px;resize:vertical;}
-
-/* ── ANON WALL ── */
-.post-input{
-width:100%;min-height:130px;
-border:1px solid var(--line);border-radius:18px;
-padding:15px;font-size:16px;
-font-family:inherit;resize:vertical;background:white;
-}
-
-.post-button{
-width:100%;background:var(--green);color:white;
-border:none;border-radius:20px;
-padding:18px;font-size:22px;font-weight:900;
-cursor:pointer;margin-top:14px;
-}
-
+.post-input{width:100%;min-height:130px;border:1px solid var(--line);border-radius:18px;padding:15px;font-size:16px;font-family:inherit;resize:vertical;background:white;}
+.post-button{width:100%;background:var(--green);color:white;border:none;border-radius:20px;padding:18px;font-size:22px;font-weight:900;cursor:pointer;margin-top:14px;}
 #posts{overflow:hidden;max-width:100%;}
-
-.post-item{
-background:rgba(255,255,255,.65);
-border:1px solid var(--line);
-border-radius:18px;padding:18px;margin-bottom:12px;
-white-space:pre-wrap;overflow-wrap:anywhere;
-word-break:normal;hyphens:auto;
-font-size:18px;line-height:1.65;max-width:100%;
-}
-
+.post-item{background:rgba(255,255,255,.65);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:12px;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;hyphens:auto;font-size:18px;line-height:1.65;max-width:100%;}
 .post-meta{margin-top:10px;font-size:13px;color:var(--muted);}
-
-.welcome{
-text-align:center;font-family:Georgia, serif;
-font-size:36px;font-weight:900;
-color:var(--rose-dark);margin-top:20px;
-}
-
-/* ── OPEN ROOM CARD ── */
-.open-card{
-background:linear-gradient(135deg,rgba(101,118,77,.1),rgba(101,118,77,.04));
-border:1.5px solid rgba(101,118,77,.3);
-}
-
-.open-badge{
-display:inline-flex;align-items:center;gap:8px;
-font-size:13px;font-weight:900;letter-spacing:1px;
-text-transform:uppercase;color:var(--green);
-margin-bottom:12px;
-}
-
-.open-dot{
-width:10px;height:10px;min-width:10px;
-background:#4caf50;border-radius:50%;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.4);}
-50%{box-shadow:0 0 0 6px rgba(76,175,80,0);}
-}
-
-/* ── FAB ── */
-.fab{
-position:fixed;bottom:28px;right:28px;z-index:100;
-background:var(--green);color:#fff;
-padding:16px 26px;border-radius:50px;
-font-weight:900;font-size:15px;
-box-shadow:0 8px 32px rgba(38,55,31,.38);
-display:flex;align-items:center;gap:8px;
-transition:transform .15s,background .15s;
-}
-
+.welcome{text-align:center;font-family:Georgia,serif;font-size:36px;font-weight:900;color:var(--rose-dark);margin-top:20px;}
+.open-card{background:linear-gradient(135deg,rgba(101,118,77,.1),rgba(101,118,77,.04));border:1.5px solid rgba(101,118,77,.3);}
+.open-badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--green);margin-bottom:12px;}
+.open-dot{width:10px;height:10px;min-width:10px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(76,175,80,.4);}50%{box-shadow:0 0 0 6px rgba(76,175,80,0);}}
+.fab{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:#fff;padding:16px 26px;border-radius:50px;font-weight:900;font-size:15px;box-shadow:0 8px 32px rgba(38,55,31,.38);display:flex;align-items:center;gap:8px;transition:transform .15s,background .15s;}
 .fab:hover{background:var(--green-dark);transform:translateY(-2px);}
-
-/* ── FOOTER ── */
-.site-footer{
-background:var(--green-dark);
-color:rgba(255,245,236,.82);
-padding:60px 5% 32px;margin-top:40px;
-}
-
-.footer-inner{
-max-width:1380px;margin:auto;
-display:grid;grid-template-columns:1fr 2.2fr;gap:56px;
-}
-
+.site-footer{background:var(--green-dark);color:rgba(255,245,236,.82);padding:60px 5% 32px;margin-top:40px;}
+.footer-inner{max-width:1380px;margin:auto;display:grid;grid-template-columns:1fr 2.2fr;gap:56px;}
 .footer-brand-wrap{display:flex;flex-direction:column;gap:14px;}
-
 .footer-logo{display:flex;align-items:center;gap:12px;}
-
 .footer-logo img{width:52px;height:52px;object-fit:contain;}
-
-.footer-brand-name{
-font-size:20px;font-weight:900;
-letter-spacing:2px;color:#fff5ec;
-}
-
+.footer-brand-name{font-size:20px;font-weight:900;letter-spacing:2px;color:#fff5ec;}
 .footer-tagline{font-size:13px;opacity:.6;line-height:1.5;}
-
 .footer-social{display:flex;gap:12px;margin-top:6px;}
-
-.footer-social a{
-color:rgba(255,245,236,.7);font-size:14px;font-weight:700;
-padding:8px 14px;border-radius:10px;
-border:1px solid rgba(255,245,236,.18);
-transition:background .15s;
-}
-
+.footer-social a{color:rgba(255,245,236,.7);font-size:14px;font-weight:700;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,245,236,.18);transition:background .15s;}
 .footer-social a:hover{background:rgba(255,245,236,.1);}
-
-.footer-links{
-display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
-}
-
-.footer-col h4{
-font-size:12px;font-weight:900;
-letter-spacing:1.8px;text-transform:uppercase;
-color:rgba(255,245,236,.42);
-margin:0 0 14px;
-}
-
-.footer-col a{
-display:block;color:rgba(255,245,236,.82);
-font-size:15px;margin-bottom:9px;
-}
-
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
+.footer-col h4{font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,245,236,.42);margin:0 0 14px;}
+.footer-col a{display:block;color:rgba(255,245,236,.82);font-size:15px;margin-bottom:9px;}
 .footer-col a:hover{color:#fff5ec;}
-
-.footer-bottom{
-max-width:1380px;margin:36px auto 0;
-padding-top:24px;
-border-top:1px solid rgba(255,245,236,.12);
-font-size:13px;opacity:.45;text-align:center;
-}
-
-/* ── RESPONSIVE ── */
+.footer-bottom{max-width:1380px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(255,245,236,.12);font-size:13px;opacity:.45;text-align:center;}
 @media(max-width:1050px){
 .nav{position:relative;flex-direction:column;padding:18px;}
 .nav-links{justify-content:center;flex-wrap:wrap;gap:16px;}
@@ -551,21 +160,13 @@ font-size:13px;opacity:.45;text-align:center;
 .footer-inner{grid-template-columns:1fr;gap:36px;}
 .footer-links{grid-template-columns:1fr 1fr;}
 }
-
 @media(max-width:650px){
 .brand{width:100%;justify-content:center;}
 .brand img{width:58px;height:58px;}
 .brand-title{font-size:21px;}
 .brand-sub{font-size:10px;}
-.nav-links{
-width:100%;display:grid;
-grid-template-columns:1fr 1fr;gap:10px;font-size:13px;
-}
-.nav-links a{
-background:rgba(255,250,244,.75);
-padding:10px 8px;border-radius:12px;
-text-align:center;white-space:nowrap;
-}
+.nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}
+.nav-links a{background:rgba(255,250,244,.75);padding:10px 8px;border-radius:12px;text-align:center;white-space:nowrap;}
 .nav-btn{grid-column:1 / -1;}
 .hero h1{font-size:42px;}
 .script{font-size:30px;}
@@ -586,14 +187,8 @@ h2{font-size:30px;}
 
 <body id="top">
 
-<!-- ── FLOATING ACTION BUTTON ── -->
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
-   target="_blank" rel="noopener noreferrer"
-   class="fab" aria-label="Bli med i kveldsmøtet">
-  ❤️ BLI MED KL. 20:00
-</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab" aria-label="Bli med i kveldsmøtet">❤️ BLI MED KL. 20:00</a>
 
-<!-- ── NAV ── -->
 <nav class="nav">
   <div class="brand">
     <img src="logo.png" alt="Trygg Sirkel logo" width="78" height="78">
@@ -602,7 +197,6 @@ h2{font-size:30px;}
       <div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
     </div>
   </div>
-
   <div class="nav-links">
     <a href="#top">Hjem</a>
     <a href="#mote">Kveldsmøte</a>
@@ -610,290 +204,159 @@ h2{font-size:30px;}
     <a href="#temaer">Ukas temaer</a>
     <a href="#apen">Åpen møteplass</a>
     <a href="#kontakt">Kontakt</a>
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
-       target="_blank" rel="noopener noreferrer"
-       class="nav-btn">Bli med ❤️</a>
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-btn">Bli med ❤️</a>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-content">
-    <div class="meeting-badge">
-      🤍 Kveldsmøte <span>Hver dag kl. 20:00</span>
-    </div>
-
+    <div class="meeting-badge">🤍 Kveldsmøte <span>Hver dag kl. 20:00</span></div>
     <h1>Du er ikke alene.</h1>
     <div class="script">Det finnes hjelp. Det finnes håp. ♡</div>
-
-    <p>
-      Gratis og anonymt nettmøte for deg som strever med alkohol, sug,
-      tilbakefall eller ønsker et edruere liv. Du trenger ikke si noe.
-      Det holder å møte opp.
-    </p>
-
+    <p class="hero-strong">Du trenger ikke være klar.<br>Du trenger bare møte opp.</p>
+    <p>Gratis og anonymt nettmøte for deg som strever med avhengighet, sug, tilbakefall – eller ønsker en rusfri hverdag.</p>
+    <p>Du trenger ikke si noe. Du trenger bare møte opp.</p>
     <div class="hero-buttons">
-      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
-         target="_blank" rel="noopener noreferrer"
-         class="btn btn-primary">BLI MED I KVELDSMØTET ❤️</a>
-      <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1"
-         target="_blank" rel="noopener noreferrer"
-         class="btn btn-open">🟢 ÅPEN MØTEPLASS – NÅ</a>
+      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🔴 BLI MED I KVELDSMØTET</a>
+      <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" rel="noopener noreferrer" class="btn btn-open">🟢 ÅPEN MØTEPLASS NÅ</a>
     </div>
   </div>
 </section>
 
-<!-- ── ICON STRIP ── -->
 <section class="icon-strip">
-  <div class="icon-box">
-    <div class="icon">🤍</div>
-    <h3>Fellesskap</h3>
-    <p>Du trenger ikke gjøre dette alene. Sammen er vi sterkere.</p>
-  </div>
-  <div class="icon-box">
-    <div class="icon">❤️</div>
-    <h3>Forståelse</h3>
-    <p>Bli møtt med respekt, forståelse og erfaring.</p>
-  </div>
-  <div class="icon-box">
-    <div class="icon">🌿</div>
-    <h3>Veiviser</h3>
-    <p>Et sted å lande når livet gjør vondt.</p>
-  </div>
-  <div class="icon-box">
-    <div class="icon">🏡</div>
-    <h3>Trygge møteplasser</h3>
-    <p>Anonyme og gratis møteplasser.</p>
-  </div>
-  <div class="icon-box">
-    <div class="icon-script">Du fortjener<br>et godt liv ♡</div>
-  </div>
+  <div class="icon-box"><div class="icon">🕊️</div><h3>Du trenger ikke si noe</h3><p>Det er helt lov å bare lytte.</p></div>
+  <div class="icon-box"><div class="icon">🔒</div><h3>Helt anonymt</h3><p>Du kan bruke kallenavn og dele bare det du vil.</p></div>
+  <div class="icon-box"><div class="icon">📅</div><h3>Hver kveld kl. 20</h3><p>Samme tid. Samme sted. Hver eneste kveld.</p></div>
+  <div class="icon-box"><div class="icon">❤️</div><h3>Mennesker som forstår</h3><p>Ikke pekefingre. Bare erfaring og støtte.</p></div>
 </section>
 
-<!-- ── MAIN ── -->
 <main class="main">
 
-  <!-- Grid: kveldsmøte + blogg -->
+  <div class="card">
+    <h2>Så enkelt er det</h2>
+    <p>Det tar under ett minutt å komme seg inn.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-content"><strong>Klikk på lenken</strong><p>Du trykker på knappen til kveldsmøtet eller åpen møteplass.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-content"><strong>Bli med på Zoom</strong><p>Zoom åpner seg direkte. Du trenger ikke registrere deg hos oss.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-content"><strong>Kamera er på for trygghet</strong><p>Det handler om å se hvem vi er sammen med.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-content"><strong>Du trenger ikke si noe</strong><p>Du kan sitte stille og bare lytte.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-content"><strong>Møtet varer én time</strong><p>Du kan være der hele møtet, eller bare komme inn og kjenne etter.</p></div></div>
+    </div>
+    <div class="simple-note">Det er alt.</div>
+  </div>
+
+  <div class="card">
+    <h2>🔒 For alles trygghet</h2>
+    <div class="trust-list">
+      <div class="trust-item"><strong>🔒 Kamera er på</strong>Det handler om trygghet – å se hvem vi er sammen med.</div>
+      <div class="trust-item"><strong>😊 Du kan bruke kallenavn</strong>Du trenger ikke bruke fullt navn.</div>
+      <div class="trust-item"><strong>🎤 Mikrofonen er av hvis du ønsker</strong>Du slår den på hvis du vil dele.</div>
+      <div class="trust-item"><strong>❤️ Ingen råd. Ingen pekefingre.</strong>Vi kommenterer ikke hverandres delinger.</div>
+      <div class="trust-item"><strong>🤍 Det som deles blir i møtet</strong>Vi snakker ikke om de som ikke er der.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="quote">Her møter du ikke skam.<br>Ikke prestasjon.<br>Ikke krav.<br><br>Bare mennesker som vet hvordan det er.</p>
+    <p class="emphasis">Sammen er vi sterkere enn avhengigheten.</p>
+  </div>
+
   <div class="grid-top" id="mote">
     <div class="panel meeting-panel">
       <div class="panel-img" style="background-image:url('veien-hjem.png')" role="img" aria-label="Veien hjem"></div>
       <div class="panel-content">
         <div class="tag">Hver kveld kl. 20:00 🤍</div>
-        <h2>Et trygt sted å møte andre</h2>
+        <h2>Kveldsmøte kl. 20</h2>
         <p>Samme tid. Samme sted. Et sted du kan komme tilbake til.</p>
         <p>Du trenger ikke si noe. Det holder å være der.</p>
-        <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
-           target="_blank" rel="noopener noreferrer"
-           class="big-btn">BLI MED I MØTET</a>
+        <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="big-btn">BLI MED I MØTET</a>
       </div>
     </div>
 
-    <div class="panel blog-panel">
-      <img src="kaffe-bok.png" alt="Herr Percy og Alise i Edruland – blogg om edring" width="260" height="260" loading="lazy">
-      <div>
-        <div class="tag">Fra bloggen vår 🤍</div>
-        <h2>Herr Percy og Alise i Edruland</h2>
-        <p>En blogg om edring, om reisen til trygghet – fra innsiden og ut.</p>
-        <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="big-btn">LES BLOGGEN</a>
+    <div class="panel open-card" id="apen">
+      <div class="panel-content">
+        <div class="open-badge"><span class="open-dot"></span> ÅPEN NÅ – HELE DØGNET</div>
+        <h2>Åpen møteplass</h2>
+        <p>Mange trenger hjelp nå, ikke bare klokka åtte.</p>
+        <p>Dette er en døgnåpen møteplass hvor vi kan møtes ved behov.</p>
+        <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1" target="_blank" rel="noopener noreferrer" class="big-btn">GÅ TIL ÅPEN MØTEPLASS</a>
       </div>
     </div>
   </div>
 
-  <!-- Slik fungerer det -->
-  <div class="card">
-    <h2>Slik fungerer det</h2>
-    <p>Det tar under ett minutt å komme seg inn. Ingen nedlasting. Ingen registrering.</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <strong>Klikk på møtelenken</strong>
-          <p>Zoom åpner seg direkte i nettleseren. Du trenger ikke laste ned noe eller opprette konto.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <strong>Mikrofonen er av – du trenger ikke si noe</strong>
-          <p>Du sitter trygt bak skjermen din. Første gang er det nok å bare sitte der og lytte.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <strong>Del hvis du vil – ingen press</strong>
-          <p>Mange av oss startet med å lytte i uker. Du bestemmer selv når og om du vil si noe.</p>
-        </div>
-      </div>
-    </div>
-
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
-       target="_blank" rel="noopener noreferrer"
-       class="big-btn">BLI MED I KVELDSMØTET KL. 20:00 ❤️</a>
-  </div>
-
-  <!-- Sitat -->
-  <div class="card">
-    <p class="quote">
-      Her møter du ikke skam.<br>
-      Ingen pekefinger.<br>
-      Bare mennesker som oppriktig ønsker et liv uten rus.
-    </p>
-  </div>
-
-  <!-- Fortelling -->
-  <div class="card">
-    <h2>Et trygt sted å lande</h2>
-    <div class="story">
-      <p>Møtene varierer fra dag til dag. Hver dag har vi et nytt tema, men du trenger ikke si noe, og du trenger ikke forholde deg til temaet.</p>
-      <p>Kjernen i det vi gjør er enkel: Vi gjør hverandre sterkere – bare ved å være her sammen.</p>
-      <p>Noen dager er vi ti–tolv. Andre dager er vi fire–fem. Det viktigste er ikke hvor mange vi er. Det viktigste er at vi ikke er alene.</p>
-      <p>Det skjer noe når vi samles. Et trygt rom. En trygg sirkel.</p>
-      <p>Vi lytter til hverandre. Deler når vi vil. Og det som blir sagt – blir her.</p>
-      <p>For mange av oss føltes det som å komme hjem første gang.</p>
-      <p>For ingenting er så ensomt som aktiv rus. Men lite er så befriende som å oppdage at vi ikke er alene.</p>
-    </div>
-    <p class="emphasis">
-      Vi er ikke unike i det vi står i.<br>
-      Vi er mennesker – med en avhengighet.
-    </p>
-  </div>
-
-  <!-- Trygghet -->
-  <div class="card">
-    <h2>🔒 For alles trygghet</h2>
-    <div class="trust-list">
-      <div class="trust-item"><strong>Kamera er på under møtet</strong>Det handler om trygghet – å se hvem vi er sammen med.</div>
-      <div class="trust-item"><strong>Du trenger ikke bruke fullt navn</strong>Du trenger ikke bruke ditt ekte navn i det hele tatt.</div>
-      <div class="trust-item"><strong>Mikrofonen er av</strong>Du slår den på hvis du vil dele.</div>
-      <div class="trust-item"><strong>Du kan også bare sitte stille</strong>Det er helt lov.</div>
-      <div class="trust-item"><strong>Vi kommenterer ikke hverandres delinger</strong>Ingen råd. Ingen meninger. Ingen vurderinger.</div>
-      <div class="trust-item"><strong>Det som deles i møtet, blir i møtet</strong>Vi snakker ikke om de som ikke er der.</div>
+  <div class="panel blog-panel">
+    <img src="kaffe-bok.png" alt="Herr Percy og Alise i Edruland – blogg om edring" width="260" height="260" loading="lazy">
+    <div>
+      <div class="tag">Fra bloggen vår 🤍</div>
+      <h2>Herr Percy og Alise i Edruland</h2>
+      <p>En blogg om edring, om reisen til trygghet – fra innsiden og ut.</p>
+      <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="big-btn">LES BLOGGEN</a>
     </div>
   </div>
 
-  <!-- To kolonner -->
-  <div class="two-col">
-    <div class="card">
-      <h2>❤️ Gruer du deg til første møte?</h2>
-      <p>Det gjorde vi også.</p>
-      <p>Du trenger ikke gjøre dette alene.</p>
-      <p>Send oss en melding hvis du trenger hjelp til å komme i gang.</p>
-      <a href="#kontakt" class="big-btn">SEND OSS EN MELDING</a>
-    </div>
-
-    <div class="card open-card" id="apen">
-      <div class="open-badge"><span class="open-dot"></span> ÅPEN NÅ – HELE DØGNET</div>
-      <h2>Vanskelig dag?</h2>
-      <p>Dette er en døgnåpen møteplass hvor vi kan møtes ved behov. Tilgjengelig når som helst, dag eller natt.</p>
-      <a href="https://us06web.zoom.us/j/81667749544?pwd=8m9GoU8XW7zOs4o6Q7yutDwhVwFjll.1"
-         target="_blank" rel="noopener noreferrer"
-         class="big-btn">GÅ TIL ÅPEN MØTEPLASS</a>
-    </div>
-  </div>
-
-  <!-- Temaer -->
-  <div class="card" id="temaer">
+  <div class="card" id="temaer" style="margin-top:26px;">
     <h2>🗓️ Ukas temaer</h2>
     <div class="theme-list">
-      <div class="theme-item">
-        <span class="theme-day">Mandag – Hvem er du uten rusen?</span>
-        <p class="theme-text">Hva likte du før? Hva drømte du om? Hva er fortsatt ditt?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Tirsdag – Hva betyr frihet?</span>
-        <p class="theme-text">Er frihet å kunne drikke – eller å slippe å måtte?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Onsdag – Grenser</span>
-        <p class="theme-text">Hvorfor er det lettere å si ja enn nei? Hvordan beskytter grenser edringen?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Torsdag – Glede</span>
-        <p class="theme-text">Hvordan finner vi glede igjen når hjernen bare vil ha dopamin?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Fredag – Tilgivelse</span>
-        <p class="theme-text">Hva betyr det egentlig å tilgi? Må vi tilgi? Kan vi slippe uten å tilgi?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Lørdag – Håp</span>
-        <p class="theme-text">Hva ga deg håp den første uka? Hva gir deg håp i dag?</p>
-      </div>
-      <div class="theme-item">
-        <span class="theme-day">Søndag – Å komme hjem til seg selv</span>
-        <p class="theme-text">Hva betyr egentlig den setningen for deg?</p>
-      </div>
+      <div class="theme-item"><span class="theme-day">Mandag – Hvem er du uten rusen?</span><p class="theme-text">Hva likte du før? Hva drømte du om? Hva er fortsatt ditt?</p></div>
+      <div class="theme-item"><span class="theme-day">Tirsdag – Hva betyr frihet?</span><p class="theme-text">Er frihet å kunne drikke – eller å slippe å måtte?</p></div>
+      <div class="theme-item"><span class="theme-day">Onsdag – Grenser</span><p class="theme-text">Hvorfor er det lettere å si ja enn nei? Hvordan beskytter grenser edringen?</p></div>
+      <div class="theme-item"><span class="theme-day">Torsdag – Glede</span><p class="theme-text">Hvordan finner vi glede igjen når hjernen bare vil ha dopamin?</p></div>
+      <div class="theme-item"><span class="theme-day">Fredag – Tilgivelse</span><p class="theme-text">Hva betyr det egentlig å tilgi? Må vi tilgi? Kan vi slippe uten å tilgi?</p></div>
+      <div class="theme-item"><span class="theme-day">Lørdag – Håp</span><p class="theme-text">Hva ga deg håp den første uka? Hva gir deg håp i dag?</p></div>
+      <div class="theme-item"><span class="theme-day">Søndag – Å komme hjem til seg selv</span><p class="theme-text">Hva betyr egentlig den setningen for deg?</p></div>
     </div>
   </div>
 
-  <!-- Keyword-sider -->
   <div class="card">
     <h2>Det du sliter med har et navn</h2>
-    <p>
-      Mange som finner oss har søkt på ett av disse temaene. Her kan du lese mer om akkurat det du kjenner på – og finne veien til møtet.
-    </p>
+    <p>Mange som finner oss har søkt på ett av disse temaene. Her kan du lese mer om akkurat det du kjenner på – og finne veien til møtet.</p>
     <div class="topic-links">
-      <a href="/alkohol">🍷 Hjelp med alkohol</a>
-      <a href="/sug">🌊 Sug etter alkohol</a>
-      <a href="/tilbakefall">🔄 Tilbakefall</a>
-      <a href="/edru">🌱 Å bli edru</a>
-      <a href="/alkoholiker">🪞 Er jeg alkoholiker?</a>
-      <a href="/avhengighet">🔗 Avhengighet</a>
-      <a href="/slutte">🚪 Slutte å drikke</a>
-      <a href="/hjelp">🤝 Hjelp med rus</a>
+      <a href="/alkohol.html">🍷 Hjelp med alkohol</a>
+      <a href="/sug.html">🌊 Sug etter alkohol</a>
+      <a href="/tilbakefall.html">🔄 Tilbakefall</a>
+      <a href="/edru.html">🌱 Å bli edru</a>
+      <a href="/alkoholiker.html">🪞 Er jeg alkoholiker?</a>
+      <a href="/avhengighet.html">🔗 Avhengighet</a>
+      <a href="/slutte.html">🚪 Slutte å drikke</a>
+      <a href="/hjelp.html">🤝 Hjelp med rus</a>
     </div>
   </div>
 
-  <!-- Kontakt -->
   <div class="card" id="kontakt">
     <h2>✉️ Kontakt oss</h2>
     <form class="contact-form" action="https://formsubmit.co/Stottegruppea@gmail.com" method="POST">
       <input type="hidden" name="_subject" value="Ny melding fra Trygg Sirkel">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
-
       <label for="navn">Navn / kallenavn</label>
       <input type="text" id="navn" name="navn">
-
       <label for="kontakt">E-post / telefon (valgfritt)</label>
       <input type="text" id="kontakt" name="kontakt">
-
       <label for="melding">Melding</label>
       <textarea id="melding" name="melding"></textarea>
-
       <button type="submit" class="post-button">SEND MELDING</button>
     </form>
   </div>
 
-  <!-- Anonym vegg -->
   <div class="card">
     <h2>🧱 Anonym vegg</h2>
     <p class="section-note">Her kan du dele noen ord anonymt.</p>
-
     <label for="postInput" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Anonym melding</label>
     <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
-
     <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
-
     <div id="postMessage" class="section-note"></div>
     <div id="posts"></div>
   </div>
 
   <div class="welcome">Velkommen ❤️</div>
-
 </main>
 
-<!-- ── FOOTER ── -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand-wrap">
       <div class="footer-logo">
         <img src="logo.png" alt="Trygg Sirkel" width="52" height="52" loading="lazy">
-        <div>
-          <div class="footer-brand-name">TRYGG SIRKEL</div>
-        </div>
+        <div><div class="footer-brand-name">TRYGG SIRKEL</div></div>
       </div>
       <p class="footer-tagline">Et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet.</p>
       <div class="footer-social">
@@ -912,14 +375,14 @@ h2{font-size:30px;}
       </div>
       <div class="footer-col">
         <h4>Ressurser</h4>
-        <a href="/alkohol">Hjelp med alkohol</a>
-        <a href="/sug">Sug etter alkohol</a>
-        <a href="/tilbakefall">Tilbakefall</a>
-        <a href="/edru">Å bli edru</a>
-        <a href="/alkoholiker">Er jeg alkoholiker?</a>
-        <a href="/avhengighet">Avhengighet</a>
-        <a href="/slutte">Slutte å drikke</a>
-        <a href="/hjelp">Hjelp med rus</a>
+        <a href="/alkohol.html">Hjelp med alkohol</a>
+        <a href="/sug.html">Sug etter alkohol</a>
+        <a href="/tilbakefall.html">Tilbakefall</a>
+        <a href="/edru.html">Å bli edru</a>
+        <a href="/alkoholiker.html">Er jeg alkoholiker?</a>
+        <a href="/avhengighet.html">Avhengighet</a>
+        <a href="/slutte.html">Slutte å drikke</a>
+        <a href="/hjelp.html">Hjelp med rus</a>
       </div>
       <div class="footer-col">
         <h4>Blogg</h4>
@@ -932,10 +395,7 @@ h2{font-size:30px;}
       </div>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    © Trygg Sirkel – Gratis og anonymt. Alltid.
-  </div>
+  <div class="footer-bottom">© Trygg Sirkel – Gratis og anonymt. Alltid.</div>
 </footer>
 
 <script>
@@ -945,16 +405,12 @@ const supabaseClient = window.supabase.createClient(
 );
 
 function formatPostText(text){
-  return text
-    .replace(/([.!?])(?=\S)/g,'$1 ')
-    .replace(/,/g,', ');
+  return text.replace(/([.!?])(?=\S)/g,'$1 ').replace(/,/g,', ');
 }
 
 async function loadPosts(){
   const container=document.getElementById('posts');
-  const {data}=await supabaseClient
-    .from('posts').select('*')
-    .order('created_at',{ascending:false});
+  const {data}=await supabaseClient.from('posts').select('*').order('created_at',{ascending:false});
   container.innerHTML='';
   if(!data) return;
   data.forEach(post=>{
@@ -987,6 +443,5 @@ loadPosts();
 </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
-
 </body>
 </html>
