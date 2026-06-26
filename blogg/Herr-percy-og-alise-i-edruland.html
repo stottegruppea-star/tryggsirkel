@@ -15,7 +15,11 @@
 <meta property="og:image" content="https://www.tryggsirkel.no/logo.png" />
 
 <link rel="canonical" href="https://www.tryggsirkel.no/blogg/Herr-percy-og-alise-i-edruland.html" />
-<link rel="icon" type="image/png" href="../logo.png" />
+<link rel="icon" type="image/png" href="/logo.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -24,6 +28,8 @@
   --rose:#a44d4d;
   --gold:#d8aa62;
   --text:#2d1714;
+  --green:#65764d;
+  --green-dark:#26371f;
 }
 
 *{
@@ -40,17 +46,98 @@ body{
   color:var(--cream);
   background:
     linear-gradient(rgba(25,10,10,0.45),rgba(25,10,10,0.78)),
-    url('../herr-percy-og-alise-bakgrunn.jpg');
+    url('/herr-percy-og-alise-bakgrunn.jpg');
   background-size:cover;
   background-position:center;
   background-attachment:fixed;
   min-height:100vh;
 }
 
+/* ── NAV (bro til resten av siden) ── */
+.blog-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  max-width:1100px;
+  margin:0 auto 30px;
+  padding:16px 22px;
+  background:rgba(25,10,10,0.35);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+}
+
+.blog-nav .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.blog-nav .brand img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.blog-nav .brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.blog-nav .brand-title{
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  color:var(--cream);
+}
+
+.blog-nav .brand-sub{
+  font-size:10px;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.6);
+}
+
+.blog-nav-links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.blog-nav-links a{
+  text-decoration:none;
+  color:var(--cream);
+  font-size:0.92rem;
+  letter-spacing:0.5px;
+  padding:9px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.06);
+  transition:0.2s ease;
+}
+
+.blog-nav-links a:hover{
+  background:rgba(255,255,255,0.14);
+}
+
+.blog-nav-links a.nav-cta{
+  background:var(--green);
+  border-color:var(--green);
+  font-weight:bold;
+}
+
+.blog-nav-links a.nav-cta:hover{
+  background:var(--green-dark);
+}
+
 .overlay{
   min-height:100vh;
   backdrop-filter:blur(2px);
-  padding:40px 20px 80px;
+  padding:30px 20px 80px;
 }
 
 .top-social{
@@ -124,7 +211,9 @@ body{
 
 .welcome-box h2{
   margin-top:0;
-  font-size:2.2rem;
+  font-family:'Caveat',cursive;
+  font-size:3rem;
+  font-weight:700;
   color:#6d3737;
 }
 
@@ -135,7 +224,9 @@ body{
 
 .section-title{
   text-align:center;
-  font-size:3rem;
+  font-family:'Caveat',cursive;
+  font-size:3.6rem;
+  font-weight:700;
   margin:30px 0 34px;
   text-shadow:0 6px 20px rgba(0,0,0,0.55);
 }
@@ -185,7 +276,7 @@ body{
 
 .help-box{
   max-width:1000px;
-  margin:0 auto 40px;
+  margin:40px auto 0;
   background:rgba(255,248,241,0.92);
   color:var(--text);
   padding:34px 38px;
@@ -196,7 +287,9 @@ body{
 
 .help-box h2{
   margin-top:0;
-  font-size:1.9rem;
+  font-family:'Caveat',cursive;
+  font-size:2.6rem;
+  font-weight:700;
   color:#6d3737;
   text-align:center;
 }
@@ -237,7 +330,7 @@ body{
 .help-cta a{
   display:inline-block;
   text-decoration:none;
-  background:#65764d;
+  background:var(--green);
   color:#fff;
   padding:16px 30px;
   border-radius:14px;
@@ -248,19 +341,93 @@ body{
 }
 
 .help-cta a:hover{
-  background:#26371f;
+  background:var(--green-dark);
   transform:translateY(-2px);
 }
 
-footer{
-  text-align:center;
-  margin-top:50px;
-  color:rgba(255,255,255,0.8);
-  font-size:0.95rem;
+/* ── FELLES FOOTER (bro til resten av siden) ── */
+.site-footer{
+  max-width:1100px;
+  margin:50px auto 0;
+  background:rgba(38,55,31,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+  padding:40px 38px 28px;
+  backdrop-filter:blur(8px);
 }
 
-footer a{
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:40px;
+}
+
+.footer-brand-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.footer-logo img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+
+.footer-brand-name{
+  font-size:18px;
+  font-weight:bold;
+  letter-spacing:2px;
   color:var(--cream);
+}
+
+.footer-tagline{
+  font-size:13px;
+  color:rgba(255,248,241,0.6);
+  line-height:1.5;
+}
+
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.footer-col h4{
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,248,241,0.45);
+  margin:0 0 12px;
+}
+
+.footer-col a{
+  display:block;
+  color:rgba(255,248,241,0.82);
+  font-size:14px;
+  margin-bottom:8px;
+  text-decoration:none;
+  transition:0.15s ease;
+}
+
+.footer-col a:hover{
+  color:var(--cream);
+}
+
+.footer-bottom{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,248,241,0.12);
+  font-size:12px;
+  color:rgba(255,248,241,0.4);
+  text-align:center;
 }
 
 @media (max-width:768px){
@@ -271,6 +438,17 @@ footer a{
 
   .overlay{
     padding:18px 14px 50px;
+  }
+
+  .blog-nav{
+    flex-direction:column;
+    gap:14px;
+    padding:16px;
+  }
+
+  .blog-nav-links{
+    width:100%;
+    justify-content:center;
   }
 
   .top-social{
@@ -303,11 +481,11 @@ footer a{
   }
 
   .welcome-box h2{
-    font-size:1.8rem;
+    font-size:2.4rem;
   }
 
   .section-title{
-    font-size:2.2rem;
+    font-size:2.8rem;
     margin-top:14px;
   }
 
@@ -332,6 +510,15 @@ footer a{
   .help-links{
     grid-template-columns:1fr;
   }
+
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+
+  .footer-links{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -339,6 +526,22 @@ footer a{
 <body>
 
 <div class="overlay">
+
+  <nav class="blog-nav">
+    <a href="/" class="brand" style="text-decoration:none;">
+      <img src="/logo.png" alt="Trygg Sirkel logo">
+      <span class="brand-text">
+        <span class="brand-title">TRYGG SIRKEL</span>
+        <span class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</span>
+      </span>
+    </a>
+    <div class="blog-nav-links">
+      <a href="/">Hjem</a>
+      <a href="/#temaer">Ukas temaer</a>
+      <a href="/hjelp">Hjelp</a>
+      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-cta">Bli med ❤️</a>
+    </div>
+  </nav>
 
   <div class="top-social">
 
@@ -359,7 +562,7 @@ footer a{
   <section class="hero">
 
     <div class="hero-image">
-      <img src="../blogg-banner.jpg" alt="Herr Percy og Alise i Edruland">
+      <img src="/blogg-banner.jpg" alt="Herr Percy og Alise i Edruland">
     </div>
 
     <div class="welcome-box">
@@ -426,53 +629,60 @@ footer a{
 
     <a class="post-card" href="blekksprut.html">
       <h2>Blekksprut</h2>
+      <p>Hva en blekksprut lærte meg om alkoholisme.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="til-stede.html">
       <h2>Til stede</h2>
+      <p>Om å fotografere livet sitt gjennom mange år — og plutselig se hvor mye som var der, samtidig som man selv følte seg et sted langt borte.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="borgerkrig.html">
       <h2>Borgerkrig</h2>
+      <p>Om skam, løgner, tomgods og den stille kampen for å lære seg å stole på seg selv igjen — én handling av gangen.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="liteblad.html">
       <h2>Lite blad</h2>
+      <p>Om edring, sannhet, avhengighet og å holde blikket på det lille som fører oss mot land.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="kognitiv.html">
       <h2>Kognitiv dissonans</h2>
+      <p>Om destruktive mønstre, indre konflikter, skam, relasjoner, edring og kampen mellom sannhet og flukt.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="sonder.html">
       <h2>Sonder</h2>
+      <p>Om mennesker, selvfølelse, ensomhet, edring og innsikten i at ingen egentlig går alene.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="koppen-min.html">
       <h2>Koppen min</h2>
+      <p>Om det vi bærer inni oss, reaksjoner, overlevelse og valget om å fylle koppen med noe annet enn flukt.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="generasjoner.html">
       <h2>Generasjoner</h2>
+      <p>Om sommerangst, minner, jul, generasjoner av uro – og valget om å stoppe det som blir sendt videre.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
     <a class="post-card" href="forste-innlegg.html">
       <h2>Jeg er Alise, jeg er i edring</h2>
+      <p>Det første innlegget. Begynnelsen på en ny fortelling, et nytt språk og en vei inn i edring.</p>
       <span class="read-more">Les innlegget →</span>
     </a>
 
   </section>
 
-  </div>
-  
   <div class="help-box">
     <h2>Du er velkommen i sirkelen</h2>
     <p class="intro">
@@ -491,9 +701,39 @@ footer a{
     </div>
   </div>
 
-  <footer>
-    En del av
-    <a href="../index.html">Trygg Sirkel</a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-wrap">
+        <div class="footer-logo">
+          <img src="/logo.png" alt="Trygg Sirkel">
+          <div class="footer-brand-name">TRYGG SIRKEL</div>
+        </div>
+        <p class="footer-tagline">Et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Ressurser</h4>
+          <a href="/alkohol">Hjelp med alkohol</a>
+          <a href="/sug">Sug etter alkohol</a>
+          <a href="/tilbakefall">Tilbakefall</a>
+          <a href="/edru">Å bli edru</a>
+          <a href="/alkoholiker">Er jeg alkoholiker?</a>
+          <a href="/avhengighet">Avhengighet</a>
+          <a href="/slutte">Slutte å drikke</a>
+          <a href="/hjelp">Hjelp med rus</a>
+        </div>
+        <div class="footer-col">
+          <h4>Trygg Sirkel</h4>
+          <a href="/">Hjem</a>
+          <a href="/#mote">Kveldsmøte kl. 20:00</a>
+          <a href="/#temaer">Ukas temaer</a>
+          <a href="/#kontakt">Kontakt oss</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © Trygg Sirkel – Gratis og anonymt. Alltid.
+    </div>
   </footer>
 
 </div>
