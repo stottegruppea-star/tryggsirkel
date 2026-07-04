@@ -195,8 +195,10 @@ margin:16px 0 0;
 }
 
 .hero-buttons{
-display:flex;gap:16px;flex-wrap:wrap;margin-top:30px;
+display:flex;flex-direction:column;gap:14px;margin-top:30px;align-items:flex-start;
 }
+
+.hero-buttons .btn{min-width:340px;}
 
 .btn{
 display:inline-flex;align-items:center;justify-content:center;
@@ -213,6 +215,18 @@ transition:background .15s,transform .15s;
 
 .btn-primary:hover{
 background:var(--green-dark);
+transform:translateY(-2px);
+}
+
+.btn-blog{
+background:var(--rose-dark);
+color:white;
+box-shadow:0 14px 28px rgba(157,90,81,.28);
+transition:background .15s,transform .15s;
+}
+
+.btn-blog:hover{
+background:#7e4740;
 transform:translateY(-2px);
 }
 
@@ -546,6 +560,8 @@ text-align:center;white-space:nowrap;
 .hero h1{font-size:42px;}
 .script{font-size:36px;}
 .hero p{font-size:18px;}
+.hero-buttons{width:100%;}
+.hero-buttons .btn{width:100%;min-width:0;}
 .icon-strip{grid-template-columns:1fr;}
 .main{padding:30px 5% 60px;}
 .card,.panel-content{padding:26px 20px;margin-bottom:20px;}
@@ -582,7 +598,7 @@ h2{font-size:30px;}
     <a href="#kontakt">Kontakt</a>
     <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
        target="_blank" rel="noopener noreferrer"
-       class="nav-btn">Bli med ❤️</a>
+       class="nav-btn">Digitalt møte ❤️</a>
   </div>
 </nav>
 
@@ -603,7 +619,9 @@ h2{font-size:30px;}
     <div class="hero-buttons">
       <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
          target="_blank" rel="noopener noreferrer"
-         class="btn btn-primary">BLI MED I KVELDSMØTET ❤️</a>
+         class="btn btn-primary">DIGITALT MØTE KL. 20:00 ❤️</a>
+      <a href="/blogg/Herr-percy-og-alise-i-edruland.html"
+         class="btn btn-blog">LES BLOGGEN VÅR 📖</a>
     </div>
   </div>
 </section>
@@ -711,7 +729,7 @@ h2{font-size:30px;}
         <p>Du trenger ikke si noe. Det holder å være der.</p>
         <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
            target="_blank" rel="noopener noreferrer"
-           class="big-btn">BLI MED I MØTET</a>
+           class="big-btn">DIGITALT MØTE KL. 20:00</a>
       </div>
     </div>
 
