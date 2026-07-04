@@ -136,6 +136,13 @@ padding:15px 24px;border-radius:14px;
 box-shadow:0 12px 26px rgba(38,55,31,.22);
 }
 
+.nav-blog{
+background:var(--rose-dark);
+color:#fff!important;
+padding:15px 24px;border-radius:14px;
+box-shadow:0 12px 26px rgba(157,90,81,.22);
+}
+
 .hero{
 min-height:78vh;
 background:
@@ -195,10 +202,10 @@ margin:16px 0 0;
 }
 
 .hero-buttons{
-display:flex;flex-direction:column;gap:14px;margin-top:30px;align-items:flex-start;
+display:flex;flex-direction:column;gap:14px;margin-top:30px;max-width:400px;
 }
 
-.hero-buttons .btn{min-width:340px;}
+.hero-buttons .btn{width:100%;}
 
 .btn{
 display:inline-flex;align-items:center;justify-content:center;
@@ -555,6 +562,7 @@ background:rgba(255,250,244,.75);
 padding:10px 8px;border-radius:12px;
 text-align:center;white-space:nowrap;
 }
+.nav-blog{grid-column:1 / -1;order:-1;background:var(--rose-dark)!important;color:#fff!important;}
 .nav-btn{grid-column:1 / -1;background:var(--green)!important;color:#fff!important;}
 .hero{padding:70px 22px;}
 .hero h1{font-size:42px;}
@@ -591,9 +599,9 @@ h2{font-size:30px;}
   </div>
 
   <div class="nav-links">
+    <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="nav-blog">Blogg</a>
     <a href="#top">Hjem</a>
     <a href="#mote">Kveldsmøte</a>
-    <a href="/blogg/Herr-percy-og-alise-i-edruland.html">Blogg</a>
     <a href="#temaer">Ukas temaer</a>
     <a href="#kontakt">Kontakt</a>
     <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
