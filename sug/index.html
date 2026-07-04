@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hjelp med alkohol | Trygg Sirkel</title>
-<meta name="description" content="Trenger du hjelp med alkohol? Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, sug eller avhengighet. Hver kveld kl. 20:00.">
-<meta property="og:title" content="Hjelp med alkohol | Trygg Sirkel">
-<meta property="og:description" content="Du trenger ikke gjøre dette alene. Gratis og anonymt nettmøte hver kveld kl. 20:00.">
-<meta property="og:url" content="https://www.tryggsirkel.no/alkohol">
+<title>Sug etter alkohol – hva er det og hva gjør du? | Trygg Sirkel</title>
+<meta name="description" content="Sug etter alkohol er ikke et tegn på svakhet – det er biologi. Lær hva sug er, hvorfor det kommer, og hvordan du kan komme deg gjennom det. Gratis hjelp hos Trygg Sirkel.">
+<meta property="og:title" content="Sug etter alkohol | Trygg Sirkel">
+<meta property="og:description" content="Suget er ikke deg. Det er hjernen. Og det går over. Vi er her.">
+<meta property="og:url" content="https://www.tryggsirkel.no/sug">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.tryggsirkel.no/logo.png">
-<link rel="canonical" href="https://www.tryggsirkel.no/alkohol">
+<link rel="canonical" href="https://www.tryggsirkel.no/sug">
 <link rel="icon" type="image/png" href="/logo.png">
 
 <script type="application/ld+json">
@@ -20,18 +20,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Hva er tegn på at alkohol har blitt et problem?",
+      "name": "Hva er sug etter alkohol?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Du drikker mer enn du hadde tenkt, prøver å kutte ned uten å klare det, tenker mye på alkohol, skjuler hvor mye du drikker, føler skyld eller skam etterpå, og kjenner sug eller rastløshet når du ikke drikker."
+        "text": "Sug er en intens trang til å drikke som kan komme plutselig, utløst av en lukt, lyd, situasjon eller følelse. Det skjer fordi hjernen har vent seg til å få dopamin gjennom alkohol. Det er ikke svakhet, men en biologisk reaksjon."
       }
     },
     {
       "@type": "Question",
-      "name": "Hvor kan jeg få gratis og anonym hjelp med alkohol?",
+      "name": "Hvor lenge varer sug etter alkohol?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Trygg Sirkel tilbyr et gratis og anonymt nettmøte hver kveld kl. 20:00. Du trenger ikke si noe, og du kan delta uten å registrere deg."
+        "text": "De fleste sug topper seg og flater så ut. Forskning viser at de fleste sug varer mellom to og femten minutter, selv om det kan kjennes som om det varer evig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva kan jeg gjøre når suget kommer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gå en tur, ring noen du stoler på eller bli med i møtet, drikk noe kaldt, legg merke til suget uten å kjempe mot det, og vent det ut – ofte holder det å telle til 90. Du trenger ikke fjerne suget, bare komme deg gjennom det."
       }
     }
   ]
@@ -42,8 +50,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
+<style>:root{
 --cream:#fff5ec;--rose:#c77b6f;--rose-dark:#9d5a51;
 --green:#65764d;--green-dark:#26371f;
 --brown:#35241f;--muted:#7a6258;
@@ -61,6 +68,7 @@ a{text-decoration:none;}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;}
 .nav-links a{color:var(--brown);}
 .nav-btn{background:var(--green);color:white!important;padding:15px 24px;border-radius:14px;box-shadow:0 12px 26px rgba(38,55,31,.22);}
+.nav-blog{background:var(--rose-dark);color:white!important;padding:15px 24px;border-radius:14px;box-shadow:0 12px 26px rgba(157,90,81,.22);}
 .hero{min-height:70vh;background:linear-gradient(90deg,rgba(255,246,238,.96) 0%,rgba(255,246,238,.82) 42%,rgba(255,246,238,.30) 100%),url('/veien-hjem.png');background-size:cover;background-position:center;display:flex;align-items:center;padding:150px 8% 90px;}
 .hero-content{max-width:720px;}
 .hero h1{font-family:Georgia,serif;font-size:72px;line-height:1.05;margin:0;color:var(--green-dark);text-shadow:0 2px 18px rgba(255,246,238,.7);}
@@ -79,11 +87,11 @@ li{margin-bottom:10px;}
 .highlight{background:linear-gradient(180deg,rgba(255,250,244,.96),rgba(244,223,207,.82));border:1px solid var(--line);}
 .question{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:14px;}
 .question strong{display:block;font-size:18px;font-weight:900;color:var(--green-dark);margin-bottom:6px;}
-.big-btn{display:inline-flex;margin-top:16px;background:var(--green);color:white;padding:16px 26px;border-radius:14px;font-weight:900;transition:background .15s,transform .15s;}
+.big-btn{display:inline-flex;margin-top:4px;background:var(--green);color:white;padding:16px 26px;border-radius:14px;font-weight:900;transition:background .15s,transform .15s;}
 .big-btn:hover{background:var(--green-dark);transform:translateY(-2px);}
 .welcome{text-align:center;font-family:'Caveat',cursive;font-size:48px;font-weight:700;color:var(--rose-dark);margin-top:20px;}
 .related-links{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;}
-.related-links a{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:18px;padding:16px;font-size:17px;font-weight:900;color:var(--green-dark);transition:background .15s;}
+.related-links a{background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:18px;padding:12px 16px;font-size:16px;font-weight:900;color:var(--green-dark);transition:background .15s;}
 .related-links a:hover{background:rgba(255,255,255,.9);}
 .fab{position:fixed;bottom:28px;right:28px;z-index:100;background:var(--green);color:#fff;padding:16px 26px;border-radius:50px;font-weight:900;font-size:15px;box-shadow:0 8px 32px rgba(38,55,31,.38);display:flex;align-items:center;gap:8px;transition:transform .15s,background .15s;}
 .fab:hover{background:var(--green-dark);transform:translateY(-2px);}
@@ -102,11 +110,11 @@ li{margin-bottom:10px;}
 .footer-col a:hover{color:#fff5ec;}
 .footer-bottom{max-width:1050px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(255,245,236,.12);font-size:13px;opacity:.45;text-align:center;}
 @media(max-width:1050px){.nav{position:relative;flex-direction:column;padding:18px;}.nav-links{justify-content:center;flex-wrap:wrap;gap:16px;}.hero{min-height:auto;padding:80px 24px;}.hero h1{font-size:52px;}.script{font-size:42px;}.footer-inner{grid-template-columns:1fr;gap:36px;}.footer-links{grid-template-columns:1fr 1fr;}}
-@media(max-width:650px){.brand{width:100%;justify-content:center;}.brand img{width:58px;height:58px;}.brand-title{font-size:21px;}.brand-sub{font-size:10px;}.nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}.nav-links a{background:rgba(255,250,244,.75);padding:10px 8px;border-radius:12px;text-align:center;white-space:nowrap;}.nav-btn{grid-column:1 / -1;background:var(--green)!important;color:#fff!important;}.hero h1{font-size:42px;}.script{font-size:30px;}.hero p{font-size:18px;}.card{padding:24px 18px;}h2{font-size:30px;}p,ul{font-size:16px;}.btn{width:100%;}.related-links{grid-template-columns:1fr;}.footer-links{grid-template-columns:1fr;}.fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}}
-</style>
+@media(max-width:650px){.brand{width:100%;justify-content:center;}.brand img{width:58px;height:58px;}.brand-title{font-size:21px;}.brand-sub{font-size:10px;}.nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}.nav-links a{background:rgba(255,250,244,.75);padding:10px 8px;border-radius:12px;text-align:center;white-space:nowrap;}.nav-blog{grid-column:1 / -1;order:-1;background:var(--rose-dark)!important;color:#fff!important;}
+.nav-btn{grid-column:1 / -1;background:var(--green)!important;color:#fff!important;}.hero h1{font-size:42px;}.script{font-size:30px;}.hero p{font-size:18px;}.card{padding:24px 18px;}h2{font-size:30px;}p,ul{font-size:16px;}.btn{width:100%;}.related-links{grid-template-columns:1fr;}.related-links a{padding:10px 14px;font-size:15px;}.footer-links{grid-template-columns:1fr;}.fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}}</style>
 </head>
 <body>
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab">❤️ BLI MED KL. 20:00</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab">❤️ DIGITALT MØTE KL. 20:00</a>
 <nav class="nav">
   <div class="brand">
     <img src="/logo.png" alt="Trygg Sirkel logo" width="78" height="78">
@@ -114,70 +122,60 @@ li{margin-bottom:10px;}
   </div>
   <div class="nav-links">
     <a href="https://www.tryggsirkel.no">Forside</a>
-    <a href="#alkohol">Alkohol</a>
-    <a href="#tegn">Tegn</a>
+    <a href="#hva">Hva er sug?</a>
+    <a href="#hjelp">Hva hjelper?</a>
     <a href="#mote">Møte</a>
-    <a href="/blogg/Herr-percy-og-alise-i-edruland.html">Blogg</a>
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-btn">Bli med ❤️</a>
+    <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="nav-blog">Blogg</a>
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-btn">Digitalt møte ❤️</a>
   </div>
 </nav>
 <section class="hero">
   <div class="hero-content">
-    <h1>Hjelp med alkohol</h1>
-    <div class="script">Du trenger ikke gjøre dette alene. ♡</div>
-    <p>Hvis alkohol har begynt å ta mer plass i livet ditt enn du ønsker, finnes det et trygt sted å møte andre som forstår.</p>
+    <h1>Sug etter alkohol</h1>
+    <div class="script">Det går over. Vi er her. ♡</div>
+    <p>Suget kan kjennes overveldende. Det fyller hele kroppen. Men suget etter alkohol er ikke et tegn på svakhet – det er biologi. Og det går over.</p>
     <div class="hero-buttons">
-      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">BLI MED I MØTET I KVELD ❤️</a>
+      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">DIGITALT MØTE KL. 20:00 ❤️</a>
     </div>
   </div>
 </section>
 <main class="main">
-  <div class="card" id="alkohol">
-    <h2>Når alkohol tar for mye plass</h2>
-    <p>For mange skjer det gradvis. Det starter kanskje som noe sosialt, noe som roer kroppen, demper uro eller gir en pause fra tanker og ansvar.</p>
-    <p>Etter hvert kan alkohol begynne å styre mer enn du ønsker. Du tenker mer på når du kan drikke. Du drikker mer enn planlagt. Du lover deg selv å ta kontroll, men havner likevel tilbake i samme mønster.</p>
-    <p>Å søke hjelp med alkohol betyr ikke at du har mislyktes. Det betyr at du tar det på alvor.</p>
-    <div class="question"><strong>Du trenger ikke vente til alt har rast sammen før du ber om støtte.</strong></div>
-  </div>
-  <div class="card" id="tegn">
-    <h2>Tegn på at alkohol kan ha blitt et problem</h2>
-    <ul>
-      <li>Du drikker mer enn du hadde tenkt.</li>
-      <li>Du prøver å kutte ned, men får det ikke helt til.</li>
-      <li>Du tenker mye på alkohol – når du kan drikke neste gang.</li>
-      <li>Du skjuler hvor mye du drikker.</li>
-      <li>Du føler skyld, skam eller uro etterpå.</li>
-      <li>Alkohol påvirker økonomi, jobb, familie eller relasjoner.</li>
-      <li>Du bruker alkohol for å slippe å kjenne på vanskelige følelser.</li>
-      <li>Du kjenner sug eller rastløshet når du ikke drikker.</li>
-    </ul>
-    <p>Du trenger ikke kjenne deg igjen i alt. Hvis alkohol bekymrer deg, er det grunn nok til å ta det på alvor.</p>
+  <div class="card" id="hva">
+    <h2>Hva er sug etter alkohol?</h2>
+    <p>Sug er en intens trang til å drikke. Det kan komme plutselig – utløst av en lukt, en lyd, en situasjon, en følelse. Det kan kjennes som om hele kroppen skriker etter alkohol.</p>
+    <p>Det skjer fordi hjernen din er blitt vant til å få dopamin gjennom alkohol. Når du slutter eller kutter ned, husker hjernen hva som ga den den gode følelsen – og ber om mer. Det er ikke svakhet. Det er hjernen som gjør jobben sin, bare på feil måte.</p>
+    <div class="question"><strong>Suget etter alkohol er ikke deg. Det er hjernen din som prøver å finne en snarvei til ro.</strong></div>
   </div>
   <div class="card">
-    <h2>Du må ikke klare det alene</h2>
-    <p>Mange som strever med alkohol prøver lenge å ordne det selv. De lager regler, tar pauser, lover seg selv en ny start og forsøker å skjerpe seg.</p>
-    <p>Noen ganger holder det en stund. Men for mange kommer det samme mønsteret tilbake. Da kan fellesskap, ærlighet og støtte være avgjørende.</p>
-    <p>Trygg Sirkel er et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet. Du kan komme om du er edru. Du kan komme om du prøver å bli edru. Du kan også komme om du bare er usikker.</p>
+    <h2>Sug er ikke et tegn på svakhet</h2>
+    <p>Mange som kjenner sug tenker at det betyr at de ikke vil det nok. At de mangler viljestyrke. At andre klarer det bedre.</p>
+    <p>Det er ikke sant. Sug etter alkohol er en biologisk reaksjon. Forskning viser at hjernen hos mennesker med alkoholproblemer faktisk endrer seg over tid. Det å kjenne på sug betyr at du er i en prosess – ikke at du er svak.</p>
+    <p>Og det er et godt tegn: sug er sterkest i starten av edringen, og blir som regel svakere over tid.</p>
+  </div>
+  <div class="card" id="hjelp">
+    <h2>Sug varer som oftest bare noen minutter</h2>
+    <p>En av de mest frigjørende tingene du kan lære om sug: det topper seg, og så flater det ut. Forskning viser at de fleste sug etter alkohol varer mellom to og femten minutter.</p>
+    <p>Det kjennes ikke slik. Det kjennes som om suget vil vare evig. Men det gjør det ikke.</p>
+    <ul>
+      <li>Gå deg en tur – bevegelse hjelper hjernen å koble om.</li>
+      <li>Ring noen du stoler på, eller bli med i møtet.</li>
+      <li>Drikk noe kaldt – vann, juice, brus.</li>
+      <li>Legg merke til suget uten å kjempe mot det: «Jeg kjenner at det er sug nå. Det skal gå over.»</li>
+      <li>Tell til 90 – noen ganger holder det å vente litt.</li>
+    </ul>
+    <div class="question"><strong>Du trenger ikke fjerne suget. Du trenger bare komme deg gjennom det.</strong></div>
   </div>
   <div class="card highlight" id="mote">
-    <h2>Gratis og anonymt nettmøte – hver kveld kl. 20:00</h2>
-    <p>Vi møtes digitalt hver kveld. Du trenger ikke dele noe første gang. Mange kommer bare for å lytte.</p>
-    <p>Hos oss møter du mennesker som vet hvordan det kan føles med sug, skam, tilbakefallstanker, uro, ensomhet og ønsket om å få livet tilbake.</p>
-    <ul>
-      <li>Møtet er gratis.</li>
-      <li>Du kan være anonym.</li>
-      <li>Du kan lytte uten å dele.</li>
-      <li>Vi gir ikke råd uten at noen ber om det.</li>
-      <li>Du blir møtt med respekt.</li>
-    </ul>
-    <div class="question"><strong>Du trenger ikke si noe. Du trenger bare møte opp.</strong></div>
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="big-btn">BLI MED I KVELD</a>
+    <h2>Fellesskap hjelper mot sug</h2>
+    <p>Et av de kraftigste verktøyene mot sug etter alkohol er andre mennesker. Å ikke sitte alene med det. Å si det høyt til noen som forstår.</p>
+    <p>Trygg Sirkel er et gratis og anonymt nettmøte som holdes hver kveld kl. 20:00. Mange av oss vet hva sug er. Vi sitter ikke og dømmer. Vi sitter der og forstår.</p>
+    <div class="question"><strong>Du trenger ikke si noe. Det holder å møte opp og ikke sitte alene med det.</strong></div>
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="big-btn">DIGITALT MØTE KL. 20:00</a>
   </div>
   <div class="card">
     <h2>Les mer om det du kjenner på</h2>
-    <p>Mange av disse temaene henger sammen. Klikk deg inn på det som treffer deg mest.</p>
     <div class="related-links">
-      <a href="/sug">Sug etter alkohol</a>
+      <a href="/alkohol">Hjelp med alkohol</a>
       <a href="/tilbakefall">Tilbakefall</a>
       <a href="/edru">Å bli edru</a>
       <a href="/alkoholiker">Er jeg alkoholiker?</a>
@@ -187,7 +185,7 @@ li{margin-bottom:10px;}
       <a href="/blogg/Herr-percy-og-alise-i-edruland.html">Bloggen vår</a>
     </div>
   </div>
-  <div class="welcome">Du er velkommen akkurat som du er ❤️</div>
+  <div class="welcome">Du er ikke alene om suget ❤️</div>
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
@@ -205,23 +203,16 @@ li{margin-bottom:10px;}
       </div>
     </div>
     <div class="footer-links">
-      <div class="footer-col">
-        <h4>Møter</h4>
+      <div class="footer-col"><h4>Møter</h4>
         <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer">Kveldsmøte kl. 20:00</a>
       </div>
-      <div class="footer-col">
-        <h4>Ressurser</h4>
-        <a href="/alkohol">Hjelp med alkohol</a>
-        <a href="/sug">Sug etter alkohol</a>
-        <a href="/tilbakefall">Tilbakefall</a>
-        <a href="/edru">Å bli edru</a>
-        <a href="/alkoholiker">Er jeg alkoholiker?</a>
-        <a href="/avhengighet">Avhengighet</a>
-        <a href="/slutte">Slutte å drikke</a>
-        <a href="/hjelp">Hjelp med rus</a>
+      <div class="footer-col"><h4>Ressurser</h4>
+        <a href="/alkohol">Hjelp med alkohol</a><a href="/sug">Sug etter alkohol</a>
+        <a href="/tilbakefall">Tilbakefall</a><a href="/edru">Å bli edru</a>
+        <a href="/alkoholiker">Er jeg alkoholiker?</a><a href="/avhengighet">Avhengighet</a>
+        <a href="/slutte">Slutte å drikke</a><a href="/hjelp">Hjelp med rus</a>
       </div>
-      <div class="footer-col">
-        <h4>Blogg</h4>
+      <div class="footer-col"><h4>Blogg</h4>
         <a href="/blogg/Herr-percy-og-alise-i-edruland.html">Herr Percy og Alise i Edruland</a>
       </div>
     </div>
