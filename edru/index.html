@@ -68,6 +68,7 @@ a{text-decoration:none;}
 .nav-links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;}
 .nav-links a{color:var(--brown);}
 .nav-btn{background:var(--green);color:white!important;padding:15px 24px;border-radius:14px;box-shadow:0 12px 26px rgba(38,55,31,.22);}
+.nav-blog{background:var(--rose-dark);color:white!important;padding:15px 24px;border-radius:14px;box-shadow:0 12px 26px rgba(157,90,81,.22);}
 .hero{min-height:70vh;background:linear-gradient(90deg,rgba(255,246,238,.96) 0%,rgba(255,246,238,.82) 42%,rgba(255,246,238,.30) 100%),url('/veien-hjem.png');background-size:cover;background-position:center;display:flex;align-items:center;padding:150px 8% 90px;}
 .hero-content{max-width:720px;}
 .hero h1{font-family:Georgia,serif;font-size:72px;line-height:1.05;margin:0;color:var(--green-dark);text-shadow:0 2px 18px rgba(255,246,238,.7);}
@@ -111,10 +112,11 @@ li{margin-bottom:10px;}
 .footer-col a:hover{color:#fff5ec;}
 .footer-bottom{max-width:1050px;margin:36px auto 0;padding-top:24px;border-top:1px solid rgba(255,245,236,.12);font-size:13px;opacity:.45;text-align:center;}
 @media(max-width:1050px){.nav{position:relative;flex-direction:column;padding:18px;}.nav-links{justify-content:center;flex-wrap:wrap;gap:16px;}.hero{min-height:auto;padding:80px 24px;}.hero h1{font-size:52px;}.script{font-size:42px;}.footer-inner{grid-template-columns:1fr;gap:36px;}.footer-links{grid-template-columns:1fr 1fr;}}
-@media(max-width:650px){.brand{width:100%;justify-content:center;}.brand img{width:58px;height:58px;}.brand-title{font-size:21px;}.brand-sub{font-size:10px;}.nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}.nav-links a{background:rgba(255,250,244,.75);padding:10px 8px;border-radius:12px;text-align:center;white-space:nowrap;}.nav-btn{grid-column:1 / -1;background:var(--green)!important;color:#fff!important;}.hero h1{font-size:42px;}.script{font-size:30px;}.hero p{font-size:18px;}.card{padding:24px 18px;}h2{font-size:30px;}p,ul{font-size:16px;}.btn{width:100%;}.related-links{grid-template-columns:1fr;}.footer-links{grid-template-columns:1fr;}.fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}}</style>
+@media(max-width:650px){.brand{width:100%;justify-content:center;}.brand img{width:58px;height:58px;}.brand-title{font-size:21px;}.brand-sub{font-size:10px;}.nav-links{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;}.nav-links a{background:rgba(255,250,244,.75);padding:10px 8px;border-radius:12px;text-align:center;white-space:nowrap;}.nav-blog{grid-column:1 / -1;order:-1;background:var(--rose-dark)!important;color:#fff!important;}
+.nav-btn{grid-column:1 / -1;background:var(--green)!important;color:#fff!important;}.hero h1{font-size:42px;}.script{font-size:30px;}.hero p{font-size:18px;}.card{padding:24px 18px;}h2{font-size:30px;}p,ul{font-size:16px;}.btn{width:100%;}.related-links{grid-template-columns:1fr;}.footer-links{grid-template-columns:1fr;}.fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}}</style>
 </head>
 <body>
-<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab">❤️ BLI MED KL. 20:00</a>
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab">❤️ DIGITALT MØTE KL. 20:00</a>
 <nav class="nav">
   <div class="brand"><img src="/logo.png" alt="Trygg Sirkel logo" width="78" height="78"><div><div class="brand-title">TRYGG SIRKEL</div><div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div></div></div>
   <div class="nav-links">
@@ -122,8 +124,8 @@ li{margin-bottom:10px;}
     <a href="#betyr">Hva betyr edru?</a>
     <a href="#reisen">Reisen</a>
     <a href="#mote">Møte</a>
-    <a href="/blogg/Herr-percy-og-alise-i-edruland.html">Blogg</a>
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-btn">Bli med ❤️</a>
+    <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="nav-blog">Blogg</a>
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="nav-btn">Digitalt møte ❤️</a>
   </div>
 </nav>
 <section class="hero">
@@ -132,7 +134,7 @@ li{margin-bottom:10px;}
     <div class="script">Et steg om gangen. Du klarer det. ♡</div>
     <p>Å bli edru er mer enn å slutte å drikke. Det er å lære å kjenne deg selv igjen, å finne glede uten alkohol, å bygge et liv du faktisk vil leve.</p>
     <div class="hero-buttons">
-      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">BLI MED I MØTET I KVELD ❤️</a>
+      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="btn btn-primary">DIGITALT MØTE KL. 20:00 ❤️</a>
     </div>
   </div>
 </section>
@@ -167,7 +169,7 @@ li{margin-bottom:10px;}
     <h2>Fellesskap gjør edring lettere</h2>
     <p>En av de viktigste tingene du kan gjøre for edringen din er å ikke gjøre det alene. Forskning og erfaring viser det samme: folk som har støtte rundt seg klarer seg bedre.</p>
     <p>Trygg Sirkel er et gratis og anonymt nettmøte for deg som er i edring – eller som vil begynne. Vi møtes hver kveld kl. 20:00. Ingen krav. Ingen agenda. Bare mennesker som forstår.</p>
-    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="big-btn">BLI MED I KVELD</a>
+    <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="big-btn">DIGITALT MØTE KL. 20:00</a>
   </div>
   <div class="card">
     <h2>Les mer om det du kjenner på</h2>
