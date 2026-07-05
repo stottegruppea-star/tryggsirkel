@@ -82,14 +82,14 @@ line-height:1.75;
 overflow-x:clip;
 width:100%;
 max-width:100%;
+position:relative;
 }
 
 a{text-decoration:none;}
 
 .nav{
 position:absolute;
-top:0;left:0;
-width:100%;
+top:0;left:0;right:0;
 z-index:10;
 display:flex;
 align-items:center;
@@ -501,11 +501,12 @@ letter-spacing:2px;color:#fff5ec;
 
 .footer-tagline{font-size:13px;opacity:.6;line-height:1.5;}
 
-.footer-social{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;}
+.footer-social{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;max-width:320px;}
 
 .footer-social a{
 color:rgba(255,245,236,.7);font-size:14px;font-weight:700;
 padding:8px 14px;border-radius:10px;
+text-align:center;
 border:1px solid rgba(255,245,236,.18);
 transition:background .15s;
 }
@@ -940,4 +941,4 @@ loadPosts();
 <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
-</html> 
+</html>
