@@ -511,12 +511,51 @@ body{
     grid-template-columns:1fr;
   }
 }
+
+.home-fab{
+  position:fixed;
+  bottom:22px;
+  left:22px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:13px 20px;
+  border-radius:999px;
+  background:rgba(38,55,31,0.92);
+  color:#fff8f1;
+  font-family:Georgia,serif;
+  font-size:0.95rem;
+  font-weight:bold;
+  text-decoration:none;
+  border:1px solid rgba(255,248,241,0.22);
+  box-shadow:0 10px 30px rgba(0,0,0,0.45);
+  backdrop-filter:blur(8px);
+  transition:0.2s ease;
+}
+.home-fab:hover{
+  background:rgba(38,55,31,1);
+  transform:translateY(-2px);
+}
+@media(max-width:768px){
+  .home-fab{
+    bottom:16px;
+    left:16px;
+    padding:12px 18px;
+    font-size:0.9rem;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <div class="overlay">
+
+  <a href="/" class="home-fab" aria-label="Til forsiden Trygg Sirkel">
+    ← Trygg Sirkel
+  </a>
+
 
   <section class="hero">
 
