@@ -57,10 +57,10 @@
 --line:#ead2c1;--shadow:0 18px 45px rgba(70,38,26,.14);--radius:28px;
 }
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{margin:0;font-family:Inter,Arial,sans-serif;background:#fff5ec;color:var(--brown);line-height:1.75;}
+html{scroll-behavior:smooth;overflow-x:clip;}
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#fff5ec;color:var(--brown);line-height:1.75;overflow-x:clip;width:100%;max-width:100%;position:relative;}
 a{text-decoration:none;}
-.nav{position:absolute;top:0;left:0;width:100%;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 7%;background:rgba(255,246,238,.58);backdrop-filter:blur(8px);}
+.nav{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:24px 7%;background:rgba(255,246,238,.58);backdrop-filter:blur(8px);}
 .brand{display:flex;align-items:center;gap:14px;background:rgba(255,250,244,.68);padding:10px 18px;border-radius:24px;}
 .brand img{width:78px;height:78px;object-fit:contain;}
 .brand-title{font-size:30px;font-weight:900;letter-spacing:2px;color:var(--green-dark);line-height:1.1;}
@@ -102,8 +102,8 @@ li{margin-bottom:10px;}
 .footer-logo img{width:52px;height:52px;object-fit:contain;}
 .footer-brand-name{font-size:20px;font-weight:900;letter-spacing:2px;color:#fff5ec;}
 .footer-tagline{font-size:13px;opacity:.6;line-height:1.5;}
-.footer-social{display:flex;gap:12px;margin-top:6px;}
-.footer-social a{color:rgba(255,245,236,.7);font-size:14px;font-weight:700;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,245,236,.18);}
+.footer-social{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px;max-width:320px;}
+.footer-social a{color:rgba(255,245,236,.7);font-size:14px;font-weight:700;padding:8px 14px;border-radius:10px;text-align:center;border:1px solid rgba(255,245,236,.18);}
 .footer-col h4{font-size:12px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,245,236,.42);margin:0 0 14px;}
 .footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;}
 .footer-col a{display:block;color:rgba(255,245,236,.82);font-size:15px;margin-bottom:9px;}
