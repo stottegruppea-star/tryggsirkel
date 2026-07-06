@@ -458,6 +458,38 @@ transition:background .15s;
 
 .post-button:hover{background:var(--green-dark);}
 
+.vis-flere-btn{
+width:100%;
+background:transparent;
+color:var(--green-dark);
+border:1.5px solid var(--green);
+border-radius:16px;
+padding:14px;
+font-size:16px;font-weight:900;
+cursor:pointer;
+margin-top:14px;
+transition:background .15s,color .15s;
+}
+
+.vis-flere-btn:hover{
+background:var(--green);
+color:#fff;
+}
+
+.fab{
+position:fixed;bottom:28px;right:28px;z-index:100;
+background:var(--green);color:#fff;
+padding:16px 26px;border-radius:50px;
+font-weight:900;font-size:15px;
+box-shadow:0 8px 32px rgba(38,55,31,.38);
+display:flex;align-items:center;gap:8px;
+transition:transform .15s,background .15s;
+}
+.fab:hover{background:var(--green-dark);transform:translateY(-2px);}
+@media(max-width:650px){
+.fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}
+}
+
 #posts{overflow:hidden;max-width:100%;}
 
 .post-item{
@@ -593,9 +625,12 @@ h2{font-size:30px;}
 
 <body id="top">
 
+<a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer" class="fab">❤️ DIGITALT MØTE KL. 20:00</a>
+
+
 <nav class="nav">
   <div class="brand">
-    <img src="logo.png" alt="Trygg Sirkel logo" width="78" height="78">
+    <img src="logo.png" alt="Trygg Sirkel logo" width="78" height="78" fetchpriority="high">
     <div>
       <div class="brand-title">TRYGG SIRKEL</div>
       <div class="brand-sub">ET STED Å VÆRE ÆRLIG. SAMMEN.</div>
@@ -604,8 +639,6 @@ h2{font-size:30px;}
 
   <div class="nav-links">
     <a href="/blogg/Herr-percy-og-alise-i-edruland.html" class="nav-blog">Blogg</a>
-    <a href="#top">Hjem</a>
-    <a href="#mote">Kveldsmøte</a>
     <a href="#temaer">Ukas temaer</a>
     <a href="#kontakt">Kontakt</a>
     <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1"
@@ -831,6 +864,7 @@ h2{font-size:30px;}
 
     <div id="postMessage" class="section-note"></div>
     <div id="posts"></div>
+    <div id="visFlereWrap"></div>
   </div>
 
   <div class="welcome">Velkommen ❤️</div>
@@ -902,25 +936,47 @@ function formatPostText(text){
     .replace(/,/g,', ');
 }
 
-async function loadPosts(){
+let allePosts=[];
+let viserAlle=false;
+
+function renderPost(post){
+  const div=document.createElement('div');
+  div.className='post-item';
+  const safeText=document.createElement('div');
+  safeText.textContent=formatPostText(post.content);
+  const meta=document.createElement('div');
+  meta.className='post-meta';
+  meta.textContent='🕒 '+new Date(post.created_at).toLocaleString('no-NO');
+  div.appendChild(safeText);
+  div.appendChild(meta);
+  return div;
+}
+
+function tegnPosts(){
   const container=document.getElementById('posts');
+  container.innerHTML='';
+  const synlige = viserAlle ? allePosts : allePosts.slice(0,2);
+  synlige.forEach(post=>container.appendChild(renderPost(post)));
+
+  const knapp=document.getElementById('visFlereWrap');
+  if(allePosts.length>2 && !viserAlle){
+    knapp.innerHTML='<button onclick="visResten()" class="vis-flere-btn">Vis flere innlegg ('+(allePosts.length-2)+')</button>';
+  } else {
+    knapp.innerHTML='';
+  }
+}
+
+function visResten(){
+  viserAlle=true;
+  tegnPosts();
+}
+
+async function loadPosts(){
   const {data}=await supabaseClient
     .from('posts').select('*')
     .order('created_at',{ascending:false});
-  container.innerHTML='';
-  if(!data) return;
-  data.forEach(post=>{
-    const div=document.createElement('div');
-    div.className='post-item';
-    const safeText=document.createElement('div');
-    safeText.textContent=formatPostText(post.content);
-    const meta=document.createElement('div');
-    meta.className='post-meta';
-    meta.textContent='🕒 '+new Date(post.created_at).toLocaleString('no-NO');
-    div.appendChild(safeText);
-    div.appendChild(meta);
-    container.appendChild(div);
-  });
+  allePosts = data || [];
+  tegnPosts();
 }
 
 async function addPost(){
@@ -932,6 +988,7 @@ async function addPost(){
   if(error){msg.textContent='Kunne ikke dele.';return;}
   input.value='';
   msg.textContent='Innlegget er delt anonymt.';
+  viserAlle=false;
   loadPosts();
 }
 
