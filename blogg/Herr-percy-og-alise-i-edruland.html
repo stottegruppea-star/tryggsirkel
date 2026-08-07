@@ -1,311 +1,719 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeg hadde en indre kløe | Herr Percy og Alise i Edruland</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Herr Percy og Alise i Edruland – en blogg om edring | Trygg Sirkel</title>
+<meta name="description" content="En blogg om edring, trygghet, håp og reisen fra innsiden og ut. Ærlige tekster om alkohol, sug, tilbakefall og veien tilbake til seg selv." />
+<meta property="og:title" content="Herr Percy og Alise i Edruland | Trygg Sirkel" />
+<meta property="og:description" content="En blogg om edring, trygghet og håp – fra innsiden og ut." />
+<meta property="og:url" content="https://www.tryggsirkel.no/blogg/Herr-percy-og-alise-i-edruland.html" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://www.tryggsirkel.no/logo.png" />
+<link rel="canonical" href="https://www.tryggsirkel.no/blogg/Herr-percy-og-alise-i-edruland.html" />
+<link rel="icon" type="image/png" href="/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-    --cream:#f6f1ea;
-    --brown:#5c3a34;
-    --gold:#d6aa62;
+  --cream:#fff8f1;
+  --warm-light:rgba(255,248,241,0.88);
+  --rose:#a44d4d;
+  --gold:#d8aa62;
+  --text:#2d1714;
+  --green:#65764d;
+  --green-dark:#26371f;
 }
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+  box-sizing:border-box;
+}
+html,body{
+  margin:0;
+  padding:0;
 }
 body{
-    font-family:Georgia, serif;
-    background:
-    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
-    url("../../herr-percy-og-alise-bakgrunn.jpg");
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-    color:#2d1f1b;
-    min-height:100vh;
-    padding:40px 20px 80px;
+  font-family:Georgia,"Times New Roman",serif;
+  color:var(--cream);
+  background:
+    linear-gradient(rgba(25,10,10,0.45),rgba(25,10,10,0.78)),
+    url('/herr-percy-og-alise-bakgrunn.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  min-height:100vh;
 }
-.container{
-    max-width:860px;
-    margin:0 auto;
+/* ── NAV (bro til resten av siden) ── */
+.blog-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  max-width:1100px;
+  margin:0 auto 30px;
+  padding:16px 22px;
+  background:rgba(25,10,10,0.35);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
 }
-article{
-    background:rgba(246,241,234,0.96);
-    border-radius:34px;
-    padding:60px 52px;
-    box-shadow:0 10px 35px rgba(0,0,0,0.35);
+.blog-nav .brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
-h1{
-    font-size:4rem;
-    color:var(--brown);
-    text-align:center;
-    margin-bottom:45px;
+.blog-nav .brand img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
 }
-p{
-    font-size:1.28rem;
-    line-height:2.05;
-    margin-bottom:30px;
+.blog-nav .brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
 }
-.skritt{
-    font-size:2rem;
-    color:var(--brown);
-    text-align:center;
-    margin:6px 0 26px;
+.blog-nav .brand-title{
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  color:var(--cream);
 }
-hr.divider{
-    border:none;
-    width:80px;
-    height:2px;
-    background:var(--gold);
-    margin:46px auto;
+.blog-nav .brand-sub{
+  font-size:10px;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.6);
 }
-.ending-image{
-    margin-top:30px;
+.blog-nav-links{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
 }
-.ending-image img{
+.blog-nav-links a{
+  text-decoration:none;
+  color:var(--cream);
+  font-size:0.92rem;
+  letter-spacing:0.5px;
+  padding:9px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.06);
+  transition:0.2s ease;
+}
+.blog-nav-links a:hover{
+  background:rgba(255,255,255,0.14);
+}
+.blog-nav-links a.nav-cta{
+  background:var(--green);
+  border-color:var(--green);
+  font-weight:bold;
+}
+.blog-nav-links a.nav-cta:hover{
+  background:var(--green-dark);
+}
+.overlay{
+  min-height:100vh;
+  backdrop-filter:blur(2px);
+  padding:30px 20px 80px;
+}
+.top-social{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:44px;
+  margin-bottom:28px;
+}
+.follow-text{
+  font-size:1rem;
+  letter-spacing:1px;
+  color:rgba(255,255,255,0.9);
+}
+.top-social a{
+  text-decoration:none;
+  color:var(--cream);
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:12px 22px;
+  border-radius:999px;
+  backdrop-filter:blur(10px);
+  font-weight:bold;
+  transition:0.25s ease;
+  box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+.top-social a:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,0.16);
+}
+.hero{
+  max-width:1200px;
+  margin:0 auto 30px;
+  text-align:center;
+}
+.hero-image{
+  width:100%;
+  max-width:1100px;
+  height:360px;
+  margin:0 auto 42px;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.18);
+}
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+}
+.welcome-box{
+  max-width:760px;
+  margin:28px auto 50px;
+  background:rgba(255,248,241,0.9);
+  color:var(--text);
+  padding:28px 34px;
+  border-radius:28px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.28);
+  border:1px solid rgba(255,255,255,0.4);
+}
+.welcome-box h2{
+  margin-top:0;
+  font-family:'Caveat',cursive;
+  font-size:3rem;
+  font-weight:700;
+  color:#6d3737;
+}
+.welcome-box p{
+  line-height:1.8;
+  font-size:1.05rem;
+}
+.section-title{
+  text-align:center;
+  font-family:'Caveat',cursive;
+  font-size:3.6rem;
+  font-weight:700;
+  margin:30px 0 34px;
+  text-shadow:0 6px 20px rgba(0,0,0,0.55);
+}
+.posts{
+  max-width:1000px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.post-card{
+  display:block;
+  text-decoration:none;
+  color:var(--cream);
+  background:linear-gradient(135deg,rgba(144,38,38,0.92),rgba(207,94,73,0.88));
+  border-radius:28px;
+  padding:32px;
+  border:1px solid rgba(255,230,180,0.35);
+  box-shadow:0 15px 45px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1);
+  transition:0.25s ease;
+}
+.post-card:hover{
+  transform:translateY(-4px) scale(1.01);
+}
+.post-card h2{
+  margin:0 0 16px;
+  font-size:2rem;
+  line-height:1.2;
+}
+.read-more{
+  display:inline-block;
+  margin-top:6px;
+  color:#ffe4b0;
+  font-weight:bold;
+}
+.help-box{
+  max-width:1000px;
+  margin:40px auto 0;
+  background:rgba(255,248,241,0.92);
+  color:var(--text);
+  padding:34px 38px;
+  border-radius:28px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.3);
+  border:1px solid rgba(255,255,255,0.4);
+}
+.help-box h2{
+  margin-top:0;
+  font-family:'Caveat',cursive;
+  font-size:2.6rem;
+  font-weight:700;
+  color:#6d3737;
+  text-align:center;
+}
+.help-box .intro{
+  text-align:center;
+  line-height:1.7;
+  font-size:1.05rem;
+  margin-bottom:24px;
+}
+.help-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-bottom:24px;
+}
+.help-links a{
+  text-decoration:none;
+  color:#6d3737;
+  background:rgba(144,38,38,0.08);
+  border:1px solid rgba(144,38,38,0.2);
+  border-radius:16px;
+  padding:14px 18px;
+  font-weight:bold;
+  transition:0.2s ease;
+}
+.help-links a:hover{
+  background:rgba(144,38,38,0.16);
+}
+.help-cta{
+  text-align:center;
+}
+.help-cta a{
+  display:inline-block;
+  text-decoration:none;
+  background:var(--green);
+  color:#fff;
+  padding:16px 30px;
+  border-radius:14px;
+  font-weight:bold;
+  font-size:1.05rem;
+  box-shadow:0 12px 26px rgba(38,55,31,0.28);
+  transition:0.2s ease;
+}
+.help-cta a:hover{
+  background:var(--green-dark);
+  transform:translateY(-2px);
+}
+/* ── FELLES FOOTER (bro til resten av siden) ── */
+.site-footer{
+  max-width:1100px;
+  margin:50px auto 0;
+  background:rgba(38,55,31,0.55);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:24px;
+  padding:40px 38px 28px;
+  backdrop-filter:blur(8px);
+}
+.footer-inner{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:40px;
+}
+.footer-brand-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.footer-logo img{
+  width:48px;
+  height:48px;
+  object-fit:contain;
+}
+.footer-brand-name{
+  font-size:18px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:var(--cream);
+}
+.footer-tagline{
+  font-size:13px;
+  color:rgba(255,248,241,0.6);
+  line-height:1.5;
+}
+.footer-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+.footer-col h4{
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,248,241,0.45);
+  margin:0 0 12px;
+}
+.footer-col a{
+  display:block;
+  color:rgba(255,248,241,0.82);
+  font-size:14px;
+  margin-bottom:8px;
+  text-decoration:none;
+  transition:0.15s ease;
+}
+.footer-col a:hover{
+  color:var(--cream);
+}
+.footer-bottom{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,248,241,0.12);
+  font-size:12px;
+  color:rgba(255,248,241,0.4);
+  text-align:center;
+}
+@media (max-width:768px){
+  body{
+    background-attachment:scroll;
+  }
+  .overlay{
+    padding:18px 14px 50px;
+  }
+  .blog-nav{
+    flex-direction:column;
+    gap:14px;
+    padding:16px;
+  }
+  .blog-nav-links{
     width:100%;
-    border-radius:28px;
-    box-shadow:0 20px 45px rgba(0,0,0,0.35);
-}
-.back{
+    justify-content:center;
+  }
+  .top-social{
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .top-social a{
+    width:100%;
     text-align:center;
-    margin-top:40px;
+  }
+  .hero-image{
+    height:auto;
+    max-width:100%;
+    border-radius:24px;
+    margin-bottom:28px;
+  }
+  .hero-image img{
+    height:auto;
+    object-fit:contain;
+  }
+  .welcome-box{
+    padding:22px;
+    border-radius:22px;
+    margin-top:20px;
+  }
+  .welcome-box h2{
+    font-size:2.4rem;
+  }
+  .section-title{
+    font-size:2.8rem;
+    margin-top:14px;
+  }
+  .post-card{
+    padding:24px;
+    border-radius:24px;
+  }
+  .post-card h2{
+    font-size:1.6rem;
+  }
+  .help-box{
+    padding:24px;
+    border-radius:22px;
+  }
+  .help-links{
+    grid-template-columns:1fr;
+  }
+  .footer-inner{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .footer-links{
+    grid-template-columns:1fr;
+  }
 }
-.back a{
-    display:inline-block;
-    padding:12px 22px;
-    border-radius:999px;
-    text-decoration:none;
-    color:var(--cream);
-    background:rgba(45,20,18,0.72);
-    border:1px solid rgba(255,255,255,0.22);
-    backdrop-filter:blur(4px);
+.home-fab{
+  position:fixed;
+  bottom:22px;
+  left:22px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:13px 20px;
+  border-radius:999px;
+  background:rgba(38,55,31,0.92);
+  color:#fff8f1;
+  font-family:Georgia,serif;
+  font-size:0.95rem;
+  font-weight:bold;
+  text-decoration:none;
+  border:1px solid rgba(255,248,241,0.22);
+  box-shadow:0 10px 30px rgba(0,0,0,0.45);
+  backdrop-filter:blur(8px);
+  transition:0.2s ease;
 }
-.back a:hover{
-    background:rgba(45,20,18,0.9);
-    transform:translateY(-2px);
-}
-footer{
-    text-align:center;
-    margin-top:40px;
-    color:#f6f1ea;
-}
-footer a{
-    color:#f6f1ea;
-    text-decoration:none;
-    font-weight:bold;
+.home-fab:hover{
+  background:rgba(38,55,31,1);
+  transform:translateY(-2px);
 }
 @media(max-width:768px){
-    body{
-        padding:20px 12px 60px;
-        background-attachment:scroll;
-    }
-    article{
-        padding:34px 24px;
-        border-radius:26px;
-    }
-    h1{
-        font-size:2.5rem;
-    }
-    p{
-        font-size:1.12rem;
-        line-height:1.9;
-    }
-    .skritt{
-        font-size:1.6rem;
-    }
+  .home-fab{
+    bottom:16px;
+    left:16px;
+    padding:12px 18px;
+    font-size:0.9rem;
+  }
 }
 </style>
 </head>
 <body>
-<main class="container">
-<article>
-<p>Jeg har brukt så mye energi på å ikke kjenne. På å ikke tenke.</p>
-<p>Jeg hadde en indre kløe.<br>
-Et mentalt ubehag jeg ikke klarte å slippe.</p>
-<p>Noen ganger føltes tankene mine som å gå inn på TV-avdelingen på Elkjøp.</p>
-<p>Alle skjermene står på samtidig,<br>
-med lyd,<br>
-på forskjellige kanaler.</p>
-<p>Før jeg fant alkoholen, balet jeg mye med mat.</p>
-<p>Jeg sluttet å spise.<br>
-Sulten ble så altoppslukende at den overdøvet alt det andre.</p>
-<p>Alle tankene.<br>
-Alle TV-skjermene.</p>
-<p>Så skjedde det noe jeg skammet meg over i mange år.</p>
-<p>Jeg glemmer det aldri.</p>
-<p>Det skjer en onsdag.<br>
-Vi har dobbeltime i matte første året på videregående.</p>
-<p>Jeg skal bare legge passeren tilbake i etuiet da den glipper.</p>
-<p>Spissen rasper bortover armen min, og jeg blir helt bergtatt av svien. Av at det renner litt blod ned på pulten.</p>
-<p>Var det alt som skulle til?<br>
-Litt rasping på armen, og jeg fikk puste?</p>
-<p>Det blir en besettelse.<br>
-Som om jeg har funnet en superkraft.</p>
-<p>Ved hjelp av en passer kan jeg flytte den mentale smerten til et lite punkt på armen.</p>
-<p>Jeg får skrudd av tankene.<br>
-Endelig blir det stille.</p>
-<p>Dette pågikk i mange år.</p>
-<p>Det ble etter hvert så alvorlig at jeg mot slutten av tenårene ble lagt inn på psykiatrisk avdeling.</p>
-<p>Psykiatrien på slutten av nittitallet er ikke den samme som i dag.</p>
-<p>Det håper jeg i hvert fall ikke.</p>
-<p>Visste du at de hadde et eget ord de brukte om mennesker som skadet seg selv?</p>
-<p>At man ikke skulle gi en selvskader «sekundærgevinst».</p>
-<p>Det er et ord jeg skulle ønske aldri hadde eksistert.</p>
-<p>Et ord som betydde at et menneske med så sterk psykisk smerte ikke skulle få ekstra oppmerksomhet eller trøst.</p>
-<p>At man heller burde sy uten bedøvelse.</p>
-<p>Jeg er sydd over to hundre sting uten bedøvelse.</p>
-<p>Og jeg brukte flere tiår av livet mitt på å skjule arrene mine.</p>
-<p>Så sterk var skammen.</p>
-<p>Jeg brukte år på å bedøve meg selv.<br>
-Med sult.<br>
-Med å kutte meg.<br>
-Med å drikke i skjul.</p>
-<p>Jeg lever heldigvis ikke der lenger.</p>
-<p>Nå tør jeg å ta imot meg selv.<br>
-Ta imot tårene mine.</p>
-<p>Jeg tåler meg selv nå, tåler følelsene og tankene.<br>
-Tåler den indre kløen.</p>
-<p>Men jeg skal ikke lyve.</p>
-<p>Noen netter kan minnene fortsatt dukke opp i meg.</p>
-<p>Minnene om den unge jenta som trodde fysisk smerte var den eneste måten å få pause fra den psykiske på.</p>
-<p>Dette skrev jeg i dagboka mi for noen år siden:</p>
-<hr class="divider">
-<p>Når alle hadde fått kveldsdosen sin, var det lett å si at jeg sov om brodern ringte på pasienttelefonen. Han ville ikke hørt forskjell på oss uansett.</p>
-<p>Alle får lik stemme på Nozinan.<br>
-Umulig å uttale konsonantene riktig.</p>
-<p>Jeg klarer ikke henge med når han ringer etter kveldsmedisinen.<br>
-Han snakker for fort.<br>
-Jeg mister tankerekka før en ny starter.<br>
-Svarer feil.</p>
-<p>Hører han prøver å le bort bekymringen i stemmen.</p>
-<p>Best å si at han får prøve å ringe tilbake i morgen.</p>
-<p>Vet at de brillene var dyre.</p>
-<p>Men de var det eneste som ikke var av plast, og jeg klarte å knekke glasset på dem.</p>
-<p>Følelsen inni meg er panisk.<br>
-De har bare bedøvd den fysiske smerten.</p>
-<p>Jeg må skjære skikkelig dypt for å kjenne noe annet enn smerten i hjertet.<br>
-Kjenner det ble for dypt.<br>
-Det renner mellom fingrene.<br>
-Klumper seg.</p>
-<p>Det kommer til å trekke gjennom dyna snart.<br>
-Hvis jeg snur meg, drypper det på gulvet.<br>
-Han kommer til å se det.<br>
-Han sitter på en stol like ved senga.</p>
-<p>Etter at jeg kuttet meg med lyspæra er jeg under § 3-3.<br>
-Jeg får ikke engang gå på do alene lenger.</p>
-<p>Det lukter metallisk nå.<br>
-Jern.<br>
-Smerten i brystet slipper.<br>
-Det er lettere å puste helt ned i magen.</p>
-<p>– Åpne dyna, sier han.</p>
-<p>Jeg kniper igjen dyna med den ene hånda, holder brillene i den andre.<br>
-Prøver å be ham la meg være, men konsonantene stokker seg.<br>
-Blir til hyl.</p>
-<p>Alarmen går.<br>
-Det blinker rødt over døra.<br>
-Faen.<br>
-Hører de løper.</p>
-<p>Det er tre av dem nå.<br>
-Dekker hele døråpningen.<br>
-River av meg dyna.</p>
-<p>– Tilkall bakvakta. De er dype.</p>
-<p>– Gi meg brillene. Nå.</p>
-<p>Det uler.<br>
-Jeg vil ta meg for ørene, men kan ikke slippe brillene.</p>
-<p>– Hysj nå, jente. Du vekker avdelinga.</p>
-<p>Da skjønner jeg at ulinga ikke er alarmen.<br>
-Det er meg.</p>
-<p>Bakvakta er han som sydde sist.<br>
-De holder meg fast.</p>
-<p>Han ene, den største, sitter på knærne mine.<br>
-De to andre holder hver sin arm.<br>
-Bakvakta ber han som reiv av meg dyna holde hardt.</p>
-<p>Det er blod overalt.</p>
-<p>Han drar fram de sterile sysakene.<br>
-Dropper bedøvelsen.<br>
-Nå som sist.</p>
-<p>Det er vondt.<br>
-Jeg mister helt kontroll på når neste sting kommer.</p>
-<p>– Slutt med …</p>
-<p>Ordene mine blir feil.<br>
-Konsonantene svikter igjen.<br>
-Jeg roper.<br>
-Prøver å rive til meg beina.<br>
-Jeg spytter.</p>
-<p>Han ved beina klapper til meg.</p>
-<p>Hører hjulene.<br>
-Det er en egen lyd når de løper med reimesenga gjennom en tom korridor.</p>
-<p>– Gap opp, sier bakvakta.</p>
-<p>Jeg kniper igjen munnen.<br>
-Øynene.<br>
-Vil ikke være her.</p>
-<p>Han presser de store hendene rundt kinnene mine.<br>
-Prøver å tvinge opp munnen.</p>
-<p>Jeg får ikke puste.<br>
-Kjenner oppkastet komme.<br>
-Vrenger hodet unna.<br>
-Prøver å bite etter hendene hans.</p>
-<p>Et hysterisk hyl presser seg fram.</p>
-<p>– Jævla sjølskader.</p>
-<p>Jeg ser sprøyta.<br>
-Ikke bedøvelse til stingene.</p>
-<p>Stesolid.</p>
-<p>Effekten kommer fort.</p>
-<p>De er fire som løfter meg opp fra gulvet.<br>
-Slenger meg som en sekk.<br>
-Kjenner det knepper i korsryggen idet de slipper armene og beina mine og jeg treffer benken.<br>
-Klarer ikke rette meg opp.</p>
-<p>Kroppen min.<br>
-Ordene mine.<br>
-De lystrer ikke lenger.</p>
-<p>Kjenner reimene.<br>
-De er kalde.<br>
-Håndledd.<br>
-Overarmer.<br>
-Brystkasse.<br>
-Hofter.<br>
-Lår.<br>
-Ankler.<br>
-De strammes hardt før de låses.</p>
-<p>Han syr ferdig.</p>
-<p>Lyset over døra slutter å blinke.<br>
-Han som klappet til meg er tilbake på stolen.<br>
-Denne gangen med nøklene klare.</p>
-<p>Lurer på om de rekker å låse meg opp om han på naborommet får fyr på gardinene sine igjen.</p>
-<p>Prøver å stoppe tårene som renner.<br>
-Vil ikke han skal se at jeg gråter.</p>
-<p>Det svir fortsatt på kinnet.</p>
-<hr class="divider">
-<p>Jeg leser dette i dag med en sorg over hvor vondt jeg hadde det.</p>
-<p>Jeg kjenner også en sorg over alle de unge menneskene som ble møtt på den måten i psykiatrien.</p>
-<p>Som fikk påført mer smerte enn hjelp.<br>
-Mer skam enn omsorg.</p>
-<p>Men jeg kjenner også stolthet.</p>
-<p>For den jenta døde ikke.</p>
-<p>Hun sitter her i dag.</p>
-<p>Hun skriver.<br>
-Hun kjenner.<br>
-Hun gråter.</p>
-<p>Og hun trenger ikke lenger skamme seg.</p>
-<p>Hun trenger ikke lenger skade seg selv for å få puste.</p>
-<p>Ikke med en passer.<br>
-Ikke med sult.<br>
-Ikke med alkohol.</p>
-<div class="ending-image">
-<img src="indrekloe.jpg" alt="Jeg hadde en indre kløe">
-</div>
-<div class="back">
-<a href="../Herr-percy-og-alise-i-edruland.html">
-← Tilbake til bloggen
+<a href="/" class="home-fab" aria-label="Til forsiden Trygg Sirkel">
+  ← Trygg Sirkel
 </a>
+<div class="overlay">
+  <section class="hero">
+    <div class="hero-image">
+      <img src="/blogg-banner.jpg" alt="Herr Percy og Alise i Edruland">
+    </div>
+    <div class="welcome-box">
+      <h2>Velkommen til bloggen «Herr Percy og Alise i Edruland»</h2>
+      <p>
+        Dette er historiene om hvordan jeg mistet meg selv i alkoholen –
+        og sakte fant veien hjem igjen.
+        Hvordan jeg møtte Herr Percy og vi lagde dette universet
+        vi kaller for Edrulandet.
+      </p>
+      <p>
+        Her deler jeg egne erfaringer, forskning om avhengighet,
+        historier fra hverdagen og det jeg skulle ønske noen hadde
+        fortalt meg da jeg satt fast.
+      </p>
+      <p>
+        Hvis bare ett innlegg kan få ett menneske til å kjenne seg
+        litt mindre alene, er det verdt å skrive.
+      </p>
+    </div>
+  </section>
+  <h2 class="section-title">Alle blogginnlegg</h2>
+  <section class="posts">
+<a class="post-card" href="indrekloe/">
+      <h2>Jeg hadde en indre kløe</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="noenganger/">
+      <h2>Noen ganger føles det som jeg ikke vet hvem jeg er</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="ittakesonetoknowone/">
+      <h2>It takes one to know one</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="elefanten/">
+      <h2>Elefantsyndromet</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="bamse/">
+      <h2>Slitte, gamle Bamse</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="9-maneder/">
+      <h2>Ni måneder</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="skylda/">
+      <h2>Fylla har skylda</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="utelukker/">
+      <h2>Det ene utelukker ikke det andre.</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+<a class="post-card" href="slipp/">
+      <h2>Du kan gi slipp nå..</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+
+    <a class="post-card" href="fortaltdeg/">
+      <h2>Det er mye jeg kunne fortalt deg..</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="gi-det-et-ar/">
+      <h2>Vi kan jo gi det et år..</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="helvetesuka/">
+      <h2>Helvetesuka</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="45minutter/">
+      <h2>Hva er det egentlig med alkohol?</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="nykommer/">
+      <h2>Jeg var helt ny. Og sinnsykt nervøs</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="faen/">
+      <h2>Faen heller, Alise</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="hvafaen/">
+      <h2>Hva faen holder jeg på med?</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="asfaltsprenger/">
+      <h2>Asfaltsprenger</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="nattevakt/">
+      <h2>Nattevakt</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="ro/">
+      <h2>RO - RO - RO</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="klippe/">
+      <h2>Du burde bo på en klippe</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="ikke-kjempe-alene/">
+      <h2>Vi lovte hverandre å ikke kjempe alene</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="tretten/">
+      <h2>Jeg var tretten år første gang jeg drakk</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="bill.html">
+      <h2>Jeg trenger ikke en drink. Jeg trenger en annen alkoholiker</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="fuckit.html">
+      <h2>Fuck it. Jeg gidder ikke mer.</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="90-sekunder.html">
+      <h2>Du? Vi klarer 90 sekunder.</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="blekksprut.html">
+      <h2>Blekksprut</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="til-stede.html">
+      <h2>Til stede</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="borgerkrig.html">
+      <h2>Borgerkrig</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="liteblad.html">
+      <h2>Lite blad</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="kognitiv.html">
+      <h2>Kognitiv dissonans</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="sonder.html">
+      <h2>Sonder</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="koppen-min.html">
+      <h2>Koppen min</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="generasjoner.html">
+      <h2>Generasjoner</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+    <a class="post-card" href="forste-innlegg.html">
+      <h2>Jeg er Alise, jeg er i edring</h2>
+      <span class="read-more">Les innlegget →</span>
+    </a>
+  </section>
+  <div class="help-box">
+    <h2>Du er velkommen i sirkelen</h2>
+    <p class="intro">
+      Kjente du deg igjen i noe du leste? Du er ikke alene. Her kan du lese mer om det du bærer på – eller bare bli med på et møte.
+    </p>
+    <div class="help-links">
+      <a href="/alkohol">Hjelp med alkohol</a>
+      <a href="/sug">Sug etter alkohol</a>
+      <a href="/tilbakefall">Tilbakefall</a>
+      <a href="/edru">Å bli edru</a>
+      <a href="/alkoholiker">Er jeg alkoholiker?</a>
+      <a href="/slutte">Slutte å drikke</a>
+    </div>
+    <div class="help-cta">
+      <a href="https://us06web.zoom.us/j/87199511754?pwd=ozfkQSOBWCefSic55mXji63n5DGZby.1" target="_blank" rel="noopener noreferrer">Bli med i kveldsmøtet kl. 20:00 ❤️</a>
+    </div>
+  </div>
+  <div class="top-social">
+    <div class="follow-text">
+      Følg reisen vår:
+    </div>
+    <a href="https://www.instagram.com/tryggsirkel?igsh=MWNyaXM0cWZnMnFxbg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/61590971423888/" target="_blank" rel="noopener noreferrer">
+      Facebook
+    </a>
+    <a href="https://www.snapchat.com/add/tryggsirkel" target="_blank" rel="noopener noreferrer">
+      Snapchat
+    </a>
+    <a href="https://www.tiktok.com/@tryggsirkelblogg" target="_blank" rel="noopener noreferrer">
+      TikTok
+    </a>
+  </div>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-wrap">
+        <div class="footer-logo">
+          <img src="/logo.png" alt="Trygg Sirkel">
+          <div class="footer-brand-name">TRYGG SIRKEL</div>
+        </div>
+        <p class="footer-tagline">Et gratis og anonymt nettmøte for deg som strever med alkohol, rus eller avhengighet.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Ressurser</h4>
+          <a href="/alkohol">Hjelp med alkohol</a>
+          <a href="/sug">Sug etter alkohol</a>
+          <a href="/tilbakefall">Tilbakefall</a>
+          <a href="/edru">Å bli edru</a>
+          <a href="/alkoholiker">Er jeg alkoholiker?</a>
+          <a href="/avhengighet">Avhengighet</a>
+          <a href="/slutte">Slutte å drikke</a>
+          <a href="/hjelp">Hjelp med rus</a>
+        </div>
+        <div class="footer-col">
+          <h4>Trygg Sirkel</h4>
+          <a href="/">Hjem</a>
+          <a href="/#mote">Kveldsmøte kl. 20:00</a>
+          <a href="/#temaer">Ukas temaer</a>
+          <a href="/#kontakt">Kontakt oss</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © Trygg Sirkel – Gratis og anonymt. Alltid.
+    </div>
+  </footer>
 </div>
-</article>
-<footer>
-<p>En del av <a href="../../index.html">Trygg Sirkel</a></p>
-</footer>
-</main>
 </body>
 </html>
