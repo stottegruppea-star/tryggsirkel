@@ -48,8 +48,6 @@
 }
 </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <style>
 :root{
 --cream:#fff5ec;
@@ -387,26 +385,6 @@ color:var(--green-dark);
 }
 
 
-.section-note{color:var(--muted);font-size:16px;}
-
-.topic-links{
-display:grid;grid-template-columns:repeat(2,1fr);
-gap:12px;margin-top:22px;
-}
-
-.topic-links a{
-background:rgba(255,255,255,.58);
-border:1px solid var(--line);
-border-radius:18px;
-padding:16px 20px;
-font-size:16px;font-weight:700;
-color:var(--green-dark);
-display:flex;align-items:center;gap:10px;
-transition:background .15s;
-}
-
-.topic-links a:hover{background:rgba(255,255,255,.9);}
-
 .contact-form label{display:block;font-weight:900;margin:14px 0 6px;}
 
 .contact-form input,
@@ -418,14 +396,7 @@ font-size:16px;font-family:inherit;background:white;
 
 .contact-form textarea{min-height:130px;resize:vertical;}
 
-.post-input{
-width:100%;min-height:130px;
-border:1px solid var(--line);border-radius:18px;
-padding:15px;font-size:16px;
-font-family:inherit;resize:vertical;background:white;
-}
-
-.post-button{
+.submit-button{
 width:100%;background:var(--green);color:white;
 border:none;border-radius:20px;
 padding:18px;font-size:22px;font-weight:900;
@@ -433,25 +404,7 @@ cursor:pointer;margin-top:14px;
 transition:background .15s;
 }
 
-.post-button:hover{background:var(--green-dark);}
-
-.vis-flere-btn{
-width:100%;
-background:transparent;
-color:var(--green-dark);
-border:1.5px solid var(--green);
-border-radius:16px;
-padding:14px;
-font-size:16px;font-weight:900;
-cursor:pointer;
-margin-top:14px;
-transition:background .15s,color .15s;
-}
-
-.vis-flere-btn:hover{
-background:var(--green);
-color:#fff;
-}
+.submit-button:hover{background:var(--green-dark);}
 
 .fab{
 position:fixed;bottom:28px;right:28px;z-index:100;
@@ -466,19 +419,6 @@ transition:transform .15s,background .15s;
 @media(max-width:650px){
 .fab{bottom:20px;right:16px;font-size:14px;padding:14px 20px;}
 }
-
-#posts{overflow:hidden;max-width:100%;}
-
-.post-item{
-background:rgba(255,255,255,.65);
-border:1px solid var(--line);
-border-radius:18px;padding:18px;margin-bottom:12px;
-white-space:pre-wrap;overflow-wrap:anywhere;
-word-break:normal;hyphens:auto;
-font-size:18px;line-height:1.65;max-width:100%;
-}
-
-.post-meta{margin-top:10px;font-size:13px;color:var(--muted);}
 
 .welcome{
 text-align:center;font-family:'Caveat', cursive;
@@ -576,9 +516,6 @@ text-align:center;white-space:nowrap;
 .card{margin-bottom:20px;}
 h2{font-size:30px;}
 .quote{font-size:25px;}
-.post-item{font-size:16px;padding:18px;}
-.post-meta{font-size:12px;}
-.topic-links{grid-template-columns:1fr;}
 .footer-links{grid-template-columns:1fr;}
 .meeting-badge{font-size:13px;padding:7px 14px;}
 .steps{gap:13px;}
@@ -783,22 +720,8 @@ h2{font-size:30px;}
       <label for="melding">Melding</label>
       <textarea id="melding" name="melding"></textarea>
 
-      <button type="submit" class="post-button">SEND MELDING</button>
+      <button type="submit" class="submit-button">SEND MELDING</button>
     </form>
-  </div>
-
-  <div class="card">
-    <h2>🧱 Anonym vegg</h2>
-    <p class="section-note">Her kan du dele noen ord anonymt.</p>
-
-    <label for="postInput" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Anonym melding</label>
-    <textarea id="postInput" class="post-input" placeholder="Skriv noe anonymt her..."></textarea>
-
-    <button onclick="addPost()" class="post-button">DEL ANONYMT</button>
-
-    <div id="postMessage" class="section-note"></div>
-    <div id="posts"></div>
-    <div id="visFlereWrap"></div>
   </div>
 
   <div class="welcome">Velkommen ❤️</div>
@@ -831,77 +754,6 @@ h2{font-size:30px;}
     © Trygg Sirkel – Gratis og anonymt. Alltid.
   </div>
 </footer>
-
-<script>
-const supabaseClient = window.supabase.createClient(
-  'https://nnmavsrnwiqxkegpsaub.supabase.co',
-  'sb_publishable_kYqt2jCFI7VMkr-7e0Ea_w_Jrh-ZcOD'
-);
-
-function formatPostText(text){
-  return text
-    .replace(/([.!?])(?=\S)/g,'$1 ')
-    .replace(/,/g,', ');
-}
-
-let allePosts=[];
-let viserAlle=false;
-
-function renderPost(post){
-  const div=document.createElement('div');
-  div.className='post-item';
-  const safeText=document.createElement('div');
-  safeText.textContent=formatPostText(post.content);
-  const meta=document.createElement('div');
-  meta.className='post-meta';
-  meta.textContent='🕒 '+new Date(post.created_at).toLocaleString('no-NO');
-  div.appendChild(safeText);
-  div.appendChild(meta);
-  return div;
-}
-
-function tegnPosts(){
-  const container=document.getElementById('posts');
-  container.innerHTML='';
-  const synlige = viserAlle ? allePosts : allePosts.slice(0,2);
-  synlige.forEach(post=>container.appendChild(renderPost(post)));
-
-  const knapp=document.getElementById('visFlereWrap');
-  if(allePosts.length>2 && !viserAlle){
-    knapp.innerHTML='<button onclick="visResten()" class="vis-flere-btn">Vis flere innlegg ('+(allePosts.length-2)+')</button>';
-  } else {
-    knapp.innerHTML='';
-  }
-}
-
-function visResten(){
-  viserAlle=true;
-  tegnPosts();
-}
-
-async function loadPosts(){
-  const {data}=await supabaseClient
-    .from('posts').select('*')
-    .order('created_at',{ascending:false});
-  allePosts = data || [];
-  tegnPosts();
-}
-
-async function addPost(){
-  const input=document.getElementById('postInput');
-  const msg=document.getElementById('postMessage');
-  const text=input.value.trim();
-  if(!text){msg.textContent='Skriv noe først.';return;}
-  const {error}=await supabaseClient.from('posts').insert([{content:text}]);
-  if(error){msg.textContent='Kunne ikke dele.';return;}
-  input.value='';
-  msg.textContent='Innlegget er delt anonymt.';
-  viserAlle=false;
-  loadPosts();
-}
-
-loadPosts();
-</script>
 
 <script defer src="/_vercel/insights/script.js"></script>
 
