@@ -86,11 +86,11 @@ border-radius:20px;
 padding:26px 24px;
 margin-bottom:20px;
 text-align:left;
+border:1px solid transparent;
 }
 
 .resource.meeting{
-background:rgba(101,118,77,.12);
-border:1px solid var(--green);
+border:1.5px solid var(--green);
 }
 
 .resource h2{
@@ -119,11 +119,19 @@ transition:background .15s;
 
 .resource a.btn:hover{background:var(--green-dark);}
 
-.phone{
-display:inline-block;
-margin-top:10px;
+.phone-row{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:14px;
 font-weight:700;
 color:var(--rose-dark);
+}
+
+.hours{
+margin:6px 0 0;
+font-size:0.85rem;
+color:var(--muted);
 }
 
 .app-links{
@@ -188,8 +196,8 @@ h1{font-size:2.5rem;}
     <a class="btn" href="https://www.anonymealkoholikere.no" target="_blank" rel="noopener noreferrer">
       anonymealkoholikere.no
     </a>
-    <div class="phone">📞 Opplysningstelefon: 911 77 770</div>
-    <p style="margin-top:6px;font-size:0.85rem;">Daglig 18–22 · man–fre også 11–15</p>
+    <div class="phone-row">📞 Opplysningstelefon: 911 77 770</div>
+    <p class="hours">Daglig 18–22 · man–fre også 11–15</p>
   </div>
 
   <div class="resource">
